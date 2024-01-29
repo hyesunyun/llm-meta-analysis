@@ -1,0 +1,10 @@
+name: llm-meta-analysis
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - torchmetrics
+  - anaconda::yaml
+  - conda-forge::openai
+  - conda-forge::pandas
+prefix: /home/yun.hy/.conda/envs/llm-meta-analysis
