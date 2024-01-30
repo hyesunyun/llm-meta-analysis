@@ -6,5 +6,5 @@ templates:
     name: without-results
   a2ca7125-1d3c-42fc-9317-07c75b59ed82: !Template
     id: a2ca7125-1d3c-42fc-9317-07c75b59ed82
-    prompt: 'Article: [RESULTS section in XML format]. Infer whether the following outcome is binary or continuous based on the given randomized controlled trial. Output "b" if the outcome type is "binary", "c" if the outcome type is "continuous", and "x" if there is insufficient information to make any inference. Do not provide any explanation. Outcome: [OUTCOME].'
+    prompt: 'Article: {{results_section}}. Infer whether the following outcome is binary or continuous based on the given randomized controlled trial. Output "b" if the outcome type is "binary", "c" if the outcome type is "continuous", and "x" if there is insufficient information to make any inference. Do not provide any explanation. Outcome: {{outcome}}.'
     name: with-results
