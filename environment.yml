@@ -7,4 +7,5 @@ dependencies:
   - anaconda::yaml
   - conda-forge::openai
   - conda-forge::pandas
+  - anaconda::jinja2
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis
