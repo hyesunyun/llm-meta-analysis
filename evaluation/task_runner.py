@@ -1,15 +1,17 @@
 import argparse
 import os
 from utils import format_example_with_prompt_template, load_dataset_from_json
-
 from typing import Dict, List, Optional
-
 from tqdm import tqdm
-import os
+from templates import DatasetTemplates
+from models import Model, GPT35, GPT4
+from datetime import datetime
+import json
+import csv
 
 class MetaAnalysisTaskRunner:
-    def __init__(self, model: str, task: str, output_path: str, is_test: bool, prompt_name: Optional[str]=None):
-        self.model = model
+    def __init__(self, model_name: str, task: str, output_path: str, is_test: bool, prompt_name: Optional[str]=None):
+        self.model_name = model_name
         self.task = task
         self.prompt_name = prompt_name
         self.output_path = output_path
@@ -17,9 +19,11 @@ class MetaAnalysisTaskRunner:
 
         self.prompt_template = None
         self.dataset = None
+        self.model = None
 
         self._load_prompt_template()
         self._load_dataset()
+        self._load_model()
 
     def _load_prompt_template(self) -> str:
         """
@@ -29,12 +33,77 @@ class MetaAnalysisTaskRunner:
         """
         # this can be deleted if we are not going to use any models other than OpenAI ones
         # if we use some open source models, we should discriminate model too and add model name to path
-        return task
+        self.prompt_template = task
     
     def _load_dataset(self) -> List[Dict]:
+        """
+        This method loads the dataset (test split)
+
+        :return dataset as a list of dictionaries
+        """
+        dataset_filename = "meta_analysis_dataset.json"
+        dataset = load_dataset_from_json(dataset_filename)
+        
+        # filter out dataset to only test split
+        dataset = [example for example in dataset if example["split"] == "test"]
+
+        # if test, only run first 10 instances
+        if self.is_test:
+            dataset = dataset[:10]
+
+        self.dataset = dataset
+
+    def _load_model(self) -> Model:
+        """
+        This method loads the model requested for the task
+
+        :return Model object
+        """
+        model_class_mapping = {"gpt35": GPT35, "gpt4": GPT4}
+        model_class = model_class_mapping[self.model_name]
+        self.model = model_class()
 
     def run_task(self):
-        print()
+        # load dataset prompt templates
+        prompts = DatasetTemplates(self.templates)
+
+        # if prompt name is given, apply the prompt template. if not, use all 
+        if self.prompt_name is None:
+            pbar_prompts = tqdm(prompts.all_template_names)
+        else:
+            pbar_prompts = tqdm([self.prompt_name])
+        
+        # run task for each prompt template
+        for _, prompt_name in enumerate(pbar_prompts):
+            pbar_prompts.set_description_str(f"Running model inference using template/prompt name: {prompt_name}")
+            
+            prompt = prompts[prompt_name]
+
+            dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
+
+            results = []
+            pbar = tqdm(dataset)
+            for _, example in enumerate(pbar):
+                output = self.model.generate_output(example["input"])
+                example["output"] = output
+                results.append(example)
+
+            # saving results to file
+            print(f"Saving outputs for task - {self.task}; prompt - {prompt_name}; model - {self.model_name} to csv and json")
+            current_datetime = datetime.now().strftime("%Y%m%d")
+
+            # convert into json
+            json_file_name = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.json"
+            with open(json_file_name, "w", encoding='utf-8') as file:
+                json.dump(results, file)
+
+            # convert into csv
+            keys = results[0].keys()
+            csv_file_name = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
+            with open(csv_file_name, "w", newline='', encoding='utf-8') as file:
+                dict_writer = csv.DictWriter(file, keys)
+                dict_writer.writeheader()
+                dict_writer.writerows(results)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")
