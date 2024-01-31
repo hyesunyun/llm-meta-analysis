@@ -1,6 +1,6 @@
 import argparse
 import os
-from utils import format_example_with_prompt_template, load_dataset_from_json
+from utils import format_example_with_prompt_template, load_dataset_from_json, get_xml_content_by_pmcid
 from typing import Dict, List, Optional
 from tqdm import tqdm
 from templates import DatasetTemplates
@@ -43,13 +43,20 @@ class MetaAnalysisTaskRunner:
         """
         dataset_filename = "meta_analysis_dataset.json"
         dataset = load_dataset_from_json(dataset_filename)
-        
-        # filter out dataset to only test split
-        dataset = [example for example in dataset if example["split"] == "test"]
 
-        # if test, only run first 10 instances
+        # if test, only get the dev set since this is for debugging and running quick experiments
         if self.is_test:
-            dataset = dataset[:10]
+            dataset = [example for example in dataset if example["split"] == "DEV"]
+        else:
+            # filter out dataset to only test (evaluation) split
+            dataset = [example for example in dataset if example["split"] == "TEST"]
+
+        # Add xml content to each example
+        for example in dataset:
+            pmcid = example["pmcid"]
+            xml_content = get_xml_content_by_pmcid(pmcid)
+            xml_item = {"abstract_and_results_xml": xml_content}
+            example.update(xml_item)
 
         self.dataset = dataset
 

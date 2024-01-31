@@ -4,6 +4,7 @@ import os
 import json
 
 DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "abstract_and_results_xml_files")
 
 def format_example_with_prompt_template(example: Dict, prompt_template: type[Template]) -> Dict:
     """
@@ -44,4 +45,17 @@ def load_dataset_from_csv(dataset_filename: str) -> List[Dict]:
         dataset = dataset_file.readlines()
     return dataset
 
+def get_xml_content_by_pmcid(pmcid: str) -> str:
+    """
+    This method gets the xml file contents of a given pmcid
+
+    :param pmcid: pmcid of the xml file
+
+    :return xml file contents as a string
+    """
+    xml_filename = f"{pmcid}.xml"
+    xml_path = os.path.join(XML_FOLDER_PATH, xml_filename)
+    with open(xml_path, "r") as xml_file:
+        xml_content = xml_file.read()
+    return xml_content
 

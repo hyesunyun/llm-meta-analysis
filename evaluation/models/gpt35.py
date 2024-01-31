@@ -14,4 +14,20 @@ class GPT35(Model):
 
         :return output of the model
         """
-        pass
+        try:
+            completion = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant for conducting meta-analyses of randomized controlled trials."},
+                    {"role": "user", "content": input}
+                ],
+                # TODO: currently set as default but should figure out temperature/top_p parameters
+                # https://community.openai.com/t/cheat-sheet-mastering-temperature-and-top-p-in-chatgpt-api/172683
+                temperature=1,
+                top_p=1,
+            )
+        except Exception as e:
+            print(e)
+            return "Error: GPT-3.5 API call failed."
+
+        return completion.choices[0].message.content
