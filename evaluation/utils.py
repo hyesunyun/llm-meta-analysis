@@ -2,6 +2,7 @@ from templates import Template
 from typing import Dict, List
 import os
 import json
+import csv
 
 DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
 XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "abstract_and_results_xml_files")
@@ -32,18 +33,42 @@ def load_dataset_from_json(dataset_filename: str) -> List[Dict]:
         dataset = json.load(dataset_file)
     return dataset
 
-def load_dataset_from_csv(dataset_filename: str) -> List[Dict]:
+def load_json_file(file_path: str) -> List[Dict]:
     """
-    This method loads a dataset in csv file from the data folder
+    This method loads a json file from the given file path
 
-    :param dataset_filename: name of the dataset to load
+    :param file_path: name of the file to load
 
-    :return dataset as a list of dictionaries
+    :return objects as a list of dictionaries
     """
-    dataset_path = os.path.join(DATA_FOLDER_PATH, dataset_filename)
-    with open(dataset_path, "r") as dataset_file:
-        dataset = dataset_file.readlines()
-    return dataset
+    with open(file_path, "r") as file:
+        json_file = json.load(file)
+    return json_file
+
+def save_dataset_to_json(dataset: List[Dict], file_path: str) -> None:
+    """
+    This method saves a dataset in json file to the data folder
+
+    :param dataset: dataset to save
+    :param file_path: name of the dataset to save
+
+    """
+    with open(file_path, "w", encoding='utf-8') as file:
+            json.dump(dataset, file)
+
+def save_dataset_to_csv(dataset: List[Dict], file_path: str) -> None:
+    """
+    This method saves a dataset in csv file to the data folder
+
+    :param dataset: dataset to save
+    :param file_path: name of the dataset to save
+
+    """
+    keys = dataset[0].keys()
+    with open(file_path, "w", newline='', encoding='utf-8') as file:
+        dict_writer = csv.DictWriter(file, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(dataset)
 
 def get_xml_content_by_pmcid(pmcid: str) -> str:
     """

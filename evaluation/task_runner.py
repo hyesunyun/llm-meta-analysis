@@ -1,16 +1,20 @@
 import argparse
 import os
-from utils import format_example_with_prompt_template, load_dataset_from_json, get_xml_content_by_pmcid
+from utils import (
+    format_example_with_prompt_template, 
+    load_dataset_from_json, 
+    get_xml_content_by_pmcid,
+    save_dataset_to_json,
+    save_dataset_to_csv
+)
 from typing import Dict, List, Optional
 from tqdm import tqdm
 from templates import DatasetTemplates
 from models import Model, GPT35, GPT4
 from datetime import datetime
-import json
-import csv
 
 class MetaAnalysisTaskRunner:
-    def __init__(self, model_name: str, task: str, output_path: str, is_test: bool, prompt_name: Optional[str]=None):
+    def __init__(self, model_name: str, task: str, output_path: str, is_test: bool, prompt_name: Optional[str]=None) -> None:
         self.model_name = model_name
         self.task = task
         self.prompt_name = prompt_name
@@ -100,27 +104,22 @@ class MetaAnalysisTaskRunner:
             current_datetime = datetime.now().strftime("%Y%m%d")
 
             # convert into json
-            json_file_name = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.json"
-            with open(json_file_name, "w", encoding='utf-8') as file:
-                json.dump(results, file)
+            json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.json"
+            save_dataset_to_json(dataset, json_file_path)
 
             # convert into csv
-            keys = results[0].keys()
-            csv_file_name = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
-            with open(csv_file_name, "w", newline='', encoding='utf-8') as file:
-                dict_writer = csv.DictWriter(file, keys)
-                dict_writer.writeheader()
-                dict_writer.writerows(results)
+            csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
+            save_dataset_to_csv(dataset, csv_file_path)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")
 
     parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4"], help="what model to run", required=True)
-    parser.add_argument("--task", default="outcome-type", choices=['outcome-type', 'binary-outcome-table', 'continuous-outcome-table'], help="type of task to run", required=True)
+    parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes'], help="type of task to run", required=True)
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, all prompts related to given task are run. OPTIONAL")
     parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved")
     # do --no-test for explicit False
-    parser.add_argument("--test", action=argparse.BooleanOptionalAction, help="whether this is a test run or not. test will only run 10 instances from the dataset.")
+    parser.add_argument("--test", action=argparse.BooleanOptionalAction, help="whether this is a test run or not. test will only run dev instances from the dataset.")
     
     args = parser.parse_args()
 
