@@ -5,7 +5,7 @@ from utils import (
     convert_character_to_string_outcome_type,
     save_json_file
 )
-from metrics_calculator import MetricsCalculator
+from evaluation.calculate_metrics import MetricsCalculator
 import yaml
 import datetime
 
