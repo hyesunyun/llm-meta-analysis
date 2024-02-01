@@ -6,7 +6,7 @@ class GPT35(Model):
         super().__init__()
         self.client = OpenAI(organization='org-amDbJ4wMNLPWA2hhgt3UdF7k',)
 
-    def generate_output(self, input: str) -> str:
+    def generate_output(self, input: str, temperature: str = 1) -> str:
         """
         This method generates the output given the input
 
@@ -23,7 +23,7 @@ class GPT35(Model):
                 ],
                 # TODO: currently set as default but should figure out temperature/top_p parameters
                 # https://community.openai.com/t/cheat-sheet-mastering-temperature-and-top-p-in-chatgpt-api/172683
-                temperature=1,
+                temperature=temperature,
                 top_p=1,
             )
         except Exception as e:

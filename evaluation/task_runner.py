@@ -27,11 +27,11 @@ class MetaAnalysisTaskRunner:
         self.dataset = None
         self.model = None
 
-        self._load_prompt_template()
-        self._load_dataset()
-        self._load_model()
+        self.__load_prompt_template()
+        self.__load_dataset()
+        self.__load_model()
 
-    def _load_prompt_template(self) -> str:
+    def __load_prompt_template(self) -> str:
         """
         This method loads the prompt template for the given task
 
@@ -41,7 +41,7 @@ class MetaAnalysisTaskRunner:
         # if we use some open source models, we should discriminate model too and add model name to path
         self.prompt_template = task
     
-    def _load_dataset(self) -> List[Dict]:
+    def __load_dataset(self) -> List[Dict]:
         """
         This method loads the dataset (test split)
 
@@ -71,7 +71,7 @@ class MetaAnalysisTaskRunner:
 
         self.dataset = dataset
 
-    def _load_model(self) -> Model:
+    def __load_model(self) -> Model:
         """
         This method loads the model requested for the task
 
@@ -109,13 +109,22 @@ class MetaAnalysisTaskRunner:
         print(f"Saving outputs for task - {self.task}; prompt - {prompt_name}; model - {self.model_name} to csv and json")
         current_datetime = datetime.now().strftime("%Y%m%d")
 
+        keys_to_drop = [
+            "effect_label", 
+            "effect_label_code", 
+            "is_data_in_figure_graphics", 
+            "is_relevant_data_in_table", 
+            "is_table_in_graphic_format", 
+            "abstract_and_results_xml", 
+            "input"
+        ]
         # convert into json
         json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.json"
-        save_dataset_to_json(dataset, json_file_path)
+        save_dataset_to_json(dataset, json_file_path, keys_to_drop)
 
         # convert into csv
         csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
-        save_dataset_to_csv(dataset, csv_file_path)
+        save_dataset_to_csv(dataset, csv_file_path, keys_to_drop)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")

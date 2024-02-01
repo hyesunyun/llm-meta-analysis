@@ -1,5 +1,5 @@
 from templates import Template
-from typing import Dict, List
+from typing import Dict, List, Optional
 import os
 import json
 import csv
@@ -45,7 +45,17 @@ def load_json_file(file_path: str) -> List[Dict]:
         json_file = json.load(file)
     return json_file
 
-def save_dataset_to_json(dataset: List[Dict], file_path: str) -> None:
+def save_json_file(file_path: str, data: Dict) -> None:
+    """
+    This method saves a dictionary to a json file
+
+    :param file_path: name of the file to save
+    :param data: data to save
+    """
+    with open(file_path, "w", encoding='utf-8') as file:
+        json.dump(data, file)
+
+def save_dataset_to_json(dataset: List[Dict], file_path: str, columns_to_drop: Optional[List[str]] = None) -> None:
     """
     This method saves a dataset in json file to the data folder
 
@@ -53,10 +63,12 @@ def save_dataset_to_json(dataset: List[Dict], file_path: str) -> None:
     :param file_path: name of the dataset to save
 
     """
+    if columns_to_drop is not None:
+        dataset = [{k: v for k, v in d.items() if k not in columns_to_drop} for d in dataset]
     with open(file_path, "w", encoding='utf-8') as file:
             json.dump(dataset, file)
 
-def save_dataset_to_csv(dataset: List[Dict], file_path: str) -> None:
+def save_dataset_to_csv(dataset: List[Dict], file_path: str, columns_to_drop: Optional[List[str]] = None) -> None:
     """
     This method saves a dataset in csv file to the data folder
 
@@ -64,6 +76,8 @@ def save_dataset_to_csv(dataset: List[Dict], file_path: str) -> None:
     :param file_path: name of the dataset to save
 
     """
+    if columns_to_drop is not None:
+        dataset = [{k: v for k, v in d.items() if k not in columns_to_drop} for d in dataset]
     keys = dataset[0].keys()
     with open(file_path, "w", newline='', encoding='utf-8') as file:
         dict_writer = csv.DictWriter(file, keys)
@@ -84,3 +98,24 @@ def get_xml_content_by_pmcid(pmcid: str) -> str:
         xml_content = xml_file.read()
     return xml_content
 
+def convert_character_to_string_outcome_type(outcome_type: str) -> str:
+    """
+    This method converts the outcome type from character to string
+
+    :param outcome_type: outcome type as character
+
+    :return outcome type as string
+    """
+    character_to_string_mapping = {"b": "binary", "c": "continuous", "x": "unknown"}
+    return character_to_string_mapping[outcome_type]
+
+def convert_string_to_character_outcome_type(outcome_type: str) -> str:
+    """
+    This method converts the outcome type from string to character
+
+    :param outcome_type: outcome type as string
+
+    :return outcome type as character
+    """
+    string_to_character_mapping = {"binary": "b", "continuous": "c", "unknown": "x"}
+    return string_to_character_mapping[outcome_type]
