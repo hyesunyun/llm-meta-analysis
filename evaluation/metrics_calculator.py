@@ -65,6 +65,7 @@ class MetricsCalculator:
         :param data: list of dictionaries with the data to calculate the accuracy
         :return: dictionary with metrics
         """
+        # TODO: these were arbitrary numbers, we need to discuss and decide on the best number
         if self.task == "binary_outcomes":
             num_match = 2
         elif self.task == "continuous_outcomes":
@@ -87,6 +88,7 @@ class MetricsCalculator:
         return correct / float(len(data))
 
     # Does it even make sense to do precision, recall, f1 for this type of task?
+    # This problem isn't needed but placing it here for now
     # def __calculate_exact_match_precision_recall_f1(self, data: List[Dict]) -> Dict:
     #     """
     #     This method calculates the exact match precision, recall, f1
