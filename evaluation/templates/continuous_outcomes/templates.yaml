@@ -3,6 +3,8 @@ templates:
   afa2c607-d7f9-4b06-bdce-2e97d0a8127e: !Template
     id: afa2c607-d7f9-4b06-bdce-2e97d0a8127e
     prompt: |+ 
+      Article: {{abstract_and_results_xml}}
+
       You are an expert on medical randomized controlled trials. Based on the given trial article, produce a table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome. Include the size of each group (intervention and comparator). If any of the numerical information is unavailable or extractable or easy to calculate, please say "x". Only produce YAML response. Do not provide an explanation.
       The YAML format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example: 
       intervention:
@@ -18,6 +20,5 @@ templates:
       Comparator: {{comparator}}
       Outcome: {{outcome}}
 
-      Article: {{abstract_and_results_xml}}
       YAML:
     name: yaml

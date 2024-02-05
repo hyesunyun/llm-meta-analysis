@@ -140,10 +140,10 @@ class MetaAnalysisTaskEvaluator:
         # calculate the metrics
         metrics = self.metrics_calculator.calculate_metrics(self.data)
 
-        # TODO: implement
         if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
             # calculate the metrics for point estimates
-            pass
+            point_estimates_metrics = self.metrics_calculator.calculate_point_estimates_metrics(self.data)
+            metrics.update(point_estimates_metrics)
         
         # print and save the metrics to a file
         print("Metrics for the task:")
