@@ -16,7 +16,7 @@ class GPT4(Model):
         """
         try:
             completion = self.client.chat.completions.create(
-                model="gpt-4",
+                model="gpt-4-0125-preview", # 128,000 tokens (https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo)
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant for conducting meta-analyses of randomized controlled trials."},
                     {"role": "user", "content": input}

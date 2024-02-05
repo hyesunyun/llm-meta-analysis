@@ -37,7 +37,7 @@ class MetaAnalysisTaskRunner:
 
         :return string of the full prompt template
         """
-        # this can be deleted if we are not going to use any models other than OpenAI ones
+        # TODO: this can be deleted if we are not going to use any models other than OpenAI ones
         # if we use some open source models, we should discriminate model too and add model name to path
         self.prompt_template = task
     

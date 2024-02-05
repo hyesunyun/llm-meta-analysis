@@ -119,3 +119,125 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
     """
     string_to_character_mapping = {"binary": "b", "continuous": "c", "unknown": "x"}
     return string_to_character_mapping[outcome_type]
+
+def calculate_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the odds ratio given the values
+
+    :param intervention_events: value of intervention_events
+    :param control_events: value of control_events
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return odds ratio
+    """
+    intervention_nonevents = intervention_total - intervention_events
+    control_nonevents = control_total - control_events
+
+    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+
+    return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
+
+def calculate_standard_error_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the standard error of the log odds ratio given the values
+
+    :param intervention_events: value of intervention_events
+    :param control_events: value of control_events
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return standard error of the log odds ratio
+    """
+    intervention_nonevents = intervention_total - intervention_events
+    control_nonevents = control_total - control_events
+
+    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+
+    return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
+
+def calculate_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the risk ratio given the values
+
+    :param intervention_events: value of intervention_events
+    :param control_events: value of control_events
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return risk ratio
+    """
+    intervention_nonevents = intervention_total - intervention_events
+    control_nonevents = control_total - control_events
+
+    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+
+    return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
+
+def calculate_standard_error_log_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the standard error of the log risk ratio given the values
+
+    :param intervention_events: value of intervention_events
+    :param control_events: value of control_events
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return standard error of the log risk ratio
+    """
+    intervention_nonevents = intervention_total - intervention_events
+    control_nonevents = control_total - control_events
+
+    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+
+    return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
+
+def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int, control_nonevents: int) -> float:
+    """
+    This method applies a zero correction to a contingency table if needed
+
+    :param intervention_events: intervention_events
+    :param control_events: control_events
+    :param intervention_nonevents: intervention_nonevents
+    :param control_nonevents: control_nonevents
+
+    :return all values with zero correction (if applied)
+    """
+    # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis)
+    # This involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero
+    # Except when intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR and RR is undefined
+    if (intervention_events == 0) or (control_events == 0) or (intervention_nonevents == 0) or (control_nonevents == 0):
+        if (intervention_events == 0 and control_events == 0) or (intervention_nonevents == 0 and control_nonevents == 0):
+            print("Error: Undefined results.")
+            return None, None, None, None
+        else:
+            intervention_events += 0.5
+            control_events += 0.5
+            intervention_nonevents += 0.5
+            control_nonevents += 0.5
+
+    return intervention_events, control_events, intervention_nonevents, control_nonevents
+
+def calculate_mean_difference(intervention_mean: float, control_mean: float) -> float:
+    """
+    This method calculates the mean difference given the values
+
+    :param intervention_mean: value of intervention_mean
+    :param control_mean: value of control_mean
+
+    :return mean difference
+    """
+    return intervention_mean - control_mean
+
+def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the standard error of the mean difference given the values
+
+    :param intervention_sd: value of intervention_sd
+    :param control_sd: value of control_sd
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return standard error of the mean difference
+    """
+    return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5

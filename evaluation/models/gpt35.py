@@ -16,7 +16,7 @@ class GPT35(Model):
         """
         try:
             completion = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-3.5-turbo-0125", #16k tokens (https://platform.openai.com/docs/models/gpt-3-5-turbo)
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant for conducting meta-analyses of randomized controlled trials."},
                     {"role": "user", "content": input}

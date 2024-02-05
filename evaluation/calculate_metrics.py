@@ -4,7 +4,7 @@ class MetricsCalculator:
     def __init__(self, task: str) -> None:
         self.task = task
 
-    def __get_keys_to_compare(data: Dict) -> Dict[List[str]]:
+    def __get_keys_to_compare(self, data: Dict, is_point_estimates: bool = False) -> Dict[List[str]]:
         """
         This method gets the keys to calculate the metrics for the given task
 
@@ -13,11 +13,16 @@ class MetricsCalculator:
         :return list of keys to calculate the metrics
         """
         search_key = "_output"
-        relevant_output_fields = [key for key in data.keys() if search_key in key]
+        point_estimates_fields = ['odds_ratio_output', 'se_log_odds_ratio_output', 'risk_ratio_output', 'se_log_risk_ratio_output', 'mean_difference_output', 'se_mean_difference_output']
+        if is_point_estimates:
+            relevant_output_fields = [key for key in data.keys() if key in point_estimates_fields]
+        else:
+            relevant_output_fields = [key for key in data.keys() if search_key in key and key not in point_estimates_fields]
+        
         relevant_reference_fields = [key.replace(search_key, "") for key in relevant_output_fields]
         return relevant_output_fields, relevant_reference_fields
 
-    def __accuracy_metric(actual: List[str], predicted: List[str]) -> float:
+    def __calculate_accuracy(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the accuracy metric
 
@@ -31,6 +36,45 @@ class MetricsCalculator:
             if actual[i] == predicted[i]:
                 correct += 1
         return correct / float(len(actual))
+    
+    def __calculate_mean_absolute_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+        """
+        This method calculates the mean absolute error
+
+        :param data: list of dictionaries with the data to calculate the mean absolute error
+        :param reference_column: string with the name of the reference column
+        :param output_column: string with the name of the output column
+        :return: mean absolute error as a float
+        """
+        actual = [example[reference_column] for example in data]
+        predicted = [example[output_column] for example in data]
+
+        return sum([abs(a - p) for a, p in zip(actual, predicted)]) / len(actual)
+    
+    def __calculate_mean_squared_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+        """
+        This method calculates the mean squared error
+
+        :param data: list of dictionaries with the data to calculate the mean squared error
+        :param reference_column: string with the name of the reference column
+        :param output_column: string with the name of the output column
+        :return: mean squared error as a float
+        """
+        actual = [example[reference_column] for example in data]
+        predicted = [example[output_column] for example in data]
+
+        return sum([(a - p) ** 2 for a, p in zip(actual, predicted)]) / len(actual)
+    
+    def __calculate_root_mean_squared_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+        """
+        This method calculates the root mean squared error
+
+        :param data: list of dictionaries with the data to calculate the root mean squared error
+        :param reference_column: string with the name of the reference column
+        :param output_column: string with the name of the output column
+        :return: root mean squared error as a float
+        """
+        return self.__calculate_mean_squared_error(data, reference_column, output_column) ** 0.5
 
     def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:
         """
@@ -40,7 +84,7 @@ class MetricsCalculator:
         :return: dictionary with the metrics
         """
         item = data[0]
-        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item)
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
 
         metrics = {}
         total_actual = []
@@ -52,60 +96,45 @@ class MetricsCalculator:
             total_actual.extend(actual)
             total_predicted.extend(predicted)
 
-            metrics[reference] = self.__accuracy_metric(actual, predicted)
+            metrics[reference] = self.__calculate_accuracy(actual, predicted)
 
         # get the total accuracy
-        metrics["total"] = self.__accuracy_metric(total_actual, total_predicted)
+        metrics["total"] = self.__calculate_accuracy(total_actual, total_predicted)
         return metrics
     
-    def __calculate_partial_match_accuracy(self, data: List[Dict]) -> float:
+    def __calculate_partial_match_accuracy(self, data: List[Dict]) -> Dict:
         """
         This method calculates the partial match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
         :return: dictionary with metrics
         """
-        # TODO: these were arbitrary numbers, we need to discuss and decide on the best number
+        # Discussed with Byron and we decided to get different levels of partial matching metrics so this could be 1, 2, 3, 4, 5 etc.
         if self.task == "binary_outcomes":
-            num_match = 2
+            num_matches = [1, 2, 3]
         elif self.task == "continuous_outcomes":
-            num_match = 3
+            num_matches = [1, 2, 3, 4, 5]
         else:
-            num_match = 1
+            num_matches = [1] # this is the default. for outcome type task, this is same as exact match accuracy
 
         item = data[0]
-        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item)
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
 
-        correct = 0
-        for example in data:
-            for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+        metrics = {}
+        
+        for num_match in num_matches:
+            correct = 0
+            for example in data:
                 num_parts_correct = 0
-                if example[output] == example[reference]:
-                    num_parts_correct += 1
-            if num_parts_correct >= num_match:
-                correct += 1
+                for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+                    if example[output] == example[reference]:
+                        num_parts_correct += 1
+                if num_parts_correct >= num_match:
+                    correct += 1
 
-        return correct / float(len(data))
+            metrics[f"partial_match_accuracy_{num_match}"] = correct / float(len(data))
 
-    # Does it even make sense to do precision, recall, f1 for this type of task?
-    # This problem isn't needed but placing it here for now
-    # def __calculate_exact_match_precision_recall_f1(self, data: List[Dict]) -> Dict:
-    #     """
-    #     This method calculates the exact match precision, recall, f1
-
-    #     :param data: list of dictionaries with the data to calculate the metrics
-    #     :return: dictionary with the metrics
-    #     """
-    #     return {}
-
-    # def __calculate_partial_match_precision_recall_f1(self, data: List[Dict]) -> Dict:
-    #     """
-    #     This method calculates the partial match precision, recall, f1
-
-    #     :param data: list of dictionaries with the data to calculate the metrics
-    #     :return: dictionary with the metrics
-    #     """
-    #     return {}
+        return metrics
 
     def __calculate_number_of_model_unknowns(self, data: List[Dict]) -> Dict:
         """
@@ -115,13 +144,36 @@ class MetricsCalculator:
         :return: Dictionary with the number of unknowns for each field and total
         """
         item = data[0]
-        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item)
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
         
         metrics = {}
         for i, field in enumerate(relevant_output_fields):
             unknowns = sum([1 for example in data if example[field] == "x" and example[relevant_reference_fields[i]] != "x"])
             metrics[relevant_reference_fields[i]] = unknowns
         metrics["total"] = sum(metrics.values())
+        return metrics
+    
+    def __calculate_point_estimates_metrics(self, data: List[Dict]) -> Dict:
+        """
+        This method calculates the metrics for the derived point estimates
+
+        :param data: list of dictionaries with the data to calculate the metrics
+        :return: dictionary with the metrics (mean absolute error, mean squared error, root mean squared error)
+        """
+        item = data[0]
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, True)
+
+        metrics = {}
+        
+        for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+            # calculate the mean absolute error
+            mean_absolute_error = self.__calculate_mean_absolute_error(data, reference, output)
+            # calculate the mean squared error
+            mean_squared_error = self.__calculate_mean_squared_error(data, reference, output)
+            # calculate the root mean squared error
+            root_mean_squared_error = self.__calculate_root_mean_squared_error(data, reference, output)
+            metrics[reference] = {"mean_absolute_error": mean_absolute_error, "mean_squared_error": mean_squared_error, "root_mean_squared_error": root_mean_squared_error}
+
         return metrics
 
     def calculate_metrics(self, data: List[Dict]) -> Dict:
@@ -138,20 +190,22 @@ class MetricsCalculator:
         # calcualte partial match accuracy
         metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)
 
-        # calculate exact match precision, recall, and f1
-        # exact_match_metrics = self.__calculate_exact_match_precision_recall_f1(data)
-        # metrics["exact_match_precision"] = exact_match_metrics["precision"]
-        # metrics["exact_match_recall"] = exact_match_metrics["recall"]
-        # metrics["exact_match_f1"] = exact_match_metrics["f1"]
-
-        # calculate partial match precision, recall, and f1
-        # partial_match_metrics = self.__calculate_partial_match_precision_recall_f1(data)
-        # metrics["partial_match_precision"] = partial_match_metrics["precision"]
-        # metrics["partial_match_recall"] = partial_match_metrics["recall"]
-        # metrics["partial_match_f1"] = partial_match_metrics["f1"]
-
         # calculate number of unknowns
         metrics["number_of_model_unknowns"] = self.__calculate_number_of_model_unknowns(data)
+
+        return metrics
+    
+    def calculate_metrics_for_derived_point_estimates(self, data: List[Dict]) -> Dict:
+        """
+        This method calculates the metrics for the derived point estimates
+
+        :param data: list of dictionaries with the data to calculate the metrics
+        :return: dictionary with the metrics
+        """
+        metrics = {}
+
+        # calculate the metrics for point estimates
+        metrics["point_estimates"] = self.__calculate_point_estimates_metrics(data)
 
         return metrics
 
