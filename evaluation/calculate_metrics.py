@@ -37,44 +37,38 @@ class MetricsCalculator:
                 correct += 1
         return correct / float(len(actual))
     
-    def __calculate_mean_absolute_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+    def __calculate_mean_absolute_error(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the mean absolute error
 
-        :param data: list of dictionaries with the data to calculate the mean absolute error
-        :param reference_column: string with the name of the reference column
-        :param output_column: string with the name of the output column
+        :param actual: list of actual values
+        :param predicted: list of predicted values
+
         :return: mean absolute error as a float
         """
-        actual = [example[reference_column] for example in data]
-        predicted = [example[output_column] for example in data]
-
         return sum([abs(a - p) for a, p in zip(actual, predicted)]) / len(actual)
     
-    def __calculate_mean_squared_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+    def __calculate_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the mean squared error
 
-        :param data: list of dictionaries with the data to calculate the mean squared error
-        :param reference_column: string with the name of the reference column
-        :param output_column: string with the name of the output column
+        :param actual: list of actual values
+        :param predicted: list of predicted values
+
         :return: mean squared error as a float
         """
-        actual = [example[reference_column] for example in data]
-        predicted = [example[output_column] for example in data]
-
         return sum([(a - p) ** 2 for a, p in zip(actual, predicted)]) / len(actual)
     
-    def __calculate_root_mean_squared_error(self, data: List[Dict], reference_column: str, output_column: str) -> float:
+    def __calculate_root_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the root mean squared error
 
-        :param data: list of dictionaries with the data to calculate the root mean squared error
-        :param reference_column: string with the name of the reference column
-        :param output_column: string with the name of the output column
+        :param actual: list of actual values
+        :param predicted: list of predicted values
+
         :return: root mean squared error as a float
         """
-        return self.__calculate_mean_squared_error(data, reference_column, output_column) ** 0.5
+        return self.__calculate_mean_squared_error(actual, predicted) ** 0.5
 
     def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:
         """
@@ -166,12 +160,15 @@ class MetricsCalculator:
         metrics = {}
         
         for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+            actual = [example[reference] for example in data]
+            predicted = [example[output] for example in data]
+
             # calculate the mean absolute error
-            mean_absolute_error = self.__calculate_mean_absolute_error(data, reference, output)
+            mean_absolute_error = self.__calculate_mean_absolute_error(actual, predicted)
             # calculate the mean squared error
-            mean_squared_error = self.__calculate_mean_squared_error(data, reference, output)
+            mean_squared_error = self.__calculate_mean_squared_error(actual, predicted)
             # calculate the root mean squared error
-            root_mean_squared_error = self.__calculate_root_mean_squared_error(data, reference, output)
+            root_mean_squared_error = self.__calculate_root_mean_squared_error(actual, predicted)
             metrics[reference] = {"mean_absolute_error": mean_absolute_error, "mean_squared_error": mean_squared_error, "root_mean_squared_error": root_mean_squared_error}
 
         return metrics
@@ -193,19 +190,9 @@ class MetricsCalculator:
         # calculate number of unknowns
         metrics["number_of_model_unknowns"] = self.__calculate_number_of_model_unknowns(data)
 
-        return metrics
-    
-    def calculate_metrics_for_derived_point_estimates(self, data: List[Dict]) -> Dict:
-        """
-        This method calculates the metrics for the derived point estimates
-
-        :param data: list of dictionaries with the data to calculate the metrics
-        :return: dictionary with the metrics
-        """
-        metrics = {}
-
-        # calculate the metrics for point estimates
-        metrics["point_estimates"] = self.__calculate_point_estimates_metrics(data)
+        if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
+            # calculate the metrics for point estimates
+            metrics["point_estimates"] = self.__calculate_point_estimates_metrics(data)
 
         return metrics
 
