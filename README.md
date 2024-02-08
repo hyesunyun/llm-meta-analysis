@@ -14,9 +14,9 @@ Activate the conda environment: `conda activate llm-meta-analysis`
 Evaluating models on different tasks for automating meta-analysis can be by running `evaluation/run_task.py`
 
 There are 3 tasks:
-- outcome_type
-- binary_outcomes
-- continuous_outcomes
+- `outcome_type`: given an outcome of an randomized controlled trial (RCT), output the correct type. `binary` and `continuous` are the options. Although there are additional categories, these two options are most often found in RCTs.
+- `binary_outcomes`: produce a 2x2 contingency table given the outcome, intervention, comparator, and also the abstract + results section of RCT.
+- `continuous_outcomes`: produce a table of mean, standard deviation, and group sizes given the outcome, intervention, comparator, and also the abstract + results section of RCT.
 
 Example script for running a specific task on GPT-3.5:
 ```bash
@@ -35,10 +35,10 @@ Arguments of `run_task.py`:
 ### Running Evaluation/Calculating Metrics
 
 After getting all the outputs from the models, you can get the metrics by running `evaluation/evaluate_output.py`. This script will output several different types of metrics:
-- number of times the model outputted "unknown" that was not "unknown" by human annotators
+- number of times the model produced "unknown" answer when it was actually "known" by human annotators
 - accuracy
-    - exact match
-    - partial match
+    - exact match: an instance is counted as correct if all the parts are correct
+    - partial match: an instance is counted as correct even if only part of the answers are correct
 - mean absolute error, mean squared error, and root mean squared error (only for `binary_outcomes` and `continuous_outcome` tasks)
 
 Example script for running `evaluate_output.py`:
