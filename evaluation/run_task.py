@@ -1,5 +1,10 @@
 import argparse
 import os
+
+from models.gpt35 import GPT35
+from models.gpt4 import GPT4
+from models.model import Model
+
 from utils import (
     format_example_with_prompt_template, 
     load_dataset_from_json, 
@@ -10,7 +15,6 @@ from utils import (
 from typing import Dict, List, Optional
 from tqdm import tqdm
 from templates import DatasetTemplates
-from models import Model, GPT35, GPT4
 from datetime import datetime
 import random
 
@@ -26,10 +30,12 @@ class MetaAnalysisTaskRunner:
         self.prompt_template = None
         self.dataset = None
         self.model = None
+        self.max_new_tokens = None
 
         self.__load_prompt_template()
         self.__load_dataset()
         self.__load_model()
+        self.__get_max_new_tokens()
 
     def __load_prompt_template(self) -> str:
         """
@@ -39,7 +45,7 @@ class MetaAnalysisTaskRunner:
         """
         # TODO: this can be deleted if we are not going to use any models other than OpenAI ones
         # if we use some open source models, we should discriminate model too and add model name to path
-        self.prompt_template = task
+        self.prompt_template = self.task
     
     def __load_dataset(self) -> List[Dict]:
         """
@@ -56,6 +62,12 @@ class MetaAnalysisTaskRunner:
         else:
             # filter out dataset to only test (evaluation) split
             dataset = [example for example in dataset if example["split"] == "TEST"]
+
+        # get only examples for the given task
+        if self.task == "binary_outcomes":
+            dataset = [example for example in dataset if example["outcome_type"] == "binary"]
+        elif self.task == "continuous_outcomes":
+            dataset = [example for example in dataset if example["outcome_type"] == "continuous"]
 
         # if test, only get 10 random examples
         if self.is_test:
@@ -81,9 +93,24 @@ class MetaAnalysisTaskRunner:
         model_class = model_class_mapping[self.model_name]
         self.model = model_class()
 
+    def __get_max_new_tokens(self) -> int:
+        """
+        This method returns the maximum number of new tokens to add to the model for the given task
+
+        :param task: task to get the max new tokens for
+
+        :return maximum number of new tokens
+        """
+        max_new_tokens = {
+            "outcome_type": 1,
+            "binary_outcomes": 50,
+            "continuous_outcomes": 50,
+        }
+        return max_new_tokens[self.task]
+
     def run_task(self):
         # load dataset prompt templates
-        prompts = DatasetTemplates(self.templates)
+        prompts = DatasetTemplates(self.prompt_template)
 
         # if prompt name is given, apply the prompt template. if not, use all 
         if self.prompt_name is None:
@@ -101,12 +128,12 @@ class MetaAnalysisTaskRunner:
         results = []
         pbar = tqdm(dataset)
         for _, example in enumerate(pbar):
-            output = self.model.generate_output(example["input"])
+            output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
             example["output"] = output
             results.append(example)
 
         # saving results to file
-        print(f"Saving outputs for task - {self.task}; prompt - {prompt_name}; model - {self.model_name} to csv and json")
+        print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")
         current_datetime = datetime.now().strftime("%Y%m%d")
 
         keys_to_drop = [
@@ -147,16 +174,17 @@ if __name__ == '__main__':
     is_test = args.test
 
     print("Arguments for the Clinical Trials Meta Analysis Task Runner:")
-    print(f"model: {model}")
-    print(f"task: {task}")
-    print(f"split: {split}")
-    print(f"prompt_name: {prompt_name}")
-    print(f"output_path: {output_path}")
-    print(f"is_text: {is_test}")
+    print(f"Model:        {model}")
+    print(f"Task:         {task}")
+    print(f"Split:        {split}")
+    print(f"Prompt Name:  {prompt_name}")
+    print(f"Output Path:  {output_path}")
+    print(f"Is Test:      {is_test}")
+    print()
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-        print("output path did not exist. directory was created.")
+        print("Output path did not exist. Directory was created.")
 
     task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name)
     task_runner.run_task()
