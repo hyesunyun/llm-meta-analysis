@@ -1,16 +1,16 @@
-from typing import Dict, List
+from typing import Dict, Tuple, List
 
 class MetricsCalculator:
     def __init__(self, task: str) -> None:
         self.task = task
 
-    def __get_keys_to_compare(self, data: Dict, is_point_estimates: bool = False) -> Dict[List[str]]:
+    def __get_keys_to_compare(self, data: Dict, is_point_estimates: bool = False) -> Tuple[List[str], List[str]]:
         """
         This method gets the keys to calculate the metrics for the given task
 
         :param data: dictionary with the data to calculate the metrics
 
-        :return list of keys to calculate the metrics
+        :return tuple of list of keys to calculate the metrics
         """
         search_key = "_output"
         point_estimates_fields = ['odds_ratio_output', 'se_log_odds_ratio_output', 'risk_ratio_output', 'se_log_risk_ratio_output', 'mean_difference_output', 'se_mean_difference_output']
@@ -46,7 +46,16 @@ class MetricsCalculator:
 
         :return: mean absolute error as a float
         """
-        return sum([abs(a - p) for a, p in zip(actual, predicted)]) / len(actual)
+        total_num = 0
+        list_of_abs_diff = []
+        for a, p in zip(actual, predicted):
+            if None in (a, p):
+                continue
+            else:
+                total_num += 1
+                list_of_abs_diff.append(abs(a - p))
+
+        return sum(list_of_abs_diff) / total_num
     
     def __calculate_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
         """
@@ -57,7 +66,17 @@ class MetricsCalculator:
 
         :return: mean squared error as a float
         """
-        return sum([(a - p) ** 2 for a, p in zip(actual, predicted)]) / len(actual)
+        total_num = 0
+        list_of_diff_squared = []
+        for a, p in zip(actual, predicted):
+            if None in (a, p):
+                continue
+            else:
+                total_num += 1
+                diff_squared = (a - p) ** 2
+                list_of_diff_squared.append(diff_squared)
+
+        return sum(list_of_diff_squared) / total_num
     
     def __calculate_root_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
         """
@@ -81,19 +100,31 @@ class MetricsCalculator:
         relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
 
         metrics = {}
-        total_actual = []
-        total_predicted = []
         for output, reference in zip(relevant_output_fields, relevant_reference_fields):
             actual = [example[reference] for example in data]
             predicted = [example[output] for example in data]
 
-            total_actual.extend(actual)
-            total_predicted.extend(predicted)
-
             metrics[reference] = self.__calculate_accuracy(actual, predicted)
 
+        
         # get the total accuracy
-        metrics["total"] = self.__calculate_accuracy(total_actual, total_predicted)
+        if self.task == "binary_outcomes":
+            num_parts = 4
+        elif self.task == "continuous_outcomes":
+            num_parts = 6
+        else:
+            num_parts = 1
+
+        correct = 0
+        for example in data:
+            num_parts_correct = 0
+            for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+                if example[output] == example[reference]:
+                    num_parts_correct += 1
+            if num_parts_correct == num_parts:
+                correct += 1
+        metrics["total"] = correct / float(len(data))
+
         return metrics
     
     def __calculate_partial_match_accuracy(self, data: List[Dict]) -> Dict:
@@ -182,13 +213,13 @@ class MetricsCalculator:
         """
         metrics = {}
 
+        # calculate number of unknowns
+        metrics["number_of_model_unknowns"] = self.__calculate_number_of_model_unknowns(data)
+
         # calculate exact match accuracy
         metrics["exact_match_accuracy"] = self.__calculate_exact_match_accuracy(data)
         # calcualte partial match accuracy
         metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)
-
-        # calculate number of unknowns
-        metrics["number_of_model_unknowns"] = self.__calculate_number_of_model_unknowns(data)
 
         if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
             # calculate the metrics for point estimates

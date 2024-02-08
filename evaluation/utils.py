@@ -7,7 +7,7 @@ import csv
 DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
 XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "abstract_and_results_xml_files")
 
-def format_example_with_prompt_template(example: Dict, prompt_template: type[Template]) -> Dict:
+def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
     This method formats each dataset example to the give prompt template
 
@@ -92,7 +92,7 @@ def get_xml_content_by_pmcid(pmcid: str) -> str:
 
     :return xml file contents as a string
     """
-    xml_filename = f"{pmcid}.xml"
+    xml_filename = f"PMC{pmcid}.xml"
     xml_path = os.path.join(XML_FOLDER_PATH, xml_filename)
     with open(xml_path, "r") as xml_file:
         xml_content = xml_file.read()
@@ -120,6 +120,16 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
     string_to_character_mapping = {"binary": "b", "continuous": "c", "unknown": "x"}
     return string_to_character_mapping[outcome_type]
 
+def clean_yaml_output(output: str) -> str:
+    """
+    This method cleans the yaml output
+
+    :param output: yaml output
+
+    :return cleaned yaml output
+    """
+    return output.replace("```", "").replace("yaml", "").replace("\t", "")
+
 def calculate_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
     This method calculates the odds ratio given the values
@@ -131,12 +141,18 @@ def calculate_odds_ratio(intervention_events: int, control_events: int, interven
 
     :return odds ratio
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_events, control_events, intervention_total, control_total):
+        return None
+    
     intervention_nonevents = intervention_total - intervention_events
     control_nonevents = control_total - control_events
 
     intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-
-    return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
+    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        return None
+    else:
+        return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
 
 def calculate_standard_error_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -149,12 +165,19 @@ def calculate_standard_error_log_odds_ratio(intervention_events: int, control_ev
 
     :return standard error of the log odds ratio
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_events, control_events, intervention_total, control_total):
+        return None
+    
     intervention_nonevents = intervention_total - intervention_events
     control_nonevents = control_total - control_events
 
     intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-
-    return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
+    
+    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        return None
+    else:
+        return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
 
 def calculate_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -167,12 +190,18 @@ def calculate_risk_ratio(intervention_events: int, control_events: int, interven
 
     :return risk ratio
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_events, control_events, intervention_total, control_total):
+        return None
+    
     intervention_nonevents = intervention_total - intervention_events
     control_nonevents = control_total - control_events
 
     intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-
-    return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
+    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        return None
+    else:
+        return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
 
 def calculate_standard_error_log_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -185,12 +214,18 @@ def calculate_standard_error_log_risk_ratio(intervention_events: int, control_ev
 
     :return standard error of the log risk ratio
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_events, control_events, intervention_total, control_total):
+        return None
+    
     intervention_nonevents = intervention_total - intervention_events
     control_nonevents = control_total - control_events
 
     intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-
-    return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
+    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        return None
+    else:
+        return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
 
 def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int, control_nonevents: int) -> float:
     """
@@ -206,9 +241,9 @@ def check_and_apply_zero_correction(intervention_events: int, control_events: in
     # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis)
     # This involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero
     # Except when intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR and RR is undefined
-    if (intervention_events == 0) or (control_events == 0) or (intervention_nonevents == 0) or (control_nonevents == 0):
+    if 0 in (intervention_events, control_events, intervention_nonevents, control_nonevents):
         if (intervention_events == 0 and control_events == 0) or (intervention_nonevents == 0 and control_nonevents == 0):
-            print("Error: Undefined results.")
+            print("Error in applying zero correction: Undefined results.")
             return None, None, None, None
         else:
             intervention_events += 0.5
@@ -227,6 +262,10 @@ def calculate_mean_difference(intervention_mean: float, control_mean: float) -> 
 
     :return mean difference
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_mean, control_mean):
+        return None
+    
     return intervention_mean - control_mean
 
 def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
@@ -240,4 +279,8 @@ def calculate_standard_error_mean_difference(intervention_sd: float, control_sd:
 
     :return standard error of the mean difference
     """
+    # need to check for x or unknown in the values
+    if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+        return None
+    
     return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
