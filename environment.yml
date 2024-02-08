@@ -18,4 +18,6 @@ dependencies:
   - conda-forge::accelerate
   - conda-forge::transformers=4.37.2
   - anaconda::cudatoolkit
+  - anaconda::ipykernel
+  - conda-forge::packaging
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis
