@@ -3,8 +3,19 @@ channels:
   - defaults
 dependencies:
   - python=3.11
-  - anaconda::yaml
+  - conda-forge::python-dotenv
+  - conda-forge::jupyterlab
+  - anaconda::pyyaml
   - conda-forge::openai
   - anaconda::jinja2
-  - conda-forge::tiktoken
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  - torchaudio
+  - sentencepiece
+  - conda-forge::bitsandbytes
+  - conda-forge::ninja
+  - conda-forge::accelerate
+  - conda-forge::transformers=4.37.2
+  - anaconda::cudatoolkit
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis
