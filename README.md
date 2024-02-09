@@ -51,3 +51,10 @@ Arguments of `evaluate_output.py`:
 - `--metrics_path`: path where the calculated metrics should be saved
 
 ## CITATION
+
+## TODO LIST
+
+- [ ] add end-to-end task (chaining of all tasks together in a row)
+- [ ] add finalized annotated data (dev and test) with articles
+- [ ] add results from running models
+- [ ] if open source results look promising adding code and results
