@@ -149,7 +149,7 @@ class MetaAnalysisTaskEvaluator:
         print("Metrics for the task:")
         print(json.dumps(metrics, indent=4))
 
-        current_datetime = datetime.now().strftime("%Y%m%d")
+        current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
         save_json_file(f"{self.metrics_path}/{self.task}_metrics_{current_datetime}.json", metrics)
 
 if __name__ == '__main__':

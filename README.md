@@ -17,6 +17,7 @@ There are 3 tasks:
 - `outcome_type`: given an outcome of an randomized controlled trial (RCT), output the correct type. `binary` and `continuous` are the options. Although there are additional categories, these two options are most often found in RCTs.
 - `binary_outcomes`: produce a 2x2 contingency table given the outcome, intervention, comparator, and also the abstract + results section of RCT.
 - `continuous_outcomes`: produce a table of mean, standard deviation, and group sizes given the outcome, intervention, comparator, and also the abstract + results section of RCT.
+- `end_to_end`: runs all 3 tasks. outputs from `outcome_type` is used for input for `binary_outcomes` and `continuous_outcomes` tasks.
 
 Example script for running a specific task on GPT-3.5:
 ```bash
@@ -27,8 +28,9 @@ You can change the arguments to run different tasks and models.
 
 Arguments of `run_task.py`:
 - `--model`: model to evaluate ("gpt35", "gpt4")
-- `--task`: task name ("outcome_type", "binary_outcomes", "continuous_outcomes")
+- `--task`: task name ("outcome_type", "binary_outcomes", "continuous_outcomes", "end_to_end")
 - `--split`: whether to run "dev" or "test" split of the dataset
+- `--prompt`: specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. not available for end_to_end task. OPTIONAL
 - `--output_path`: path where json and csv files of the outputs from model should be saved
 - `--test`: adding this flag will only run 10 randomly sampled examples from dataset. this is for debugging purposes.
 
@@ -54,7 +56,7 @@ Arguments of `evaluate_output.py`:
 
 ## TODO LIST
 
-- [ ] add end-to-end task (chaining of all tasks together in a row)
+- [X] add end-to-end task (chaining of all tasks together in a row)
 - [ ] add finalized annotated data (dev and test) with articles
 - [ ] add results from running models
 - [ ] if open source results look promising adding code and results

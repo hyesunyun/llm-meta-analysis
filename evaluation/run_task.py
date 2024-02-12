@@ -7,25 +7,46 @@ from models.model import Model
 
 from utils import (
     format_example_with_prompt_template, 
-    load_dataset_from_json, 
+    load_json_file, 
     get_xml_content_by_pmcid,
+    save_json_file,
     save_dataset_to_json,
-    save_dataset_to_csv
+    save_dataset_to_csv,
+    convert_character_to_string_outcome_type
 )
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from tqdm import tqdm
 from templates import DatasetTemplates
 from datetime import datetime
 import random
 
+DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
+
 class MetaAnalysisTaskRunner:
-    def __init__(self, model_name: str, task: str, split: str, output_path: str, is_test: bool, prompt_name: Optional[str]=None) -> None:
+
+    def __init__(self, model_name: str, task: str, split: str, output_path: str, is_test: bool=False, prompt_name: Optional[str]=None, input_path: Optional[str]=None) -> None:
+        '''
+        This class runs the meta analysis task for the given model, task, and split
+
+        :param model_name: name of the model to use
+        :param task: task to run
+        :param split: split of the dataset to run (dev or test)
+        :param output_path: path to save the output data
+        :param is_test: whether to run the task with only 10 instances for debugging purposes
+        :param prompt_name: name of the prompt template to use (Optional, default is the first prompt template for the given task)
+        :param input_path: path to the input file (Optional, default is the meta_analysis_dataset.json file in the data folder)
+
+        :return None
+        '''
         self.model_name = model_name
         self.task = task
         self.split = split
         self.prompt_name = prompt_name
         self.output_path = output_path
         self.is_test = is_test
+        # the default input path is the meta_analysis_dataset.json file in the data folder
+        # this file is the evaluation dataset
+        self.input_path = input_path if input_path is not None else os.path.join(DATA_FOLDER_PATH, "meta_analysis_dataset.json")
 
         self.prompt_template = None
         self.dataset = None
@@ -53,8 +74,7 @@ class MetaAnalysisTaskRunner:
 
         :return dataset as a list of dictionaries
         """
-        dataset_filename = "meta_analysis_dataset.json"
-        dataset = load_dataset_from_json(dataset_filename)
+        dataset = load_json_file(self.input_path)
 
         # get the correct split to run the task
         if self.split == "dev":
@@ -108,7 +128,12 @@ class MetaAnalysisTaskRunner:
         }
         return max_new_tokens[self.task]
 
-    def run_task(self):
+    def run_task(self) -> Tuple[str, str]:
+        '''
+        This method runs the task for the given model, task, and split
+
+        :return paths to the output file (json and csv) as a tuple
+        '''
         # load dataset prompt templates
         prompts = DatasetTemplates(self.prompt_template)
 
@@ -134,7 +159,7 @@ class MetaAnalysisTaskRunner:
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")
-        current_datetime = datetime.now().strftime("%Y%m%d")
+        current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
 
         keys_to_drop = [
             "effect_label", 
@@ -153,11 +178,48 @@ class MetaAnalysisTaskRunner:
         csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
         save_dataset_to_csv(dataset, csv_file_path, keys_to_drop)
 
+        return json_file_path, csv_file_path
+
+def run_end_to_end_task(model: str, split: str, output_path: str, is_test: bool) -> Tuple[Tuple[str, str], Tuple[str, str], Tuple[str, str]]:
+    '''
+    This method runs the end-to-end task for the given model and split
+    
+    :param model: name of the model to use
+    :param split: split of the dataset to run (dev or test)
+    :param output_path: path to save the output data
+    :param is_test: whether to run the task with only 10 instances for debugging purposes
+    
+    :return paths to the output files (json and csv) for outcome types and binary and continuous outcomes as a tuple
+            output types: (json, csv) and binary outcomes: (json, csv) and continuous outcomes: (json, csv)
+    '''
+    # First, call the outcome type task
+    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, is_test)
+    outcome_type_json_file_path, outcome_type_csv_file_path = outcome_type_task_runner.run_task()
+    # Do some post-processing to pass the output to the next task as input
+    outcome_type_outputs = load_json_file(outcome_type_json_file_path)
+    for example in outcome_type_outputs:
+        original_outcome_type = example["outcome_type"]
+        model_output = example["output"]
+        output_outcome_type = convert_character_to_string_outcome_type(model_output)
+        new_item = {"outcome_type_reference": original_outcome_type, "outcome_type": output_outcome_type}
+        example.update(new_item)
+    save_json_file(outcome_type_json_file_path, outcome_type_outputs)
+
+    # Second, call binary_outcomes task using the output from the outcome_type task
+    binary_outcomes_task_runner = MetaAnalysisTaskRunner(model, "binary_outcomes", split, output_path, is_test, None, outcome_type_json_file_path)
+    binary_outcomes_json_file_path, binary_outcomes_csv_file_path = binary_outcomes_task_runner.run_task()
+
+    # Third, call continuous_outcomes task using the output from the outcome_type task
+    continuous_outcomes_task_runner = MetaAnalysisTaskRunner(model, "continuous_outcomes", split, output_path, is_test, None, outcome_type_json_file_path)
+    continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path = continuous_outcomes_task_runner.run_task()
+
+    return (outcome_type_json_file_path, outcome_type_csv_file_path), (binary_outcomes_json_file_path, binary_outcomes_csv_file_path), (continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")
 
     parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4"], help="what model to run", required=True)
-    parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes'], help="type of task to run", required=True)
+    parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes', 'end_to_end'], help="type of task to run", required=True)
     parser.add_argument("--split", default="test", choices=["test", "dev"], help="which split of the dataset to run")
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")
     parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved")
@@ -185,7 +247,15 @@ if __name__ == '__main__':
     if not os.path.exists(output_path):
         os.makedirs(output_path)
         print("Output path did not exist. Directory was created.")
-
-    task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name)
-    task_runner.run_task()
+    
+    if task == "end-to-end":
+        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, output_path, is_test)
+        print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
+        print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
+        print(f"Continuous Outcomes task outputs saved to {continuous_outcomes_task_files[0]} and {continuous_outcomes_task_files[1]}")
+    else:
+        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name)
+        json_file_path, csv_file_path = task_runner.run_task()
+        print(f"Task outputs saved to {json_file_path} and {csv_file_path}")
+    
     
