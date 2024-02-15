@@ -101,6 +101,9 @@ class MetaAnalysisTaskRunner:
             xml_item = {"abstract_and_results_xml": xml_content}
             example.update(xml_item)
 
+        # shuffle the dataset since it is ordered by pmcid
+        random.seed(42) # set seed for reproducibility
+        random.shuffle(dataset)
         self.dataset = dataset
 
     def __load_model(self) -> Model:
@@ -171,11 +174,11 @@ class MetaAnalysisTaskRunner:
             "input"
         ]
         # convert into json
-        json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.json"
+        json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output_{current_datetime}.json"
         save_dataset_to_json(dataset, json_file_path, keys_to_drop)
 
         # convert into csv
-        csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_output_{current_datetime}.csv"
+        csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output_{current_datetime}.csv"
         save_dataset_to_csv(dataset, csv_file_path, keys_to_drop)
 
         return json_file_path, csv_file_path
@@ -248,7 +251,7 @@ if __name__ == '__main__':
         os.makedirs(output_path)
         print("Output path did not exist. Directory was created.")
     
-    if task == "end-to-end":
+    if task == "end_to_end":
         outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, output_path, is_test)
         print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
         print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
