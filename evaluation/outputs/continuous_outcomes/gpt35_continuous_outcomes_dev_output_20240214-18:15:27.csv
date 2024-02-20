@@ -1,5 +1,5 @@
 id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator agent,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,openai_gpt_token_num_abstract_results,split,output
-,11266,1216327,The mean body weight gain,White Grape Juice (WGJ),colored and flavored water (WA),continuous,,30,,30,50.6,,-7,,cannot calculate,cannot calculate,,,,,Missing standard deviations,FALSE,"6,350",DEV,"```yaml
+,11266,1216327,The mean body weight gain,White Grape Juice (WGJ),colored and flavored water (WA),continuous,,30,,30,50.6,,-0.7,,cannot calculate,cannot calculate,,,,,Missing standard deviations,FALSE,"6,350",DEV,"```yaml
 intervention:
   mean: 50.6
   standard_deviation: x
