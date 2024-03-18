@@ -34,7 +34,7 @@ class MetaAnalysisTaskRunner:
         :param output_path: path to save the output data
         :param is_test: whether to run the task with only 10 instances for debugging purposes
         :param prompt_name: name of the prompt template to use (Optional, default is the first prompt template for the given task)
-        :param input_path: path to the input file (Optional, default is the meta_analysis_dataset.json file in the data folder)
+        :param input_path: path to the input file (Optional, default is the annotated_rct_dataset.json file in the data folder)
 
         :return None
         '''
@@ -44,9 +44,9 @@ class MetaAnalysisTaskRunner:
         self.prompt_name = prompt_name
         self.output_path = output_path
         self.is_test = is_test
-        # the default input path is the meta_analysis_dataset.json file in the data folder
+        # the default input path is the annotated_rct_dataset.json file in the data folder
         # this file is the evaluation dataset
-        self.input_path = input_path if input_path is not None else os.path.join(DATA_FOLDER_PATH, "meta_analysis_dataset.json")
+        self.input_path = input_path if input_path is not None else os.path.join(DATA_FOLDER_PATH, "annotated_rct_dataset.json")
 
         self.prompt_template = None
         self.dataset = None
