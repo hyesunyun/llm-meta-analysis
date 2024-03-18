@@ -15,7 +15,9 @@ class GPT4(Model):
         This method generates the output given the input
 
         :param input: input to the model
-
+        :param max_new_tokens: maximum number of tokens to generate
+        :param temperature: temperature parameter for the model
+        
         :return output of the model
         """
         completion = None

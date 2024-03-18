@@ -134,7 +134,7 @@ class MetricsCalculator:
         :param data: list of dictionaries with the data to calculate the accuracy
         :return: dictionary with metrics
         """
-        # Discussed with Byron and we decided to get different levels of partial matching metrics so this could be 1, 2, 3, 4, 5 etc.
+        # different levels of partial matching metrics so this could be 1, 2, 3, 4, 5 etc.
         if self.task == "binary_outcomes":
             num_matches = [1, 2, 3]
         elif self.task == "continuous_outcomes":

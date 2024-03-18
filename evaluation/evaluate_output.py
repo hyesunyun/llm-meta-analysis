@@ -14,7 +14,6 @@ from utils import (
 )
 from calculate_metrics import MetricsCalculator
 import yaml
-from datetime import datetime
 import json
 
 class MetaAnalysisTaskEvaluator:
@@ -149,8 +148,8 @@ class MetaAnalysisTaskEvaluator:
         print("Metrics for the task:")
         print(json.dumps(metrics, indent=4))
 
-        current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
-        save_json_file(f"{self.metrics_path}/{self.task}_metrics_{current_datetime}.json", metrics)
+        output_file_name = self.output_path.split("/")[-1]
+        save_json_file(f"{self.metrics_path}/{output_file_name}_metrics.json", metrics)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Evaluating Outputs for Clinical Trials Meta Analysis Task")

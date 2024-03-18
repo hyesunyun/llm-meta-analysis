@@ -2,19 +2,21 @@ from .model import Model
 from openai import OpenAI
 import time
 
-REQ_TIME_GAP = 50 # in seconds TODO - change to 5
+REQ_TIME_GAP = 5 #
 MAX_API_RETRY = 3
 
 class GPT35(Model):
     def __init__(self) -> None:
         super().__init__()
-        self.client = OpenAI(organization='org-O8NhcF3Aq5bw9P7Ad5Jbeddv',) # TODO change
+        self.client = OpenAI(organization='org-amDbJ4wMNLPWA2hhgt3UdF7k',)
 
     def generate_output(self, input: str, max_new_tokens: int, temperature: str = 1) -> str:
         """
         This method generates the output given the input
 
         :param input: input to the model
+        :param max_new_tokens: maximum number of tokens to generate
+        :param temperature: temperature parameter for the model
 
         :return output of the model
         """
