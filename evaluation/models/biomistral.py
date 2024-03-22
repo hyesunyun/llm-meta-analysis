@@ -36,6 +36,6 @@ class BioMistral(Model):
             inputs = self.tokenizer(input, return_tensors="pt").to(self.device)
             with torch.no_grad():
                 result = self.model.generate(**inputs, max_new_tokens=max_new_tokens)
-            return self.tokenizer.decode(result[0], skip_special_tokens=True)
+            return self.tokenizer.decode(result[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)
