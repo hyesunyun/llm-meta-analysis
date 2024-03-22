@@ -1,0 +1,68 @@
+dataset: continuous_outcomes
+templates:
+  1e8f0bb9-9c9f-477e-ae2e-a54dc9e28d38: !Template
+    id: 1e8f0bb9-9c9f-477e-ae2e-a54dc9e28d38
+    prompt: |+ 
+      Below is an instruction that describes a task, paired with an input that provides further context.
+      Write a response that appropriately completes the request.
+      
+      ### Instruction:
+       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      
+      ### Input:
+      ### Article: {abstract_and_results_xml}
+      ### Question: Based on the given trial article, what is the table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome?
+      Intervention: {intervention}
+      Comparator: {comparator}
+      Outcome: {outcome}
+      
+      Include the total size of each group for Intervention and Comparator. 
+      The YAML format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
+      intervention:
+          mean: NUMBER
+          standard_deviation: NUMBER
+          group_size: NUMBER
+      comparator:
+          mean: NUMBER
+          standard_deviation: NUMBER
+          group_size: NUMBER
+
+      Only produce YAML response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
+      If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
+      ### Response:
+    name: yaml
+  8fd5346e-cb7c-4b14-addd-135d58e8ec79: !Template
+    id: 8fd5346e-cb7c-4b14-addd-135d58e8ec79
+    prompt: |+ 
+      Below is an instruction that describes a task, paired with an input that provides further context.
+      Write a response that appropriately completes the request.
+      
+      ### Instruction:
+       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      
+      ### Input:
+      ### Article: {abstract_and_results_xml}
+      ### Question: Based on the given trial article, what is the table of mean outcome and standard deviation in JSON format for the following Intervention, Comparator, and Outcome?
+      Intervention: {intervention}
+      Comparator: {comparator}
+      Outcome: {outcome}
+      
+      Include the total size of each group for Intervention and Comparator. 
+      The JSON format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
+      {
+        "intervention": {
+          "mean": NUMBER,
+          "standard_deviation": NUMBER,
+          "group_size": NUMBER
+        },
+        "comparator": {
+          "mean": NUMBER,
+          "standard_deviation": NUMBER,
+          "group_size": NUMBER
+        }
+      }
+
+      Only produce JSON response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
+      If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
+      ### Response:
+    name: json

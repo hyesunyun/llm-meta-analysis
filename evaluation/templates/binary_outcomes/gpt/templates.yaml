@@ -3,20 +3,23 @@ templates:
   a07937ad-d278-402d-ab6f-2fe4cc9a0b7d: !Template
     id: a07937ad-d278-402d-ab6f-2fe4cc9a0b7d
     prompt: |+ 
-      Article: {{abstract_and_results_xml}}
+      Article: {abstract_and_results_xml}
 
-      You are an expert on medical randomized controlled trials. Based on the given trial article, produce a 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x". Only produce YAML response. Do not provide explanation.
-      The YAML format should include the fields "events" and "group_size" for only "intervention" and "comparator" but not "outcome". Example: 
+      Based on the given trial article, produce a 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome: 
+      Intervention: {intervention}
+      Comparator: {comparator}
+      Outcome: {outcome}
+
+      The YAML format should include the fields "events" and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
       intervention:
           events: NUMBER
-          group_size: NUMBER	
+          group_size: NUMBER
       comparator:
           events: NUMBER
           group_size: NUMBER
 
-      Intervention: {{intervention}}
-      Comparator: {{comparator}}
-      Outcome: {{outcome}}
+      Only produce YAML response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
+      If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
 
       YAML:
     name: yaml

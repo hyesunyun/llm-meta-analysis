@@ -1,0 +1,37 @@
+dataset: outcome_type
+templates:
+  2e997682-d51c-4831-9c23-70e4a80520da: !Template
+    id: 2e997682-d51c-4831-9c23-70e4a80520da
+    prompt: |+ 
+      Below is an instruction that describes a task, paired with an input that provides further context.
+      Write a response that appropriately completes the request.
+      
+      ### Instruction:
+       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      
+      ### Input:
+      ### Question: Is the outcome of {outcome} from a randomized controlled trial a binary or continuous type?
+      ### Options:
+      (A) binary
+      (B) continuous
+      (C) unknown - there is insufficient information to make any inference
+      ### Response:
+    name: without-abstract-results
+  93d4bb52-7167-4ad5-b314-cc6a978e1b0f: !Template
+    id: 93d4bb52-7167-4ad5-b314-cc6a978e1b0f
+    prompt: |+
+      Below is an instruction that describes a task, paired with an input that provides further context.
+      Write a response that appropriately completes the request.
+      
+      ### Instruction:
+      You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      
+      ### Input:
+      ### Article: {abstract_and_results_xml}
+      ### Question: Based on the article, is the outcome of {outcome} from a randomized controlled trial a binary or continuous type?
+      ### Options:
+      (A) binary
+      (B) continuous
+      (C) unknown - there is insufficient information to make any inference
+      ### Response:
+    name: with-abstract-results

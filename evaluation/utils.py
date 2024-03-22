@@ -92,7 +92,7 @@ def convert_character_to_string_outcome_type(outcome_type: str) -> str:
 
     :return outcome type as string
     """
-    character_to_string_mapping = {"b": "binary", "c": "continuous", "x": "unknown"}
+    character_to_string_mapping = {"(A": "binary", "(B": "continuous", "(C": "unknown"}
     return character_to_string_mapping[outcome_type]
 
 def convert_string_to_character_outcome_type(outcome_type: str) -> str:
@@ -103,7 +103,7 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
 
     :return outcome type as character
     """
-    string_to_character_mapping = {"binary": "b", "continuous": "c", "unknown": "x"}
+    string_to_character_mapping = {"binary": "(A", "continuous": "(B", "unknown": "(C"}
     return string_to_character_mapping[outcome_type]
 
 def clean_yaml_output(output: str) -> str:
