@@ -9,6 +9,9 @@ class Mistral(Model):
         self.model = self.load_model()
         self.tokenizer = self.load_tokenizer()
 
+    def get_context_length(self) -> int:
+        return 8192
+
     def load_model(self): # context window size: 32k tokens but 8k tokens is recommended for best performance
         model = AutoModelForCausalLM.from_pretrained(
             "mistralai/Mistral-7B-Instruct-v0.2", device_map="auto"

@@ -7,6 +7,12 @@ Create conda environment from the environment.yml: `conda env create -f environm
 
 Activate the conda environment: `conda activate llm-meta-analysis`
 
+## DATA
+
+The human-annotated data is available in the `data` folder as both csv and json formats.
+The dev set has 10 RCTs with 43 number of total ICO triplets.
+The test set has 110 RCTs with 656 number of total ICO triplets.
+
 ## EXPERIMENTS
 
 ### Running Tasks
@@ -27,7 +33,7 @@ python3 evaluation/run_task.py --model gpt35 --task binary_outcomes --split test
 You can change the arguments to run different tasks and models.
 
 Arguments of `run_task.py`:
-- `--model`: model to evaluate ("gpt35", "gpt4")
+- `--model`: model to evaluate ("gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama13B", "gemma7B", "olmo7B") - more details of the models can be found in [MODELS.md](evaluation/models/MODELS.md)
 - `--task`: task name ("outcome_type", "binary_outcomes", "continuous_outcomes", "end_to_end")
 - `--split`: whether to run "dev" or "test" split of the dataset
 - `--prompt`: specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. not available for end_to_end task. OPTIONAL
@@ -56,7 +62,4 @@ Arguments of `evaluate_output.py`:
 
 ## TODO LIST
 
-- [X] add end-to-end task (chaining of all tasks together in a row)
-- [ ] add finalized annotated data (dev and test) with articles
 - [ ] add results from running models
-- [ ] if open source results look promising adding code and results

@@ -9,6 +9,9 @@ class PMCLlama(Model):
         self.model = self.load_model()
         self.tokenizer = self.load_tokenizer()
 
+    def get_context_length(self) -> int:
+        return 2048
+
     def load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens
         # also have only been evaluated on biomedical tasks that are multiple choice questions      
