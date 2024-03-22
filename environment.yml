@@ -16,8 +16,10 @@ dependencies:
   - conda-forge::bitsandbytes
   - conda-forge::ninja
   - conda-forge::accelerate
-  - conda-forge::transformers=4.38.2
+  - transformers=4.38.2
   - anaconda::cudatoolkit
   - anaconda::ipykernel
   - conda-forge::packaging
+  - pip:
+    - ai2-olmo
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis
