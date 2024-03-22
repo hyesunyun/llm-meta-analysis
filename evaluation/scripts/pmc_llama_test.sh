@@ -8,6 +8,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --output=exec.pmcllama.%j.evaluate.out
 
+module load discovery/2021-10-06
 module load cuda/12.1
 module load anaconda3/2022.05
 
