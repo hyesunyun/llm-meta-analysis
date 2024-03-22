@@ -7,7 +7,7 @@ from models.biomistral import BioMistral
 from models.gemma import Gemma
 from models.mistral import Mistral
 from models.pmc_llama import PMCLlama
-from models.olmo import Olmo
+# from models.olmo import Olmo
 from models.model import Model
 
 from utils import (
