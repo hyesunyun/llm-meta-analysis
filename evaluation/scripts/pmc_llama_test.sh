@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --time=48:00:00
+#SBATCH --time=24:00:00
 #SBATCH --job-name=pmc_llama
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=75G
-#SBATCH --partition=frink
+#SBATCH --mem=100G
+#SBATCH --partition=177huntington
 #SBATCH --gres=gpu:1
 #SBATCH --output=exec.pmcllama.%j.evaluate.out
 

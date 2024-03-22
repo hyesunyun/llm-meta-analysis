@@ -126,7 +126,7 @@ class MetaAnalysisTaskRunner:
 
         :return Model object
         """
-        model_class_mapping = {"gpt35": GPT35, "gpt4": GPT4, "mistral7B": Mistral, "biomistral": BioMistral, "pmc-llama13B": PMCLlama, "gemma7B": Gemma, "olmo7B": Olmo}
+        model_class_mapping = {"gpt35": GPT35, "gpt4": GPT4, "mistral7B": Mistral, "biomistral": BioMistral, "pmc-llama": PMCLlama, "gemma7B": Gemma, "olmo7B": Olmo}
         model_class = model_class_mapping[self.model_name]
         self.model = model_class()
 
@@ -235,7 +235,7 @@ def run_end_to_end_task(model: str, split: str, output_path: str, is_test: bool)
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")
 
-    parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama13B", "gemma7B", "olmo7B"], help="what model to run", required=True)
+    parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B"], help="what model to run", required=True)
     parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes', 'end_to_end'], help="type of task to run", required=True)
     parser.add_argument("--split", default="test", choices=["test", "dev"], help="which split of the dataset to run")
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")

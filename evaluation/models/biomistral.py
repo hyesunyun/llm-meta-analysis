@@ -32,6 +32,8 @@ class BioMistral(Model):
 
         :return output of the model
         """
+        print(input)
+        print(max_new_tokens)
         try:
             inputs = self.tokenizer(input, return_tensors="pt").to(self.device)
             with torch.no_grad():
