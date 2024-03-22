@@ -56,12 +56,11 @@ class MetaAnalysisTaskRunner:
         self.prompt_template = None
         self.dataset = None
         self.model = None
-        self.max_new_tokens = None
+        self.max_new_tokens = self.__get_max_new_tokens()
 
         self.__load_prompt_template()
         self.__load_dataset()
         self.__load_model()
-        self.__get_max_new_tokens()
 
     def __load_prompt_template(self) -> str:
         """
