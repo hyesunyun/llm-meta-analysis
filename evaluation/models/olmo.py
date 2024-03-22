@@ -15,7 +15,7 @@ class Olmo(Model):
 
     def load_model(self): # context window size: 32k tokens but 8k tokens is recommended for best performance
         model = AutoModelForCausalLM.from_pretrained(
-            "allenai/OLMo-7B-Instruct"", device_map="auto"
+            "allenai/OLMo-7B-Instruct", device_map="auto"
         )
         return model
 
