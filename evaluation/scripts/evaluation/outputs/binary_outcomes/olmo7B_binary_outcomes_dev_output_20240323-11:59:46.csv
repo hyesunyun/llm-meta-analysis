@@ -1,0 +1,81 @@
+id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,tiktoken_with_attributes_xml_token_num,tiktoken_without_attributes_xml_token_num,split,output
+191,13818,5244530,sick leave,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,49,125,64,133,,,,,,,-0.3637,0.0637,-0.205,0.0205,,TRUE,6216,5516,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+260,13181,5771543,CGI-I response rate,fluoxetine,placebo,binary,79,101,62,99,,,,,,,0.7622,0.1013,0.2223,0.0088,,TRUE,12534,9831,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+190,13818,5244530,sedative prescriptions,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,52,125,51,133,,,,,,,0.1357,0.0647,0.0815,0.0233,Data from 12 months follow up (final timepoint),TRUE,6216,5516,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+263,13183,5771543,Treatment-emergent adverse events (TEAEs),fluoxetine,placebo,binary,72,112,79,112,,,,,,,-0.2852,0.0819,-0.0928,0.0087,Typo in the table,TRUE,12534,9831,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+120,3102,4450164,ureteropelvic junction obstruction,internal drainage group,stentless cases,binary,8,20,13,44,,,,,,,0.4636,0.3175,0.3029,0.1292,,TRUE,3862,2242,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+2,11249,57750,Myocardial infarction,eptifibatide,placebo,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Group sizes are not given so the events cannot calculate using the percentages.,FALSE,5811,4777,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+261,13182,5771543,CGI-I response rate,desvenlafaxine,placebo,binary,68,99,62,99,,,,,,,0.2693,0.0901,0.0924,0.0106,,TRUE,12534,9831,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+262,13183,5771543,Treatment-emergent adverse events (TEAEs),desvenlafaxine,placebo,binary,69,115,79,112,,,,,,,-0.4675,0.0792,-0.1618,0.0095,,TRUE,12534,9831,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+56,10676,3276927,effective in the treatment of reversible inguinal hernia,post-Yoga,pre-Yoga,binary,,19,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,"No real numerical data attached to this specific outcome. Other prompts account for ""treatment",FALSE,2011,1731,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """
+192,13819,5244530,continued antidepressants until the 6-month,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,86,125,78,133,,,,,,,0.4414,0.0683,0.1597,0.0089,,TRUE,6216,5516,DEV,"{
+  ""intervention"": {
+    ""mean"": 6.0,
+    ""standard_deviation"": 2.0,
+    ""group_size"": 30
+  },
+  ""comparator"": {
+    """

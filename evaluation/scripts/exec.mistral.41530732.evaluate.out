@@ -1,0 +1,70 @@
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        mistral7B
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  json
+Output Path:  evaluation/outputs/binary_outcomes
+Is Test:      True
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.63s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.63s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.56s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.58s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2302.29it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 10%|█         | 1/10 [00:03<00:35,  3.93s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 20%|██        | 2/10 [00:07<00:29,  3.64s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 30%|███       | 3/10 [00:10<00:24,  3.55s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 40%|████      | 4/10 [00:14<00:21,  3.51s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 50%|█████     | 5/10 [00:17<00:17,  3.48s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 60%|██████    | 6/10 [00:21<00:13,  3.47s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 70%|███████   | 7/10 [00:24<00:10,  3.46s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 80%|████████  | 8/10 [00:28<00:06,  3.45s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 90%|█████████ | 9/10 [00:31<00:03,  3.45s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+100%|██████████| 10/10 [00:34<00:00,  3.45s/it]100%|██████████| 10/10 [00:34<00:00,  3.49s/it]
+Saving outputs for task - binary_outcomes; prompt - json; model - mistral7B to csv and json
+Task outputs saved to evaluation/outputs/binary_outcomes/mistral7B_binary_outcomes_dev_output_20240323-11:59:42.json and evaluation/outputs/binary_outcomes/mistral7B_binary_outcomes_dev_output_20240323-11:59:42.csv
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        mistral7B
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  yaml
+Output Path:  evaluation/outputs/binary_outcomes
+Is Test:      True
+
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.14s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.85s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.67s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.75s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2163.24it/s]
+  0%|          | 0/10 [00:00<?, ?it/s]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 10%|█         | 1/10 [00:03<00:31,  3.51s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 20%|██        | 2/10 [00:06<00:25,  3.21s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 30%|███       | 3/10 [00:09<00:21,  3.11s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 40%|████      | 4/10 [00:12<00:18,  3.06s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 50%|█████     | 5/10 [00:15<00:15,  3.04s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 60%|██████    | 6/10 [00:18<00:12,  3.02s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 70%|███████   | 7/10 [00:21<00:09,  3.01s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 80%|████████  | 8/10 [00:24<00:06,  3.01s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+ 90%|█████████ | 9/10 [00:27<00:03,  3.00s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+100%|██████████| 10/10 [00:30<00:00,  3.00s/it]100%|██████████| 10/10 [00:30<00:00,  3.04s/it]
+Saving outputs for task - binary_outcomes; prompt - yaml; model - mistral7B to csv and json
+Task outputs saved to evaluation/outputs/binary_outcomes/mistral7B_binary_outcomes_dev_output_20240323-12:00:25.json and evaluation/outputs/binary_outcomes/mistral7B_binary_outcomes_dev_output_20240323-12:00:25.csv

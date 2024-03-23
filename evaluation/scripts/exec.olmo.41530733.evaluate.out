@@ -1,0 +1,32 @@
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+The model weights are not tied. Please use the `tie_weights` method before using the `infer_auto_device` function.
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        olmo7B
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  json
+Output Path:  evaluation/outputs/binary_outcomes
+Is Test:      True
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.27s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.10s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.42s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2260.11it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:35,  3.97s/it] 20%|██        | 2/10 [00:07<00:29,  3.64s/it] 30%|███       | 3/10 [00:10<00:24,  3.53s/it] 40%|████      | 4/10 [00:14<00:20,  3.48s/it] 50%|█████     | 5/10 [00:17<00:17,  3.45s/it] 60%|██████    | 6/10 [00:20<00:13,  3.44s/it] 70%|███████   | 7/10 [00:24<00:10,  3.42s/it] 80%|████████  | 8/10 [00:27<00:06,  3.42s/it] 90%|█████████ | 9/10 [00:31<00:03,  3.41s/it]100%|██████████| 10/10 [00:34<00:00,  3.41s/it]100%|██████████| 10/10 [00:34<00:00,  3.46s/it]
+Saving outputs for task - binary_outcomes; prompt - json; model - olmo7B to csv and json
+Task outputs saved to evaluation/outputs/binary_outcomes/olmo7B_binary_outcomes_dev_output_20240323-11:59:46.json and evaluation/outputs/binary_outcomes/olmo7B_binary_outcomes_dev_output_20240323-11:59:46.csv
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+The model weights are not tied. Please use the `tie_weights` method before using the `infer_auto_device` function.
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        olmo7B
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  yaml
+Output Path:  evaluation/outputs/binary_outcomes
+Is Test:      True
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.17s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  3.97s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:08<00:00,  4.30s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2364.19it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:34,  3.78s/it] 20%|██        | 2/10 [00:07<00:27,  3.45s/it] 30%|███       | 3/10 [00:10<00:23,  3.35s/it] 40%|████      | 4/10 [00:13<00:19,  3.30s/it] 50%|█████     | 5/10 [00:16<00:16,  3.27s/it] 60%|██████    | 6/10 [00:19<00:13,  3.26s/it] 70%|███████   | 7/10 [00:23<00:09,  3.25s/it] 80%|████████  | 8/10 [00:26<00:06,  3.24s/it] 90%|█████████ | 9/10 [00:29<00:03,  3.23s/it]100%|██████████| 10/10 [00:32<00:00,  3.23s/it]100%|██████████| 10/10 [00:32<00:00,  3.28s/it]
+Saving outputs for task - binary_outcomes; prompt - yaml; model - olmo7B to csv and json
+Task outputs saved to evaluation/outputs/binary_outcomes/olmo7B_binary_outcomes_dev_output_20240323-12:00:34.json and evaluation/outputs/binary_outcomes/olmo7B_binary_outcomes_dev_output_20240323-12:00:34.csv
