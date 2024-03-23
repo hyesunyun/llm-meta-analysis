@@ -1,0 +1,16 @@
+/var/spool/slurmd/job41531742/slurm_script: line 11: module: command not found
+/var/spool/slurmd/job41531742/slurm_script: line 12: module: command not found
+/var/spool/slurmd/job41531742/slurm_script: line 13: module: command not found
+/var/spool/slurmd/job41531742/slurm_script: line 15: activate: No such file or directory
+Traceback (most recent call last):
+  File "../run_task.py", line 4, in <module>
+    from models.gpt35 import GPT35
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/models/gpt35.py", line 2, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'
+Traceback (most recent call last):
+  File "../run_task.py", line 4, in <module>
+    from models.gpt35 import GPT35
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/models/gpt35.py", line 2, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'
