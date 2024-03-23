@@ -24,5 +24,5 @@ templates:
       Only produce YAML response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
       If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
 
-      YAML: 
+      YAML:
     name: yaml
