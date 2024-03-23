@@ -10,3 +10,13 @@ class Model(ABC):
 
         """
         pass
+
+    @abstractmethod
+    def get_context_length(self) -> int:
+        """
+        This method must be overridden
+
+        :abstract
+
+        """
+        pass

@@ -10,6 +10,9 @@ class GPT35(Model):
         super().__init__()
         self.client = OpenAI(organization='org-amDbJ4wMNLPWA2hhgt3UdF7k',)
 
+    def get_context_length(self) -> int:
+        return 16385
+    
     def generate_output(self, input: str, max_new_tokens: int, temperature: str = 1) -> str:
         """
         This method generates the output given the input
