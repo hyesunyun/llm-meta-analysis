@@ -12,6 +12,8 @@ dependencies:
   - torchvision
   - pytorch-cuda=12.1
   - torchaudio
+  - lxml
+  - beautifulsoup4
   - sentencepiece
   - conda-forge::bitsandbytes
   - conda-forge::ninja
