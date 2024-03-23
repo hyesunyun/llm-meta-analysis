@@ -1,5 +1,6 @@
 # Models
-This document lists some details for each model used as part of this project.
+
+This document lists some details for each model used as part of this project. All the models we used are instruction-tuned for zero-shot inference. OLMo, PMC LLaMA, and BioMistral have been trained on scientific documents/texts that are more closely aligned to our input texts.
 
 | Model | Training Data | Sequence Length | Model Weights | Details |
 |---|---|---|---|---|

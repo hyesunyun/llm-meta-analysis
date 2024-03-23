@@ -36,9 +36,9 @@ class Gemma(Model):
                 {"role": "user", "content": input},
             ]
             prompt = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
-            inputs = self.tokenizer.encode(prompt, return_tensors="pt").to(self.device)
+            inputs = self.tokenizer.encode(prompt, add_special_tokens=False, return_tensors="pt").to(self.device)
             with torch.no_grad():
-                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens)
+                result = self.model.generate(inputs, max_new_tokens=max_new_tokens)
             return self.tokenizer.decode(result[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)
