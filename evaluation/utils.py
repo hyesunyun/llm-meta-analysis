@@ -4,7 +4,7 @@ import os
 import json
 import csv
 
-XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "abstract_and_results_xml_files")
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """

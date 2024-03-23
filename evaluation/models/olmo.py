@@ -20,7 +20,7 @@ class Olmo(Model):
         return model
 
     def load_tokenizer(self):
-        tokenizer = AutoTokenizer.from_pretrained("allenai/OLMo-7B-Instruct", padding_side="left")
+        tokenizer = AutoTokenizer.from_pretrained("allenai/OLMo-7B-Instruct")
         return tokenizer
 
     def generate_output(self, input: str, max_new_tokens: int) -> str:
