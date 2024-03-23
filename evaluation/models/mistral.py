@@ -36,10 +36,21 @@ class Mistral(Model):
             chat = [
                 {"role": "user", "content": input},
             ]
-            encoded = self.tokenizer.apply_chat_template(chat, return_tensors="pt")
-            model_inputs = encoded.to(self.device)
+            prompt = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
+            print(prompt)
+            inputs = self.tokenizer.encode(prompt, add_special_tokens=False, return_tensors="pt").to(self.device)
+            print(inputs)
             with torch.no_grad():
-                result = self.model.generate(model_inputs, max_new_tokens=max_new_tokens)
-            return self.tokenizer.decode(result[0, model_inputs.shape[1]:], skip_special_tokens=True)
+                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens, pad_token_id=self.tokenizer.eos_token_id)
+            return self.tokenizer.decode(result[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)
+
+
+
+
+# encoded = self.tokenizer.apply_chat_template(chat, return_tensors="pt")
+# model_inputs = encoded.to(self.device)
+# with torch.no_grad():
+#     result = self.model.generate(model_inputs, max_new_tokens=max_new_tokens)
+# return self.tokenizer.decode(result[0, model_inputs.shape[1]:], skip_special_tokens=True)
