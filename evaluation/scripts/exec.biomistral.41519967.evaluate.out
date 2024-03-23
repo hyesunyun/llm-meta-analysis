@@ -1,49 +1,0 @@
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-Arguments for the Clinical Trials Meta Analysis Task Runner:
-Model:        biomistral
-Task:         binary_outcomes
-Split:        dev
-Prompt Name:  json
-Output Path:  evaluation/outputs/binary_outcomes
-Is Test:      True
-
-Output path did not exist. Directory was created.
-  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2279.02it/s]
-  0%|          | 0/10 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 10%|█         | 1/10 [00:01<00:10,  1.16s/it]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 20%|██        | 2/10 [00:01<00:05,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 30%|███       | 3/10 [00:02<00:04,  1.67it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 40%|████      | 4/10 [00:02<00:03,  1.87it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 50%|█████     | 5/10 [00:02<00:02,  2.00it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 60%|██████    | 6/10 [00:03<00:01,  2.08it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 70%|███████   | 7/10 [00:03<00:01,  2.14it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 80%|████████  | 8/10 [00:04<00:00,  2.18it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 90%|█████████ | 9/10 [00:04<00:00,  2.21it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-100%|██████████| 10/10 [00:05<00:00,  2.23it/s]100%|██████████| 10/10 [00:05<00:00,  1.96it/s]
-Saving outputs for task - binary_outcomes; prompt - json; model - biomistral to csv and json
-Task outputs saved to evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_dev_output_20240322-17:30:37.json and evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_dev_output_20240322-17:30:37.csv
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-Arguments for the Clinical Trials Meta Analysis Task Runner:
-Model:        biomistral
-Task:         binary_outcomes
-Split:        dev
-Prompt Name:  yaml
-Output Path:  evaluation/outputs/binary_outcomes
-Is Test:      True
-
-  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2402.37it/s]
-  0%|          | 0/10 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 10%|█         | 1/10 [00:00<00:07,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 20%|██        | 2/10 [00:01<00:04,  1.89it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 30%|███       | 3/10 [00:01<00:03,  2.30it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 40%|████      | 4/10 [00:01<00:02,  2.56it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 50%|█████     | 5/10 [00:02<00:01,  2.72it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 60%|██████    | 6/10 [00:02<00:01,  2.83it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 70%|███████   | 7/10 [00:02<00:01,  2.91it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 80%|████████  | 8/10 [00:03<00:00,  2.96it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 90%|█████████ | 9/10 [00:03<00:00,  3.00it/s]Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-100%|██████████| 10/10 [00:03<00:00,  3.02it/s]100%|██████████| 10/10 [00:03<00:00,  2.67it/s]
-Saving outputs for task - binary_outcomes; prompt - yaml; model - biomistral to csv and json
-Task outputs saved to evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_dev_output_20240322-17:30:52.json and evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_dev_output_20240322-17:30:52.csv

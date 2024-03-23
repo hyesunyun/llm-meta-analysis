@@ -72,8 +72,10 @@ class MetaAnalysisTaskRunner:
             self.prompt_template = self.task + "/gpt"
         elif "pmc-llama" in self.model_name: 
             self.prompt_template = self.task + "/pmc-llama"
-        elif "mistral" in self.model_name:
+        elif self.model_name == "mistral7B":
             self.prompt_template = self.task + "/mistral"
+        elif self.model_name == "biomistral":
+            self.prompt_template = self.task + "/biomistral"
         elif "gemma" in self.model_name:
             self.prompt_template = self.task + "/gemma"
         elif "olmo" in self.model_name:
@@ -138,9 +140,9 @@ class MetaAnalysisTaskRunner:
         :return maximum number of new tokens
         """
         max_new_tokens = {
-            "outcome_type": 1,
-            "binary_outcomes": 50,
-            "continuous_outcomes": 50,
+            "outcome_type": 5,
+            "binary_outcomes": 100,
+            "continuous_outcomes": 100,
         }
         return max_new_tokens[self.task]
 
@@ -178,8 +180,6 @@ class MetaAnalysisTaskRunner:
         current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
 
         keys_to_drop = [
-            "effect_label", 
-            "effect_label_code", 
             "is_data_in_figure_graphics", 
             "is_relevant_data_in_table", 
             "is_table_in_graphic_format", 

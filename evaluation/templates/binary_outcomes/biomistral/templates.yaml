@@ -1,9 +1,9 @@
 dataset: binary_outcomes
 templates:
-  a1b82b75-0d7e-4f25-b55c-acd59a2febfc: !Template
-    id: a1b82b75-0d7e-4f25-b55c-acd59a2febfc
+  b0b690f3-65d1-456a-a4b4-c52dfa1c0938: !Template
+    id: b0b690f3-65d1-456a-a4b4-c52dfa1c0938
     prompt: |+ 
-      Article: {abstract_and_results_xml}
+      <s>[INST] Article: {abstract_and_results_xml}
 
       Based on the given trial article, what is the 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome?
       Intervention: {intervention}
@@ -21,12 +21,12 @@ templates:
       Only produce YAML response. Do NOT provide explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x". 
       If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
       
-      YAML:
+      YAML: [/INST]
     name: yaml
-  4f46e9ac-b645-447f-8160-bfc6b35b7fc9: !Template
-    id: 4f46e9ac-b645-447f-8160-bfc6b35b7fc9
+  82fa42ab-cc17-4e05-85d1-caafb3d3d119: !Template
+    id: 82fa42ab-cc17-4e05-85d1-caafb3d3d119
     prompt: |+ 
-      Article: {abstract_and_results_xml}
+      <s>[INST] Article: {abstract_and_results_xml}
 
       Based on the given trial article, what is the 2x2 contingency table in JSON format for the following Intervention, Comparator, and Outcome?
       Intervention: {intervention}
@@ -48,5 +48,5 @@ templates:
       Only produce JSON response. Do NOT provide explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x". 
       If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
       
-      JSON:
+      JSON: [/INST]
     name: json

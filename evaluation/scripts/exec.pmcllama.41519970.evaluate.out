@@ -1,40 +1,0 @@
-/var/spool/slurmd/job41519970/slurm_script: line 11: module: command not found
-/var/spool/slurmd/job41519970/slurm_script: line 12: module: command not found
-/var/spool/slurmd/job41519970/slurm_script: line 13: module: command not found
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-Arguments for the Clinical Trials Meta Analysis Task Runner:
-Model:        pmc-llama
-Task:         continuous_outcomes
-Split:        dev
-Prompt Name:  json
-Output Path:  evaluation/outputs/continuous_outcomes
-Is Test:      True
-
-Output path did not exist. Directory was created.
-Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [02:08<10:41, 128.29s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [06:50<14:36, 219.06s/it]Loading checkpoint shards:  50%|█████     | 3/6 [13:41<15:19, 306.56s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [19:02<10:24, 312.42s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [24:26<05:16, 316.31s/it]Loading checkpoint shards: 100%|██████████| 6/6 [25:41<00:00, 234.26s/it]Loading checkpoint shards: 100%|██████████| 6/6 [25:41<00:00, 256.86s/it]
-tokenizer_config.json:   0%|          | 0.00/735 [00:00<?, ?B/s]tokenizer_config.json: 100%|██████████| 735/735 [00:00<00:00, 8.09MB/s]
-tokenizer.model:   0%|          | 0.00/500k [00:00<?, ?B/s]tokenizer.model: 100%|██████████| 500k/500k [00:00<00:00, 12.0MB/s]
-added_tokens.json:   0%|          | 0.00/21.0 [00:00<?, ?B/s]added_tokens.json: 100%|██████████| 21.0/21.0 [00:00<00:00, 283kB/s]
-special_tokens_map.json:   0%|          | 0.00/96.0 [00:00<?, ?B/s]special_tokens_map.json: 100%|██████████| 96.0/96.0 [00:00<00:00, 1.09MB/s]
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
-  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2867.70it/s]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:36,  4.11s/it] 20%|██        | 2/10 [00:04<00:17,  2.17s/it] 30%|███       | 3/10 [00:05<00:10,  1.55s/it] 40%|████      | 4/10 [00:06<00:07,  1.26s/it] 50%|█████     | 5/10 [00:07<00:05,  1.10s/it] 60%|██████    | 6/10 [00:08<00:04,  1.00s/it] 70%|███████   | 7/10 [00:08<00:02,  1.06it/s] 80%|████████  | 8/10 [00:09<00:01,  1.11it/s] 90%|█████████ | 9/10 [00:10<00:00,  1.15it/s]100%|██████████| 10/10 [00:11<00:00,  1.17it/s]100%|██████████| 10/10 [00:11<00:00,  1.14s/it]
-Saving outputs for task - continuous_outcomes; prompt - json; model - pmc-llama to csv and json
-Task outputs saved to evaluation/outputs/continuous_outcomes/pmc-llama_continuous_outcomes_dev_output_20240322-17:57:11.json and evaluation/outputs/continuous_outcomes/pmc-llama_continuous_outcomes_dev_output_20240322-17:57:11.csv
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-Arguments for the Clinical Trials Meta Analysis Task Runner:
-Model:        pmc-llama
-Task:         continuous_outcomes
-Split:        dev
-Prompt Name:  yaml
-Output Path:  evaluation/outputs/continuous_outcomes
-Is Test:      True
-
-Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [03:15<16:17, 195.43s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [06:20<12:37, 189.47s/it]Loading checkpoint shards:  50%|█████     | 3/6 [06:22<05:11, 103.84s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [06:24<02:07, 63.59s/it] Loading checkpoint shards:  83%|████████▎ | 5/6 [06:26<00:41, 41.37s/it]Loading checkpoint shards: 100%|██████████| 6/6 [06:27<00:00, 27.48s/it]Loading checkpoint shards: 100%|██████████| 6/6 [06:27<00:00, 64.51s/it]
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
-  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 3013.80it/s]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:12,  1.41s/it] 20%|██        | 2/10 [00:02<00:08,  1.06s/it] 30%|███       | 3/10 [00:03<00:06,  1.06it/s] 40%|████      | 4/10 [00:03<00:05,  1.12it/s] 50%|█████     | 5/10 [00:04<00:04,  1.16it/s] 60%|██████    | 6/10 [00:05<00:03,  1.19it/s] 70%|███████   | 7/10 [00:06<00:02,  1.20it/s] 80%|████████  | 8/10 [00:07<00:01,  1.21it/s] 90%|█████████ | 9/10 [00:07<00:00,  1.22it/s]100%|██████████| 10/10 [00:08<00:00,  1.23it/s]100%|██████████| 10/10 [00:08<00:00,  1.15it/s]
-Saving outputs for task - continuous_outcomes; prompt - yaml; model - pmc-llama to csv and json
-Task outputs saved to evaluation/outputs/continuous_outcomes/pmc-llama_continuous_outcomes_dev_output_20240322-18:04:09.json and evaluation/outputs/continuous_outcomes/pmc-llama_continuous_outcomes_dev_output_20240322-18:04:09.csv

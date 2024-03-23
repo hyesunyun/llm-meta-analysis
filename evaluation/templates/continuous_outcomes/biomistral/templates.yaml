@@ -1,0 +1,28 @@
+dataset: continuous_outcomes
+templates:
+  e2d3d554-453e-428b-b77f-bc0731df0a9e: !Template
+    id: e2d3d554-453e-428b-b77f-bc0731df0a9e
+    prompt: |+ 
+      <s>[INST] Article: {abstract_and_results_xml}
+
+      Based on the given trial article, what is the table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome?
+      Intervention: {intervention}
+      Comparator: {comparator}
+      Outcome: {outcome}
+      
+      Include the total size of each group for Intervention and Comparator. 
+      The YAML format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
+      intervention:
+          mean: NUMBER
+          standard_deviation: NUMBER
+          group_size: NUMBER
+      comparator:
+          mean: NUMBER
+          standard_deviation: NUMBER
+          group_size: NUMBER
+
+      Only produce YAML response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
+      If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
+
+      YAML: [/INST]
+    name: yaml
