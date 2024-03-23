@@ -1,7 +1,7 @@
 dataset: outcome_type
 templates:
-  2e997682-d51c-4831-9c23-70e4a80520da: !Template
-    id: 2e997682-d51c-4831-9c23-70e4a80520da
+  ae1453d3-e455-4eca-bceb-45bcbd9b6036: !Template
+    id: ae1453d3-e455-4eca-bceb-45bcbd9b6036
     prompt: |+ 
       Do NOT provide an explanation.
       **QUESTION:** Is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type? 
@@ -10,8 +10,8 @@ templates:
       (C) unknown - there is insufficient information to make any inference
       **ANSWER:**
     name: without-abstract-results
-  93d4bb52-7167-4ad5-b314-cc6a978e1b0f: !Template
-    id: 93d4bb52-7167-4ad5-b314-cc6a978e1b0f
+  4dbe7f85-5b57-4662-a45d-068d6b7d0833: !Template
+    id: 4dbe7f85-5b57-4662-a45d-068d6b7d0833
     prompt: |+
       Article: {{abstract_and_results_xml}}
       Do NOT provide an explanation.
