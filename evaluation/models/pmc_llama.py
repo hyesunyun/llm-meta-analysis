@@ -34,7 +34,7 @@ class PMCLlama(Model):
         try:
             inputs = self.tokenizer(input, return_tensors="pt").to(self.device)
             with torch.no_grad():
-                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens)
+                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=True, top_k=50) # used the same parameters as the example in the hugginface model card: https://huggingface.co/axiong/PMC_LLaMA_13B
             return self.tokenizer.decode(result[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)

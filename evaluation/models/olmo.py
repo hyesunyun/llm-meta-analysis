@@ -39,7 +39,7 @@ class Olmo(Model):
             prompt = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
             inputs = self.tokenizer.encode(prompt, add_special_tokens=False, return_tensors="pt").to(self.device)
             with torch.no_grad():
-                result = self.model.generate(inputs, max_new_tokens=max_new_tokens)
+                result = self.model.generate(inputs, max_new_tokens=max_new_tokens, do_sample=True, top_k=50, top_p=0.95) # used the same parameters as the example in the hugginface model card: https://huggingface.co/allenai/OLMo-7B-Instruct
             return self.tokenizer.decode(result[0, inputs.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)

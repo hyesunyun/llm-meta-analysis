@@ -14,7 +14,8 @@ class BioMistral(Model):
 
     def load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens
-        # also have only been evaluated on biomedical tasks that are multiple choice questions      
+        # also have only been evaluated on biomedical tasks that are multiple choice questions 
+        # after supervised fine tuning so not sure it's true performance on true zero shot open ended generation     
         model = AutoModelForCausalLM.from_pretrained("BioMistral/BioMistral-7B", device_map="auto")
         return model
 
@@ -35,7 +36,7 @@ class BioMistral(Model):
         try:
             inputs = self.tokenizer(input, return_tensors="pt").to(self.device)
             with torch.no_grad():
-                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens)
+                result = self.model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=True) # same as mistral
             return self.tokenizer.decode(result[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
         except Exception as e:
             print("[ERROR]", e)
