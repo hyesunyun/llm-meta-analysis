@@ -10,6 +10,8 @@ from models.pmc_llama import PMCLlama
 from models.olmo import Olmo
 from models.model import Model
 
+from input_chunker import InputChunker
+
 from utils import (
     format_example_with_prompt_template, 
     load_json_file, 
@@ -164,16 +166,46 @@ class MetaAnalysisTaskRunner:
         
         prompt = prompts[prompt_template_name]
 
-        # format the dataset with the prompt template
-        dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
+        # for outcome_type, we don't need chunking since we don't add any abstract/results text to prompt
+        if self.task == "outcom_type":
+            # format the dataset with the prompt template
+            dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
 
-        # run the task using specified model
-        results = []
-        pbar = tqdm(dataset)
-        for _, example in enumerate(pbar):
-            output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
-            example["output"] = output
-            results.append(example)
+            # run the task using specified model
+            results = []
+            pbar = tqdm(dataset)
+            for _, example in enumerate(pbar):
+                output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
+                example["output"] = output
+                results.append(example)
+        else: # for binary_outcomes or continuous_outcomes, we need to chunk the input
+            # instantiate input chunker
+            input_chunker = InputChunker(self.model)
+
+            # run the task using specified model
+            results = []
+            pbar = tqdm(self.dataset)
+            for _, example in enumerate(pbar):
+                ico_dict = {
+                    "intervention": example["intervention"],
+                    "comparator": example["comparator"],
+                    "outcomes": example["outcomes"]
+                }
+                chunks = input_chunker.chunk_input(example["abstract_and_results_xml"], ico_dict)
+                chunks_examples = []
+                for chunk in chunks:
+                    chunk_example = example.copy()
+                    chunk_example["abstract_and_results_xml"] = chunk
+                    chunks_examples.append(chunk_example)
+                # format the chunks with the prompt template
+                chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+
+                concatenated_output = ""
+                for chunk in chunks:
+                    output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
+                    concatenated_output = concatenated_output + output + "|"
+                example["output"] = concatenated_output
+                results.append(example)
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")

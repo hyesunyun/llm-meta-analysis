@@ -6,19 +6,30 @@ class PMCLlama(Model):
     def __init__(self) -> None:
         super().__init__()
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.model = self.load_model()
-        self.tokenizer = self.load_tokenizer()
+        self.model = self.__load_model()
+        self.tokenizer = self.__load_tokenizer()
 
     def get_context_length(self) -> int:
         return 2048
+    
+    def encode_text(self, text: str) -> str:
+        """
+        This method encodes the text
 
-    def load_model(self):
+        :param text: text to encode
+
+        :return encoded text
+        """
+        # 30,000 is some arbitrary number that is larger than the maximum context length of the model
+        return self.tokenizer(text, max_length = 30000, return_tensors="pt").input_ids
+
+    def __load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens
         # also have only been evaluated on biomedical tasks that are multiple choice questions      
         model = LlamaForCausalLM.from_pretrained("axiong/PMC_LLaMA_13B", device_map="auto")
         return model
 
-    def load_tokenizer(self):
+    def __load_tokenizer(self):
         tokenizer = LlamaTokenizer.from_pretrained("axiong/PMC_LLaMA_13B")
         return tokenizer
 

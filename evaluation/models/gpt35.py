@@ -1,6 +1,7 @@
 from .model import Model
 from openai import OpenAI
 import time
+import tiktoken
 
 REQ_TIME_GAP = 5 #
 MAX_API_RETRY = 3
@@ -9,9 +10,20 @@ class GPT35(Model):
     def __init__(self) -> None:
         super().__init__()
         self.client = OpenAI(organization='org-amDbJ4wMNLPWA2hhgt3UdF7k',)
+        self.encoder = tiktoken.get_encoding("cl100k_base")
 
     def get_context_length(self) -> int:
         return 16385
+    
+    def encode_text(self, text: str) -> str:
+        """
+        This method encodes the text
+
+        :param text: text to encode
+
+        :return encoded text
+        """
+        return self.encoder.encode(text)
     
     def generate_output(self, input: str, max_new_tokens: int, temperature: str = 1) -> str:
         """

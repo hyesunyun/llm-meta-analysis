@@ -6,19 +6,29 @@ class Gemma(Model):
     def __init__(self) -> None:
         super().__init__()
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.model = self.load_model()
-        self.tokenizer = self.load_tokenizer()
+        self.model = self.__load_model()
+        self.tokenizer = self.__load_tokenizer()
 
     def get_context_length(self) -> int:
         return 8192
+    
+    def encode_text(self, text: str) -> str:
+        """
+        This method encodes the text
 
-    def load_model(self):
+        :param text: text to encode
+
+        :return encoded text
+        """
+        return self.tokenizer(text, return_tensors="pt").input_ids
+
+    def __load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens
         # also have only been evaluated on biomedical tasks that are multiple choice questions      
         model = AutoModelForCausalLM.from_pretrained("google/gemma-7b-it", device_map="auto")
         return model
 
-    def load_tokenizer(self):
+    def __load_tokenizer(self):
         tokenizer = AutoTokenizer.from_pretrained("google/gemma-7b-it")
         return tokenizer
 

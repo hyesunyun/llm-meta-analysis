@@ -20,3 +20,14 @@ class Model(ABC):
 
         """
         pass
+    
+    @abstractmethod
+    def encode_text(self, text: str) -> str:
+        """
+        This method encodes the text
+
+        :param text: text to encode
+
+        :return encoded text
+        """
+        pass

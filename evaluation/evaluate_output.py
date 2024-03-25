@@ -43,7 +43,7 @@ class MetaAnalysisTaskEvaluator:
             new_item = {"outcome_type_output": output_outcome_type}
             example.update(new_item)
 
-    def __preprocess_binary_outcomes_results(self) -> None:
+    def __preprocess_binary_outcomes_results(self) -> None: # TODO: need to implement case for chunking
         """
         This method preprocesses the data for binary_outcomes task
         """
@@ -84,7 +84,7 @@ class MetaAnalysisTaskEvaluator:
             }
             example.update(new_item)
 
-    def __preprocess_continuous_outcomes_results(self) -> None:
+    def __preprocess_continuous_outcomes_results(self) -> None: # TODO: need to implement case for chunking
         """
         This method preprocesses the data for continuous_outcomes task
         """

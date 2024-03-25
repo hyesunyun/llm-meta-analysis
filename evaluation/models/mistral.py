@@ -6,19 +6,29 @@ class Mistral(Model):
     def __init__(self) -> None:
         super().__init__()
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.model = self.load_model()
-        self.tokenizer = self.load_tokenizer()
+        self.model = self.__load_model()
+        self.tokenizer = self.__load_tokenizer()
 
     def get_context_length(self) -> int:
         return 8192
+    
+    def encode_text(self, text: str) -> str:
+        """
+        This method encodes the text
 
-    def load_model(self): # context window size: 32k tokens but 8k tokens is recommended for best performance
+        :param text: text to encode
+
+        :return encoded text
+        """
+        return self.tokenizer(text, return_tensors="pt").input_ids
+
+    def __load_model(self): # context window size: 32k tokens but 8k tokens is recommended for best performance
         model = AutoModelForCausalLM.from_pretrained(
             "mistralai/Mistral-7B-Instruct-v0.2", device_map="auto"
         )
         return model
 
-    def load_tokenizer(self):
+    def __load_tokenizer(self):
         tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2")
         # tokenizer.pad_token = tokenizer.eos_token  # Most LLMs don't have a pad token by default
         return tokenizer
