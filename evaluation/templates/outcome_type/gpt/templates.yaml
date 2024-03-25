@@ -8,7 +8,7 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      **ANSWER:** 
+      **ANSWER:** ( 
     name: without-abstract-results
   fa50e89d-d00e-48cf-836c-252b2907af59: !Template
     id: fa50e89d-d00e-48cf-836c-252b2907af59
@@ -19,5 +19,5 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      **ANSWER:** 
+      **ANSWER:** ( 
     name: with-abstract-results

@@ -15,7 +15,7 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      ### Response:
+      ### Response: (
     name: without-abstract-results
   15d354d7-4629-49c4-8127-4ebdb047bbc6: !Template
     id: 15d354d7-4629-49c4-8127-4ebdb047bbc6
@@ -33,5 +33,5 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      ### Response:
+      ### Response: (
     name: with-abstract-results

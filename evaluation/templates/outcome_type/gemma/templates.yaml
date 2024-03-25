@@ -8,7 +8,7 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      **ANSWER:**
+      **ANSWER:** (
     name: without-abstract-results
   9e5aefb1-c7f9-4530-98c9-e60ac144b6e4: !Template
     id: 9e5aefb1-c7f9-4530-98c9-e60ac144b6e4
@@ -19,5 +19,5 @@ templates:
       (A) binary
       (B) continuous
       (C) unknown - there is insufficient information to make any inference
-      **ANSWER:** 
+      **ANSWER:** (
     name: with-abstract-results
