@@ -1,0 +1,14 @@
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        gpt4
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  None
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes
+Is Test:      True
+
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 1316.77it/s]
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:11<01:46, 11.86s/it] 20%|██        | 2/10 [00:18<01:12,  9.02s/it] 30%|███       | 3/10 [00:33<01:20, 11.50s/it] 40%|████      | 4/10 [00:45<01:10, 11.69s/it] 50%|█████     | 5/10 [00:53<00:51, 10.35s/it] 60%|██████    | 6/10 [01:01<00:37,  9.48s/it] 70%|███████   | 7/10 [01:10<00:27,  9.33s/it] 80%|████████  | 8/10 [01:17<00:17,  8.85s/it] 90%|█████████ | 9/10 [01:26<00:08,  8.81s/it]100%|██████████| 10/10 [01:36<00:00,  9.23s/it]100%|██████████| 10/10 [01:36<00:00,  9.68s/it]
+Saving outputs for task - binary_outcomes; prompt - yaml; model - gpt4 to csv and json
+Task outputs saved to /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/gpt4_binary_outcomes_dev_output_20240325-16:15:36.json and /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/gpt4_binary_outcomes_dev_output_20240325-16:15:36.csv

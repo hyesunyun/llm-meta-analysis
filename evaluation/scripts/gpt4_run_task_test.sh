@@ -14,4 +14,4 @@ source activate llm-meta-analysis
 export $(xargs < ../../.env)
 
 # outcome_types
-python3 ../run_task.py --model gpt4 --task outcome_type --split dev --prompt without-abstract-results --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type --test
+python3 ../run_task.py --model gpt4 --task binary_outcomes --split dev --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes --test
