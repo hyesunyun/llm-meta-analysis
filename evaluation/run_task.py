@@ -222,6 +222,8 @@ class MetaAnalysisTaskRunner:
                         chunks_examples.append(chunk_example)
                     # format the chunks with the prompt template
                     chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+                    num_chunks = len(chunks)
+                    example["num_chunks"] = num_chunks
 
                     concatenated_output = ""
                     for chunk in chunks:

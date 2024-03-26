@@ -1,16 +1,0 @@
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/torch/cuda/__init__.py:141: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /opt/conda/conda-bld/pytorch_1704987288773/work/c10/cuda/CUDAFunctions.cpp:108.)
-  return torch._C._cuda_getDeviceCount() > 0
-Arguments for the Clinical Trials Meta Analysis Task Runner:
-Model:        gpt4
-Task:         outcome_type
-Split:        dev
-Prompt Name:  without-abstract-results
-Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
-Is Test:      True
-
-  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 2214.87it/s]
-  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:22,  2.52s/it] 20%|██        | 2/10 [00:06<00:28,  3.57s/it] 30%|███       | 3/10 [00:09<00:23,  3.31s/it] 40%|████      | 4/10 [00:13<00:20,  3.45s/it] 50%|█████     | 5/10 [00:16<00:16,  3.20s/it] 60%|██████    | 6/10 [00:19<00:13,  3.28s/it] 70%|███████   | 7/10 [00:23<00:10,  3.38s/it] 80%|████████  | 8/10 [00:25<00:06,  3.10s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.09s/it]100%|██████████| 10/10 [00:31<00:00,  2.82s/it]100%|██████████| 10/10 [00:31<00:00,  3.11s/it]
-Saving outputs for task - outcome_type; prompt - without-abstract-results; model - gpt4 to csv and json
-Task outputs saved to /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/gpt4_outcome_type_dev_output_20240325-11:09:42.json and /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/gpt4_outcome_type_dev_output_20240325-11:09:42.csv

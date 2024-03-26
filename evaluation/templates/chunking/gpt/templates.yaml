@@ -4,9 +4,12 @@ templates:
     id: 4bcbc203-0a23-4385-804d-0e9d5b14ce2a
     prompt: |+ 
       Do NOT provide an explanation.
-      **QUESTION:** Is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type? 
-      (A) binary
-      (B) continuous
-      (C) unknown - there is insufficient information to make any inference
+      **ARTICLE:** {{abstract_and_results_xml}}
+      **INTERVENTION:** {{intervention}}
+      **COMPARATOR:** {{comparator}}
+      **OUTCOME:** {{outcome}}
+      **QUESTION:** Does the given part of the article include any relevant values for meta-analysis (intervention events, intervention group size, comparator events, comparator group size, intervention mean, intervention standard deviation, comparator mean, or comparator standard deviation) for the given intervention, comparator, and outcome?
+      (A) no
+      (B) yes
       **ANSWER:** ( 
-    name: without-abstract-results
+    name: multiple-choice
