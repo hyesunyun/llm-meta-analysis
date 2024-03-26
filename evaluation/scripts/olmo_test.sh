@@ -15,8 +15,4 @@ source activate llm-meta-analysis
 
 export $(xargs < ../../.env)
 
-# json
-python3 ../run_task.py --model olmo7B --task binary_outcomes --split dev --prompt json --output_path evaluation/outputs/binary_outcomes --test
-
-# yaml
-python3 ../run_task.py --model olmo7B --task binary_outcomes --split dev --prompt yaml --output_path evaluation/outputs/binary_outcomes --test
+python3 ../run_task.py --model olmo7B --task binary_outcomes --split dev --output_path evaluation/outputs/binary_outcomes --test

@@ -1,0 +1,29 @@
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+The model weights are not tied. Please use the `tie_weights` method before using the `infer_auto_device` function.
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        olmo7B
+Task:         binary_outcomes
+Split:        dev
+Prompt Name:  None
+Output Path:  evaluation/outputs/binary_outcomes
+Is Test:      True
+
+Output path did not exist. Directory was created.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:08<00:08,  8.52s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  5.80s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  6.20s/it]
+  0%|          | 0/10 [00:00<?, ?it/s]100%|██████████| 10/10 [00:00<00:00, 1309.04it/s]
+WARNING:root:Tried instantiating `DatasetTemplates` for chunking/, but no prompts found. Please ignore this warning if you are creating new prompts for this dataset.
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../run_task.py", line 331, in <module>
+    json_file_path, csv_file_path = task_runner.run_task()
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../run_task.py", line 197, in run_task
+    input_chunker = InputChunker(self.model)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/input_chunker.py", line 14, in __init__
+    self.__load_prompt_template() # loads the actual prompt template for the model
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/input_chunker.py", line 88, in __load_prompt_template
+    prompt_template_name = prompts.all_template_names[0]
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
