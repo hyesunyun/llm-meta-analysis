@@ -165,12 +165,26 @@ class MetaAnalysisTaskRunner:
             prompt_template_name = self.prompt_name
         
         prompt = prompts[prompt_template_name]
+        
+        # ORIGINAL CODE
+        # # format the dataset with the prompt template
+        # dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
+
+        # # run the task using specified model
+        # results = []
+        # pbar = tqdm(dataset)
+        # for _, example in enumerate(pbar):
+        #     output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
+        #     example["output"] = output
+        #     results.append(example)
+
+        # CODE WITH CHUNKING
+
+        # format the dataset with the prompt template
+        dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
 
         # for outcome_type, we don't need chunking since we don't add any abstract/results text to prompt
         if self.task == "outcom_type":
-            # format the dataset with the prompt template
-            dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
-
             # run the task using specified model
             results = []
             pbar = tqdm(dataset)
@@ -184,28 +198,36 @@ class MetaAnalysisTaskRunner:
 
             # run the task using specified model
             results = []
-            pbar = tqdm(self.dataset)
+            pbar = tqdm(dataset)
             for _, example in enumerate(pbar):
-                ico_dict = {
-                    "intervention": example["intervention"],
-                    "comparator": example["comparator"],
-                    "outcomes": example["outcomes"]
-                }
-                chunks = input_chunker.chunk_input(example["abstract_and_results_xml"], ico_dict)
-                chunks_examples = []
-                for chunk in chunks:
-                    chunk_example = example.copy()
-                    chunk_example["abstract_and_results_xml"] = chunk
-                    chunks_examples.append(chunk_example)
-                # format the chunks with the prompt template
-                chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+                input_token_count = input_chunker.count_token(example["input"])
 
-                concatenated_output = ""
-                for chunk in chunks:
-                    output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
-                    concatenated_output = concatenated_output + output + "|"
-                example["output"] = concatenated_output
-                results.append(example)
+                if input_token_count == self.model.get_context_length(): # if the model can handle the tokens, just do as normal
+                    output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
+                    example["output"] = output
+                    results.append(example)
+                else:
+                    ico_dict = {
+                        "intervention": example["intervention"],
+                        "comparator": example["comparator"],
+                        "outcomes": example["outcomes"]
+                    }
+                    max_tokens = self.model.get_context_length() - 300 # account for the actual prompt, 300 as approx num of tokens of prompt template
+                    chunks = input_chunker.chunk_input(example["abstract_and_results_xml"], ico_dict, max_tokens)
+                    chunks_examples = []
+                    for chunk in chunks:
+                        chunk_example = example.copy()
+                        chunk_example["abstract_and_results_xml"] = chunk
+                        chunks_examples.append(chunk_example)
+                    # format the chunks with the prompt template
+                    chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+
+                    concatenated_output = ""
+                    for chunk in chunks:
+                        output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
+                        concatenated_output = concatenated_output + output + "\n---\n"
+                    example["output"] = concatenated_output
+                    results.append(example)
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")

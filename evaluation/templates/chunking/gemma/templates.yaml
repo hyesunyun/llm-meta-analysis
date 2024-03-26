@@ -1,0 +1,12 @@
+dataset: chunking
+templates:
+  b7f73d2a-6dad-4ce7-8457-497206059704: !Template
+    id: b7f73d2a-6dad-4ce7-8457-497206059704
+    prompt: |+ 
+      Do NOT provide an explanation.
+      **QUESTION:** Is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type? 
+      (A) binary
+      (B) continuous
+      (C) unknown - there is insufficient information to make any inference
+      **ANSWER:** (
+    name: without-abstract-results

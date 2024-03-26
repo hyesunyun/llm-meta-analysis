@@ -133,18 +133,22 @@ def calculate_odds_ratio(intervention_events: int, control_events: int, interven
 
     :return odds ratio
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_events, control_events, intervention_total, control_total):
-        return None
-    
-    intervention_nonevents = intervention_total - intervention_events
-    control_nonevents = control_total - control_events
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        
+        intervention_nonevents = intervention_total - intervention_events
+        control_nonevents = control_total - control_events
 
-    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+            return None
+        else:
+            return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
+    except:
+        print(f"An exception occurred for calculate odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
-    else:
-        return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
 
 def calculate_standard_error_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -157,19 +161,23 @@ def calculate_standard_error_log_odds_ratio(intervention_events: int, control_ev
 
     :return standard error of the log odds ratio
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_events, control_events, intervention_total, control_total):
-        return None
-    
-    intervention_nonevents = intervention_total - intervention_events
-    control_nonevents = control_total - control_events
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        
+        intervention_nonevents = intervention_total - intervention_events
+        control_nonevents = control_total - control_events
 
-    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-    
-    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+        
+        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+            return None
+        else:
+            return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
+    except:
+        print(f"An exception occurred for calculate standard error log odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
-    else:
-        return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
 
 def calculate_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -182,18 +190,22 @@ def calculate_risk_ratio(intervention_events: int, control_events: int, interven
 
     :return risk ratio
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_events, control_events, intervention_total, control_total):
-        return None
-    
-    intervention_nonevents = intervention_total - intervention_events
-    control_nonevents = control_total - control_events
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        
+        intervention_nonevents = intervention_total - intervention_events
+        control_nonevents = control_total - control_events
 
-    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+            return None
+        else:
+            return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
+    except:
+        print(f"An exception occurred for calculate risk ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
-    else:
-        return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
 
 def calculate_standard_error_log_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -206,18 +218,22 @@ def calculate_standard_error_log_risk_ratio(intervention_events: int, control_ev
 
     :return standard error of the log risk ratio
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_events, control_events, intervention_total, control_total):
-        return None
-    
-    intervention_nonevents = intervention_total - intervention_events
-    control_nonevents = control_total - control_events
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        
+        intervention_nonevents = intervention_total - intervention_events
+        control_nonevents = control_total - control_events
 
-    intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-    if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
+            return None
+        else:
+            return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
+    except:
+        print(f"An exception occurred for calculate standard error log risk ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
-    else:
-        return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
 
 def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int, control_nonevents: int) -> float:
     """
@@ -254,11 +270,15 @@ def calculate_mean_difference(intervention_mean: float, control_mean: float) -> 
 
     :return mean difference
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_mean, control_mean):
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_mean, control_mean):
+            return None
+        
+        return intervention_mean - control_mean
+    except:
+        print(f"An exception occurred for calculate mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}")
         return None
-    
-    return intervention_mean - control_mean
 
 def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
     """
@@ -271,8 +291,12 @@ def calculate_standard_error_mean_difference(intervention_sd: float, control_sd:
 
     :return standard error of the mean difference
     """
-    # need to check for x or unknown in the values
-    if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+            return None
+        
+        return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
+    except:
+        print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
-    
-    return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5

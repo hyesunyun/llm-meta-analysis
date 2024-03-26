@@ -1,0 +1,19 @@
+dataset: chunking
+templates:
+  9980ba77-c885-4399-99cf-89e61d65edc6: !Template
+    id: 9980ba77-c885-4399-99cf-89e61d65edc6
+    prompt: |+ 
+      Below is an instruction that describes a task, paired with an input that provides further context.
+      Write a response that appropriately completes the request.
+      
+      ### Instruction:
+       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      
+      ### Input:
+      ### Question: Is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type?
+      ### Options:
+      (A) binary
+      (B) continuous
+      (C) unknown - there is insufficient information to make any inference
+      ### Response: (
+    name: without-abstract-results

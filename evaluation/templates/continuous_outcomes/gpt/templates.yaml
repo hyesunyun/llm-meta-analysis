@@ -3,12 +3,12 @@ templates:
   afa2c607-d7f9-4b06-bdce-2e97d0a8127e: !Template
     id: afa2c607-d7f9-4b06-bdce-2e97d0a8127e
     prompt: |+ 
-      Article: {abstract_and_results_xml}
+      Article: {{abstract_and_results_xml}}
 
       Based on the given trial article, what is the table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome?
-      Intervention: {intervention}
-      Comparator: {comparator}
-      Outcome: {outcome}
+      Intervention: {{intervention}}
+      Comparator: {{comparator}}
+      Outcome: {{outcome}}
       
       Include the total size of each group for Intervention and Comparator. 
       The YAML format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example:

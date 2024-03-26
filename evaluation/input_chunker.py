@@ -50,7 +50,7 @@ class InputChunker:
         # Remove the html and body tags
         return self.__remove_html_body(soup)
     
-    def __count_tokens(self, text: str) -> int:
+    def count_tokens(self, text: str) -> int:
         """
         Count the number of tokens in the text.
         

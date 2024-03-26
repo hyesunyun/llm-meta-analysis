@@ -1,0 +1,48 @@
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/gpt4_continuous_outcomes_test_output_20240325-18:45:56.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes
+
+An exception occurred for calculate mean difference - intervention_mean: 35.2%, control_mean: 9.9%
+An exception occurred for calculate standard error mean difference - intervention_sd: 21.7%, control_sd: 14.5%, intervention_total: 44, control_total: 44
+An exception occurred for calculate standard error mean difference - intervention_sd: 4.3 to 32.1, control_sd: 4.2 to 31.6, intervention_total: 22, control_total: 22
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 52,
+        "intervention_standard_deviation": 66,
+        "intervention_group_size": 32,
+        "comparator_mean": 60,
+        "comparator_standard_deviation": 73,
+        "comparator_group_size": 41,
+        "total": 324
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.7690721649484537,
+        "intervention_standard_deviation": 0.7505154639175258,
+        "intervention_group_size": 0.8123711340206186,
+        "comparator_mean": 0.7443298969072165,
+        "comparator_standard_deviation": 0.7360824742268042,
+        "comparator_group_size": 0.7731958762886598,
+        "total": 0.5257731958762887
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.9670103092783505,
+        "partial_match_accuracy_2": 0.954639175257732,
+        "partial_match_accuracy_3": 0.7917525773195876,
+        "partial_match_accuracy_4": 0.7752577319587629,
+        "partial_match_accuracy_5": 0.5711340206185567
+    },
+    "point_estimates": {
+        "mean_difference": {
+            "mean_absolute_error": 0.7337551020408162,
+            "mean_squared_error": 11.603126938775514,
+            "root_mean_squared_error": 3.40633629267216
+        },
+        "se_mean_difference": {
+            "mean_absolute_error": 2.46944804621851,
+            "mean_squared_error": 530.4236135203812,
+            "root_mean_squared_error": 23.03092732654031
+        }
+    }
+}

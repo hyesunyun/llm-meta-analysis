@@ -1,4 +1,5 @@
 from typing import Dict, Tuple, List
+import math
 
 class MetricsCalculator:
     def __init__(self, task: str) -> None:
@@ -67,17 +68,16 @@ class MetricsCalculator:
         :return: mean squared error as a float
         """
         total_num = 0
-        list_of_diff_squared = []
+        summation = 0
         for a, p in zip(actual, predicted):
             if None in (a, p):
                 continue
             else:
                 total_num += 1
                 diff_squared = (a - p) ** 2
-                list_of_diff_squared.append(diff_squared)
+                summation += diff_squared
+        return summation / total_num
 
-        return sum(list_of_diff_squared) / total_num
-    
     def __calculate_root_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the root mean squared error
@@ -87,7 +87,7 @@ class MetricsCalculator:
 
         :return: root mean squared error as a float
         """
-        return self.__calculate_mean_squared_error(actual, predicted) ** 0.5
+        return math.sqrt(self.__calculate_mean_squared_error(actual, predicted))
 
     def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:
         """
@@ -173,7 +173,7 @@ class MetricsCalculator:
         
         metrics = {}
         for i, field in enumerate(relevant_output_fields):
-            unknowns = sum([1 for example in data if example[field] == "x" and example[relevant_reference_fields[i]] != "x"])
+            unknowns = sum([1 for example in data if (example[field] == "x" and example[relevant_reference_fields[i]] != "x") or example[field] == "unknown"])
             metrics[relevant_reference_fields[i]] = unknowns
         metrics["total"] = sum(metrics.values())
         return metrics

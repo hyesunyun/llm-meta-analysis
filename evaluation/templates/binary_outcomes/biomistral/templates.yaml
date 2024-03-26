@@ -3,12 +3,12 @@ templates:
   b0b690f3-65d1-456a-a4b4-c52dfa1c0938: !Template
     id: b0b690f3-65d1-456a-a4b4-c52dfa1c0938
     prompt: |+ 
-      <s>[INST] Article: {abstract_and_results_xml}
+      <s>[INST] Article: {{abstract_and_results_xml}}
 
       Based on the given trial article, what is the 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome?
-      Intervention: {intervention}
-      Comparator: {comparator}
-      Outcome: {outcome}
+      Intervention: {{intervention}}
+      Comparator: {{comparator}}
+      Outcome: {{outcome}}
       
       The YAML format should include the fields "events" and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
       intervention:

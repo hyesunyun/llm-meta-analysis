@@ -83,6 +83,7 @@ class MetaAnalysisTaskEvaluator:
                 "se_log_risk_ratio_output": calculate_standard_error_log_risk_ratio(ie_output, ce_output, it_output, ct_output),
             }
             example.update(new_item)
+            print(example)
 
     def __preprocess_continuous_outcomes_results(self) -> None: # TODO: need to implement case for chunking
         """

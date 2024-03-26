@@ -1,0 +1,13 @@
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 155,
+        "total": 155
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.7134146341463414,
+        "total": 0.7134146341463414
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.7134146341463414
+    }
+}
