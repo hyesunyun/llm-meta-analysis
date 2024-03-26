@@ -1,0 +1,11 @@
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Arguments for the Clinical Trials Meta Analysis Task Runner:
+Model:        pmc-llama
+Task:         outcome_type
+Split:        test
+Prompt Name:  without-abstract-results
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
+Is Test:      None
+
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [02:42<13:31, 162.24s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [05:59<12:10, 182.61s/it]

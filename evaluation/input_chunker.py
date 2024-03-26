@@ -7,7 +7,8 @@ from models.model import Model
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
 class InputChunker:
-    def __init__(self, model: Model) -> None:
+    def __init__(self, model_name: str, model: Model) -> None:
+        self.model_name = model_name # the name of the model (parameter for run_task.py)
         self.model = model # model object for GPT models or other models (HuggingFace)
         self.prompt_template = None
         
@@ -60,7 +61,7 @@ class InputChunker:
         Returns:
         token_count: integer
         """
-        return len(self.tokenizer.encode_text(text))
+        return len(self.model.encode_text(text))
     
     def __load_prompt_template(self) -> Template:
         """
@@ -68,30 +69,29 @@ class InputChunker:
 
         :return string of the full prompt template
         """
-        model_class_name = self.model.__class__.__name__
-        print(model_class_name)
-        if "gpt" in model_class_name:
+        if "gpt" in self.model_name:
             prompt_template = "chunking/gpt"
-        elif "pmc-llama" in model_class_name: 
+        elif "pmc-llama" == self.model_name: 
             prompt_template = "chunking/pmc-llama"
-        elif model_class_name == "mistral7B":
+        elif "mistral" in self.model_name:
             prompt_template = "chunking/mistral"
-        elif model_class_name == "biomistral":
+        elif "biomistral" == self.model_name:
             prompt_template = "chunking/biomistral"
-        elif "gemma" in model_class_name:
+        elif "gemma" in self.model_name:
             prompt_template = "chunking/gemma"
-        elif "olmo" in model_class_name:
+        elif "olmo" in self.model_name:
             prompt_template = "chunking/olmo"
         else:
             prompt_template = "chunking/" # default. this should never really happen
 
         prompts = DatasetTemplates(prompt_template)
-        prompt_template_name = prompts.all_template_names[0]
+        all_prompt_templates = prompts.all_template_names
+        prompt_template_name = all_prompt_templates[0]
         prompt = prompts[prompt_template_name]
 
-        self.prompt = prompt
+        self.prompt_template = prompt
 
-    def __convert_output_to_boolean(answer: str) -> bool:
+    def __convert_output_to_boolean(self, answer: str) -> bool:
         """
         This method converts the answer from string to boolean.
 
@@ -126,9 +126,9 @@ class InputChunker:
         """
         example = ico_dict
         example["chunk"] = text
-        example["input"] = format_example_with_prompt_template(ico_dict, self.prompt)
+        example = format_example_with_prompt_template(ico_dict, self.prompt_template)
 
-        model_output = self.model.generate_output(example["input"], 1)
+        model_output = self.model.generate_output(example["input"], 3)
         model_output = model_output.strip()
 
         return self.__convert_output_to_boolean(model_output)
@@ -147,17 +147,14 @@ class InputChunker:
         """
         keep_chunks = []
 
-        def process_chunk(chunk: BeautifulSoup) -> None:
+        def process_chunk() -> None:
             """
             Process the chunk.
-
-            Args:
-            chunk: BeautifulSoup object
 
             Returns:
             None
             """
-            chunk = deepcopy(chunk)
+            chunk = deepcopy(child)
             is_relevant = self.__is_relevant(chunk, ico_dict)
 
             is_p_tag = chunk.name == 'p'
@@ -166,11 +163,11 @@ class InputChunker:
             if (is_table and is_relevant) or (is_p_tag and is_relevant):
                 keep_chunks.append(chunk)
 
-            elif self.__count_tokens(str(chunk)) >= max_tokens and is_relevant and not is_table:
+            elif self.count_tokens(str(chunk)) >= max_tokens and is_relevant and not is_table:
                 # Chunk it further, recursively
                 keep_chunks.extend(self.__chunk_xml(chunk, max_tokens))
 
-            elif self.__count_tokens(str(chunk)) < max_tokens and is_relevant:
+            elif self.count_tokens(str(chunk)) < max_tokens and is_relevant:
                 # if the chunk is too small and the condition is true, keep it
                 keep_chunks.append(chunk)
             
@@ -179,7 +176,7 @@ class InputChunker:
                 pass
 
         for child in xml_soup_element.contents:
-            process_chunk(child)
+            process_chunk()
 
         return keep_chunks
     
@@ -199,7 +196,7 @@ class InputChunker:
         current_length = 0
 
         for soup in chunks_list:
-            soup_length = self.__count_tokens(str(soup))
+            soup_length = self.count_tokens(str(soup))
             # If adding this soup would exceed max_length, finish the current chunk
             if current_length + soup_length > max_tokens:
                 if current_length > 0: # Avoid adding empty chunks

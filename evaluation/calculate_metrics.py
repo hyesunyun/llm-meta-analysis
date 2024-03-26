@@ -14,7 +14,7 @@ class MetricsCalculator:
         :return tuple of list of keys to calculate the metrics
         """
         search_key = "_output"
-        point_estimates_fields = ['odds_ratio_output', 'se_log_odds_ratio_output', 'risk_ratio_output', 'se_log_risk_ratio_output', 'mean_difference_output', 'se_mean_difference_output']
+        point_estimates_fields = ['log_odds_ratio_output', 'se_log_odds_ratio_output', 'standardized_mean_difference_output', 'se_standardized_mean_difference_output']
         if is_point_estimates:
             relevant_output_fields = [key for key in data.keys() if key in point_estimates_fields]
         else:
@@ -177,6 +177,23 @@ class MetricsCalculator:
             metrics[relevant_reference_fields[i]] = unknowns
         metrics["total"] = sum(metrics.values())
         return metrics
+
+    def __calculate_number_of_reference_unknowns(self, data: List[Dict]) -> Dict:
+        """
+        This method calculates the number of unknowns or "x" in the data by human annotators
+
+        :param data: list of dictionaries with the data to calculate the number of unknowns
+        :return: Dictionary with the number of unknowns for each field and total
+        """
+        item = data[0]
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
+        
+        metrics = {}
+        for i, field in enumerate(relevant_reference_fields):
+            unknowns = sum([1 for example in data if example[relevant_reference_fields[i]] == "x"])
+            metrics[relevant_reference_fields[i]] = unknowns
+        metrics["total"] = sum(metrics.values())
+        return metrics
     
     def __calculate_point_estimates_metrics(self, data: List[Dict]) -> Dict:
         """
@@ -215,6 +232,7 @@ class MetricsCalculator:
 
         # calculate number of unknowns
         metrics["number_of_model_unknowns"] = self.__calculate_number_of_model_unknowns(data)
+        metrics["number_of_reference_unknowns"] = self.__calculate_number_of_reference_unknowns(data)
 
         # calculate exact match accuracy
         metrics["exact_match_accuracy"] = self.__calculate_exact_match_accuracy(data)
