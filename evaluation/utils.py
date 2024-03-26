@@ -137,6 +137,9 @@ def calculate_odds_ratio(intervention_events: int, control_events: int, interven
         # need to check for x or unknown in the values
         if "x" in (intervention_events, control_events, intervention_total, control_total):
             return None
+        # check to make sure that events do not exceed total
+        if (intervention_events > intervention_total) or (control_events > control_total):
+            return None
         
         intervention_nonevents = intervention_total - intervention_events
         control_nonevents = control_total - control_events
@@ -164,6 +167,9 @@ def calculate_standard_error_log_odds_ratio(intervention_events: int, control_ev
     try:
         # need to check for x or unknown in the values
         if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        # check to make sure that events do not exceed total
+        if (intervention_events > intervention_total) or (control_events > control_total):
             return None
         
         intervention_nonevents = intervention_total - intervention_events
@@ -194,6 +200,9 @@ def calculate_risk_ratio(intervention_events: int, control_events: int, interven
         # need to check for x or unknown in the values
         if "x" in (intervention_events, control_events, intervention_total, control_total):
             return None
+        # check to make sure that events do not exceed total
+        if (intervention_events > intervention_total) or (control_events > control_total):
+            return None
         
         intervention_nonevents = intervention_total - intervention_events
         control_nonevents = control_total - control_events
@@ -221,6 +230,9 @@ def calculate_standard_error_log_risk_ratio(intervention_events: int, control_ev
     try:
         # need to check for x or unknown in the values
         if "x" in (intervention_events, control_events, intervention_total, control_total):
+            return None
+        # check to make sure that events do not exceed total
+        if (intervention_events > intervention_total) or (control_events > control_total):
             return None
         
         intervention_nonevents = intervention_total - intervention_events
