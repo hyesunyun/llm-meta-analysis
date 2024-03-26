@@ -38,7 +38,7 @@ class MetricsCalculator:
         correct = 0
         for i in range(num_actual):
             if remove_unknowns and predicted[i] == "x":
-                num_total -= 1
+                num_actual -= 1
                 continue
             if actual[i] == predicted[i]:
                 correct += 1
