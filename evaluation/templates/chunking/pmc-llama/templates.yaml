@@ -10,10 +10,13 @@ templates:
        You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
       
       ### Input:
-      ### Question: Is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type?
+      ### Article {{abstract_and_results_xml}}
+      ### Intervention: {{intervention}}
+      ### Comparator: {{comparator}}
+      ### Outcome: {{outcome}}
+      ### Question: Does the given part of the article include any relevant values for meta-analysis (intervention events, intervention group size, comparator events, comparator group size, intervention mean, intervention standard deviation, comparator mean, or comparator standard deviation) for the given intervention, comparator, and outcome?
       ### Options:
-      (A) binary
-      (B) continuous
-      (C) unknown - there is insufficient information to make any inference
+      (A) no
+      (B) yes
       ### Response: (
     name: without-abstract-results

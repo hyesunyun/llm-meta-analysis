@@ -221,13 +221,15 @@ class MetaAnalysisTaskRunner:
                         chunks_examples.append(chunk_example)
                     # format the chunks with the prompt template
                     chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+                    num_chunks = len(chunks)
+                    example["num_chunks"] = num_chunks
 
                     concatenated_output = ""
                     for chunk in chunks:
                         output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["output"] = concatenated_output
-                    results.append(example)
+                    results.append(example) # TODO: save number of tokens in each chunk, num of calls to the model?
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")
