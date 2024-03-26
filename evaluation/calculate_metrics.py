@@ -1,5 +1,5 @@
 from typing import Dict, Tuple, List
-import math
+from sklearn.metrics import f1_score
 
 class MetricsCalculator:
     def __init__(self, task: str) -> None:
@@ -23,20 +23,47 @@ class MetricsCalculator:
         relevant_reference_fields = [key.replace(search_key, "") for key in relevant_output_fields]
         return relevant_output_fields, relevant_reference_fields
 
-    def __calculate_accuracy(self, actual: List[str], predicted: List[str]) -> float:
+    def __calculate_accuracy(self, actual: List[str], predicted: List[str], remove_unknowns: bool = False) -> float:
         """
         This method calculates the accuracy metric
 
         :param actual: list of actual values
         :param predicted: list of predicted values
+        :param remove_unknowns: boolean to remove unknowns
 
         :return accuracy as a float
         """
+        num_actual = len(actual)
         correct = 0
-        for i in range(len(actual)):
+        for i in range(num_actual):
+            if remove_unknowns and predicted[i] == "x":
+                num_total -= 1
+                continue
             if actual[i] == predicted[i]:
                 correct += 1
-        return correct / float(len(actual))
+        return correct / float(num_actual)
+
+    def __calculate_f_score(self, data: List[Dict]) -> Dict:
+        """
+        This method calculates the F1 score for the given task
+
+        :param data: list of dictionaries with the data to calculate the F1 score
+        :return: dictionary with the F1 score
+        """
+        relevant_output_field = "outcome_type_output"
+        relevant_reference_field = "outcome_type" 
+        string_to_int_labels = {"binary": 0, "continuous": 1, "unknown": 2}
+        metrics = {}
+
+        actual = [example[relevant_reference_field] for example in data]
+        predicted = [example[relevant_output_field] for example in data]
+
+        # convert from string to integer labels
+        actual = [string_to_int_labels[a] for a in actual]
+        predicted = [string_to_int_labels[p] for p in predicted]
+        
+        metrics[relevant_reference_field] = f1_score(actual, predicted, average=None)
+        return metrics
     
     def __calculate_mean_absolute_error(self, actual: List[str], predicted: List[str]) -> float:
         """
@@ -57,43 +84,14 @@ class MetricsCalculator:
                 list_of_abs_diff.append(abs(a - p))
 
         return sum(list_of_abs_diff) / total_num
-    
-    def __calculate_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
-        """
-        This method calculates the mean squared error
 
-        :param actual: list of actual values
-        :param predicted: list of predicted values
-
-        :return: mean squared error as a float
-        """
-        total_num = 0
-        summation = 0
-        for a, p in zip(actual, predicted):
-            if None in (a, p):
-                continue
-            else:
-                total_num += 1
-                diff_squared = (a - p) ** 2
-                summation += diff_squared
-        return summation / total_num
-
-    def __calculate_root_mean_squared_error(self, actual: List[str], predicted: List[str]) -> float:
-        """
-        This method calculates the root mean squared error
-
-        :param actual: list of actual values
-        :param predicted: list of predicted values
-
-        :return: root mean squared error as a float
-        """
-        return math.sqrt(self.__calculate_mean_squared_error(actual, predicted))
-
-    def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:
+    def __calculate_exact_match_accuracy(self, data: List[Dict], remove_unknowns: bool = False) -> Dict:
         """
         This method calculates the exact match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
+        :param remove_unknowns: boolean to remove unknowns
+
         :return: dictionary with the metrics
         """
         item = data[0]
@@ -104,7 +102,7 @@ class MetricsCalculator:
             actual = [example[reference] for example in data]
             predicted = [example[output] for example in data]
 
-            metrics[reference] = self.__calculate_accuracy(actual, predicted)
+            metrics[reference] = self.__calculate_accuracy(actual, predicted, remove_unknowns)
 
         
         # get the total accuracy
@@ -115,15 +113,19 @@ class MetricsCalculator:
         else:
             num_parts = 1
 
+        num_total = len(data)
         correct = 0
         for example in data:
             num_parts_correct = 0
             for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+                if remove_unknowns and example[output] == "x":
+                    num_total -= 1
+                    break
                 if example[output] == example[reference]:
                     num_parts_correct += 1
             if num_parts_correct == num_parts:
                 correct += 1
-        metrics["total"] = correct / float(len(data))
+        metrics["total"] = correct / float(num_total)
 
         return metrics
     
@@ -186,10 +188,10 @@ class MetricsCalculator:
         :return: Dictionary with the number of unknowns for each field and total
         """
         item = data[0]
-        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, False)
+        _, relevant_reference_fields = self.__get_keys_to_compare(item, False)
         
         metrics = {}
-        for i, field in enumerate(relevant_reference_fields):
+        for i, _ in enumerate(relevant_reference_fields):
             unknowns = sum([1 for example in data if example[relevant_reference_fields[i]] == "x"])
             metrics[relevant_reference_fields[i]] = unknowns
         metrics["total"] = sum(metrics.values())
@@ -213,11 +215,8 @@ class MetricsCalculator:
 
             # calculate the mean absolute error
             mean_absolute_error = self.__calculate_mean_absolute_error(actual, predicted)
-            # calculate the mean squared error
-            mean_squared_error = self.__calculate_mean_squared_error(actual, predicted)
-            # calculate the root mean squared error
-            root_mean_squared_error = self.__calculate_root_mean_squared_error(actual, predicted)
-            metrics[reference] = {"mean_absolute_error": mean_absolute_error, "mean_squared_error": mean_squared_error, "root_mean_squared_error": root_mean_squared_error}
+        
+            metrics[reference] = {"mean_absolute_error": mean_absolute_error}
 
         return metrics
 
@@ -236,8 +235,13 @@ class MetricsCalculator:
 
         # calculate exact match accuracy
         metrics["exact_match_accuracy"] = self.__calculate_exact_match_accuracy(data)
+        metrics["exact_match_accuracy_remove_unknowns"] = self.__calculate_exact_match_accuracy(data, True)
         # calcualte partial match accuracy
         metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)
+
+        if self.task == "outcome_type":
+            # calculate the F score for outcome type
+            metrics["outcome_type_f_score"] = self.__calculate_f_score(data)
 
         if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
             # calculate the metrics for point estimates

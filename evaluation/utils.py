@@ -3,6 +3,7 @@ from typing import Dict, List, Optional
 import os
 import json
 import csv
+import math
 
 XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
 
@@ -99,7 +100,11 @@ def convert_character_to_string_outcome_type(outcome_type: str) -> str:
         if not char.isspace():
             outcome_type = char
             break
-    return character_to_string_mapping[outcome_type]
+    try:
+        string_outcome = character_to_string_mapping[outcome_type]
+    except:
+        string_outcome = "unknown"
+    return string_outcome
 
 def convert_string_to_character_outcome_type(outcome_type: str) -> str:
     """
@@ -122,16 +127,17 @@ def clean_yaml_output(output: str) -> str:
     """
     return output.replace("```", "").replace("yaml", "").replace("\t", "")
 
-def calculate_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
+
+def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
-    This method calculates the odds ratio given the values
+    This method calculates the log odds ratio given the values
 
     :param intervention_events: value of intervention_events
     :param control_events: value of control_events
     :param intervention_total: value of intervention_total
     :param control_total: value of control_total
 
-    :return odds ratio
+    :return log odds ratio
     """
     try:
         # need to check for x or unknown in the values
@@ -145,12 +151,14 @@ def calculate_odds_ratio(intervention_events: int, control_events: int, interven
         control_nonevents = control_total - control_events
 
         intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
+        
         if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
             return None
         else:
-            return (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
+            odds_ratio = (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
+            return math.log(odds_ratio)
     except:
-        print(f"An exception occurred for calculate odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
+        print(f"An exception occurred for calculate log odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
 
 def calculate_standard_error_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
@@ -185,68 +193,6 @@ def calculate_standard_error_log_odds_ratio(intervention_events: int, control_ev
         print(f"An exception occurred for calculate standard error log odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
 
-def calculate_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
-    """
-    This method calculates the risk ratio given the values
-
-    :param intervention_events: value of intervention_events
-    :param control_events: value of control_events
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
-
-    :return risk ratio
-    """
-    try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_events, control_events, intervention_total, control_total):
-            return None
-        # check to make sure that events do not exceed total
-        if (intervention_events > intervention_total) or (control_events > control_total):
-            return None
-        
-        intervention_nonevents = intervention_total - intervention_events
-        control_nonevents = control_total - control_events
-
-        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
-            return None
-        else:
-            return (intervention_events / (intervention_events + intervention_nonevents)) / (control_events / (control_events + control_nonevents))
-    except:
-        print(f"An exception occurred for calculate risk ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
-        return None
-
-def calculate_standard_error_log_risk_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
-    """
-    This method calculates the standard error of the log risk ratio given the values
-
-    :param intervention_events: value of intervention_events
-    :param control_events: value of control_events
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
-
-    :return standard error of the log risk ratio
-    """
-    try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_events, control_events, intervention_total, control_total):
-            return None
-        # check to make sure that events do not exceed total
-        if (intervention_events > intervention_total) or (control_events > control_total):
-            return None
-        
-        intervention_nonevents = intervention_total - intervention_events
-        control_nonevents = control_total - control_events
-
-        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
-            return None
-        else:
-            return ((1 / intervention_events) + (1 / control_events) - (1 / (intervention_events + intervention_nonevents)) - (1 / (control_events + control_nonevents))) ** 0.5
-    except:
-        print(f"An exception occurred for calculate standard error log risk ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
-        return None
-
 def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int, control_nonevents: int) -> float:
     """
     This method applies a zero correction to a contingency table if needed
@@ -273,42 +219,44 @@ def check_and_apply_zero_correction(intervention_events: int, control_events: in
 
     return intervention_events, control_events, intervention_nonevents, control_nonevents
 
-def calculate_mean_difference(intervention_mean: float, control_mean: float) -> float:
+def calculate_standardized_mean_difference(intervention_mean: float, control_mean: float, intervention_sd: float, control_sd: float) -> float:
     """
-    This method calculates the mean difference given the values
+    This method calculates the standardized mean difference given the values
 
     :param intervention_mean: value of intervention_mean
     :param control_mean: value of control_mean
-
-    :return mean difference
-    """
-    try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_mean, control_mean):
-            return None
-        
-        return intervention_mean - control_mean
-    except:
-        print(f"An exception occurred for calculate mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}")
-        return None
-
-def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
-    """
-    This method calculates the standard error of the mean difference given the values
-
     :param intervention_sd: value of intervention_sd
     :param control_sd: value of control_sd
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
 
-    :return standard error of the mean difference
+    :return standardized mean difference
     """
     try:
         # need to check for x or unknown in the values
-        if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+        if "x" in (intervention_mean, control_mean, intervention_sd, control_sd):
             return None
         
-        return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
+        return (intervention_mean - control_mean) / ((intervention_sd**2 + control_sd**2) / 2)**0.5
     except:
-        print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
+        print(f"An exception occurred for calculate standardized mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}, intervention_sd: {intervention_sd}, control_sd: {control_sd}")
         return None
+
+# def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
+#     """
+#     This method calculates the standard error of the mean difference given the values
+
+#     :param intervention_sd: value of intervention_sd
+#     :param control_sd: value of control_sd
+#     :param intervention_total: value of intervention_total
+#     :param control_total: value of control_total
+
+#     :return standard error of the mean difference
+#     """
+#     try:
+#         # need to check for x or unknown in the values
+#         if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+#             return None
+        
+#         return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
+#     except:
+#         print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
+#         return None
