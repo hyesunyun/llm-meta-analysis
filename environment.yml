@@ -23,6 +23,7 @@ dependencies:
   - anaconda::ipykernel
   - conda-forge::packaging
   - conda-forge::tiktoken
+  - anaconda::scikit-learn
   - pip:
     - ai2-olmo
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis

@@ -4,11 +4,9 @@ from utils import (
     load_json_file,
     convert_character_to_string_outcome_type,
     save_json_file,
-    calculate_odds_ratio,
+    calculate_log_odds_ratio,
     calculate_standard_error_log_odds_ratio,
-    calculate_risk_ratio,
-    calculate_standard_error_log_risk_ratio,
-    calculate_mean_difference,
+    calculate_standardized_mean_difference,
     calculate_standard_error_mean_difference,
     clean_yaml_output
 )
@@ -61,10 +59,8 @@ class MetaAnalysisTaskEvaluator:
             ce = example["comparator_events"]
             ct = example["comparator_group_size"]
             example.update({
-                "odds_ratio": calculate_odds_ratio(ie, ce, it, ct),
-                "se_log_odds_ratio": calculate_standard_error_log_odds_ratio(ie, ce, it, ct),
-                "risk_ratio": calculate_risk_ratio(ie, ce, it, ct),
-                "se_log_risk_ratio": calculate_standard_error_log_risk_ratio(ie, ce, it, ct),
+                "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct),
+                "se_log_odds_ratio": calculate_standard_error_log_odds_ratio(ie, ce, it, ct)
             })
 
             output_dict = yaml.safe_load(model_output)
@@ -77,10 +73,8 @@ class MetaAnalysisTaskEvaluator:
                 "intervention_group_size_output": it_output,
                 "comparator_events_output": ce_output,
                 "comparator_group_size_output": ct_output,
-                "odds_ratio_output": calculate_odds_ratio(ie_output, ce_output, it_output, ct_output),
-                "se_log_odds_ratio_output": calculate_standard_error_log_odds_ratio(ie_output, ce_output, it_output, ct_output),
-                "risk_ratio_output": calculate_risk_ratio(ie_output, ce_output, it_output, ct_output),
-                "se_log_risk_ratio_output": calculate_standard_error_log_risk_ratio(ie_output, ce_output, it_output, ct_output),
+                "log_odds_ratio": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output),
+                "se_log_odds_ratio_output": calculate_standard_error_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
             }
             example.update(new_item)
 
@@ -104,8 +98,8 @@ class MetaAnalysisTaskEvaluator:
             csd = example["comparator_standard_deviation"]
             ct = example["comparator_group_size"]
             example.update({
-                "mean_difference": calculate_mean_difference(im, cm),
-                "se_mean_difference": calculate_standard_error_mean_difference(isd, csd, it, ct),
+                "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd),
+                "se_standardized_mean_difference": calculate_standard_error_mean_difference(isd, csd, it, ct),
             })
 
             output_dict = yaml.safe_load(model_output)
@@ -122,8 +116,8 @@ class MetaAnalysisTaskEvaluator:
                 "comparator_mean_output": cm_output,
                 "comparator_standard_deviation_output": csd_output,
                 "comparator_group_size_output": ct_output,
-                "mean_difference_output": calculate_mean_difference(im_output, cm_output),
-                "se_mean_difference_output": calculate_standard_error_mean_difference(isd_output, csd_output, it_output, ct_output),
+                "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output),
+                "se_standardized_mean_difference_output": calculate_standard_error_mean_difference(isd_output, csd_output, it_output, ct_output),
             }
             example.update(new_item)
 

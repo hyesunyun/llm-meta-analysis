@@ -3,7 +3,6 @@
 #SBATCH --time=24:00:00
 #SBATCH --job-name=gpt4
 #SBATCH --mem=20G
-#SBATCH --cpus-per-task=4
 #SBATCH --partition=short
 #SBATCH --output=exec.gpt4-eval.%j.evaluate.out
 
