@@ -1,27 +1,27 @@
 {
     "number_of_model_unknowns": {
-        "outcome_type": 155,
-        "total": 155
+        "outcome_type": 489,
+        "total": 489
     },
     "number_of_reference_unknowns": {
         "outcome_type": 0,
         "total": 0
     },
     "exact_match_accuracy": {
-        "outcome_type": 0.7134146341463414,
-        "total": 0.7134146341463414
+        "outcome_type": 0.20121951219512196,
+        "total": 0.20121951219512196
     },
     "exact_match_accuracy_remove_unknowns": {
-        "outcome_type": 0.7134146341463414,
-        "total": 0.7134146341463414
+        "outcome_type": 0.20121951219512196,
+        "total": 0.20121951219512196
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.7134146341463414
+        "partial_match_accuracy_1": 0.20121951219512196
     },
     "outcome_type_f_score": {
         "outcome_type": [
-            0.7354838709677418,
-            0.8358913813459268,
+            0.576388888888889,
+            0.18317757009345792,
             0.0
         ]
     }

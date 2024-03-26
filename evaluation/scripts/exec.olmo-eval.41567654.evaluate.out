@@ -1,0 +1,34 @@
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/olmo7B_outcome_type_test_output_20240326-12:06:30.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 5,
+        "total": 5
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.2896341463414634,
+        "total": 0.2896341463414634
+    },
+    "exact_match_accuracy_remove_unknowns": {
+        "outcome_type": 0.2896341463414634,
+        "total": 0.2896341463414634
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.2896341463414634
+    },
+    "outcome_type_f_score": {
+        "outcome_type": [
+            0.4239401496259351,
+            0.0792079207920792,
+            0.0
+        ]
+    }
+}

@@ -94,7 +94,7 @@ def convert_character_to_string_outcome_type(outcome_type: str) -> str:
     :return outcome type as string
     """
     character_to_string_mapping = {"A": "binary", "B": "continuous", "C": "unknown"}
-    outcome_type = outcome_type.replace("(", "").replace(")", "") # remove any parens
+    outcome_type = outcome_type.replace("The answer is ", "").replace(".", "").replace("(", "").replace(")", "") # remove any parens, periods, and other known common, extra texts
     # remove any unnecessary text output by finding the first non-space character
     for char in outcome_type:
         if not char.isspace():
@@ -240,23 +240,23 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
         print(f"An exception occurred for calculate standardized mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}, intervention_sd: {intervention_sd}, control_sd: {control_sd}")
         return None
 
-# def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
-#     """
-#     This method calculates the standard error of the mean difference given the values
+def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
+    """
+    This method calculates the standard error of the mean difference given the values
 
-#     :param intervention_sd: value of intervention_sd
-#     :param control_sd: value of control_sd
-#     :param intervention_total: value of intervention_total
-#     :param control_total: value of control_total
+    :param intervention_sd: value of intervention_sd
+    :param control_sd: value of control_sd
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
 
-#     :return standard error of the mean difference
-#     """
-#     try:
-#         # need to check for x or unknown in the values
-#         if "x" in (intervention_sd, control_sd, intervention_total, control_total):
-#             return None
+    :return standard error of the mean difference
+    """
+    try:
+        # need to check for x or unknown in the values
+        if "x" in (intervention_sd, control_sd, intervention_total, control_total):
+            return None
         
-#         return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
-#     except:
-#         print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
-#         return None
+        return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
+    except:
+        print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
+        return None

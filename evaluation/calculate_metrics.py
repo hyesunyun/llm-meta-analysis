@@ -1,5 +1,6 @@
 from typing import Dict, Tuple, List
 from sklearn.metrics import f1_score
+import numpy as np
 
 class MetricsCalculator:
     def __init__(self, task: str) -> None:
@@ -62,7 +63,7 @@ class MetricsCalculator:
         actual = [string_to_int_labels[a] for a in actual]
         predicted = [string_to_int_labels[p] for p in predicted]
         
-        metrics[relevant_reference_field] = f1_score(actual, predicted, average=None)
+        metrics[relevant_reference_field] = f1_score(actual, predicted, average=None).tolist()
         return metrics
     
     def __calculate_mean_absolute_error(self, actual: List[str], predicted: List[str]) -> float:
