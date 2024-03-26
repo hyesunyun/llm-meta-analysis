@@ -214,7 +214,7 @@ class MetaAnalysisTaskRunner:
                         "outcome": example["outcome"]
                     }
                     max_tokens = self.model.get_context_length() - 300 # account for the actual prompt, 300 as approx num of tokens of prompt template
-                    chunks = input_chunker.get_chunked_input(example["abstract_and_results_xml"], ico_dict, max_tokens)
+                    chunks, num_model_calls = input_chunker.chunk_input(example["abstract_and_results_xml"], ico_dict, max_tokens)
                     chunks_examples = []
                     for chunk in chunks:
                         chunk_example = example.copy()
@@ -226,10 +226,15 @@ class MetaAnalysisTaskRunner:
                     example["num_chunks"] = num_chunks
 
                     concatenated_output = ""
+                    chunk_num_tokens_list = []
                     for chunk in chunks:
                         print(chunk)
+                        num_model_calls += 1
+                        chunk_num_tokens_list.append(input_chunker.count_token(chunk))
                         output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
                         concatenated_output = concatenated_output + output + "\n---\n"
+                    example["chunk_num_tokens"] = chunk_num_tokens_list
+                    example["total_num_model_calls"] = num_model_calls
                     example["output"] = concatenated_output
                     example["is_chunked"] = True
                     results.append(example)

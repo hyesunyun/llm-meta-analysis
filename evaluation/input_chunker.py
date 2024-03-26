@@ -3,6 +3,7 @@ from copy import deepcopy
 from templates import DatasetTemplates, Template
 from utils import format_example_with_prompt_template
 from models.model import Model
+from typing import Tuple
 
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
@@ -133,7 +134,7 @@ class InputChunker:
 
         return self.__convert_output_to_boolean(model_output)
     
-    def __chunk_xml(self, xml_soup_element: BeautifulSoup, ico_dict: dict, max_tokens: int) -> list:
+    def __chunk_xml(self, xml_soup_element: BeautifulSoup, ico_dict: dict, max_tokens: int) -> Tuple[list, int]:
         """
         Chunk the xml soup element based on the max tokens.
 
@@ -144,8 +145,10 @@ class InputChunker:
 
         Returns:
         keep_chunks: list
+        num_model_calls: integer
         """
         keep_chunks = []
+        num_model_calls = 0
 
         def process_chunk() -> None:
             """
@@ -156,6 +159,7 @@ class InputChunker:
             """
             chunk = deepcopy(child)
             is_relevant = self.__is_relevant(chunk, ico_dict)
+            num_model_calls += 1
 
             is_p_tag = chunk.name == 'p'
             is_table = isinstance(chunk, Tag) and chunk.name == 'table-wrap'
@@ -178,7 +182,7 @@ class InputChunker:
         for child in xml_soup_element.contents:
             process_chunk()
 
-        return keep_chunks
+        return keep_chunks, num_model_calls
     
     def __combine_chunks(self, chunks_list: list, max_tokens: int) -> list:
         """
@@ -216,7 +220,7 @@ class InputChunker:
         return final_chunks
 
     
-    def get_chunked_input(self, xml_string: str, ico_dict: dict, max_tokens: int) -> list:
+    def get_chunked_input(self, xml_string: str, ico_dict: dict, max_tokens: int) -> Tuple[list, int]:
         """
         Get the chunked input based on the max tokens. The only public method.
         
@@ -226,9 +230,10 @@ class InputChunker:
         
         Returns:
         chunked_input: list
+        num_model_calls: integer
         """
         soup = self.__convert_xml_string_to_soup(xml_string)
-        chunks_list = self.__chunk_xml(soup, ico_dict, max_tokens)
+        chunks_list, num_model_calls = self.__chunk_xml(soup, ico_dict, max_tokens)
         condensed_chunks_list = self.__combine_chunks(chunks_list, max_tokens)
-        return condensed_chunks_list
+        return condensed_chunks_list, num_model_calls
         
