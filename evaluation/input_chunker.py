@@ -69,6 +69,7 @@ class InputChunker:
         :return string of the full prompt template
         """
         model_class_name = self.model.__class__.__name__
+        print(model_class_name)
         if "gpt" in model_class_name:
             prompt_template = "chunking/gpt"
         elif "pmc-llama" in model_class_name: 

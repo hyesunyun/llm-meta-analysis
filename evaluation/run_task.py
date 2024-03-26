@@ -179,12 +179,12 @@ class MetaAnalysisTaskRunner:
         #     results.append(example)
 
         # CODE WITH CHUNKING
-
         # format the dataset with the prompt template
         dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
 
         # for outcome_type, we don't need chunking since we don't add any abstract/results text to prompt
-        if self.task == "outcom_type":
+        # we can also fit everything into gpt4-turbo
+        if self.task == "outcom_type" or self.model_name == "gpt4":
             # run the task using specified model
             results = []
             pbar = tqdm(dataset)
@@ -192,7 +192,7 @@ class MetaAnalysisTaskRunner:
                 output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
                 example["output"] = output
                 results.append(example)
-        else: # for binary_outcomes or continuous_outcomes, we need to chunk the input
+        else: # for binary_outcomes or continuous_outcomes not using gpt4, we may need to chunk the input
             # instantiate input chunker
             input_chunker = InputChunker(self.model)
 
@@ -205,6 +205,7 @@ class MetaAnalysisTaskRunner:
                 if input_token_count == self.model.get_context_length(): # if the model can handle the tokens, just do as normal
                     output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
                     example["output"] = output
+                    example["is_chunked"] = False
                     results.append(example)
                 else:
                     ico_dict = {
@@ -224,9 +225,11 @@ class MetaAnalysisTaskRunner:
 
                     concatenated_output = ""
                     for chunk in chunks:
+                        print(chunk)
                         output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["output"] = concatenated_output
+                    example["is_chunked"] = True
                     results.append(example)
 
         # saving results to file
