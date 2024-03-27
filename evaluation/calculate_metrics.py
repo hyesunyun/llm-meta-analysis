@@ -53,7 +53,7 @@ class MetricsCalculator:
         """
         relevant_output_field = "outcome_type_output"
         relevant_reference_field = "outcome_type" 
-        string_to_int_labels = {"binary": 0, "continuous": 1, "unknown": 2}
+        string_to_int_labels = {"binary": 0, "continuous": 1, "x": 2}
         metrics = {}
 
         actual = [example[relevant_reference_field] for example in data]
@@ -63,7 +63,13 @@ class MetricsCalculator:
         actual = [string_to_int_labels[a] for a in actual]
         predicted = [string_to_int_labels[p] for p in predicted]
         
-        metrics[relevant_reference_field] = f1_score(actual, predicted, average=None).tolist()
+        f1_scores = f1_score(actual, predicted, average=None).tolist()
+
+        metrics[relevant_reference_field] = {
+            "f1_score_binary": f1_scores[0],
+            "f1_score_continuous": f1_scores[1],
+            "f1_score_unknown": f1_scores[2]
+        }
         return metrics
     
     def __calculate_mean_absolute_error(self, actual: List[str], predicted: List[str]) -> float:
@@ -130,7 +136,7 @@ class MetricsCalculator:
 
         return metrics
     
-    def __calculate_partial_match_accuracy(self, data: List[Dict]) -> Dict:
+    def __calculate_partial_match_accuracy(self, data: List[Dict], remove_unknowns: bool = False) -> Dict:
         """
         This method calculates the partial match accuracy for the given task
 
@@ -151,16 +157,20 @@ class MetricsCalculator:
         metrics = {}
         
         for num_match in num_matches:
+            num_total = len(data)
             correct = 0
             for example in data:
                 num_parts_correct = 0
                 for output, reference in zip(relevant_output_fields, relevant_reference_fields):
+                    if remove_unknowns and example[output] == "x":
+                        num_total -= 1
+                        break
                     if example[output] == example[reference]:
                         num_parts_correct += 1
                 if num_parts_correct >= num_match:
                     correct += 1
 
-            metrics[f"partial_match_accuracy_{num_match}"] = correct / float(len(data))
+            metrics[f"partial_match_accuracy_{num_match}"] = correct / float(num_total)
 
         return metrics
 
@@ -239,6 +249,7 @@ class MetricsCalculator:
         metrics["exact_match_accuracy_remove_unknowns"] = self.__calculate_exact_match_accuracy(data, True)
         # calcualte partial match accuracy
         metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)
+        metrics["partial_match_accuracy_remove_unknowns"] = self.__calculate_partial_match_accuracy(data, True)
 
         if self.task == "outcome_type":
             # calculate the F score for outcome type

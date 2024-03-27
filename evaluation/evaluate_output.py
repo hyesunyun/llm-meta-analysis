@@ -73,7 +73,7 @@ class MetaAnalysisTaskEvaluator:
                 "intervention_group_size_output": it_output,
                 "comparator_events_output": ce_output,
                 "comparator_group_size_output": ct_output,
-                "log_odds_ratio": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output),
+                "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output),
                 "se_log_odds_ratio_output": calculate_standard_error_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
             }
             example.update(new_item)

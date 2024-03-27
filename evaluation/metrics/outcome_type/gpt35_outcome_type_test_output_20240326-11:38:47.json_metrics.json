@@ -1,1 +1,28 @@
-{"number_of_model_unknowns": {"outcome_type": 152, "total": 152}, "number_of_reference_unknowns": {"outcome_type": 0, "total": 0}, "exact_match_accuracy": {"outcome_type": 0.6067073170731707, "total": 0.6067073170731707}, "exact_match_accuracy_remove_unknowns": {"outcome_type": 0.6067073170731707, "total": 0.6067073170731707}, "partial_match_accuracy": {"partial_match_accuracy_1": 0.6067073170731707}, "outcome_type_f_score": {"outcome_type": [0.6797066014669926, 0.6897470039946738, 0.0]}}
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 152,
+        "total": 152
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.6067073170731707,
+        "total": 0.6067073170731707
+    },
+    "exact_match_accuracy_remove_unknowns": {
+        "outcome_type": 0.6067073170731707,
+        "total": 0.6067073170731707
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.6067073170731707
+    },
+    "outcome_type_f_score": {
+        "outcome_type": [
+            0.6797066014669926,
+            0.6897470039946738,
+            0.0
+        ]
+    }
+}

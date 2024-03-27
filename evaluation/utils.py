@@ -93,7 +93,7 @@ def convert_character_to_string_outcome_type(outcome_type: str) -> str:
 
     :return outcome type as string
     """
-    character_to_string_mapping = {"A": "binary", "B": "continuous", "C": "unknown"}
+    character_to_string_mapping = {"A": "binary", "B": "continuous", "C": "x"} # x is used to represent unknown
     outcome_type = outcome_type.replace("The answer is ", "").replace(".", "").replace("(", "").replace(")", "") # remove any parens, periods, and other known common, extra texts
     # remove any unnecessary text output by finding the first non-space character
     for char in outcome_type:
@@ -103,7 +103,7 @@ def convert_character_to_string_outcome_type(outcome_type: str) -> str:
     try:
         string_outcome = character_to_string_mapping[outcome_type]
     except:
-        string_outcome = "unknown"
+        string_outcome = "x" # x is used to represent unknown
     return string_outcome
 
 def convert_string_to_character_outcome_type(outcome_type: str) -> str:
@@ -114,7 +114,7 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
 
     :return outcome type as character
     """
-    string_to_character_mapping = {"binary": "A", "continuous": "B", "unknown": "C"}
+    string_to_character_mapping = {"binary": "A", "continuous": "B", "x": "C"}
     return string_to_character_mapping[outcome_type]
 
 def clean_yaml_output(output: str) -> str:
