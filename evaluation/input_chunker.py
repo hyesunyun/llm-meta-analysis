@@ -1,19 +1,20 @@
 from bs4 import BeautifulSoup, Tag
-from copy import deepcopy
+from copy import deepcopy, copy
 from templates import DatasetTemplates, Template
 from utils import format_example_with_prompt_template
 from models.model import Model
 from typing import Tuple
 
+
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
 class InputChunker:
     def __init__(self, model_name: str, model: Model) -> None:
-        self.model_name = model_name # the name of the model (parameter for run_task.py)
-        self.model = model # model object for GPT models or other models (HuggingFace)
+        self.model_name = model_name  # the name of the model (parameter for run_task.py)
+        self.model = model  # model object for GPT models or other models (HuggingFace)
         self.prompt_template = None
-        
-        self.__load_prompt_template() # loads the actual prompt template for the model
+
+        self.__load_prompt_template()  # loads the actual prompt template for the model
 
     def __remove_html_body(self, soup_object: BeautifulSoup) -> BeautifulSoup:
         """
@@ -36,7 +37,7 @@ class InputChunker:
             body_tag.unwrap()
 
         return soup_object
-    
+
     def __convert_xml_string_to_soup(self, xml_string: str) -> BeautifulSoup:
         """
         Convert the xml string to a BeautifulSoup object.
@@ -51,7 +52,41 @@ class InputChunker:
 
         # Remove the html and body tags
         return self.__remove_html_body(soup)
-    
+
+    def __remove_style_tags(self, soup: BeautifulSoup, tags: list) -> BeautifulSoup:
+        """
+        Remove the style tags from the soup object.
+
+        Args:
+        soup: BeautifulSoup object
+        tags: list
+
+        Returns:
+        soup: BeautifulSoup object
+        """
+        # Copy the soup and unwrap the styling tags specified in the list
+        soup = deepcopy(soup)
+        for tag in soup.find_all(tags):
+            tag.unwrap()
+        return soup
+
+    def __preprocess_xml(self, xml_string: str, remove_tags: list = None) -> BeautifulSoup:
+        """
+        Preprocess the xml string by converting to a BeautifulSoup object and removing the styling tags.
+
+        Args:
+        xml_string: string
+
+        Returns:
+        soup: BeautifulSoup object
+        """
+        if remove_tags is None:
+            remove_tags = ["bold", "italic", "underline", "sup", "sub"]
+        soup = self.__convert_xml_string_to_soup(xml_string)
+        soup = self.__remove_style_tags(soup, remove_tags)
+
+        return soup
+
     def count_tokens(self, text: str) -> int:
         """
         Count the number of tokens in the text.
@@ -63,16 +98,17 @@ class InputChunker:
         token_count: integer
         """
         return len(self.model.encode_text(text))
-    
-    def __load_prompt_template(self) -> Template:
+
+    def __load_prompt_template(self):
         """
         This method loads the prompt template for the given model class name.
 
-        :return string of the full prompt template
+        Returns:
+            None
         """
         if "gpt" in self.model_name:
             prompt_template = "chunking/gpt"
-        elif "pmc-llama" == self.model_name: 
+        elif "pmc-llama" == self.model_name:
             prompt_template = "chunking/pmc-llama"
         elif "mistral" in self.model_name:
             prompt_template = "chunking/mistral"
@@ -83,7 +119,7 @@ class InputChunker:
         elif "olmo" in self.model_name:
             prompt_template = "chunking/olmo"
         else:
-            prompt_template = "chunking/" # default. this should never really happen
+            prompt_template = "chunking/"  # default. this should never really happen
 
         prompts = DatasetTemplates(prompt_template)
         all_prompt_templates = prompts.all_template_names
@@ -102,20 +138,22 @@ class InputChunker:
         """
         print(answer)
         character_to_string_mapping = {"A": "n", "B": "y"}
-        answer = answer.replace("The answer is ", "").replace(".", "").replace("(", "").replace(")", "") # remove any parens, periods, and other known common, extra texts
+        answer = answer.replace("The answer is ", "").replace(".", "").replace("(", "").replace(")",
+                                                                                                "")  # remove any parens, periods, and other known common, extra texts
         # remove any unnecessary text output by finding the first non-space character
         for char in answer:
             if not char.isspace():
                 answer = char
                 break
-        string_answer = character_to_string_mapping[answer] if answer in character_to_string_mapping else 'y' # default to "yes" in the case that the model might find relevant data with further chunking (conservative approach)
+        string_answer = character_to_string_mapping[
+            answer] if answer in character_to_string_mapping else 'y'  # default to "yes" in the case that the model might find relevant data with further chunking (conservative approach)
         if string_answer == 'n':
             return False
         elif string_answer == 'y':
             return True
         else:
             raise ValueError("Model answer is not valid.")
-    
+
     def __is_relevant(self, text: str, ico_dict: dict) -> bool:
         """
         Check if the text is relevant.
@@ -133,7 +171,7 @@ class InputChunker:
         model_output = model_output.strip()
 
         return self.__convert_output_to_boolean(model_output)
-    
+
     def __chunk_xml(self, xml_soup_element: BeautifulSoup, ico_dict: dict, max_tokens: int) -> Tuple[list, int]:
         """
         Chunk the xml soup element based on the max tokens.
@@ -175,7 +213,7 @@ class InputChunker:
             elif self.count_tokens(str(chunk)) < max_tokens and is_relevant:
                 # if the chunk is too small and the condition is true, keep it
                 keep_chunks.append(chunk)
-            
+
             else:
                 # If the chunk is not relevant, don't keep it
                 pass
@@ -184,7 +222,7 @@ class InputChunker:
             process_chunk()
 
         return keep_chunks, num_model_calls
-    
+
     def __combine_chunks(self, chunks_list: list, max_tokens: int) -> list:
         """
         Combine the chunks based on the max tokens.
@@ -204,7 +242,7 @@ class InputChunker:
             soup_length = self.count_tokens(str(soup))
             # If adding this soup would exceed max_length, finish the current chunk
             if current_length + soup_length > max_tokens:
-                if current_length > 0: # Avoid adding empty chunks
+                if current_length > 0:  # Avoid adding empty chunks
                     final_chunks.append(current_chunk)
                 # Start a new chunk with the current soup
                 current_chunk = soup
@@ -220,7 +258,6 @@ class InputChunker:
 
         return final_chunks
 
-    
     def get_chunked_input(self, xml_string: str, ico_dict: dict, max_tokens: int) -> Tuple[list, int]:
         """
         Get the chunked input based on the max tokens. The only public method.
@@ -233,8 +270,7 @@ class InputChunker:
         chunked_input: list
         num_model_calls: integer
         """
-        soup = self.__convert_xml_string_to_soup(xml_string)
+        soup = self.__preprocess_xml(xml_string)
         chunks_list, num_model_calls = self.__chunk_xml(soup, ico_dict, max_tokens)
         condensed_chunks_list = self.__combine_chunks(chunks_list, max_tokens)
         return condensed_chunks_list, num_model_calls
-        
