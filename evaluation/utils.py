@@ -127,6 +127,120 @@ def clean_yaml_output(output: str) -> str:
     """
     return output.replace("```", "").replace("yaml", "").replace("\t", "")
 
+def parse_multiple_yaml_output(output: str) -> list[str]:
+    """
+    This method parses the multiple yaml output to list of str yaml
+
+    :param output: yaml output
+
+    :return list of str yaml
+    """
+    yaml_strings = output.split("\n---\n")
+    return yaml_strings
+
+def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict]) -> Dict:
+    """
+    This method aggregates the yaml outputs for binary outcomes
+
+    :param yaml_json_list: list of yaml in dict
+
+    :return aggregated yaml output
+    """
+    aggregated_output = {"intervention_events": [], "intervention_group_size": [], "comparator_events": [], "comparator_group_size": []}
+    for yaml_dict in yaml_dict_list:
+        for key in yaml_dict.keys():
+            if key not in ["intervention", "comparator"]:
+                print(f"Error: key {key} not found in yaml_dict")
+                return None
+            if key == "intervention":
+                if "events" in yaml_dict[key].keys():
+                    aggregated_output["intervention_events"].append(yaml_dict[key]["events"])
+                if "group_size" in yaml_dict[key].keys():
+                    aggregated_output["intervention_group_size"].append(yaml_dict[key]["group_size"])
+            if key == "comparator":
+                if "events" in yaml_dict[key].keys():
+                    aggregated_output["comparator_events"].append(yaml_dict[key]["events"])
+                if "group_size" in yaml_dict[key].keys():
+                    aggregated_output["comparator_group_size"].append(yaml_dict[key]["group_size"])
+
+    # if there is one numeric output in the list, then we set the aggregated value to that numeric value
+    # if there is conflicting numeric outputs in the list, then we set the aggregated value to first numeric value
+    # if there is no numeric outputs in the list, then we set the aggregated value to x
+    for key in aggregated_output.keys():
+        numeric_values = [value for value in aggregated_output[key] if value.isnumeric()]
+        if len(numeric_values) == 1:
+            aggregated_output[key] = numeric_values[0]
+        elif len(numeric_values) > 1:
+            aggregated_output[key] = numeric_values[0]
+        else:
+            aggregated_output[key] = "x"
+
+    final_yaml_output = {
+        "intervention": {
+                "events": aggregated_output["intervention_events"], 
+                "group_size": aggregated_output["intervention_group_size"]
+            },
+        "comparator": {
+                "events": aggregated_output["comparator_events"], 
+                "group_size": aggregated_output["comparator_group_size"]
+            }
+    }
+    return final_yaml_output
+
+def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict]) -> Dict:
+    """
+    This method aggregates the yaml outputs for continuous outcomes
+
+    :param yaml_json_list: list of yaml in dict
+
+    :return aggregated yaml output
+    """
+    aggregated_output = {"intervention_mean": [], "intervention_standard_deviation": [], "intervention_group_size": [], "comparator_mean": [], "comparator_standard_deviation": [], "comparator_group_size": []}
+    for yaml_dict in yaml_dict_list:
+        for key in yaml_dict.keys():
+            if key not in ["intervention", "comparator"]:
+                print(f"Error: key {key} not found in yaml_dict")
+                return None
+            if key == "intervention":
+                if "mean" in yaml_dict[key].keys():
+                    aggregated_output["intervention_mean"].append(yaml_dict[key]["mean"])
+                if "standard_deviation" in yaml_dict[key].keys():
+                    aggregated_output["intervention_standard_deviation"].append(yaml_dict[key]["standard_deviation"])
+                if "group_size" in yaml_dict[key].keys():
+                    aggregated_output["intervention_group_size"].append(yaml_dict[key]["group_size"])
+            if key == "comparator":
+                if "mean" in yaml_dict[key].keys():
+                    aggregated_output["comparator_mean"].append(yaml_dict[key]["mean"])
+                if "standard_deviation" in yaml_dict[key].keys():
+                    aggregated_output["comparator_standard_deviation"].append(yaml_dict[key]["standard_deviation"])
+                if "group_size" in yaml_dict[key].keys():
+                    aggregated_output["comparator_group_size"].append(yaml_dict[key]["group_size"])
+
+    # if there is one numeric output in the list, then we set the aggregated value to that numeric value
+    # if there is conflicting numeric outputs in the list, then we set the aggregated value to first numeric value
+    # if there is no numeric outputs in the list, then we set the aggregated value to x
+    for key in aggregated_output.keys():
+        numeric_values = [value for value in aggregated_output[key] if value.isnumeric()]
+        if len(numeric_values) == 1:
+            aggregated_output[key] = numeric_values[0]
+        elif len(numeric_values) > 1:
+            aggregated_output[key] = numeric_values[0]
+        else:
+            aggregated_output[key] = "x"
+
+    final_yaml_output = {
+        "intervention": {
+                "mean": aggregated_output["intervention_mean"], 
+                "standard_deviation": aggregated_output["intervention_standard_deviation"],
+                "group_size": aggregated_output["intervention_group_size"]
+            },
+        "comparator": {
+                "mean": aggregated_output["comparator_mean"], 
+                "standard_deviation": aggregated_output["comparator_standard_deviation"],
+                "group_size": aggregated_output["comparator_group_size"]
+            }
+    }
+    return final_yaml_output
 
 def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
     """
@@ -159,38 +273,6 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
             return math.log(odds_ratio)
     except:
         print(f"An exception occurred for calculate log odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
-        return None
-
-def calculate_standard_error_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
-    """
-    This method calculates the standard error of the log odds ratio given the values
-
-    :param intervention_events: value of intervention_events
-    :param control_events: value of control_events
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
-
-    :return standard error of the log odds ratio
-    """
-    try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_events, control_events, intervention_total, control_total):
-            return None
-        # check to make sure that events do not exceed total
-        if (intervention_events > intervention_total) or (control_events > control_total):
-            return None
-        
-        intervention_nonevents = intervention_total - intervention_events
-        control_nonevents = control_total - control_events
-
-        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(intervention_events, control_events, intervention_nonevents, control_nonevents)
-        
-        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
-            return None
-        else:
-            return ((1 / intervention_events) + (1 / intervention_nonevents) + (1 / control_events) + (1 / control_nonevents)) ** 0.5
-    except:
-        print(f"An exception occurred for calculate standard error log odds ratio - intervention_events: {intervention_events}, control_events: {control_events}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None
 
 def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int, control_nonevents: int) -> float:
@@ -238,25 +320,4 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
         return (intervention_mean - control_mean) / ((intervention_sd**2 + control_sd**2) / 2)**0.5
     except:
         print(f"An exception occurred for calculate standardized mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}, intervention_sd: {intervention_sd}, control_sd: {control_sd}")
-        return None
-
-def calculate_standard_error_mean_difference(intervention_sd: float, control_sd: float, intervention_total: int, control_total: int) -> float:
-    """
-    This method calculates the standard error of the mean difference given the values
-
-    :param intervention_sd: value of intervention_sd
-    :param control_sd: value of control_sd
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
-
-    :return standard error of the mean difference
-    """
-    try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_sd, control_sd, intervention_total, control_total):
-            return None
-        
-        return ((intervention_sd ** 2 / intervention_total) + (control_sd ** 2 / control_total)) ** 0.5
-    except:
-        print(f"An exception occurred for calculate standard error mean difference - intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_total: {intervention_total}, control_total: {control_total}")
         return None

@@ -5,10 +5,11 @@ from utils import (
     convert_character_to_string_outcome_type,
     save_json_file,
     calculate_log_odds_ratio,
-    calculate_standard_error_log_odds_ratio,
     calculate_standardized_mean_difference,
-    calculate_standard_error_mean_difference,
-    clean_yaml_output
+    clean_yaml_output,
+    parse_multiple_yaml_output,
+    aggregate_yaml_output_for_binary_outcomes,
+    aggregate_yaml_output_for_continuous_outcomes
 )
 from calculate_metrics import MetricsCalculator
 import yaml
@@ -59,11 +60,19 @@ class MetaAnalysisTaskEvaluator:
             ce = example["comparator_events"]
             ct = example["comparator_group_size"]
             example.update({
-                "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct),
-                "se_log_odds_ratio": calculate_standard_error_log_odds_ratio(ie, ce, it, ct)
+                "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct)
             })
 
-            output_dict = yaml.safe_load(model_output)
+            # aggregate the output if the input was chunked because the output will have multiple parts
+            if "is_chunked" in example and example["is_chunked"]:
+                yaml_strings_list = parse_multiple_yaml_output(model_output)
+                yaml_dict_list = []
+                for yaml_string in yaml_strings_list:
+                    yaml_dict_list.append(yaml.safe_load(yaml_string))
+                output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list)
+            else:
+                output_dict = yaml.safe_load(model_output)
+
             ie_output = output_dict["intervention"]["events"]
             it_output = output_dict["intervention"]["group_size"]
             ce_output = output_dict["comparator"]["events"]
@@ -73,8 +82,7 @@ class MetaAnalysisTaskEvaluator:
                 "intervention_group_size_output": it_output,
                 "comparator_events_output": ce_output,
                 "comparator_group_size_output": ct_output,
-                "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output),
-                "se_log_odds_ratio_output": calculate_standard_error_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
+                "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
             }
             example.update(new_item)
 
@@ -93,16 +101,22 @@ class MetaAnalysisTaskEvaluator:
 
             im = example["intervention_mean"]
             isd = example["intervention_standard_deviation"]
-            it = example["intervention_group_size"]
             cm = example["comparator_mean"]
             csd = example["comparator_standard_deviation"]
-            ct = example["comparator_group_size"]
             example.update({
                 "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd),
-                "se_standardized_mean_difference": calculate_standard_error_mean_difference(isd, csd, it, ct),
             })
 
-            output_dict = yaml.safe_load(model_output)
+            # aggregate the output if the input was chunked because the output will have multiple parts
+            if "is_chunked" in example and example["is_chunked"]:
+                yaml_strings_list = parse_multiple_yaml_output(model_output)
+                yaml_dict_list = []
+                for yaml_string in yaml_strings_list:
+                    yaml_dict_list.append(yaml.safe_load(yaml_string))
+                output_dict = aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list)
+            else:
+                output_dict = yaml.safe_load(model_output)
+
             im_output = output_dict["intervention"]["mean"]
             isd_output = output_dict["intervention"]["standard_deviation"]
             it_output = output_dict["intervention"]["group_size"]
@@ -116,8 +130,7 @@ class MetaAnalysisTaskEvaluator:
                 "comparator_mean_output": cm_output,
                 "comparator_standard_deviation_output": csd_output,
                 "comparator_group_size_output": ct_output,
-                "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output),
-                "se_standardized_mean_difference_output": calculate_standard_error_mean_difference(isd_output, csd_output, it_output, ct_output),
+                "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output)
             }
             example.update(new_item)
 

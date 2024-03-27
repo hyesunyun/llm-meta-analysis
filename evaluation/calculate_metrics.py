@@ -15,7 +15,7 @@ class MetricsCalculator:
         :return tuple of list of keys to calculate the metrics
         """
         search_key = "_output"
-        point_estimates_fields = ['log_odds_ratio_output', 'se_log_odds_ratio_output', 'standardized_mean_difference_output', 'se_standardized_mean_difference_output']
+        point_estimates_fields = ['log_odds_ratio_output', 'standardized_mean_difference_output']
         if is_point_estimates:
             relevant_output_fields = [key for key in data.keys() if key in point_estimates_fields]
         else:
@@ -72,7 +72,7 @@ class MetricsCalculator:
         }
         return metrics
     
-    def __calculate_mean_absolute_error(self, actual: List[str], predicted: List[str]) -> float:
+    def __calculate_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float:
         """
         This method calculates the mean absolute error
 
@@ -91,6 +91,36 @@ class MetricsCalculator:
                 list_of_abs_diff.append(abs(a - p))
 
         return sum(list_of_abs_diff) / total_num
+    
+    def __calculate_standard_error_of_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float:
+        """
+        This method calculates the standard error of the mean absolute error
+
+        :param actual: list of actual values
+        :param predicted: list of predicted values
+
+        :return: standard error of the mean absolute error as a float
+        """
+        total_num = 0
+        list_of_abs_diff = []
+        for a, p in zip(actual, predicted):
+            if None in (a, p):
+                continue
+            else:
+                total_num += 1
+                list_of_abs_diff.append(a - p)
+        return np.std(list_of_abs_diff) / np.sqrt(total_num)
+    
+    def __calculate_95_confidence_interval_of_mean_absolute_error(self, mean_absolute_error: float, standard_error: float) -> Tuple[float, float]:
+        """
+        This method calculates the 95% confidence interval of the mean absolute error (mean differences of actual vs predicted values)
+
+        :param mean_absolute_error: mean absolute error
+        :param standard_error: standard error of the mean absolute error
+
+        :return: tuple with the lower and upper bounds of the confidence interval
+        """
+        return mean_absolute_error - 1.96 * standard_error, mean_absolute_error + 1.96 * standard_error
 
     def __calculate_exact_match_accuracy(self, data: List[Dict], remove_unknowns: bool = False) -> Dict:
         """
@@ -226,8 +256,12 @@ class MetricsCalculator:
 
             # calculate the mean absolute error
             mean_absolute_error = self.__calculate_mean_absolute_error(actual, predicted)
+            # calculate the standard error of the mean absolute error
+            standard_error = self.__calculate_standard_error_of_mean_absolute_error(actual, predicted)
+            # calculate the 95% confidence interval of the mean absolute error
+            lower_bound, upper_bound = self.__calculate_95_confidence_interval_of_mean_absolute_error(mean_absolute_error, standard_error)
         
-            metrics[reference] = {"mean_absolute_error": mean_absolute_error}
+            metrics[reference] = {"mean_absolute_error": mean_absolute_error, "standard_error_of_mae": standard_error, "95_confidence_interval_of_mae": (lower_bound, upper_bound)}
 
         return metrics
 
