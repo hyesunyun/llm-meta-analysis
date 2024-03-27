@@ -1,0 +1,37 @@
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/pmc-llama_outcome_type_test_output_20240326-14:21:40.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 15,
+        "total": 15
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.7317073170731707,
+        "total": 0.7317073170731707
+    },
+    "exact_match_accuracy_remove_unknowns": {
+        "outcome_type": 0.748829953198128,
+        "total": 0.748829953198128
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.7317073170731707
+    },
+    "partial_match_accuracy_remove_unknowns": {
+        "partial_match_accuracy_1": 0.748829953198128
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.12435233160621761,
+            "f1_score_continuous": 0.8478260869565217,
+            "f1_score_unknown": 0.0
+        }
+    }
+}

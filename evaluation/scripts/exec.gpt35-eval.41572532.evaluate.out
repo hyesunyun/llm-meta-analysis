@@ -1,0 +1,73 @@
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/gpt35_outcome_type_test_output_20240326-11:38:47.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 152,
+        "total": 152
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.6067073170731707,
+        "total": 0.6067073170731707
+    },
+    "exact_match_accuracy_remove_unknowns": {
+        "outcome_type": 0.7896825396825397,
+        "total": 0.7896825396825397
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.6067073170731707
+    },
+    "partial_match_accuracy_remove_unknowns": {
+        "partial_match_accuracy_1": 0.7896825396825397
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.6797066014669926,
+            "f1_score_continuous": 0.6897470039946738,
+            "f1_score_unknown": 0.0
+        }
+    }
+}
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 175, in <module>
+    task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 26, in __init__
+    self.__load_data()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 32, in __load_data
+    self.data = load_json_file(self.output_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/utils.py", line 31, in load_json_file
+    with open(file_path, "r") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: '/scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/'
+Arguments for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes
+
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 175, in <module>
+    task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 26, in __init__
+    self.__load_data()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 32, in __load_data
+    self.data = load_json_file(self.output_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/utils.py", line 31, in load_json_file
+    with open(file_path, "r") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+IsADirectoryError: [Errno 21] Is a directory: '/scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/'
