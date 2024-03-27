@@ -4,7 +4,7 @@ templates:
     id: d8625fe0-48d4-463f-8386-24658479d49c
     prompt: |+ 
       <s>[INST] Do NOT provide an explanation.
-      **ARTICLE:** {{abstract_and_results_xml}}
+      **ARTICLE:** {{chunk}}
       **INTERVENTION:** {{intervention}}
       **COMPARATOR:** {{comparator}}
       **OUTCOME:** {{outcome}}

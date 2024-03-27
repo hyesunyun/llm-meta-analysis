@@ -100,14 +100,15 @@ class InputChunker:
 
         :return answer as string
         """
+        print(answer)
         character_to_string_mapping = {"A": "n", "B": "y"}
-        answer = answer.replace("(", "").replace(")", "") # remove any parens
+        answer = answer.replace("The answer is ", "").replace(".", "").replace("(", "").replace(")", "") # remove any parens, periods, and other known common, extra texts
         # remove any unnecessary text output by finding the first non-space character
         for char in answer:
             if not char.isspace():
                 answer = char
                 break
-        string_answer = character_to_string_mapping[answer]
+        string_answer = character_to_string_mapping[answer] if answer in character_to_string_mapping else 'y' # not sure how to handle situations like this
         if string_answer == 'n':
             return False
         elif string_answer == 'y':
@@ -128,7 +129,7 @@ class InputChunker:
         example = ico_dict
         example["chunk"] = text
         example = format_example_with_prompt_template(ico_dict, self.prompt_template)
-
+        print(example["input"])
         model_output = self.model.generate_output(example["input"], 3)
         model_output = model_output.strip()
 
@@ -157,6 +158,7 @@ class InputChunker:
             Returns:
             None
             """
+            nonlocal num_model_calls
             chunk = deepcopy(child)
             is_relevant = self.__is_relevant(chunk, ico_dict)
             num_model_calls += 1
