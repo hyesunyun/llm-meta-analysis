@@ -50,41 +50,7 @@ Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
 An exception occurred for calculate log odds ratio - intervention_events: {'TT': 45, 'GT/GG': 17}, control_events: {'TT': 35, 'GT/GG': 2}, intervention_total: {'TT': 65, 'GT/GG': 23}, control_total: {'TT': 60, 'GT/GG': 24}
-An exception occurred for calculate standard error log odds ratio - intervention_events: {'TT': 45, 'GT/GG': 17}, control_events: {'TT': 35, 'GT/GG': 2}, intervention_total: {'TT': 65, 'GT/GG': 23}, control_total: {'TT': 60, 'GT/GG': 24}
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
-Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
@@ -150,10 +116,12 @@ Metrics for the task:
     },
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 0.08849337331978875
-        },
-        "se_log_odds_ratio": {
-            "mean_absolute_error": 0.00374970276798421
+            "mean_absolute_error": 0.08849337331978875,
+            "standard_error_of_mae": 0.04311310208440692,
+            "95_confidence_interval_of_mae": [
+                0.003991693234351196,
+                0.1729950534052263
+            ]
         }
     }
 }
@@ -163,9 +131,7 @@ Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_ou
 Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes
 
 An exception occurred for calculate standardized mean difference - intervention_mean: 35.2%, control_mean: 9.9%, intervention_sd: 21.7%, control_sd: 14.5%
-An exception occurred for calculate standard error mean difference - intervention_sd: 21.7%, control_sd: 14.5%, intervention_total: 44, control_total: 44
 An exception occurred for calculate standardized mean difference - intervention_mean: 12, control_mean: 11.1, intervention_sd: 4.3 to 32.1, control_sd: 4.2 to 31.6
-An exception occurred for calculate standard error mean difference - intervention_sd: 4.3 to 32.1, control_sd: 4.2 to 31.6, intervention_total: 22, control_total: 22
 Metrics for the task:
 {
     "number_of_model_unknowns": {
@@ -220,10 +186,12 @@ Metrics for the task:
     },
     "point_estimates": {
         "standardized_mean_difference": {
-            "mean_absolute_error": 0.5689139828913712
-        },
-        "se_standardized_mean_difference": {
-            "mean_absolute_error": 2.46944804621851
+            "mean_absolute_error": 0.5689139828913712,
+            "standard_error_of_mae": 0.3352866393578748,
+            "95_confidence_interval_of_mae": [
+                -0.08824783025006333,
+                1.2260757960328057
+            ]
         }
     }
 }
