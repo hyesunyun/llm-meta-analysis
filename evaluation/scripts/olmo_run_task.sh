@@ -18,10 +18,10 @@ source activate llm-meta-analysis
 export $(xargs < ../../.env)
 
 # outcome type
-python3 ../run_task.py --model olmo7B --task outcome_type --split test --prompt without-abstract-results --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
+# python3 ../run_task.py --model olmo7B --task outcome_type --split test --prompt without-abstract-results --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
 
 # binary outcomes
-# python3 ../run_task.py --model olmo7B --task binary_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes
+python3 ../run_task.py --model olmo7B --task binary_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes
 
 # continuous outcomes
-# python3 ../run_task.py --model olmo7B --task continuous_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes
+python3 ../run_task.py --model olmo7B --task continuous_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes

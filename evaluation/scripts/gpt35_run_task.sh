@@ -16,10 +16,10 @@ source activate llm-meta-analysis
 export $(xargs < ../../.env)
 
 # outcome_types
-python3 ../run_task.py --model gpt35 --task outcome_type --split test --prompt without-abstract-results --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
+# python3 ../run_task.py --model gpt35 --task outcome_type --split test --prompt without-abstract-results --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type
 
 # binary outcomes
-# python3 ../run_task.py --model gpt35 --task binary_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes
+python3 ../run_task.py --model gpt35 --task binary_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes
 
 # continuous_outcomes
-# python3 ../run_task.py --model gpt35 --task continuous_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes
+python3 ../run_task.py --model gpt35 --task continuous_outcomes --split test --prompt yaml --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes

@@ -109,7 +109,7 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:10]
+            dataset = dataset[:2] # TODO change back to 10
 
         # Add xml content to each example
         for example in dataset:
@@ -221,17 +221,18 @@ class MetaAnalysisTaskRunner:
                         chunk_example["abstract_and_results_xml"] = chunk
                         chunks_examples.append(chunk_example)
                     # format the chunks with the prompt template
-                    chunks = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
+                    formatted_chunks_examples = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
                     num_chunks = len(chunks)
                     example["num_chunks"] = num_chunks
 
                     concatenated_output = ""
                     chunk_num_tokens_list = []
-                    for chunk in chunks:
-                        print(chunk)
+                    for input_chunk in formatted_chunks_examples:
+                        print(input_chunk["input"])
                         num_model_calls += 1
-                        chunk_num_tokens_list.append(input_chunker.count_tokens(chunk))
-                        output = self.model.generate_output(chunk["input"], max_new_tokens=self.max_new_tokens)
+                        chunk_num_tokens_list.append(input_chunker.count_tokens(input_chunk["input"]))
+                        output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
+                        print(output)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
                     example["total_num_model_calls"] = num_model_calls

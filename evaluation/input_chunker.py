@@ -108,7 +108,7 @@ class InputChunker:
             if not char.isspace():
                 answer = char
                 break
-        string_answer = character_to_string_mapping[answer] if answer in character_to_string_mapping else 'y' # not sure how to handle situations like this
+        string_answer = character_to_string_mapping[answer] if answer in character_to_string_mapping else 'y' # default to "yes" in the case that the model might find relevant data with further chunking (conservative approach)
         if string_answer == 'n':
             return False
         elif string_answer == 'y':
@@ -129,7 +129,6 @@ class InputChunker:
         example = ico_dict
         example["chunk"] = text
         example = format_example_with_prompt_template(ico_dict, self.prompt_template)
-        print(example["input"])
         model_output = self.model.generate_output(example["input"], 3)
         model_output = model_output.strip()
 
