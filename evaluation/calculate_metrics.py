@@ -68,7 +68,7 @@ class MetricsCalculator:
         metrics[relevant_reference_field] = {
             "f1_score_binary": f1_scores[0],
             "f1_score_continuous": f1_scores[1],
-            "f1_score_unknown": f1_scores[2]
+            "f1_score_unknown": f1_scores[2] if len(f1_scores) > 2 else None
         }
         return metrics
     
