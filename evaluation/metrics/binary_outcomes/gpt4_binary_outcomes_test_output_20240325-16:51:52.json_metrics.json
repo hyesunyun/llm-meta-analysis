@@ -1,1 +1,48 @@
-{"number_of_model_unknowns": {"intervention_events": 18, "intervention_group_size": 5, "comparator_events": 20, "comparator_group_size": 7, "total": 50}, "number_of_reference_unknowns": {"intervention_events": 25, "intervention_group_size": 3, "comparator_events": 25, "comparator_group_size": 3, "total": 56}, "exact_match_accuracy": {"intervention_events": 0.7602339181286549, "intervention_group_size": 0.8713450292397661, "comparator_events": 0.7485380116959064, "comparator_group_size": 0.8830409356725146, "total": 0.6666666666666666}, "exact_match_accuracy_remove_unknowns": {"intervention_events": 0.8308823529411765, "intervention_group_size": 0.8963414634146342, "comparator_events": 0.8270676691729323, "comparator_group_size": 0.9197530864197531, "total": 0.7575757575757576}, "partial_match_accuracy": {"partial_match_accuracy_1": 0.9473684210526315, "partial_match_accuracy_2": 0.9298245614035088, "partial_match_accuracy_3": 0.7192982456140351}, "partial_match_accuracy_remove_unknowns": {"partial_match_accuracy_1": 0.9924242424242424, "partial_match_accuracy_2": 0.9621212121212122, "partial_match_accuracy_3": 0.8106060606060606}, "point_estimates": {"log_odds_ratio": {"mean_absolute_error": 0.08849337331978875}, "se_log_odds_ratio": {"mean_absolute_error": 0.00374970276798421}}}
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 18,
+        "intervention_group_size": 5,
+        "comparator_events": 20,
+        "comparator_group_size": 7,
+        "total": 50
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 25,
+        "intervention_group_size": 3,
+        "comparator_events": 25,
+        "comparator_group_size": 3,
+        "total": 56
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.7602339181286549,
+        "intervention_group_size": 0.8713450292397661,
+        "comparator_events": 0.7485380116959064,
+        "comparator_group_size": 0.8830409356725146,
+        "total": 0.6666666666666666
+    },
+    "exact_match_accuracy_remove_unknowns": {
+        "intervention_events": 0.8308823529411765,
+        "intervention_group_size": 0.8963414634146342,
+        "comparator_events": 0.8270676691729323,
+        "comparator_group_size": 0.9197530864197531,
+        "total": 0.7575757575757576
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.9473684210526315,
+        "partial_match_accuracy_2": 0.9298245614035088,
+        "partial_match_accuracy_3": 0.7192982456140351
+    },
+    "partial_match_accuracy_remove_unknowns": {
+        "partial_match_accuracy_1": 0.9924242424242424,
+        "partial_match_accuracy_2": 0.9621212121212122,
+        "partial_match_accuracy_3": 0.8106060606060606
+    },
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 0.08849337331978875
+        },
+        "se_log_odds_ratio": {
+            "mean_absolute_error": 0.00374970276798421
+        }
+    }
+}
