@@ -109,7 +109,7 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:3] # TODO make it back to 10
+            dataset = dataset[:10]
 
         # Add xml content to each example
         for example in dataset:
@@ -202,7 +202,7 @@ class MetaAnalysisTaskRunner:
             for _, example in enumerate(pbar):
                 input_token_count = input_chunker.count_tokens(example["input"])
 
-                if input_token_count == self.model.get_context_length(): # if the model can handle the tokens, just do as normal
+                if input_token_count <= self.model.get_context_length(): # if the model can handle the tokens, just do as normal
                     output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
                     example["output"] = output
                     example["is_chunked"] = False

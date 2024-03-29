@@ -1,0 +1,98 @@
+id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,tiktoken_with_attributes_xml_token_num,tiktoken_without_attributes_xml_token_num,split,chunk_num_tokens,output,is_chunked
+263,13183,5771543,Treatment-emergent adverse events (TEAEs),fluoxetine,placebo,binary,72,112,79,112,,,,,,,-0.2852,0.0819,-0.0928,0.0087,Typo in the table,TRUE,12534,9831,DEV,"[7769, 7810, 496]","intervention:
+  events: 13
+  group_size: 112
+comparator:
+  events: 70.5
+  group_size: 112
+
+Desvenlafaxine data:
+intervention:
+  events: 16
+  group_size: 115
+comparator:
+  events: 70.5
+  group_size: 112
+---
+intervention:
+  events: 24
+  group_size: 67
+comparator:
+  events: 4
+  group_size: 112
+
+Note: The provided text mentions that there were 24 TEAEs reported by fluoxetine-treated patients but does not specify how many of these were during the on-therapy period. Assuming that all 24 TEAEs were during the on-therapy
+---
+intervention:
+  events: 9
+  group_size: 52
+comparator:
+  events: 0
+  group_size: 52
+---
+",True
+2,11249,57750,Myocardial infarction,eptifibatide,placebo,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Group sizes are not given so the events cannot calculate using the percentages.,FALSE,5811,4777,DEV,[6608],"intervention:
+  events: 106
+  group_size: 513
+ comparator:
+  events: 118
+  group_size: 512
+
+Note: The information was extracted from the article, specifically from Table 5, regarding the event rates of MI at 30 days by geographic region for the intervention and comparator groups.
+---
+",True
+191,13818,5244530,sick leave,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,49,125,64,133,,,,,,,-0.3637,0.0637,-0.205,0.0205,,TRUE,6216,5516,DEV,"[7574, 7531, 5414]","intervention:
+  events: 86
+  group_size: 125
+comparator:
+  events: 78
+  group_size: 133
+---
+intervention:
+  events: 31
+  group_size: 125
+comparator:
+  events: 48
+  group_size: 133
+---
+intervention:
+  events: 31
+  group_size: 49
+comparator:
+  events: 48
+  group_size: 64
+---
+",True
+261,13182,5771543,CGI-I response rate,desvenlafaxine,placebo,binary,68,99,62,99,,,,,,,0.2693,0.0901,0.0924,0.0106,,TRUE,12534,9831,DEV,"[7769, 7810, 496]","intervention:
+  events: 68
+  group_size: 115
+
+comparator:
+  events: 62
+  group_size: 112
+---
+intervention:
+  events: 68
+  group_size: 115
+comparator:
+  events: 52
+  group_size: 112
+---
+intervention:
+  events: 4
+  group_size: 52
+comparator:
+  events: 0
+  group_size: 51
+
+(Note: The article does not provide the number of patients with a CGI-I response rate in the desvenlafaxine and placebo groups.)
+---
+",True
+120,3102,4450164,ureteropelvic junction obstruction,internal drainage group,stentless cases,binary,8,20,13,44,,,,,,,0.4636,0.3175,0.3029,0.1292,,TRUE,3862,2242,DEV,[4331],"intervention:
+  events: 8
+  group_size: 52
+comparator:
+  events: 4
+  group_size: 30
+---
+",True

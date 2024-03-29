@@ -4,7 +4,7 @@ from models.model import Model
 from typing import List
 import torch
 
-MIN_CHUNK_TOKENS = 250  # minimum tokens to stop reducing the chunks
+MIN_CHUNK_TOKENS = 300  # minimum tokens to stop reducing the chunks
 
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
@@ -154,7 +154,7 @@ class InputChunker:
             # If the chunk isn't smaller than the minimum chunk size, chunk it further
             elif chunk_token_size >= MIN_CHUNK_TOKENS:
                 # Chunk it further, recursively
-                keep_chunks.extend(self.__create_xml_chunks(chunk, max_tokens)[0])
+                keep_chunks.extend(self.__create_xml_chunks(chunk, max_tokens))
 
             elif chunk_token_size < MIN_CHUNK_TOKENS:
                 # if the chunk is too small and the condition is true, keep it
@@ -172,7 +172,7 @@ class InputChunker:
             else:
                 keep_chunks.append(xml_soup_element)
                 continue
-
+        
         return keep_chunks
 
     def __combine_xml_chunks(self, chunks_list: List[BeautifulSoup], max_tokens: int) -> List[str]:
@@ -187,11 +187,12 @@ class InputChunker:
         final_chunks: list
         """
         final_chunks = []
-        current_chunk = BeautifulSoup("", 'lxml')
+        current_chunk = ""
         current_length = 0
 
         for soup in chunks_list:
             soup_length = self.count_tokens(str(soup))
+            print(soup_length)
             # If the soup is too long, print ERROR.
             # This should not happen ideally, but if it does, we should know about it.
             if soup_length > max_tokens:
@@ -205,14 +206,14 @@ class InputChunker:
                         "token_size": current_length
                     }
                     final_chunks.append(chunk_to_add)
-                    current_chunk = BeautifulSoup("", 'lxml')  # Reset the current chunk
+                    current_chunk = ""  # Reset the current chunk
                     current_length = 0  # Reset the current length
                 # Start a new chunk with the current soup
-                current_chunk.append(copy(soup))
+                current_chunk += str(soup)
                 current_length += soup_length
             else:
                 # If adding this soup wouldn't exceed max_length, add it to the current chunk
-                current_chunk.append(copy(soup))
+                current_chunk += str(soup)
                 current_length += soup_length
 
         # After the loop, add the current_chunk if it's not empty
@@ -237,7 +238,6 @@ class InputChunker:
         chunked_input: A list of text chunks
         """
         soup = self.__convert_xml_string_to_soup(xml_string)
-        print(soup)
         xml_chunks_list = self.__create_xml_chunks(soup, max_chunk_token_size)
         condensed_chunks_list = self.__combine_xml_chunks(xml_chunks_list, max_chunk_token_size)
         return condensed_chunks_list

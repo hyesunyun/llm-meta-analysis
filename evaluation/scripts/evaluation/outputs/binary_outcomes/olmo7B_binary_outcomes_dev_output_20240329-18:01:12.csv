@@ -1,0 +1,1162 @@
+id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,tiktoken_with_attributes_xml_token_num,tiktoken_without_attributes_xml_token_num,split,chunk_num_tokens,output,is_chunked
+1,11248,57750,Death or myocardial infarction,eptifibatide,placebo,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Group sizes are not given so the events cannot calculate using the percentages.,FALSE,5811,4777,DEV,"[1526, 1518, 1737]","intervention:
+    events: 1315
+    group_size: 1058
+comparator:
+    events: 815
+    group_size: 812
+
+In the article, the authors reported on the primary event endpoint (death or post-enrolment myocardial infarction) and also the secondary event endpoint (death, post-enrolment myocardial infarction, or non-ST-segment elevation myocardial infarction). Assuming the secondary endpoint event was ""death"", what is the 2
+---
+intervention:
+     Death or myocardial infarction: 118
+    Group_size: N/A
+comparator:
+     Death or myocardial infarction: 124
+    Group_size: N/A
+
+YAML:
+<|assistant>
+intervention:
+    Death or myocardial infarction: 61
+    Group_size: 30
+comparator:
+    Death or myocardial infarction: 63
+    Group_size: 31
+---
+intervention:
+    events: 442
+    group_size: 580
+
+comparator:
+    events: 540
+    group_size: 648
+
+---
+intervention:
+    events: NUMBER
+    group_size: NUMBER
+
+comparator:
+    events: NUMBER
+    group_size: NUMBER
+    
+outcome:
+    events: NUMBER
+    group_size: NUMBER
+
+---
+
+intervention:
+---
+",True
+262,13183,5771543,Treatment-emergent adverse events (TEAEs),desvenlafaxine,placebo,binary,69,115,79,112,,,,,,,-0.4675,0.0792,-0.1618,0.0095,,TRUE,12534,9831,DEV,"[1626, 1568, 547, 1718, 1360, 1682, 1713, 520]","intervention:
+    events: 72
+    group_size: 211
+comparator:
+    events: 68
+    group_size: 213
+
+TEAEs:
+  events:
+  - TEAE: Appetite increased
+    occurred_after: 24
+    occurred_before: 48
+  - TEAE: Insomnia
+    occurred_after: 8
+    occurred_before: 56
+  - TEAE: Dry mouth
+
+---
+intervention:
+  events: 93
+  group_size: 45
+comparator:
+  events: 87
+  group_size: 37
+
+intervention:
+  events: 48
+  group_size: 24
+comparator:
+  events: 58
+  group_size: 43
+
+intervention:
+  events: 22
+  group_size: 14
+comparator:
+  events: 28
+  group_size: 21
+---
+intervention:
+    events: 17...30
+    group_size: 87
+comparator:
+    events: 17...30
+    group_size: 87
+
+
+In the given trial article, the contingency table for the Treatment-emergent adverse events (TEAEs) shows events for desvenlafaxine and placebo groups. For desvenlafaxine, 17 (36.8%) out of 50 patients reported at least one TEAE, while for
+---
+intervention:
+  events: 93
+  group_size: 99
+comparator:
+  events: 93
+  group_size: 99
+
+TEAEs:
+  - event: pruritus
+    groups: [""desvenlafaxine""]
+    counts: 8
+  - event: agitation
+    groups: [""fluoxetine""]
+    counts: 2
+  - event: severe pruritus
+    groups: [""desven
+---
+intervention:
+    events: 27
+    group_size: 43
+comparator:
+    events: 52
+    group_size: 112
+
+YAML:
+intervention:
+    events: 43
+    group_size: 72
+comparator:
+    events: 79
+    group_size: 115
+---
+intervention:
+    events: 34
+    group_size: 45
+desvenlafaxine:
+    events: 17
+    group_size: 67
+placebo:
+    events: 23
+    group_size: 70
+
+TeCVid 2021 C-SSRS summary:
+intervention:
+    events: 28
+    group_size: 112
+desvenlafaxine:
+    events: 7
+    group_size: 115
+placebo
+---
+intervention:
+    events: 8
+    group_size: 112
+desvenlafaxine:
+    events: 6
+    group_size: 107
+
+comparator:
+    events: 8
+    group_size: 110
+
+< YAML descriptor for safety population:
+
+intervention:
+    events: 29
+    group_size: 337
+desvenlafaxine:
+    events: 10
+    group_size: 332
+
+
+---
+intervention:
+  events: 2
+  group_size: 12
+desvenlafaxine:
+  events: 8
+  group_size: 12
+placebo:
+  events: 4
+  group_size: 13
+
+Explanation:
+The provided data indicate that 2 adolescents in the desvenlafaxine group and 4 adolescents in the placebo group experienced TEAEs during the study. Therefore, the total number of events in each group amounts to 2
+---
+",True
+260,13181,5771543,CGI-I response rate,fluoxetine,placebo,binary,79,101,62,99,,,,,,,0.7622,0.1013,0.2223,0.0088,,TRUE,12534,9831,DEV,"[1626, 1568, 547, 1718, 1360, 1682, 1713, 520]","intervention:
+  events: 8
+  group_size: 29
+comparator:
+  events: 8
+  group_size: 29
+
+CGI-I response rate:
+  events: 8
+  group_size: 29
+  value: 6
+YAML:
+intervention:
+  events: 8
+  group_size: 29
+comparator:
+  events: 8
+  group_size: 29
+
+CGI-I response
+---
+intervention:
+  events: 43
+  group_size: 29
+
+comparator:
+  events: 70
+  group_size: 35
+
+outcome:
+ CGI-I response rate
+ events: 209
+ group_size: 63
+---
+intervention:
+  events: 8
+  group_size: 88
+
+comparator:
+  events: 8
+  group_size: 88
+
+outcome:
+  events: 8
+  group_size: 88
+CGI-I response:
+  post: 8
+  group_A: 6
+  group_B: 4
+---
+intervention:
+  events: 116
+  group_size: 104
+fluoxetine:
+  events: 80
+  group_size: 81
+desvenlafaxine:
+  events: 100
+  group_size: 99
+---
+intervention:
+  events: 17
+  group_size: 47
+comparator:
+  events: 13
+  group_size: 55
+
+The given data does not provide any information about treatment-emergent adverse events (TEAEs) or CGI-I response rate, so ""x"" should be included in the YAML format.
+---
+intervention:
+    CGI-I: ""< 4""
+    group_size: N/A
+comparator:
+    CGI-I: "">-3 and <= 7""
+    group_size: N/A
+
+expmap: |
+  interventions:
+    ""Fluoxetine"": ""Fluoxetine (n=45)""
+    ""Placebo"": ""Placebo (n=42)""
+  comparators:
+    
+---
+intervention:
+  events: 112
+  group_size: 107
+
+comparator:
+  events: 110
+  group_size: 108
+
+outcome:
+  events: 29
+  group_size: 337
+
+CGI-I response rate:
+  events: 29
+  group_size: 337
+  group: fluoxetine
+  intervention: post-baseline
+  subgroup: CGI-I response rate
+---
+intervention:
+    events: 2
+    group_size: 11
+post_intervention:
+    events: NUMBER
+    group_size: NUMBER
+
+ The 2 x 2 contingency table for the given trial article (intervention: fluoxetine, comparator: placebo, outcome: CGI-I response rate) based on the data provided is:
+
+|  | Fluoxetine (Post-Intervention) | Placebo (Post-Intervention) |
+
+---
+",True
+261,13182,5771543,CGI-I response rate,desvenlafaxine,placebo,binary,68,99,62,99,,,,,,,0.2693,0.0901,0.0924,0.0106,,TRUE,12534,9831,DEV,"[1626, 1568, 547, 1718, 1360, 1682, 1713, 520]","intervention:
+    events: 8
+    group_size: 31
+
+comparator:
+    events: 8
+    group_size: 31
+
+CGI-I response rate post-treatment (desvenlafaxine)
+[6, 33]
+
+Note: The above YAML format displays the contingency table for the specified intervention and comparator. It includes the number of events and number of samples in each group. The fields ""events"" and ""group_
+---
+intervention:
+  events: 43
+  group_size: 140
+
+comparator:
+  events: 42
+  group_size: 138
+
+<|assistant>
+intervention:
+  events: 43
+  group_size: 140
+
+comparator:
+  events: 42
+  group_size: 138
+
+post_intervention:
+  CGI-I response: 2
+  number_completed_12_week_phase: 130
+---
+intervention:
+  events: 8
+  group_size: 84
+
+comparator:
+  events: 8
+  group_size: 84
+
+outcome:
+  events: 8
+  group_size: 42
+
+CGI-I response rate:
+  intervention: 4
+  comparator: 4
+
+CGI-I response rate post-intervention:
+  intervention: 6
+  comparator: 6
+---
+intervention:
+    events: 94
+    group_size: 99
+desvenlafaxine:
+    events: 94
+    group_size: 99
+    
+comparator:
+    events: 82
+    group_size: 106
+fluoxetine:
+    events: 79
+    group_size: 106
+
+CGI-I response rate:
+    events: 45
+    group_size: 99
+desvenlafaxine:
+
+---
+intervention:
+  events: 14
+  group_size: 43
+comparator:
+  events: 14
+  group_size: 43
+
+YAML:
+<|assistant>
+intervention:
+  events: 10
+  group_size: 72
+comparator:
+  events: 8
+  group_size: 112
+
+YAML:
+<|assistant>
+intervention:
+  events: 7
+  group_size: 115
+---
+intervention:
+    CGI-I:
+        events: 337
+        group_size: 70
+
+comparator:
+    CGI-I:
+        events: 337
+        group_size: 70
+
+output:
+    intervention:
+        CGI-I:
+            ""g1"": { ""value"": 44, ""confidence"": ""95%"" }
+            ""g2"": { ""value"": 22, ""confidence"": ""95%"" }
+---
+intervention:
+    events: 112
+    group_size: 110
+
+comparator:
+    events: 104
+    group_size: 97
+
+cgibiord:
+    events: 29
+    group_size: 337
+
+interventoumi:
+    events: 29
+    group_size: 115
+
+cgiglobals:
+    events: 343
+    group_size: 340
+
+interventiondes:
+    events: 29
+    
+---
+ intervention:
+   events: 2
+   group_size: 13
+ desvenlafaxine:
+   events: 2
+   group_size: 13
+   
+comparator:
+   events: 2
+   group_size: 13
+ placebo:
+   events: 0
+   group_size: 13
+   
+CGI-I response rate:
+   post-intervention: 2
+   group_size: 13
+---
+",True
+191,13818,5244530,sick leave,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,49,125,64,133,,,,,,,-0.3637,0.0637,-0.205,0.0205,,TRUE,6216,5516,DEV,"[795, 1337, 1328, 1421, 1686, 1686, 1319, 1626, 1423, 1557, 1513, 1085, 941]","intervention:
+    sick_leave: NUMBER   # number of patients who took sick leave
+    group_size: NUMBER  # sample size for each group (intervention and control)
+
+comparator:
+    sick_leave: NUMBER   # number of patients who took sick leave
+    group_size: NUMBER  # sample size for each group (intervention and control)
+
+YAML definition ended.
+---
+intervention:
+    events: 2
+    group_size: 8
+comparator:
+    events: 3
+    group_size: 6
+
+sick_leave:
+    post: 2
+    n: 258
+
+# Note: 'outcome' field not needed for this specific question. The YAML provided covers the correct contingency table for the given trial information.
+---
+intervention:
+    events: 2
+    group_size: 10
+
+comparator:
+    events: 2
+    group_size: 10
+
+outcome:
+    sick_leave: 2
+
+In the given trial article, the number of participants with sick leave at baseline is not mentioned. Thus, ""x"" should be used for the YAML output.
+---
+intervention:
+    events: 2
+    group_size: 12
+comparator:
+    events: 3
+    group_size: 6
+
+outcome:
+    events: NUMBER OF PARTICIPANTS WHO TOOK SICK LEAVE
+    group_size: NUMBER OF PARTICIPANTS IN EACH GROUP
+    label: ""sick leave""
+    unit: ""days""
+    timeframe: ""post-intervention""
+---
+intervention:
+    events: 6
+    group_size: 10
+
+comparator:
+    events: 12
+    group_size: 12
+
+outcome:
+    sick_leave: 132 # close to 12 months follow-up (124 + 8)
+    sick_leave: 87 # close to 6 months follow-up (54 + 6)
+    sick_leave: 47 # close to 3 months follow-up (19 + 11)
+---
+intervention:
+    events: 12
+    group_size: 8
+
+comparator:
+    events: 12
+    group_size: 8
+
+outcome:
+    sick_leave: 6
+---
+intervention:
+    events: 3
+    group_size: 8
+
+comparator:
+    events: 10
+    group_size: 10
+
+GHQ-12:
+    events: 6
+    group_size: 6
+
+BDI-II:
+    events: 6
+    group_size: 6
+
+EQ-5D:
+    events: 6
+    group_size: 6
+
+Sick leave days:
+    events:
+---
+intervention:
+    events: 67
+    group_size: 11
+interverter:
+    events: 35
+    group_size: 14
+outcome:
+    sick_leave: 27
+    N/A (no data for this outcome in the provided article)
+yaml_string: |
+    intervention:
+        events: 67
+        group_size: 11
+    comparator:
+        events: 35
+        group_size: 14
+
+---
+intervention:
+  events: 142
+  group_size: 18
+comparator:
+  events: 136
+  group_size: 15
+
+YAML:
+<intervention>
+  sick_leave:
+    Number: 71
+    Group_size: 13
+</intervention>
+
+YAML:
+<comparator>
+  sick_leave:
+    Number: 70
+    Group_size: 16
+</comparator
+---
+intervention:
+    events: 103
+    group_size: 23
+comparator:
+    events: 111
+    group_size: 38
+
+YAML:
+<|assistant>
+intervention:
+    events: 49
+    group_size: 36
+comparator:
+    events: 90
+    group_size: 45
+
+YAML:
+<|assistant>
+intervention:
+    events: 123
+    group_size: 44
+---
+intervention:
+    events: 124
+    group_size: 39
+
+comparator:
+    events: 124
+    group_size: 48
+
+outcome:
+    sick_leave: 55
+---
+intervention:
+    sick_leave: 4
+    group_size: unspecified
+
+comparator:
+    sick_leave: 4
+    group_size: unspecified
+
+YAML:
+<|assistant>
+intervention:
+    sick_leave: 1
+    group_size: unspecified
+
+comparator:
+    sick_leave: 3
+    group_size: unspecified
+
+YAML:
+<|assistant>
+
+---
+intervention:
+    events: 3
+    group_size: 10
+comparator:
+    events: 6
+    group_size: 12
+
+YAML:
+intervention:
+    events: mean (3.44) and SD (1.214) of GP consultations in the 3-month intervention period
+    group_size: mean (4.16) and SD (2.398) of the total visits to primary care and health centers during the 3-month
+---
+",True
+2,11249,57750,Myocardial infarction,eptifibatide,placebo,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Group sizes are not given so the events cannot calculate using the percentages.,FALSE,5811,4777,DEV,"[1526, 1518, 1737]","intervention:
+    events: 1315
+    group_size: 478
+eptifibatide:
+    events: 5005
+    group_size: 1180
+
+comparator:
+    events: 3463
+    group_size: 821
+
+# If multiple timeframes for the outcome are available:
+# YAML:
+# intervention:
+#     events: NUMBER1
+#     group_size: NUMBER1
+# comparator:
+---
+intervention:
+    Myocardial infarction: x
+    eptifibatide:...) post-intervention (if available)
+comparator:
+    Myocardial infarction: x
+    placebo:...) post-intervention (if available)
+
+The YAML format for the following contingency table and research question is requested:
+
+|       Intervention     |       Number of events    |
+|------------------------|---------------------------|
+|      Eptifibatide       |             n
+---
+intervention:
+     Myocardial infarction: NUMBER
+    eptifibatide:
+        Myocardial infarction: NUMBER
+
+comparator:
+    Myocardial infarction: NUMBER
+    Placebo:
+        Myocardial infarction: NUMBER
+
+ events: NUMBER
+ group_size: NUMBER
+---
+",True
+190,13818,5244530,sedative prescriptions,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,52,125,51,133,,,,,,,0.1357,0.0647,0.0815,0.0233,Data from 12 months follow up (final timepoint),TRUE,6216,5516,DEV,"[795, 1337, 1328, 1421, 1686, 1686, 1319, 1626, 1423, 1557, 1513, 1085, 941]","intervention:
+  events: 238
+  group_size: 126
+intervention vs TAU:
+  events: 238
+  group_size: 276
+
+sedatives:
+  intervention: 118
+  comparator: 131
+
+x
+---
+intervention:
+    events: 142
+    group_size: 17
+
+comparator:
+    events: 119
+    group_size: 13
+
+<The above contingency table represents the background characteristics of the study population in the PRI-SMA trial, where the ""intervention"" group received person-centred general practitioners (GP) consultations, while the ""comparator"" group received treatment as usual (TAU). The ""events"" column represents the number of participants
+---
+intervention:
+    events: 123
+    group_size: 47
+post_intervention:
+    intervention:
+        sedative_prescriptions: 21
+    comparator:
+        sedative_prescriptions: 45
+
+TAU:
+    events: 134
+    group_size: 62
+sedative_prescriptions:
+    post_intervention: 12
+    TAU: 22
+---
+intervention:
+    events: 168
+    group_size: 30
+
+comparator:
+    events: 130
+    group_size: 15
+
+sedative_prescriptions:
+    post: 68 (24.6%)
+  pre: 51 (28.3%)
+---
+intervention:
+    events: 67, 98
+    group_size: 18, 30
+comparator:
+    events: 81, 26
+    group_size: 17, 27
+
+Explanation:
+The data provided in the trial article does not contain information on sedative prescriptions. Therefore, the ""outcome"" field should be left empty.
+---
+intervention:
+    events: 14
+    group_size: 10
+
+comparator:
+    events: 23
+    group_size: 30
+
+outcome:
+    sedative_prescriptions: 102
+    post_intervention: 102
+
+The above contingency table in YAML format is created based on the provided trial article. The given information suggests there were 14 person-centred general practitioners (GP) consultations in the intervention group, and each consultation resulted in an
+---
+intervention:
+    events: 113
+    group_size: 14
+intervention vs comparator:
+    events: n/a
+    group_size: n/a
+outcome: sedative prescriptions:
+    events: 66
+    group_size: 33
+
+YAML:
+intervention:
+    events: 113
+    group_size: 14
+comparator:
+    events: 107
+    group_size: 16
+outcome: sedative prescriptions
+---
+intervention:
+    events: 72
+    group_size: 88
+comparator:
+    events: 137
+    group_size: 126
+
+This YAML format is based on the given trial article, where the post-intervention percentage of patients with sedative prescriptions is considered for both the intervention and TAU groups. The contingency table compares these two groups, indicating the number and percent of patients who had sedative prescriptions in both groups. The data for the YAML format comes
+---
+intervention:
+    events: 68
+    group_size: 34
+comparator:
+    events: 130
+    group_size: 68
+
+num_sedatives_post_intervention: x
+num_sedatives_pre_intervention: N/A
+timeframe_closest_to_outcome: 6m
+timeframe_last: 6m
+---
+intervention:
+    events: 123
+    group_size: 37
+comparator:
+    events: 125
+    group_size: 39
+
+YAML:
+<|assistant>
+intervention:
+    events: 35 * 2
+    group_size: 14
+comparator:
+    events: 47 * 2
+    group_size: 35
+---
+intervention:
+    events: 93
+    group_size: N/A	
+comparator:
+    events: 122
+    group_size: N/A
+
+YAML:
+intervention:
+    events: 45
+    group_size: N/A	
+comparator:
+    events: 65
+    group_size: N/A
+
+YAML:
+intervention:
+    events: 31
+    group_size: 47
+
+
+---
+intervention:
+    events: 4
+    group_size: 12
+comparator:
+    events: 12
+    group_size: 8
+
+yamllint enable: D203, D408, D204, D022
+---
+intervention:
+    events: 4
+    group_size: 12
+comparator:
+    events: 3
+    group_size: 10
+
+yamLLink: https://yamlformat.com/man/f-table-4/
+yamLLinkTitle: Table 4 - Contingency Table
+yamLLinkDescr: Table displaying the number of patients' contacts with GPs, nurses, and psychologists between baseline to 3 months, and 4 to 12
+---
+",True
+56,10676,3276927,effective in the treatment of reversible inguinal hernia,post-Yoga,pre-Yoga,binary,,19,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,"No real numerical data attached to this specific outcome. Other prompts account for ""treatment",FALSE,2011,1731,DEV,,"intervention:
+    events: 19
+    group_size: 9
+
+comparator:
+    events: 19
+    group_size: 9
+
+outcome:
+    effective:
+        NUM_PUST_PAIN: 0
+        NUM_AGVARING_FACTORS: 3
+        NUM_RELIEVING_FACTORS: 3
+        NUM_FREQ_OCCURRENCES: 14
+
+Note: The given",False
+120,3102,4450164,ureteropelvic junction obstruction,internal drainage group,stentless cases,binary,8,20,13,44,,,,,,,0.4636,0.3175,0.3029,0.1292,,TRUE,3862,2242,DEV,"[1471, 1127, 1008]","intervention:
+    events: 51
+    group_size: 52
+
+comparator:
+    events: 82
+    group_size: 86
+
+yaml_data: |
+  intervention:
+    events: 51
+    group_size: 52
+
+  comparator:
+    events: 82
+    group_size: 86
+---
+intervention:
+    events: 45
+    group_size: 52
+comparator:
+    events: 45
+    group_size: 52
+
+YAML:
+<|assistant>
+intervention:
+    events: 4
+    group_size: 6
+comparator:
+    events: 0
+    group_size: 0
+
+YAML:
+<|assistant>
+intervention:
+    events: 8
+    group_size: 8
+---
+intervention:
+    events: 30
+    group_size: 30
+comparator:
+    events: 52
+    group_size: 52
+
+YAML:
+intervention:
+    events: 27
+    group_size: 27
+comparator:
+    events: 32
+    group_size: 32
+
+
+YAML:
+intervention:
+    events: 20
+    group_size: 20
+comparator:
+    events: 44
+
+---
+",True
+192,13819,5244530,continued antidepressants until the 6-month,person-centred general practitioners (GP) consultations,treatment as usual (TAU),binary,86,125,78,133,,,,,,,0.4414,0.0683,0.1597,0.0089,,TRUE,6216,5516,DEV,"[795, 1337, 1328, 1421, 1686, 1686, 1319, 1626, 1423, 1557, 1513, 1085, 941]","intervention:
+  events: 2
+  group_size: 125
+
+comparator:
+  events: 130
+  group_size: 133
+
+<Fig 1><caption>PRI-SMA-Study (CONSORT Flowchart)</caption><graphic></graphic></Fig>
+
+<intervention>:
+  events: 258
+  group_size: 258
+
+<comparator>:
+  events: 91
+  group_size: 91
+---
+intervention:
+  events: 6
+  group_size: 12
+
+comparator:
+  events: 6
+  group_size: 12
+
+outcome:
+  NUM_OF_ANTIDEPRESSANTS_CONTINUED: 3
+
+Note: 3 is chosen because it is the closest value to 6 months (6.4 months) and is the largest value among the timeframes provided in the article. In case of any ambiguity, 3 is chosen
+---
+intervention:
+    events: 8
+    group_size: 10
+
+comparator:
+    events: 9
+    group_size: 9
+
+You did not provide information about pre-intervention values, so I assume there are no pre-intervention values. Post-intervention values were obtained at 6 months for the intervention group, so the contingency table shown above is based on this timepoint.
+---
+intervention:
+    events: 10
+    group_size: 15
+
+comparator:
+    events: 10
+    group_size: 15
+
+outcome:
+    NUM_OF_PARTICIPANTS_ON_ANTDEPRESSANTS_AT_6_MONTHS:
+        events: n_participants_at_6_months
+        group_size: n_participants
+
+Note: n_participants is the total
+---
+intervention:
+    events: 8, 11
+    group_size: 6
+
+comparator:
+    events: 9, 12
+    group_size: 6
+
+The post-intervention data for the outcome is used. The timeframe of interest is the 6-month timepoint.
+---
+intervention:
+    events: 12
+    group_size: 6
+interventions:
+    person-centred general practitioners (GP) consultations:
+        events: NUMBER
+        group_size: NUMBER
+comparator:
+    treatment as usual (TAU):
+        events: NUMBER
+        group_size: NUMBER
+outcome:
+    continued antidepressants until the 6-month:
+        events: NUMBER
+        group_size:
+---
+intervention:
+    events: 4
+    group_size: 8
+comparator:
+    events: 6
+    group_size: 10
+---
+intervention:
+    BDI_II_post: < xref id=""fig.2"" role=""doc-reference"">Fig. 2< /xref> <i>mean ∆(Intra-individual change in BDI-II score)</i> 
+    EQ5D_post: < xref
+---
+intervention:
+    events: 72
+    group_size: 125
+comparator:
+    events: 96
+    group_size: 133
+
+YAML:
+<|assistant>
+intervention:
+    events: 69
+    group_size: 125
+comparator:
+    events: 59
+    group_size: 133
+
+YAML:
+<|assistant>
+intervention:
+    events: 74
+    group_size: 124
+---
+intervention:
+  events: 72
+  group_size: 58
+comparator:
+  events: 96
+  group_size: 74
+
+YAML:
+intervention:
+  events: 27 * 22 = 538
+  group_size: 86
+comparator:
+  events: 43 * 32 = 1228
+  group_size: 77 * 74
+
+YAML:
+intervention:
+  events: 26 * 21 = 531
+  group_
+---
+intervention:
+    events: 125
+    group_size: 10
+
+comparator:
+    events: 125
+    group_size: 10
+
+outcome:
+    num_on_ANTs_6_months: x
+    mean_days_ANTs_6_months: x
+    p_val_diff_mean_days_ANTs_6_months: x
+---
+intervention:
+    events: 12
+    group_size: 8
+post_intervention:
+    NUMBER: total_days_on_meds
+TAU:
+    events: NUMBER
+    group_size: NUMBER
+    NUMBER: med_days_before_TAU
+intervention_total:
+    events: NUMBER
+    group_size: NUMBER
+    NUMBER: total_days_on_meds_total
+
+YAML:
+---
+intervention:
+    events: NUM_VISITS_TO_PHCC
+    group_size: NUM_VISITS_TO_PHCC
+comparator:
+    events: NUM_VISITS_TO_PHCC
+    group_size: NUM_VISITS_TO_PHCC
+
+YAML:
+ intervention:
+    events: NUM_GP_VISITS
+    group_size: NUM_GP_VISITS
+ comparator:
+    events:
+---
+intervention:
+  events: 3
+  group_size: 10
+comparator:
+  events: 3
+  group_size: 10
+
+YAML:
+<|assistant>
+intervention:
+  events: 1
+  group_size: 9
+comparator:
+  events: 3
+  group_size: 10
+
+YAML:
+<|assistant>
+intervention:
+  events: 2
+  group_size: 8
+---
+",True
