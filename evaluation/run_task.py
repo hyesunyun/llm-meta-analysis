@@ -109,7 +109,7 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:2] # TODO change back to 10
+            dataset = dataset[:10]
 
         # Add xml content to each example
         for example in dataset:
@@ -207,35 +207,26 @@ class MetaAnalysisTaskRunner:
                     example["output"] = output
                     example["is_chunked"] = False
                     results.append(example)
-                else:
-                    ico_dict = {
-                        "intervention": example["intervention"],
-                        "comparator": example["comparator"],
-                        "outcome": example["outcome"]
-                    }
-                    max_tokens = self.model.get_context_length() - 300 # account for the actual prompt, 300 as approx num of tokens of prompt template
-                    chunks, num_model_calls = input_chunker.get_chunked_input(example["abstract_and_results_xml"], ico_dict, max_tokens)
-                    chunks_examples = []
+                else: # if the model cannot handle the tokens, chunk the input
+                    max_chunk_tokens = self.model.get_context_length() - 300 # account for the actual prompt, 300 as approx num of tokens of prompt template
+                    chunks = input_chunker.get_chunked_input(example["abstract_and_results_xml"], max_chunk_tokens)
+                    chunked_examples = []
                     for chunk in chunks:
-                        chunk_example = example.copy()
-                        chunk_example["abstract_and_results_xml"] = chunk
-                        chunks_examples.append(chunk_example)
+                        chunked_example = example.copy()
+                        chunked_example["abstract_and_results_xml"] = chunk
+                        chunked_examples.append(chunked_example)
                     # format the chunks with the prompt template
-                    formatted_chunks_examples = [format_example_with_prompt_template(example, prompt) for example in chunks_examples]
-                    num_chunks = len(chunks)
-                    example["num_chunks"] = num_chunks
+                    formatted_chunked_examples = [format_example_with_prompt_template(example, prompt) for example in chunked_examples]
 
                     concatenated_output = ""
                     chunk_num_tokens_list = []
-                    for input_chunk in formatted_chunks_examples:
+                    for input_chunk in formatted_chunked_examples:
                         print(input_chunk["input"])
-                        num_model_calls += 1
                         chunk_num_tokens_list.append(input_chunker.count_tokens(input_chunk["input"]))
                         output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
                         print(output)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
-                    example["total_num_model_calls"] = num_model_calls
                     example["output"] = concatenated_output
                     example["is_chunked"] = True
                     results.append(example)
