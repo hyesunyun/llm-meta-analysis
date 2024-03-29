@@ -265,8 +265,7 @@ class InputChunker:
             # If the chunk is a table and is relevant, but it's too large, split it in half and add the two tables to
             # the list
             if is_table and is_relevant and chunk_len > max_tokens:
-                if is_table:
-                    keep_chunks.extend(self.__split_table(chunk))
+                keep_chunks.extend(self.__split_table(chunk))
 
             # If the chunk is a table or abstract and is relevant, and not too big, append it to the list
             elif (is_table or is_abstract) and is_relevant and chunk_len <= max_tokens:
