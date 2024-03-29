@@ -109,7 +109,7 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:3] # TODO make it back to 10
+            dataset = dataset[:1] # TODO make it back to 10
 
         # Add xml content to each example
         for example in dataset:
