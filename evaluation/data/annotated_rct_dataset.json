@@ -368,7 +368,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "FALSE",
     "tiktoken_with_attributes_xml_token_num": 11722,
-    "tiktoken_without_attributes_xml_token_num": 8110,
+    "tiktoken_without_attributes_xml_token_num": 8106,
     "split": "TEST"
   },
   {
@@ -399,7 +399,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 11722,
-    "tiktoken_without_attributes_xml_token_num": 8110,
+    "tiktoken_without_attributes_xml_token_num": 8106,
     "split": "TEST"
   },
   {
@@ -430,7 +430,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 11722,
-    "tiktoken_without_attributes_xml_token_num": 8110,
+    "tiktoken_without_attributes_xml_token_num": 8106,
     "split": "TEST"
   },
   {
@@ -461,7 +461,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 11722,
-    "tiktoken_without_attributes_xml_token_num": 8110,
+    "tiktoken_without_attributes_xml_token_num": 8106,
     "split": "TEST"
   },
   {
@@ -492,7 +492,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 11722,
-    "tiktoken_without_attributes_xml_token_num": 8110,
+    "tiktoken_without_attributes_xml_token_num": 8106,
     "split": "TEST"
   },
   {

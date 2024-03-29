@@ -12,6 +12,40 @@ class InputChunker:
     def __init__(self, model: Model) -> None:
         self.model = model  # model object for GPT models or other models (HuggingFace)
 
+    def __remove_style_tags(self, soup: BeautifulSoup, tags: list) -> BeautifulSoup:
+        """
+        Remove the style tags from the soup object.
+
+        Args:
+        soup: BeautifulSoup object
+        tags: list
+
+        Returns:
+        soup: BeautifulSoup object
+        """
+        # Copy the soup and unwrap the styling tags specified in the list
+        soup = deepcopy(soup)
+        for tag in soup.find_all(tags):
+            tag.unwrap()
+        return soup
+
+    def __preprocess_xml(self, xml_string: str, remove_tags: list = None) -> BeautifulSoup:
+        """
+        Preprocess the xml string by converting to a BeautifulSoup object and removing the styling tags.
+
+        Args:
+        xml_string: string
+
+        Returns:
+        soup: BeautifulSoup object
+        """
+        if remove_tags is None:
+            remove_tags = ["bold", "italic", "underline", "sup", "sub"]
+        soup = self.__convert_xml_string_to_soup(xml_string)
+        soup = self.__remove_style_tags(soup, remove_tags)
+
+        return soup
+
     def __remove_html_body(self, soup_object: BeautifulSoup) -> BeautifulSoup:
         """
         Remove the html and body tags from the soup object. 
@@ -237,6 +271,7 @@ class InputChunker:
         Returns:
         chunked_input: A list of text chunks
         """
+        soup = self.__preprocess_xml(xml_string)
         soup = self.__convert_xml_string_to_soup(xml_string)
         xml_chunks_list = self.__create_xml_chunks(soup, max_chunk_token_size)
         condensed_chunks_list = self.__combine_xml_chunks(xml_chunks_list, max_chunk_token_size)
