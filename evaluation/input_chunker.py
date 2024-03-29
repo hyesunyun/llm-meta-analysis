@@ -205,9 +205,11 @@ class InputChunker:
                         "token_size": current_length
                     }
                     final_chunks.append(chunk_to_add)
+                    current_chunk = BeautifulSoup("", 'lxml')  # Reset the current chunk
+                    current_length = 0  # Reset the current length
                 # Start a new chunk with the current soup
-                current_chunk = copy(soup)
-                current_length = soup_length
+                current_chunk.append(copy(soup))
+                current_length += soup_length
             else:
                 # If adding this soup wouldn't exceed max_length, add it to the current chunk
                 current_chunk.append(copy(soup))
