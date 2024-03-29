@@ -21,7 +21,7 @@ class PMCLlama(Model):
         :return encoded text
         """
         # 30,000 is some arbitrary number that is larger than the maximum context length of the model
-        return self.tokenizer(text, max_length = 30000, return_tensors="pt").input_ids
+        return self.tokenizer.encode(text, max_length = 30000)
 
     def __load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens

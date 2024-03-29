@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup, Tag
 from copy import deepcopy, copy
 from models.model import Model
 from typing import List
+import torch
 
 MIN_CHUNK_TOKENS = 250  # minimum tokens to stop reducing the chunks
 
@@ -58,9 +59,11 @@ class InputChunker:
         Returns:
         token_count: integer
         """
-        return len(self.model.encode_text(text))
+        encoded = self.model.encode_text(text)
+        encoded_length = len(encoded)
+        return encoded_length
 
-    def __split_table(self, table: BeautifulSoup) -> List[BeautifulSoup, BeautifulSoup]:
+    def __split_table(self, table: BeautifulSoup) -> List[BeautifulSoup]:
         """
         Extract the header and footer, spit the body table rows in half, and return the two tables (first and second halves).
 
@@ -160,7 +163,7 @@ class InputChunker:
             else:
                 # If the chunk is not relevant, don't keep it
                 pass
-
+        
         for child in xml_soup_element.contents:
             # If the child is a tag, process the chunk
             if isinstance(child, Tag):
@@ -197,7 +200,11 @@ class InputChunker:
             # If adding this soup would exceed max_length, finish the current chunk
             if current_length + soup_length > max_tokens:
                 if current_length > 0:  # Avoid adding empty chunks
-                    final_chunks.append(copy(current_chunk))
+                    chunk_to_add = {
+                        "chunk": current_chunk,
+                        "token_size": current_length
+                    }
+                    final_chunks.append(chunk_to_add)
                 # Start a new chunk with the current soup
                 current_chunk = copy(soup)
                 current_length = soup_length
@@ -208,7 +215,11 @@ class InputChunker:
 
         # After the loop, add the current_chunk if it's not empty
         if current_length > 0:
-            final_chunks.append(copy(current_chunk))
+            chunk_to_add = {
+                "chunk": current_chunk,
+                "token_size": current_length
+            }
+            final_chunks.append(chunk_to_add)
 
         return final_chunks
 
@@ -224,6 +235,7 @@ class InputChunker:
         chunked_input: A list of text chunks
         """
         soup = self.__convert_xml_string_to_soup(xml_string)
+        print(soup)
         xml_chunks_list = self.__create_xml_chunks(soup, max_chunk_token_size)
         condensed_chunks_list = self.__combine_xml_chunks(xml_chunks_list, max_chunk_token_size)
         return condensed_chunks_list

@@ -109,7 +109,7 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:10]
+            dataset = dataset[:3] # TODO make it back to 10
 
         # Add xml content to each example
         for example in dataset:
@@ -194,7 +194,7 @@ class MetaAnalysisTaskRunner:
                 results.append(example)
         else: # for binary_outcomes or continuous_outcomes not using gpt4, we may need to chunk the input
             # instantiate input chunker
-            input_chunker = InputChunker(self.model_name, self.model)
+            input_chunker = InputChunker(self.model)
 
             # run the task using specified model
             results = []
@@ -213,7 +213,8 @@ class MetaAnalysisTaskRunner:
                     chunked_examples = []
                     for chunk in chunks:
                         chunked_example = example.copy()
-                        chunked_example["abstract_and_results_xml"] = chunk
+                        chunked_example["abstract_and_results_xml"] = chunk["chunk"]
+                        chunked_example["chunk_token_size"] = chunk["token_size"]
                         chunked_examples.append(chunked_example)
                     # format the chunks with the prompt template
                     formatted_chunked_examples = [format_example_with_prompt_template(example, prompt) for example in chunked_examples]
@@ -221,10 +222,10 @@ class MetaAnalysisTaskRunner:
                     concatenated_output = ""
                     chunk_num_tokens_list = []
                     for input_chunk in formatted_chunked_examples:
-                        print(input_chunk["input"])
-                        chunk_num_tokens_list.append(input_chunker.count_tokens(input_chunk["input"]))
+                        chunk_num_tokens_list.append(input_chunk["chunk_token_size"])
+                        print(f"chunk token size: {input_chunk['chunk_token_size']}")
+                        print(f"input chunk token size: {input_chunk['input']}")
                         output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
-                        print(output)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
                     example["output"] = concatenated_output

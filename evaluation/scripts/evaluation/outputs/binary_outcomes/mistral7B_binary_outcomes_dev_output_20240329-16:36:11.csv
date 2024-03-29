@@ -1,0 +1,25 @@
+id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,tiktoken_with_attributes_xml_token_num,tiktoken_without_attributes_xml_token_num,split,chunk_num_tokens,output,is_chunked
+2,11249,57750,Myocardial infarction,eptifibatide,placebo,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Group sizes are not given so the events cannot calculate using the percentages.,FALSE,5811,4777,DEV,[131],"intervention:
+  events: NUMBER_INTERVENSION_MI
+  group_size: NUMBER_INTERVENION_PARTICIPANTS
+comparator:
+  events: NUMBER_COMPARATOR_MI
+  group_size: NUMBER_COMPARATOR_PARTICIPANTS
+---
+",True
+120,3102,4450164,ureteropelvic junction obstruction,internal drainage group,stentless cases,binary,8,20,13,44,,,,,,,0.4636,0.3175,0.3029,0.1292,,TRUE,3862,2242,DEV,[78],"intervention:
+  events: 41
+  group_size: 82
+comparator:
+  events: 30
+  group_size: 60
+---
+",True
+56,10676,3276927,effective in the treatment of reversible inguinal hernia,post-Yoga,pre-Yoga,binary,,19,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,"No real numerical data attached to this specific outcome. Other prompts account for ""treatment",FALSE,2011,1731,DEV,[884],"intervention:
+  events: 11
+  group_size: 19
+comparator:
+  events: 8
+  group_size: 19
+---
+",True

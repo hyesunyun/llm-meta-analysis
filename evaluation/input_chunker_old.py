@@ -8,7 +8,7 @@ from typing import Tuple
 
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
-class InputChunker:
+class InputChunkerOld:
     def __init__(self, model_name: str, model: Model) -> None:
         self.model_name = model_name  # the name of the model (parameter for run_task.py)
         self.model = model  # model object for GPT models or other models (HuggingFace)

@@ -20,8 +20,8 @@ class Mistral(Model):
 
         :return encoded text
         """
-        return self.tokenizer(text, return_tensors="pt").input_ids
-
+        return self.tokenizer.encode(text)
+        
     def __load_model(self): # context window size: 32k tokens but 8k tokens is recommended for best performance
         model = AutoModelForCausalLM.from_pretrained(
             "mistralai/Mistral-7B-Instruct-v0.2", device_map="auto"

@@ -20,7 +20,7 @@ class BioMistral(Model):
 
         :return encoded text
         """
-        return self.tokenizer(text, return_tensors="pt").input_ids
+        return self.tokenizer.encode(text)
 
     def __load_model(self):
         # fine-tuned on biomedical texts but only to context of 2048 tokens
