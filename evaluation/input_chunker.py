@@ -2,14 +2,11 @@ from bs4 import BeautifulSoup, Tag
 from copy import deepcopy, copy
 from models.model import Model
 from typing import List
-import torch
-
-MIN_CHUNK_TOKENS = 300  # minimum tokens to stop reducing the chunks
 
 # This class is responsible for chunking the input based on the max tokens.
 # Majority of the code was implemented by David Pogrebitskiy (@pogrebitskiy)
 class InputChunker:
-    def __init__(self, model: Model) -> None:
+    def __init__(self, model) -> None:
         self.model = model  # model object for GPT models or other models (HuggingFace)
 
     def __remove_style_tags(self, soup: BeautifulSoup, tags: list) -> BeautifulSoup:
@@ -40,7 +37,7 @@ class InputChunker:
         soup: BeautifulSoup object
         """
         if remove_tags is None:
-            remove_tags = ["bold", "italic", "underline", "sup", "sub"]
+            remove_tags = ["bold", "italic", "underline", "sup", "sub", "xref"]
         soup = self.__convert_xml_string_to_soup(xml_string)
         soup = self.__remove_style_tags(soup, remove_tags)
 
@@ -164,14 +161,14 @@ class InputChunker:
         """
         keep_chunks = []
 
-        def process_chunk() -> None:
+        def process_chunk(xml: BeautifulSoup) -> None:
             """
             Process the chunk.
 
             Returns:
             None
             """
-            chunk = deepcopy(child)
+            chunk = deepcopy(xml)
             chunk_token_size = self.count_tokens(str(chunk))
 
             # we perform special logic for tables if they are too long
@@ -186,11 +183,11 @@ class InputChunker:
                 keep_chunks.append(chunk)
 
             # If the chunk isn't smaller than the minimum chunk size, chunk it further
-            elif chunk_token_size >= MIN_CHUNK_TOKENS:
+            elif chunk_token_size > max_tokens:
                 # Chunk it further, recursively
                 keep_chunks.extend(self.__create_xml_chunks(chunk, max_tokens))
 
-            elif chunk_token_size < MIN_CHUNK_TOKENS:
+            elif chunk_token_size <= max_tokens:
                 # if the chunk is too small and the condition is true, keep it
                 keep_chunks.append(chunk)
 
@@ -201,12 +198,12 @@ class InputChunker:
         for child in xml_soup_element.contents:
             # If the child is a tag, process the chunk
             if isinstance(child, Tag):
-                process_chunk()
+                process_chunk(child)
             # If it's anything else, append it and don't chunk further
             else:
                 keep_chunks.append(xml_soup_element)
                 continue
-        
+
         return keep_chunks
 
     def __combine_xml_chunks(self, chunks_list: List[BeautifulSoup], max_tokens: int) -> List[str]:
@@ -226,10 +223,10 @@ class InputChunker:
 
         for soup in chunks_list:
             soup_length = self.count_tokens(str(soup))
-            print(soup_length)
             # If the soup is too long, print ERROR.
             # This should not happen ideally, but if it does, we should know about it.
             if soup_length > max_tokens:
+                # print(str(soup))
                 print(f"ERROR - chunk to combine is too long: {soup_length} tokens")
                 continue
             # If adding this soup would exceed max_length, finish the current chunk
@@ -272,7 +269,6 @@ class InputChunker:
         chunked_input: A list of text chunks
         """
         soup = self.__preprocess_xml(xml_string)
-        soup = self.__convert_xml_string_to_soup(xml_string)
         xml_chunks_list = self.__create_xml_chunks(soup, max_chunk_token_size)
         condensed_chunks_list = self.__combine_xml_chunks(xml_chunks_list, max_chunk_token_size)
         return condensed_chunks_list
