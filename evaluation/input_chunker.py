@@ -111,7 +111,9 @@ class InputChunker:
         # Keep track of the header
         header = BeautifulSoup("", 'lxml')
         [header.append(copy(tag)) for tag in table_copy.find_all(('label', 'caption'))]
-        header.append(copy(table_copy.find('thead')))
+        thead = table_copy.find('thead')
+        if thead is not None:
+            header.append(copy(thead))
 
         # Keep track of the footer
         footer = table_copy.find('table-wrap-foot')
@@ -150,7 +152,7 @@ class InputChunker:
 
     def __create_xml_chunks(self, xml_soup_element: BeautifulSoup, max_tokens: int) -> List[str]:
         """
-        Chunk the xml soup element to minimum chunk size if chunk is too large.
+        Recursively chunk the xml soup until each chunk is less than max_tokens.
 
         Args:
         xml_soup_element: BeautifulSoup object
@@ -161,49 +163,41 @@ class InputChunker:
         """
         keep_chunks = []
 
-        def process_chunk(xml: BeautifulSoup) -> None:
+        def process_chunk(chunk: BeautifulSoup) -> None:
             """
             Process the chunk.
+
+            Args:
+            chunk: BeautifulSoup object
 
             Returns:
             None
             """
-            chunk = deepcopy(xml)
+            chunk = deepcopy(chunk)
             chunk_token_size = self.count_tokens(str(chunk))
+            is_table = chunk.name == 'table-wrap'
 
-            # we perform special logic for tables if they are too long
-            is_table = isinstance(chunk, Tag) and chunk.name == 'table-wrap'
+            if chunk_token_size > max_tokens:
+                if is_table:
+                    # If the chunk is a table, but it's too large, split it in half and add the two tables to the list
+                    keep_chunks.extend(self.__split_table(chunk))
+                else:
+                    # If the chunk is too large, chunk it further
+                    keep_chunks.extend(self.__create_xml_chunks(chunk, max_tokens))
 
-            # If the chunk is a table but it's too large, split it in half and add the two tables to the list
-            if is_table and chunk_token_size > max_tokens:
-                keep_chunks.extend(self.__split_table(chunk))
-
-            # If the chunk is a table and not too big, append it to the list
-            elif is_table and chunk_token_size <= max_tokens:
-                keep_chunks.append(chunk)
-
-            # If the chunk isn't smaller than the minimum chunk size, chunk it further
-            elif chunk_token_size > max_tokens:
-                # Chunk it further, recursively
-                keep_chunks.extend(self.__create_xml_chunks(chunk, max_tokens))
-
-            elif chunk_token_size <= max_tokens:
-                # if the chunk is too small and the condition is true, keep it
-                keep_chunks.append(chunk)
-
+            # If the chunk is small enough, add it to the list
             else:
-                # If the chunk is not relevant, don't keep it
-                pass
-        
+                keep_chunks.append(copy(chunk))
+
+        # Iterate through the children of the XML element
         for child in xml_soup_element.contents:
-            # If the child is a tag, process the chunk
             if isinstance(child, Tag):
-                process_chunk(child)
-            # If it's anything else, append it and don't chunk further
+                # Process the chunk
+                process_chunk(copy(child))
             else:
-                keep_chunks.append(xml_soup_element)
-                continue
+                keep_chunks.append(copy(child))
 
+        # Return the list of chunks
         return keep_chunks
 
     def __combine_xml_chunks(self, chunks_list: List[BeautifulSoup], max_tokens: int) -> List[str]:
