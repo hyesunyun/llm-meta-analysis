@@ -21448,7 +21448,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21479,7 +21479,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "FALSE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21510,7 +21510,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "FALSE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21541,7 +21541,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21572,7 +21572,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21603,7 +21603,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21634,7 +21634,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   },
   {
@@ -21665,7 +21665,7 @@
     "is_table_in_graphic_format": "FALSE",
     "is_data_complete": "TRUE",
     "tiktoken_with_attributes_xml_token_num": 6401,
-    "tiktoken_without_attributes_xml_token_num": 5424,
+    "tiktoken_without_attributes_xml_token_num": 5359,
     "split": "TEST"
   }
 ]
