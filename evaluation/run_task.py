@@ -143,8 +143,8 @@ class MetaAnalysisTaskRunner:
         """
         max_new_tokens = {
             "outcome_type": 5,
-            "binary_outcomes": 100,
-            "continuous_outcomes": 100,
+            "binary_outcomes": 50,
+            "continuous_outcomes": 70,
         }
         return max_new_tokens[self.task]
 
