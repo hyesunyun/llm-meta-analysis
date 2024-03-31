@@ -238,6 +238,16 @@ class MetricsCalculator:
         metrics["total"] = sum(metrics.values())
         return metrics
     
+    def __calculate_num_of_chunked_instances(self, data: List[Dict]) -> int:
+        """
+        This method calculates the number of chunked instances in the data
+
+        :param data: list of dictionaries with the data to calculate the number of chunked instances
+        :return: number of chunked instances for each field and total
+        """
+        num_chunked_instances = sum([1 for example in data if "is_chunked" in example and example["is_chunked"]])
+        return num_chunked_instances
+    
     def __calculate_point_estimates_metrics(self, data: List[Dict]) -> Dict:
         """
         This method calculates the metrics for the derived point estimates
@@ -292,6 +302,7 @@ class MetricsCalculator:
         if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
             # calculate the metrics for point estimates
             metrics["point_estimates"] = self.__calculate_point_estimates_metrics(data)
+            metrics["num_of_chunked_instances"] = self.__calculate_num_of_chunked_instances(data)
 
         return metrics
 
