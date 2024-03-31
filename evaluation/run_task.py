@@ -223,8 +223,6 @@ class MetaAnalysisTaskRunner:
                     chunk_num_tokens_list = []
                     for input_chunk in formatted_chunked_examples:
                         chunk_num_tokens_list.append(input_chunk["chunk_token_size"])
-                        print(f"chunk token size: {input_chunk['chunk_token_size']}")
-                        print(f"input chunk token size: {input_chunk['input']}")
                         output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
