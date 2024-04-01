@@ -165,18 +165,6 @@ class MetaAnalysisTaskRunner:
             prompt_template_name = self.prompt_name
         
         prompt = prompts[prompt_template_name]
-        
-        # ORIGINAL CODE
-        # # format the dataset with the prompt template
-        # dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
-
-        # # run the task using specified model
-        # results = []
-        # pbar = tqdm(dataset)
-        # for _, example in enumerate(pbar):
-        #     output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
-        #     example["output"] = output
-        #     results.append(example)
 
         # CODE WITH CHUNKING
         # format the dataset with the prompt template
@@ -209,7 +197,8 @@ class MetaAnalysisTaskRunner:
                     example["is_chunked"] = False
                     results.append(example)
                 else: # if the model cannot handle the tokens, chunk the input
-                    max_chunk_tokens = self.model.get_context_length() - 300 - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
+                    prompt_approx_tokens = 400 if self.model_name == "pmc-llama" and self.task == "continuous_outcomes" else 300 # PMC LLAMA prompts tend to be longer and want to add some padding (extra tokens)
+                    max_chunk_tokens = self.model.get_context_length() - prompt_approx_tokens - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
                     chunks = input_chunker.get_chunked_input(example["abstract_and_results_xml"], max_chunk_tokens)
                     chunked_examples = []
                     for chunk in chunks:
@@ -223,10 +212,8 @@ class MetaAnalysisTaskRunner:
                     concatenated_output = ""
                     chunk_num_tokens_list = []
                     for input_chunk in formatted_chunked_examples:
-                        chunk_num_tokens_list.append(input_chunk["chunk_token_size"])
-                        print(input_chunk["input"])
+                        print(f"input chunk token size: {input_chunker.count_tokens(input_chunk['input'])}")
                         output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
-                        print(output)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
                     example["output"] = concatenated_output
