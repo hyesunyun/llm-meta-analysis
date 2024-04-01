@@ -12,7 +12,7 @@
         "total": 0.7134146341463414
     },
     "exact_match_accuracy_remove_unknowns": {
-        "outcome_type": 0.9341317365269461,
+        "outcome_type": 0.7134146341463414,
         "total": 0.9496951219512195
     },
     "partial_match_accuracy": {

@@ -21,10 +21,10 @@
         "total": 0.30994152046783624
     },
     "exact_match_accuracy_remove_unknowns": {
-        "intervention_events": 0.5853658536585366,
-        "intervention_group_size": 0.6870748299319728,
-        "comparator_events": 0.5041322314049587,
-        "comparator_group_size": 0.7638888888888888,
+        "intervention_events": 0.5672514619883041,
+        "intervention_group_size": 0.6081871345029239,
+        "comparator_events": 0.5029239766081871,
+        "comparator_group_size": 0.6608187134502924,
         "total": 0.47953216374269003
     },
     "partial_match_accuracy": {
