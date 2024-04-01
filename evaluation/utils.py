@@ -127,7 +127,8 @@ def clean_yaml_output(output: str) -> str:
     :return cleaned yaml output
     """
     cleaned_output = output.replace("```", "").replace("yaml", "").replace("\t", "")
-    cleaned_output = output.replace("-x\n", "x\n").replace("-\n", "x\n").replace("  group_", "").replace("  group_size", "") # some post processing
+    cleaned_output = cleaned_output.replace("-x\n", "x\n").replace("-\n", "x\n").replace("  group_", "").replace("  group_size", "") # some post processing
+    return cleaned_output
 
 def parse_multiple_yaml_output(output: str) -> list[str]:
     """
