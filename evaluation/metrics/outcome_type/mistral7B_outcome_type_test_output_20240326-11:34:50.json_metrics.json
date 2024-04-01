@@ -13,13 +13,13 @@
     },
     "exact_match_accuracy_remove_unknowns": {
         "outcome_type": 0.7904191616766467,
-        "total": 0.7904191616766467
+        "total": 0.9466463414634146
     },
     "partial_match_accuracy": {
         "partial_match_accuracy_1": 0.20121951219512196
     },
     "partial_match_accuracy_remove_unknowns": {
-        "partial_match_accuracy_1": 0.7904191616766467
+        "partial_match_accuracy_1": 0.9466463414634146
     },
     "outcome_type_f_score": {
         "outcome_type": {

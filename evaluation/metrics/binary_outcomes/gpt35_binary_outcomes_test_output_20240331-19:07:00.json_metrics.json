@@ -25,7 +25,7 @@
         "intervention_group_size": 0.6870748299319728,
         "comparator_events": 0.5041322314049587,
         "comparator_group_size": 0.7638888888888888,
-        "total": 0.4067796610169492
+        "total": 0.47953216374269003
     },
     "partial_match_accuracy": {
         "partial_match_accuracy_1": 0.7368421052631579,
@@ -33,9 +33,9 @@
         "partial_match_accuracy_3": 0.4152046783625731
     },
     "partial_match_accuracy_remove_unknowns": {
-        "partial_match_accuracy_1": 0.8898305084745762,
-        "partial_match_accuracy_2": 0.8305084745762712,
-        "partial_match_accuracy_3": 0.5338983050847458
+        "partial_match_accuracy_1": 0.9064327485380117,
+        "partial_match_accuracy_2": 0.8830409356725146,
+        "partial_match_accuracy_3": 0.6140350877192983
     },
     "point_estimates": {
         "log_odds_ratio": {

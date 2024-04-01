@@ -68,13 +68,16 @@ class MetaAnalysisTaskEvaluator:
                 yaml_strings_list = parse_multiple_yaml_output(model_output)
                 yaml_dict_list = []
                 for yaml_string in yaml_strings_list:
-                    yaml_dict_list.append(yaml.safe_load(yaml_string))
+                    try:
+                        yaml_dict_list.append(yaml.safe_load(yaml_string))
+                    except:
+                        print(f"Error parsing yaml string: {yaml_string}")
                 output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list)
             else:
-                print(model_output)
-                output_dict = yaml.safe_load(model_output)
-                print(output_dict)
-                print()
+                try:
+                    output_dict = yaml.safe_load(model_output)
+                except:
+                    print(f"Error parsing yaml string: {model_output}")
 
             ie_output = output_dict["intervention"]["events"]
             it_output = output_dict["intervention"]["group_size"]
@@ -115,13 +118,16 @@ class MetaAnalysisTaskEvaluator:
                 yaml_strings_list = parse_multiple_yaml_output(model_output)
                 yaml_dict_list = []
                 for yaml_string in yaml_strings_list:
-                    yaml_dict_list.append(yaml.safe_load(yaml_string))
+                    try:
+                        yaml_dict_list.append(yaml.safe_load(yaml_string))
+                    except:
+                        print(f"Error parsing yaml string: {yaml_string}")
                 output_dict = aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list)
             else:
-                print(model_output)
-                output_dict = yaml.safe_load(model_output)
-                print(output_dict)
-                print()
+                try:
+                    output_dict = yaml.safe_load(model_output)
+                except:
+                    print(f"Error parsing yaml string: {model_output}")
 
             im_output = output_dict["intervention"]["mean"]
             isd_output = output_dict["intervention"]["standard_deviation"]

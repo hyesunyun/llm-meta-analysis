@@ -127,7 +127,7 @@ class MetricsCalculator:
         This method calculates the exact match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
-        :param remove_unknowns: boolean to remove unknowns
+        :param remove_unknowns: boolean to remove unknowns. If True, then unknowns in the model output are considered correct if the reference is not unknown
 
         :return: dictionary with the metrics
         """
@@ -155,9 +155,8 @@ class MetricsCalculator:
         for example in data:
             num_parts_correct = 0
             for output, reference in zip(relevant_output_fields, relevant_reference_fields):
-                if remove_unknowns and example[output] == "x":
-                    num_total -= 1
-                    break
+                if remove_unknowns and example[output] == "x" and example[reference] != "x":
+                    num_parts_correct += 1 # consider it as correct
                 if example[output] == example[reference]:
                     num_parts_correct += 1
             if num_parts_correct == num_parts:
@@ -171,6 +170,7 @@ class MetricsCalculator:
         This method calculates the partial match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
+        :param remove_unknowns: boolean to remove unknowns. If True, then unknowns in the model output are considered correct if the reference is not unknown
         :return: dictionary with metrics
         """
         # different levels of partial matching metrics so this could be 1, 2, 3, 4, 5 etc.
@@ -192,9 +192,8 @@ class MetricsCalculator:
             for example in data:
                 num_parts_correct = 0
                 for output, reference in zip(relevant_output_fields, relevant_reference_fields):
-                    if remove_unknowns and example[output] == "x":
-                        num_total -= 1
-                        break
+                    if remove_unknowns and example[output] == "x" and example[reference] != "x":
+                        num_parts_correct += 1 # consider it as correct
                     if example[output] == example[reference]:
                         num_parts_correct += 1
                 if num_parts_correct >= num_match:

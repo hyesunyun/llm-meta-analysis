@@ -25,7 +25,7 @@
         "intervention_group_size": 0.8963414634146342,
         "comparator_events": 0.8270676691729323,
         "comparator_group_size": 0.9197530864197531,
-        "total": 0.7575757575757576
+        "total": 0.7777777777777778
     },
     "partial_match_accuracy": {
         "partial_match_accuracy_1": 0.9473684210526315,
@@ -33,9 +33,9 @@
         "partial_match_accuracy_3": 0.7192982456140351
     },
     "partial_match_accuracy_remove_unknowns": {
-        "partial_match_accuracy_1": 0.9924242424242424,
-        "partial_match_accuracy_2": 0.9621212121212122,
-        "partial_match_accuracy_3": 0.8106060606060606
+        "partial_match_accuracy_1": 0.9707602339181286,
+        "partial_match_accuracy_2": 0.9649122807017544,
+        "partial_match_accuracy_3": 0.8421052631578947
     },
     "point_estimates": {
         "log_odds_ratio": {
@@ -46,5 +46,6 @@
                 0.1729950534052263
             ]
         }
-    }
+    },
+    "num_of_chunked_instances": 0
 }

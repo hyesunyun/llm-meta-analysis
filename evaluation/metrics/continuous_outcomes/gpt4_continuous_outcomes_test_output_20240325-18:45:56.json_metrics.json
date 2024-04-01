@@ -33,7 +33,7 @@
         "comparator_mean": 0.7557251908396947,
         "comparator_standard_deviation": 0.7393364928909952,
         "comparator_group_size": 0.8368794326241135,
-        "total": 0.5775401069518716
+        "total": 0.7072164948453609
     },
     "partial_match_accuracy": {
         "partial_match_accuracy_1": 0.9670103092783505,
@@ -43,11 +43,11 @@
         "partial_match_accuracy_5": 0.5711340206185567
     },
     "partial_match_accuracy_remove_unknowns": {
-        "partial_match_accuracy_1": 1.3368983957219251,
-        "partial_match_accuracy_2": 1.1122994652406417,
-        "partial_match_accuracy_3": 0.8074866310160428,
-        "partial_match_accuracy_4": 0.7754010695187166,
-        "partial_match_accuracy_5": 0.6256684491978609
+        "partial_match_accuracy_1": 0.9958762886597938,
+        "partial_match_accuracy_2": 0.9938144329896907,
+        "partial_match_accuracy_3": 0.9010309278350516,
+        "partial_match_accuracy_4": 0.8948453608247423,
+        "partial_match_accuracy_5": 0.7608247422680412
     },
     "point_estimates": {
         "standardized_mean_difference": {
@@ -58,5 +58,6 @@
                 1.2260757960328057
             ]
         }
-    }
+    },
+    "num_of_chunked_instances": 0
 }
