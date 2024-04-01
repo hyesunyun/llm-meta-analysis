@@ -197,7 +197,7 @@ class MetaAnalysisTaskRunner:
                     example["is_chunked"] = False
                     results.append(example)
                 else: # if the model cannot handle the tokens, chunk the input
-                    prompt_approx_tokens = 400 if self.model_name == "pmc-llama" and self.task == "continuous_outcomes" else 300 # PMC LLAMA prompts tend to be longer. Also model seems to be more sensitive to token size
+                    prompt_approx_tokens = 420 if self.model_name == "pmc-llama" and self.task == "continuous_outcomes" else 300 # PMC LLAMA prompts tend to be longer. Also model seems to be more sensitive to token size
                     max_chunk_tokens = self.model.get_context_length() - prompt_approx_tokens - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
                     chunks = input_chunker.get_chunked_input(example["abstract_and_results_xml"], max_chunk_tokens)
                     chunked_examples = []

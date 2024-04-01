@@ -126,7 +126,8 @@ def clean_yaml_output(output: str) -> str:
 
     :return cleaned yaml output
     """
-    return output.replace("```", "").replace("yaml", "").replace("\t", "").replace("-x\n", "x\n").replace("-\n", "x\n") # some post processing
+    cleaned_output = output.replace("```", "").replace("yaml", "").replace("\t", "")
+    cleaned_output = output.replace("-x\n", "x\n").replace("-\n", "x\n").replace("  group_", "").replace("  group_size", "") # some post processing
 
 def parse_multiple_yaml_output(output: str) -> list[str]:
     """
@@ -187,6 +188,7 @@ def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict]) -> Dic
                 "group_size": aggregated_output["comparator_group_size"]
             }
     }
+    print(final_yaml_output)
     return final_yaml_output
 
 def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict]) -> Dict:
@@ -242,6 +244,7 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict]) ->
                 "group_size": aggregated_output["comparator_group_size"]
             }
     }
+    print(final_yaml_output)
     return final_yaml_output
 
 def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int, control_total: int) -> float:
