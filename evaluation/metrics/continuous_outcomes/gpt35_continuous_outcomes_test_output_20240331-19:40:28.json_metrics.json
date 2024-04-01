@@ -27,12 +27,12 @@
         "total": 0.2639175257731959
     },
     "exact_match_accuracy_remove_unknowns": {
-        "intervention_mean": 0.48846153846153845,
-        "intervention_standard_deviation": 0.46601941747572817,
-        "intervention_group_size": 0.7644110275689223,
-        "comparator_mean": 0.5043478260869565,
-        "comparator_standard_deviation": 0.4942528735632184,
-        "comparator_group_size": 0.7606382978723404,
+        "intervention_mean": 0.6288659793814433,
+        "intervention_standard_deviation": 0.6329896907216495,
+        "intervention_group_size": 0.711340206185567,
+        "comparator_mean": 0.6061855670103092,
+        "comparator_standard_deviation": 0.6144329896907217,
+        "comparator_group_size": 0.6721649484536083,
         "total": 0.5092783505154639
     },
     "partial_match_accuracy": {

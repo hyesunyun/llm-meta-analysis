@@ -79,18 +79,28 @@ class MetaAnalysisTaskEvaluator:
                 except:
                     print(f"Error parsing yaml string: {model_output}")
 
-            ie_output = output_dict["intervention"]["events"]
-            it_output = output_dict["intervention"]["group_size"]
-            ce_output = output_dict["comparator"]["events"]
-            ct_output = output_dict["comparator"]["group_size"]
-            new_item = {
-                "intervention_events_output": ie_output,
-                "intervention_group_size_output": it_output,
-                "comparator_events_output": ce_output,
-                "comparator_group_size_output": ct_output,
-                "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
-            }
-            example.update(new_item)
+            if "intervention" in output_dict and "comparator" in output_dict:
+                ie_output = output_dict["intervention"]["events"]
+                it_output = output_dict["intervention"]["group_size"]
+                ce_output = output_dict["comparator"]["events"]
+                ct_output = output_dict["comparator"]["group_size"]
+                new_item = {
+                    "intervention_events_output": ie_output,
+                    "intervention_group_size_output": it_output,
+                    "comparator_events_output": ce_output,
+                    "comparator_group_size_output": ct_output,
+                    "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
+                }
+                example.update(new_item)
+            else:
+                new_item = {
+                    "intervention_events_output": "x",
+                    "intervention_group_size_output": "x",
+                    "comparator_events_output": "x",
+                    "comparator_group_size_output": "x",
+                    "log_odds_ratio_output": None
+                }
+                example.update(new_item)
 
     def __preprocess_continuous_outcomes_results(self) -> None: # TODO: need to implement case for chunking
         """
@@ -129,22 +139,34 @@ class MetaAnalysisTaskEvaluator:
                 except:
                     print(f"Error parsing yaml string: {model_output}")
 
-            im_output = output_dict["intervention"]["mean"]
-            isd_output = output_dict["intervention"]["standard_deviation"]
-            it_output = output_dict["intervention"]["group_size"]
-            cm_output = output_dict["comparator"]["mean"]
-            csd_output = output_dict["comparator"]["standard_deviation"]
-            ct_output = output_dict["comparator"]["group_size"]
-            new_item = {
-                "intervention_mean_output": im_output,
-                "intervention_standard_deviation_output": isd_output,
-                "intervention_group_size_output": it_output,
-                "comparator_mean_output": cm_output,
-                "comparator_standard_deviation_output": csd_output,
-                "comparator_group_size_output": ct_output,
-                "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output)
-            }
-            example.update(new_item)
+            if "intervention" in output_dict and "comparator" in output_dict:
+                im_output = output_dict["intervention"]["mean"]
+                isd_output = output_dict["intervention"]["standard_deviation"]
+                it_output = output_dict["intervention"]["group_size"]
+                cm_output = output_dict["comparator"]["mean"]
+                csd_output = output_dict["comparator"]["standard_deviation"]
+                ct_output = output_dict["comparator"]["group_size"]
+                new_item = {
+                    "intervention_mean_output": im_output,
+                    "intervention_standard_deviation_output": isd_output,
+                    "intervention_group_size_output": it_output,
+                    "comparator_mean_output": cm_output,
+                    "comparator_standard_deviation_output": csd_output,
+                    "comparator_group_size_output": ct_output,
+                    "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output)
+                }
+                example.update(new_item)
+            else:
+                new_item = {
+                    "intervention_mean_output": "x",
+                    "intervention_standard_deviation_output": "x",
+                    "intervention_group_size_output": "x",
+                    "comparator_mean_output": "x",
+                    "comparator_standard_deviation_output": "x",
+                    "comparator_group_size_output": "x",
+                    "standardized_mean_difference_output": None
+                }
+                example.update(new_item)
 
     def run_evaluation(self) -> None:
         """

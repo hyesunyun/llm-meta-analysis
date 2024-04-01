@@ -37,9 +37,8 @@ class MetricsCalculator:
         num_actual = len(actual)
         correct = 0
         for i in range(num_actual):
-            if remove_unknowns and predicted[i] == "x":
-                num_actual -= 1
-                continue
+            if remove_unknowns and actual[i] == "x" and predicted[i] != "x":
+                correct += 1 # consider it as correct
             if actual[i] == predicted[i]:
                 correct += 1
         return correct / float(num_actual)
@@ -89,7 +88,6 @@ class MetricsCalculator:
             else:
                 total_num += 1
                 list_of_abs_diff.append(abs(a - p))
-
         return sum(list_of_abs_diff) / total_num
     
     def __calculate_standard_error_of_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float:
