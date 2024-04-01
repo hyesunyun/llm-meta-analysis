@@ -4,6 +4,7 @@ import os
 import json
 import csv
 import math
+from statistics import mode
 
 XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
 
@@ -163,7 +164,7 @@ def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict]) -> Dic
                     aggregated_output["comparator_events"].append(yaml_dict[key]["events"])
                 if "group_size" in yaml_dict[key].keys():
                     aggregated_output["comparator_group_size"].append(yaml_dict[key]["group_size"])
-                    
+
     # if there is one numeric output in the list, then we set the aggregated value to that numeric value
     # if there is conflicting numeric outputs in the list, then we set the aggregated value to first numeric value
     # if there is no numeric outputs in the list, then we set the aggregated value to x
@@ -171,8 +172,8 @@ def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict]) -> Dic
         numeric_values = [value for value in aggregated_output[key] if value != "x"]
         if len(numeric_values) == 1:
             aggregated_output[key] = numeric_values[0]
-        elif len(numeric_values) > 1: # not sure. this doesn't seem right TODO
-            aggregated_output[key] = numeric_values[0]
+        elif len(numeric_values) > 1: # get the mode
+            aggregated_output[key] = mode(numeric_values)
         else:
             aggregated_output[key] = "x"
 
@@ -224,8 +225,8 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict]) ->
         numeric_values = [value for value in aggregated_output[key] if value != "x"]
         if len(numeric_values) == 1:
             aggregated_output[key] = numeric_values[0]
-        elif len(numeric_values) > 1: # not sure. this doesn't seem right TODO
-            aggregated_output[key] = numeric_values[0]
+        elif len(numeric_values) > 1: # get the mode
+            aggregated_output[key] = mode(numeric_values)
         else:
             aggregated_output[key] = "x"
 
