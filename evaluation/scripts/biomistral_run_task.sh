@@ -10,10 +10,10 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=yun.hy@northeastern.edu
 
-# module load cuda/12.1
-# module load anaconda3/2022.05
+module load cuda/12.1
+module load anaconda3/2022.05
 
-conda activate llm-meta-analysis
+source activate llm-meta-analysis
 
 export $(xargs < ../../.env)
 

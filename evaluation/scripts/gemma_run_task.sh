@@ -3,17 +3,23 @@
 #SBATCH --time=48:00:00
 #SBATCH --job-name=gemma
 #SBATCH --cpus-per-task=8
+#SBATCH --ntasks-per-node=1
 #SBATCH --mem=75G
-#SBATCH --partition=frink
+#SBATCH --partition=177huntington
 #SBATCH --gres=gpu:1
 #SBATCH --output=exec.gemma.%j.evaluate.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=yun.hy@northeastern.edu
 
-module load cuda/12.1
-module load anaconda3/2022.05
+# module load cuda/12.1
+# module load anaconda3/2022.05
 
-source activate llm-meta-analysis
+# source activate llm-meta-analysis
+
+# export $(xargs < ../../.env)
+
+source ~/.bashrc
+conda activate llm-meta-analysis
 
 export $(xargs < ../../.env)
 

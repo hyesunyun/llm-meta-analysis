@@ -222,7 +222,7 @@ class InputChunker:
             if soup_length > max_tokens:
                 # print(str(soup))
                 print(f"ERROR - chunk to combine is too long: {soup_length} tokens")
-                continue
+                continue # just skipping since there isn't a very clear way to deal with this currently
             # If adding this soup would exceed max_length, finish the current chunk
             if current_length + soup_length > max_tokens:
                 if current_length > 0:  # Avoid adding empty chunks
