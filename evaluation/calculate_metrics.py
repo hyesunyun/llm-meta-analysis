@@ -252,13 +252,14 @@ class MetricsCalculator:
         :param data: list of dictionaries with the data to calculate the percentage of computable instances
         :return: percentage of computable instances for each field and total
         """
-        if self.task == "binary_outcomes":
-            point_estimate_field = 'log_odds_ratio_output'
-        else:
-            point_estimate_field = 'standardized_mean_difference_output'
+        item = data[0]
+        relevant_output_fields, relevant_reference_fields = self.__get_keys_to_compare(item, True)
+        output, reference = relevant_output_fields[0], relevant_reference_fields[0]
 
-        num_computable_instances = sum([1 for example in data if example[point_estimate_field] is not None])
-        return num_computable_instances / len(data)
+        num_computable_instances_output = sum([1 for example in data if example[output] is not None and example[reference] is not None])
+        num_computable_instances_reference = sum([1 for example in data if example[reference] is not None])
+
+        return num_computable_instances_output / num_computable_instances_reference
     
     def __calculate_point_estimates_metrics(self, data: List[Dict]) -> Dict:
         """

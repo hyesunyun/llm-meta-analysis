@@ -37,7 +37,7 @@
         "partial_match_accuracy_2": 0.9649122807017544,
         "partial_match_accuracy_3": 0.8421052631578947
     },
-    "percentage_of_computable_instances": 0.6666666666666666,
+    "percentage_of_computable_instances": 0.8217054263565892,
     "point_estimates": {
         "log_odds_ratio": {
             "mean_absolute_error": 0.08849337331978875,
