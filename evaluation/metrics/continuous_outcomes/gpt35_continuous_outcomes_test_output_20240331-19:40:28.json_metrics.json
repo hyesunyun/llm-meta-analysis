@@ -49,6 +49,7 @@
         "partial_match_accuracy_4": 0.8061855670103093,
         "partial_match_accuracy_5": 0.5793814432989691
     },
+    "percentage_of_computable_instances": 0.31752577319587627,
     "point_estimates": {
         "standardized_mean_difference": {
             "mean_absolute_error": 1.2066694101161566,

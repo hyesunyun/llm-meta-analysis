@@ -245,6 +245,21 @@ class MetricsCalculator:
         num_chunked_instances = sum([1 for example in data if "is_chunked" in example and example["is_chunked"]])
         return num_chunked_instances
     
+    def __calculate_percentage_of_computable_instances(self, data: List[Dict]) -> int:
+        """
+        This method calculates the percentage of computable instances in the data
+
+        :param data: list of dictionaries with the data to calculate the percentage of computable instances
+        :return: percentage of computable instances for each field and total
+        """
+        if self.task == "binary_outcomes":
+            point_estimate_field = 'log_odds_ratio_output'
+        else:
+            point_estimate_field = 'standardized_mean_difference_output'
+
+        num_computable_instances = sum([1 for example in data if example[point_estimate_field] is not None])
+        return num_computable_instances / len(data)
+    
     def __calculate_point_estimates_metrics(self, data: List[Dict]) -> Dict:
         """
         This method calculates the metrics for the derived point estimates
@@ -298,6 +313,7 @@ class MetricsCalculator:
 
         if self.task == "binary_outcomes" or self.task == "continuous_outcomes":
             # calculate the metrics for point estimates
+            metrics["percentage_of_computable_instances"] = self.__calculate_percentage_of_computable_instances(data)
             metrics["point_estimates"] = self.__calculate_point_estimates_metrics(data)
             metrics["num_of_chunked_instances"] = self.__calculate_num_of_chunked_instances(data)
 
