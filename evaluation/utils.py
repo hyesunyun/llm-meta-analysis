@@ -6,7 +6,8 @@ import csv
 import math
 from statistics import mode
 
-XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
+# XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files") # TODO remove after testing
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
@@ -80,7 +81,8 @@ def get_xml_content_by_pmcid(pmcid: str) -> str:
 
     :return xml file contents as a string
     """
-    xml_filename = f"PMC{pmcid}.xml"
+    # xml_filename = f"PMC{pmcid}.xml"
+    xml_filename = f"PMC{pmcid}.md" # TODO remove after testing
     xml_path = os.path.join(XML_FOLDER_PATH, xml_filename)
     with open(xml_path, "r") as xml_file:
         xml_content = xml_file.read()
