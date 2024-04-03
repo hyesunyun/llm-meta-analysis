@@ -10,7 +10,7 @@ class Mistral(Model):
         self.tokenizer = self.__load_tokenizer()
 
     def get_context_length(self) -> int:
-        return 8192
+        return 32768
     
     def encode_text(self, text: str) -> str:
         """

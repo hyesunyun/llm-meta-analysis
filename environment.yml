@@ -24,6 +24,10 @@ dependencies:
   - conda-forge::packaging
   - conda-forge::tiktoken
   - anaconda::scikit-learn
+  - conda-forge::pandoc
+  - anaconda::nltk
   - pip:
     - ai2-olmo
+    - pypandoc
+    - numerizer
 prefix: /home/yun.hy/.conda/envs/llm-meta-analysis

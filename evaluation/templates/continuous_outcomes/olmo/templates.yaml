@@ -3,7 +3,7 @@ templates:
   f4fd1f99-8356-41ac-b503-38f614cf8eb4: !Template
     id: f4fd1f99-8356-41ac-b503-38f614cf8eb4
     prompt: |+ 
-      Article: {{abstract_and_results_xml}}
+      Article: {{abstract_and_results}}
 
       Based on the given trial article, what is the table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome?
       Intervention: {{intervention}}

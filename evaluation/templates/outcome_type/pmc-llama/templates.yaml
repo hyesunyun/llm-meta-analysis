@@ -27,7 +27,7 @@ templates:
       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
       
       ### Input:
-      ### Article: {{abstract_and_results_xml}}
+      ### Article: {{abstract_and_results}}
       ### Question: Based on the article, is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type?
       ### Options:
       (A) binary

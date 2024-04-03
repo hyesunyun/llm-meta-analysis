@@ -14,8 +14,8 @@ from input_chunker import InputChunker
 
 from utils import (
     format_example_with_prompt_template, 
-    load_json_file, 
-    get_xml_content_by_pmcid,
+    load_json_file,
+    get_md_content_by_pmcid,
     save_json_file,
     save_dataset_to_json,
     save_dataset_to_csv,
@@ -111,12 +111,12 @@ class MetaAnalysisTaskRunner:
             random.shuffle(dataset)
             dataset = dataset[:10]
 
-        # Add xml content to each example
+        # Add md content to each example
         for example in dataset:
             pmcid = example["pmcid"]
-            xml_content = get_xml_content_by_pmcid(pmcid)
-            xml_item = {"abstract_and_results_xml": xml_content}
-            example.update(xml_item)
+            md_content = get_md_content_by_pmcid(pmcid)
+            md_item = {"abstract_and_results": md_content}
+            example.update(md_item)
 
         # shuffle the dataset since it is ordered by pmcid
         random.seed(42) # set seed for reproducibility
@@ -170,63 +170,55 @@ class MetaAnalysisTaskRunner:
         # format the dataset with the prompt template
         dataset = [format_example_with_prompt_template(example, prompt) for example in tqdm(self.dataset)]
 
-        # for testing: TODO remove
-        results = []
-        pbar = tqdm(dataset)
-        for _, example in enumerate(pbar):
-            output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
-            example["output"] = output
-            results.append(example)
-
         # for outcome_type, we don't need chunking since we don't add any abstract/results text to prompt
         # we can also fit everything into gpt4-turbo
-        # if self.task == "outcome_type" or self.model_name == "gpt4":
-        #     # run the task using specified model
-        #     results = []
-        #     pbar = tqdm(dataset)
-        #     for _, example in enumerate(pbar):
-        #         output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
-        #         example["output"] = output
-        #         results.append(example)
-        # else: # for binary_outcomes or continuous_outcomes not using gpt4, we may need to chunk the input
-        #     # instantiate input chunker
-        #     input_chunker = InputChunker(self.model)
+        if self.task == "outcome_type" or self.model_name == "gpt4":
+            # run the task using specified model
+            results = []
+            pbar = tqdm(dataset)
+            for _, example in enumerate(pbar):
+                output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
+                example["output"] = output
+                results.append(example)
+        else: # for binary_outcomes or continuous_outcomes not using gpt4, we may need to chunk the input
+            # instantiate input chunker
+            input_chunker = InputChunker(self.model)
 
-        #     # run the task using specified model
-        #     results = []
-        #     pbar = tqdm(dataset)
-        #     for _, example in enumerate(pbar):
-        #         input_token_count = input_chunker.count_tokens(example["input"])
+            # run the task using specified model
+            results = []
+            pbar = tqdm(dataset)
+            for _, example in enumerate(pbar):
+                input_token_count = input_chunker.count_tokens(example["input"])
 
-        #         if input_token_count <= self.model.get_context_length(): # if the model can handle the tokens, just do as normal
-        #             output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
-        #             example["chunk_num_tokens"] = []
-        #             example["output"] = output
-        #             example["is_chunked"] = False
-        #             results.append(example)
-        #         else: # if the model cannot handle the tokens, chunk the input
-        #             prompt_approx_tokens = 450 if self.model_name == "pmc-llama" and self.task == "continuous_outcomes" else 300 # PMC LLAMA prompts tend to be longer. Also model seems to be more sensitive to token size
-        #             max_chunk_tokens = self.model.get_context_length() - prompt_approx_tokens - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
-        #             chunks = input_chunker.get_chunked_input(example["abstract_and_results_xml"], max_chunk_tokens)
-        #             chunked_examples = []
-        #             for chunk in chunks:
-        #                 chunked_example = example.copy()
-        #                 chunked_example["abstract_and_results_xml"] = chunk["chunk"]
-        #                 chunked_example["chunk_token_size"] = chunk["token_size"]
-        #                 chunked_examples.append(chunked_example)
-        #             # format the chunks with the prompt template
-        #             formatted_chunked_examples = [format_example_with_prompt_template(example, prompt) for example in chunked_examples]
+                if input_token_count <= self.model.get_context_length(): # if the model can handle the tokens, just do as normal
+                    output = self.model.generate_output(example["input"], max_new_tokens=self.max_new_tokens)
+                    example["chunk_num_tokens"] = []
+                    example["output"] = output
+                    example["is_chunked"] = False
+                    results.append(example)
+                else: # if the model cannot handle the tokens, chunk the input
+                    prompt_approx_tokens = 450 if self.model_name == "pmc-llama" and self.task == "continuous_outcomes" else 300 # PMC LLAMA prompts tend to be longer. Also model seems to be more sensitive to token size
+                    max_chunk_tokens = self.model.get_context_length() - prompt_approx_tokens - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
+                    chunks = input_chunker.get_chunked_input(example["abstract_and_results"], max_chunk_tokens)
+                    chunked_examples = []
+                    for chunk in chunks:
+                        chunked_example = example.copy()
+                        chunked_example["abstract_and_results"] = chunk["chunk"]
+                        chunked_example["chunk_token_size"] = chunk["token_size"]
+                        chunked_examples.append(chunked_example)
+                    # format the chunks with the prompt template
+                    formatted_chunked_examples = [format_example_with_prompt_template(example, prompt) for example in chunked_examples]
 
-        #             concatenated_output = ""
-        #             chunk_num_tokens_list = []
-        #             for input_chunk in formatted_chunked_examples:
-        #                 print(f"input chunk token size: {input_chunker.count_tokens(input_chunk['input'])}")
-        #                 output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
-        #                 concatenated_output = concatenated_output + output + "\n---\n"
-        #             example["chunk_num_tokens"] = chunk_num_tokens_list
-        #             example["output"] = concatenated_output
-        #             example["is_chunked"] = True
-        #             results.append(example)
+                    concatenated_output = ""
+                    chunk_num_tokens_list = []
+                    for input_chunk in formatted_chunked_examples:
+                        print(f"input chunk token size: {input_chunker.count_tokens(input_chunk['input'])}")
+                        output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
+                        concatenated_output = concatenated_output + output + "\n---\n"
+                    example["chunk_num_tokens"] = chunk_num_tokens_list
+                    example["output"] = concatenated_output
+                    example["is_chunked"] = True
+                    results.append(example)
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")
@@ -236,7 +228,7 @@ class MetaAnalysisTaskRunner:
             "is_data_in_figure_graphics", 
             "is_relevant_data_in_table", 
             "is_table_in_graphic_format", 
-            "abstract_and_results_xml", 
+            "abstract_and_results", 
             "input"
         ]
         # convert into json

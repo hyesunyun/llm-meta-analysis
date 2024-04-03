@@ -3,7 +3,7 @@ templates:
   3be0002d-2108-4062-9535-cbd3db1d7f06: !Template
     id: 3be0002d-2108-4062-9535-cbd3db1d7f06
     prompt: |+ 
-      Article: {{abstract_and_results_xml}}
+      Article: {{abstract_and_results}}
 
       Based on the given trial article, what is the 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome?
       Intervention: {{intervention}}

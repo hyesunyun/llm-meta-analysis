@@ -13,7 +13,7 @@ templates:
   9e5aefb1-c7f9-4530-98c9-e60ac144b6e4: !Template
     id: 9e5aefb1-c7f9-4530-98c9-e60ac144b6e4
     prompt: |+
-      Article: {{abstract_and_results_xml}}
+      Article: {{abstract_and_results}}
       Do NOT provide an explanation.
       **QUESTION:** Based on the article, is the outcome of {{outcome}} from a randomized controlled trial a binary or continuous type?
       (A) binary

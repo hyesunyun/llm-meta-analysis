@@ -6,8 +6,8 @@ import csv
 import math
 from statistics import mode
 
-# XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
-XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files") # TODO remove after testing
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
+MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files")
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
@@ -81,12 +81,25 @@ def get_xml_content_by_pmcid(pmcid: str) -> str:
 
     :return xml file contents as a string
     """
-    # xml_filename = f"PMC{pmcid}.xml"
-    xml_filename = f"PMC{pmcid}.md" # TODO remove after testing
+    xml_filename = f"PMC{pmcid}.xml"
     xml_path = os.path.join(XML_FOLDER_PATH, xml_filename)
     with open(xml_path, "r") as xml_file:
         xml_content = xml_file.read()
     return xml_content
+
+def get_md_content_by_pmcid(pmcid: str) -> str:
+    """
+    This method gets the markdown (md) file contents of a given pmcid
+
+    :param pmcid: pmcid of the md file
+
+    :return md file contents as a string
+    """
+    md_filename = f"PMC{pmcid}.md"
+    md_path = os.path.join(MD_FOLDER_PATH, md_filename)
+    with open(md_path, "r") as md_file:
+        md_content = md_file.read()
+    return md_content
 
 def convert_character_to_string_outcome_type(outcome_type: str) -> str:
     """
