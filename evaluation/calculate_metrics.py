@@ -24,21 +24,18 @@ class MetricsCalculator:
         relevant_reference_fields = [key.replace(search_key, "") for key in relevant_output_fields]
         return relevant_output_fields, relevant_reference_fields
 
-    def __calculate_accuracy(self, actual: List[str], predicted: List[str], remove_unknowns: bool = False) -> float:
+    def __calculate_accuracy(self, actual: List[str], predicted: List[str]) -> float:
         """
         This method calculates the accuracy metric
 
         :param actual: list of actual values
         :param predicted: list of predicted values
-        :param remove_unknowns: boolean to remove unknowns
 
         :return accuracy as a float
         """
         num_actual = len(actual)
         correct = 0
         for i in range(num_actual):
-            if remove_unknowns and actual[i] == "x" and predicted[i] != "x":
-                correct += 1 # consider it as correct
             if actual[i] == predicted[i]:
                 correct += 1
         return correct / float(num_actual)
@@ -120,12 +117,11 @@ class MetricsCalculator:
         """
         return mean_absolute_error - 1.96 * standard_error, mean_absolute_error + 1.96 * standard_error
 
-    def __calculate_exact_match_accuracy(self, data: List[Dict], remove_unknowns: bool = False) -> Dict:
+    def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:
         """
         This method calculates the exact match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
-        :param remove_unknowns: boolean to remove unknowns. If True, then unknowns in the model output are considered correct if the reference is not unknown
 
         :return: dictionary with the metrics
         """
@@ -137,7 +133,7 @@ class MetricsCalculator:
             actual = [example[reference] for example in data]
             predicted = [example[output] for example in data]
 
-            metrics[reference] = self.__calculate_accuracy(actual, predicted, remove_unknowns)
+            metrics[reference] = self.__calculate_accuracy(actual, predicted)
 
         
         # get the total accuracy
@@ -153,8 +149,6 @@ class MetricsCalculator:
         for example in data:
             num_parts_correct = 0
             for output, reference in zip(relevant_output_fields, relevant_reference_fields):
-                if remove_unknowns and example[output] == "x" and example[reference] != "x":
-                    num_parts_correct += 1 # consider it as correct
                 if example[output] == example[reference]:
                     num_parts_correct += 1
             if num_parts_correct == num_parts:
@@ -163,12 +157,11 @@ class MetricsCalculator:
 
         return metrics
     
-    def __calculate_partial_match_accuracy(self, data: List[Dict], remove_unknowns: bool = False) -> Dict:
+    def __calculate_partial_match_accuracy(self, data: List[Dict]) -> Dict:
         """
         This method calculates the partial match accuracy for the given task
 
         :param data: list of dictionaries with the data to calculate the accuracy
-        :param remove_unknowns: boolean to remove unknowns. If True, then unknowns in the model output are considered correct if the reference is not unknown
         :return: dictionary with metrics
         """
         # different levels of partial matching metrics so this could be 1, 2, 3, 4, 5 etc.
@@ -190,8 +183,6 @@ class MetricsCalculator:
             for example in data:
                 num_parts_correct = 0
                 for output, reference in zip(relevant_output_fields, relevant_reference_fields):
-                    if remove_unknowns and example[output] == "x" and example[reference] != "x":
-                        num_parts_correct += 1 # consider it as correct
                     if example[output] == example[reference]:
                         num_parts_correct += 1
                 if num_parts_correct >= num_match:
@@ -303,10 +294,8 @@ class MetricsCalculator:
 
         # calculate exact match accuracy
         metrics["exact_match_accuracy"] = self.__calculate_exact_match_accuracy(data)
-        metrics["exact_match_accuracy_remove_unknowns"] = self.__calculate_exact_match_accuracy(data, True)
         # calcualte partial match accuracy
-        metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)
-        metrics["partial_match_accuracy_remove_unknowns"] = self.__calculate_partial_match_accuracy(data, True)
+        metrics["partial_match_accuracy"] = self.__calculate_partial_match_accuracy(data)\
 
         if self.task == "outcome_type":
             # calculate the F score for outcome type

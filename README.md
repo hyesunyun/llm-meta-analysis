@@ -43,11 +43,16 @@ Arguments of `run_task.py`:
 ### Running Evaluation/Calculating Metrics
 
 After getting all the outputs from the models, you can get the metrics by running `evaluation/evaluate_output.py`. This script will output several different types of metrics:
-- number of times the model produced "unknown" answer when it was actually "known" by human annotators
+- number of times the model produced "unknown" answer when it was actually "known" according to reference answers
+- number of times the reference produced "unknown" answers
 - accuracy
     - exact match: an instance is counted as correct if all the parts are correct
     - partial match: an instance is counted as correct even if only part of the answers are correct
-- mean absolute error, mean squared error, and root mean squared error (only for `binary_outcomes` and `continuous_outcome` tasks)
+- f score (only for `outcome_type` task)
+- percentage of model ICOs that have enough data to compute point estimates compared with reference data (only for `binary_outcomes` and `continuous_outcome` tasks)
+- point estimates: log odds ratio for `binary_outcomes` task and standardized mean differences for `continuous_outcome` task
+- mean absolute error and standard error of the mean absolute error (only for `binary_outcomes` and `continuous_outcome` tasks)
+- total number of ICOs with chunked input (only for `binary_outcomes` and `continuous_outcome` tasks)
 
 Example script for running `evaluate_output.py`:
 ```bash
@@ -60,6 +65,9 @@ Arguments of `evaluate_output.py`:
 
 ## CITATION
 
-## TODO LIST
+```
+```
 
-- [ ] add results from running models
+## TODO
+
+- [ ] clean the repo
