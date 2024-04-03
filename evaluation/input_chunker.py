@@ -37,15 +37,15 @@ class InputChunker:
         try:
             numerized_text = numerize(md_string)
         except:
-            print(f"error in numerizing {md_string}")
+            print(f"ERROR: failed to numerize. using the following text as is : {md_string}")
             numerized_text = md_string
-
+        
         # Remove non-numerical text from the markdown string
         processed_string = ""
         special_string = "::::" # special string to split the regular text and tables
         split_text = numerized_text.split(special_string)
         for partial_text in split_text:
-            if "table-wrap" in partial_text:
+            if "table wrap" in partial_text:
                 new_line = special_string + partial_text + special_string
                 processed_string += new_line
             else:
@@ -93,7 +93,7 @@ class InputChunker:
         split_text = md_string.split(special_string)
 
         for partial_text in split_text:
-            if "table-wrap" in partial_text:
+            if "table wrap" in partial_text:
                 table = special_string + partial_text + special_string
                 table_token_count = self.count_tokens(table)
                 if current_length + table_token_count > max_tokens:
@@ -106,11 +106,11 @@ class InputChunker:
                         current_chunk = ""  # Reset the current chunk
                         current_length = 0  # Reset the current length
                     # Start a new chunk with the current table
-                    current_chunk += str(table)
+                    current_chunk = current_chunk + " " + str(table)
                     current_length += table_token_count
                 else:
                     # If adding this table wouldn't exceed max_tokens, add it to the current chunk
-                    current_chunk += str(table)
+                    current_chunk = current_chunk + " " + str(table)
                     current_length += table_token_count
             else:
                 sentences = sent_tokenize(partial_text)
@@ -126,12 +126,12 @@ class InputChunker:
                             current_chunk = ""  # Reset the current chunk
                             current_length = 0  # Reset the current length
                         # Start a new chunk with the current chunk
-                        current_chunk += str(sentence)
-                        current_length += table_token_count
+                        current_chunk = current_chunk + " " + str(sentence)
+                        current_length += sentence_token_count
                     else:
                         # If adding this cbunk wouldn't exceed max_tokens, add it to the current chunk
-                        current_chunk += str(sentence)
-                        current_length += table_token_count
+                        current_chunk = current_chunk + " " + str(sentence)
+                        current_length += sentence_token_count
 
         # After the loop, add the current_chunk if it's not empty
         if current_length > 0:

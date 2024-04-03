@@ -204,7 +204,7 @@ class MetaAnalysisTaskRunner:
                     for chunk in chunks:
                         chunked_example = example.copy()
                         chunked_example["abstract_and_results"] = chunk["chunk"]
-                        chunked_example["chunk_token_size"] = chunk["token_size"]
+                        chunked_example["model_chunk_token_size"] = chunk["token_size"]
                         chunked_examples.append(chunked_example)
                     # format the chunks with the prompt template
                     formatted_chunked_examples = [format_example_with_prompt_template(example, prompt) for example in chunked_examples]
@@ -212,10 +212,8 @@ class MetaAnalysisTaskRunner:
                     concatenated_output = ""
                     chunk_num_tokens_list = []
                     for input_chunk in formatted_chunked_examples:
-                        print(f"input chunk token size: {input_chunker.count_tokens(input_chunk['input'])}")
-                        print(input_chunk['input'])
+                        chunk_num_tokens_list.append(input_chunk["model_chunk_token_size"])
                         output = self.model.generate_output(input_chunk["input"], max_new_tokens=self.max_new_tokens)
-                        print(output)
                         concatenated_output = concatenated_output + output + "\n---\n"
                     example["chunk_num_tokens"] = chunk_num_tokens_list
                     example["output"] = concatenated_output

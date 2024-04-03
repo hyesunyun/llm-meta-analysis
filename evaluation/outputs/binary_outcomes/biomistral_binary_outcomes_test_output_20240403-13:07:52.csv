@@ -1,0 +1,1225 @@
+id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_type,intervention_events,intervention_group_size,comparator_events,comparator_group_size,intervention_mean,intervention_standard_deviation,comparator_mean,comparator_standard_deviation,standardized_mean_difference,smd_sampling_variance,log_odds_ratio,lor_sampling_variance,log_risk_ratio,lrr_sampling_variance,notes,is_data_complete,tiktoken_with_attributes_xml_token_num,tiktoken_without_attributes_xml_token_num,split,tiktoken_without_attributes_markdown_token_num,chunk_num_tokens,output,is_chunked
+130,4925,4493951,the incidence of postoperative nausea and vomiting (PONV),H1(haloperidol 1 mg),H2 (haloperidol 2 mg),binary,11,49,10,50,,,,,,,0.1466,0.2422,0.1155,0.1505,Used numbers from Late time (2–24 h),TRUE,3932,3205,TEST,2434,"[1538, 1161]","events: 29, 24, 54comparator: events: 72, 74, 144group\_size: 50, 49, 50
+---
+intervention: events: 17 group_size: 50 comparator: events: 21 group_size: 50
+---
+",True
+548,8462,3263860,Diabetic ketoacidosis,Real-Time Continuous Glucose Monitoring,Control,binary,0,69,0,68,,,,,,,-0.014493,4.02898703,-0.0143887,3.97122153,Unclear group sizes. Used the group size for 26-week visit.,TRUE,3178,2587,TEST,2232,"[1614, 796]","intervention:
+---
+intervention: events: 1 group_size: 103 comparator: events: 1 group_size: 103
+---
+",True
+49,6989,3169777,adverse event profile - headache,macitentan doses of 100 mg,placebo,binary,1,6,3,14,,,,,,,-0.3102,1.6242,-0.2513,1.0952,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention:
+group_size: 14events: 2placebo:group_size: 14events: 0
+---
+macitentan doses of 100 mg: events: 3 group_size: 80 placebo: events: 33 group_size: 328
+---
+intervention: { group_size: 77 events: 30 } comparator: group_size: 77 events: 14 # Note: ""1/0"" is used to indicate the event and non-event number
+---
+",True
+568,8555,5541727,Treatment-related serious adverse events,Allogeneic mesenchymal precursor cells,Control,binary,0,11,0,6,,,,,,,-0.5705449,4.24080268,-0.5389965,3.77380952,,TRUE,6118,5345,TEST,4032,"[867, 1610, 1671, 76]","comparator: events: 0 group_size: 6 intervention: events: 4 group_size: 11
+---
+intervention:
+---
+intervention:events:42group_size:47comparator:events:107group_size:109
+---
+intervention: events: 0 group_size: 47 comparator: events: 6 group_size: 45
+---
+",True
+622,11904,3493722,eradication rate of H. pylori in PP,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,71,81,72,81,,,,,,,-0.1193468,0.23908451,-0.0139862,0.00328204,"found in abstract and table, assumed binary because given as percentage of population",TRUE,1684,1549,TEST,1357,[],groups: intervention: events: 83.5 group_size: 85comparator: events: 87.7 group_size: 84,False
+50,6989,3169777,adverse event profile - headache,macitentan doses of 300 mg,placebo,binary,2,6,3,14,,,,,,,0.6061,1.1742,0.4418,0.5952,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","eventsgroup_sizeeventsgroup_size300_mg:{""1"":1,""2"":1}placebo:{""1"":2,""2"":4}
+---
+The following is the description of the YAML format for the ""Data"" fields for trial articles involving binary outcome. It starts and ends with the triple quotes for demonstration purposes.
+---
+{ intervention:
+---
+",True
+633,12277,3936115,"Subjective improvement in observed symptoms based on a single closed-end question (yes or no answer): ""Did you observe adequate relief of diverticulosis related to abdominal pain or discomfort within the past 12 months?",Microencapsulated sodium butyrate (MSB) 300 mg daily,control group was administered placebo,binary,17,30,5,22,,,,,,,1.49203942,0.39457014,0.9136205,0.18003565,found in table 3,TRUE,2217,2016,TEST,1562,[1595],"intervention:
+---
+",True
+123,7936,4486927,the end-of-treatment virologic response,peginterferon (Peg-IFN) plus ribavirin (RBV) for 48 weeks,peginterferon (Peg-IFN) plus ribavirin (RBV) for 24 weeks,binary,83,94,75,93,,,,,,,0.5938,0.1718,0.0907,0.004,,TRUE,14472,7883,TEST,5770,"[1665, 1265, 863, 1463, 1414]","{Events group_size: 7028Events group_size: 6529]
+---
+intervention: group_size: 95events: 95comparator: group_size: 84events: 63
+---
+{% set events = [{""value"" =0, ""label""=""1st Arm"", ""count"" = 78}, {""value"" = 1, ""label"" = ""2nd Arm"", ""count"" = 8
+---
+{ ""outcome"": ""the end-of-treatment virologic response"", ""intervention"": {""event"": 48, ""group_size"": 97}, ""Comparator"": {""event"": 8, ""group
+---
+intervention: events: 48 number group_size: 94 comparator: number group_size: 93
+---
+",True
+623,11905,3493722,side effects,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,19,85,32,84,,,,,,,-0.7597079,0.11826386,-0.5331314,0.06021211,found in results section,TRUE,1684,1549,TEST,1357,[],{ %32intervention%32 events: 19 %72group_size: 81%32comparator%32 events: 32 %72group_size: 84 %31,False
+313,9840,4928400,Stone-free rate,Transperitoneal laparoscopic ureterolithotomy,Flexible ureteroscopy,binary,22,22,16,20,,,,,,,2.5074,2.3273,0.2192,0.014,,TRUE,4037,2288,TEST,1670,[1630],"intervention: events: 22 group_size: 22comparator: events: 20 group_size: 20
+---
+",True
+543,7795,3508963,Baseline characteristics - left kidney stone,Intravenous lidocaine,Intravenous morphine,binary,60,120,63,120,,,,,,,-0.1000835,0.06675021,-0.0487902,0.01587302,,TRUE,3561,2387,TEST,1552,"[1557, 216]","The YAML format for the contingency table for ""intervention"" and ""comparator"" based on the extracted numerical information is:
+---
+{""intervention"": {""events"": { ""comparator"": { ""events"": { ""outcome"": { ""group_size"": 3, ""number"": 3 } } } } }}, {""events"": {""comparator"": {""events
+---
+",True
+373,220,1475568,Baseline beta-blockers intake,Follow-up and thorough education on self-care,Standard information about self-care,binary,32,59,46,64,,,,,,,-0.7684,0.1456,-0.2816,0.0204,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention: ""Number"" ""Number""comparator: ""Number"" ""Number""
+---
+- events: 44096971group_size: 6459
+---
+",True
+14,12634,2667135,early discontinuations,some portion of therapy outside of the hospital (CoPAT),full course of therapy in the hospital setting,binary,10,103,54,97,,,,,,,-2.4161,0.1523,-1.7277,0.0988,,TRUE,11722,8106,TEST,5529,"[745, 1370, 1667, 1449, 915]","intervention: events: 27 group_size: 108 comparator: events: 42 group_size: 111
+---
+intervention: events: 18 comparator: events: 4 group_size: 56 group_size: 91
+---
+intervention: events: ""9"" group_size: ""x"" comparator: events: ""x"" group_size: ""x""
+---
+intervention:
+---
+- intervention: events: ""events"" group_size: ""group_size"" comparator: events: ""events"" group_size: ""group_size"" - intervention: events: ""events"" group_size: ""group_size
+---
+",True
+384,877,2974815,The percentage of patients with controlled blood pressure (<140/90 mmHg),"phone calls"" group","no phone calls"" group",binary,,108,,246,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Numerical values are not available.,FALSE,13659,6016,TEST,4469,"[1665, 1619, 1697]","intervention:
+events: 398
+---
+The ROBINS-I tool is for assessing the risk of bias across nonrandomized studies of interventions. The main dimensions of bias in nonrandomized studies are the confounding, the selection of participants into the study, the classification
+---
+The YAML format should include the fields ""events"" and ""group_size"" for only ""intervention"" and ""comparator"" but not ""outcome"". Example:
+---
+",True
+535,7793,3508963,Response to treatment,Intravenous lidocaine,Intravenous morphine,binary,108,120,84,120,,,,,,,1.34992672,0.13227513,0.25131443,0.00449735,,TRUE,3561,2387,TEST,1552,"[1557, 216]","intervention: events: 108 group_size: 120 comparator: events: 84 group_size: 120
+---
+intervention: events: 3 group_size: 66comparator: events: 3 group_size: 99
+---
+",True
+256,10573,5711682,myocardial infarction (MI),Genoss drug-eluting stent (DES),Promus Element,binary,0,38,0,39,,,,,,,0.0256,4.0513,0.0253,3.9494,,TRUE,13148,4660,TEST,2966,"[1669, 1605]","intervention: events: NUMBER group_size: NUMBER  comparison: events: NUMBER group_size: NUMBER  outcome: events: NUMBER group_size: NUMBER 
+---
+intervention: { group_size: 153 events: 5 } comparator: { group_size: 187 events: 12 }
+---
+",True
+375,219,1475568,Baseline systolic dysfunction,Follow-up and thorough education on self-care,Standard information about self-care,binary,23,59,28,64,,,,,,,-0.1967,0.1347,-0.1154,0.0466,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention: group_size: 54 comparator: group_size: 17
+---
+intervention:events: 32group_size: 104comparator:events: 45group_size: 104
+---
+",True
+491,6484,5419060,Sample rejection rate: CHC A,Phlebotomy training programme,Control,binary,79,10218,60,7557,,,,,,,-0.0267831,0.02955691,-0.0265733,0.0290947,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","events: 60 group_size: 7557
+---
+events: 60 125 10 218 79 45 38 45 48 37 8 7 0 0 26 27 group_
+---
+events: 20000group_size: 20000events: 20000group_size: 20000
+---
+Only produce YAML response. Do NOT provide explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say ""x"". If there are numerical data for pre and post-intervention, choose
+---
+",True
+132,2452,4574984,level of postoperative pain,"intervention group, i.e. patient empowerment through information booklet and diary keeping","control group, which received standard care",binary,234,326,261,326,,,,,,,-0.4566,0.0344,-0.1092,0.002,,TRUE,12997,7944,TEST,5795,"[718, 1310, 1681, 1685, 1285]","intervention: events: 107 group_size: 127 comparison: events: 115 group_size: 127 outcome: pain: events: unknown group_size: unknown
+---
+intervention: events: 78 group_size: 103 comparator: events: 76 group_size: 103
+---
+intervention: 125 'events': 43 'group_size': 285 comparator: 125 'events': 55 'group_size': 285
+---
+Only provide YAML response. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say ""x"". If there are numerical data for pre and post-intervention, choose the post-intervention
+---
+intervention:events: 42450NANAgroup: 2542comparator:events: 51400NANAgroup: 2965
+---
+",True
+43,6985,3169777,unexpected adverse events,macitentan doses of 600 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: { events: 5 events: group_size: 6 } comparator: { events: 1 events: group_size: 14 }
+---
+intervention: {events: 13comparator: {group_size: 16group_size: 18total_sample: 117macitentan doses of 600 mgPlacebo
+---
+intervention: events: 4 NUMBER group_size: 14 NUMBER comparator:events: NUMBERgroup_size: NUMBER
+---
+",True
+304,3880,4357072,reduction in erythematous area,topical pimecrolimus cream 1%,triamcinolone acetonide oral paste 0.1%,binary,14,15,10,15,,,,,,,1.9459,1.3714,0.3365,0.0381,significance found in abstract and numbers in results,TRUE,2097,1624,TEST,1385,[],intervention: events: 6 instances of erythematous area reduction (out of 15 subjects in Pimecrolimus group) Comparator: events: 13 instances of erythematous area reduction (out,False
+476,5523,4144850,Open defecation - adult women,Total Sanitation Campaign,Control,binary,1116,1525,1264,1514,,,,,,,-0.6167847,0.00813218,-0.1317697,0.00037096,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention:events: 41group_size: 40comparator:events: 73group_size: 73
+---
+Intervention:comparator:outcome:: events group_size events group_size intervention:comparator:outcome:: events group_size events group_size Intervention:282Comparators:167Outcome: Open def
+---
+intervention: events: 504 group_size: 39 comparator: events: 602 group_size: 39 outcome: open_defecation_women events: NUMBER group_size:
+---
+events: 18616 group_size: 18636
+---
+We need to convert the raw data for the outcome “open defecation – adult women” and “open defecation – adult men” from descriptive statistics into a 2x2 contingency table (Table 5). We obtained
+---
+Open defecation - adult womenTotal Sanitation CampaignControlevents:836995group_size:181683
+---
+intervention: events: 85 group_size: 119 comparator: events: 99 group_size: 148
+---
+- intervention:open defecation ----adult womencomparator:intervention:open defecation ----adult womencomparator:
+---
+",True
+587,11581,115849,patients discontinued due to lack of efficacy,etoricoxib 90 mg once daily,placebo,binary,44,353,90,357,,,,,,,-0.8617127,0.04081995,-0.7043523,0.0282044,found in fig 1,TRUE,6464,5362,TEST,4091,"[1531, 1683, 1002]","events: 383 events group\_size: 674 events: 51 events group\_size: 674
+---
+events:NUMBER group_size: NUMBER 
+---
+intervention: events: 5 group_size: 353comparator: events: 3 group_size: 353
+---
+",True
+508,6486,5419060,Techinque related rejections: CHC B,Phlebotomy training programme,Control,binary,15,4114,8,3973,,,,,,,0.59537147,0.19216284,0.59373435,0.1911719,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","events: pre-0000
+---
+intervention: events: 45 group_size: 3973comparator: events: 4114 group_size: 4114outcome: events: 11 group_size: 11
+---
+intervention: {""events"": 16, ""group_size"": 80}comparator: {""events"": 18, ""group_size"": 80}
+---
+intervention: { events: 55 group_size: 781}comparator: {events:51 group_size:781}
+---
+",True
+173,2791,5079604,The 2-year failure rate,"metformin 1,000 mg daily, sitagliptin 100 mg daily",placebo,binary,13,33,12,15,,,,,,,-1.8171,0.5436,-0.7084,0.0633,Used percentage to calculate events as binary outcome.,TRUE,12690,6902,TEST,4923,"[739, 1755, 1654, 706]","intervention: events: 4 group_size: 17 comparator: events: 4 group_size: 15
+---
+{% if outcome.intervention == ""metformin 1,000 mg daily"" and outcome.comparator == ""placebo"" and outcome.outcome_type == ""continuous"" %}
+---
+Only produce YAML response. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say “x”. If there are numerical data for pre and post-intervention, choose the post-intervention
+---
+intervention: group_size: 59 events: 24 comparator: group_size: 58 events: 28 output: ""failures""
+---
+",True
+652,13099,5976307,The incidence rate of vital sign fluctuation (VSF),etomidate,propofol based on midazolam,binary,17,62,31,62,,,,,,,-0.9734491,0.14556188,-0.6007739,0.05882353,found in table 3,TRUE,2560,2044,TEST,1751,[1636],"The YAML format for the contingency table should be as follows:
+---
+",True
+48,6989,3169777,adverse event profile - headache,macitentan doses of 25 mg,placebo,binary,2,6,3,14,,,,,,,0.6061,1.1742,0.4418,0.5952,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: ""macitentan doses of 25 mg""
+---
+1:0:141:0:11:0:0:0:2
+---
+2x2-table_data: (10_14) = {'events': 99,'group_size': 44} 10_14: {'events': 25,'group_size':
+---
+",True
+93,10166,4173437,Complications,Tranexamic acid,Control,binary,0,30,0,30,,,,,,,0,4.0656,0,3.9355,Had to infer that the group sizes were equal.,TRUE,854,745,TEST,637,[],groups: - intervention: events: 1 group_size: 24Comparator: events: 16 group_size: 24,False
+131,2451,4574984,numbers overall complications,"intervention group, i.e. patient empowerment through information booklet and diary keeping","control group, which received standard care",binary,238,326,241,326,,,,,,,-0.0472,0.0315,-0.0125,0.0022,,TRUE,12997,7944,TEST,5795,"[718, 1310, 1681, 1685, 1285]","intervention:events: 130group_size: 257comparator:events: 134group_size: 257
+---
+intervention:events: 97group_size: 48comparator:events: 184group_size: 184
+---
+intervention (events, group_size): 10.8, 65 comparator (events, group_size): 11.2, 54
+---
+intervention:
+---
+intervention: events: 5.89% group_size: 253comparator: events: 5.61%group_size: 257
+---
+",True
+152,13479,5055753,The percentages of patients in the calm,0.2 mg oral clonidine,2 mg oral midazolam,binary,14,40,7,40,,,,,,,0.9316,0.2831,0.6931,0.1643,"Even though the outcome says percentage, the way that the results are reported in the table makes it easier to calculate as binary outcome.",TRUE,3292,2470,TEST,2114,"[1599, 640]","intervention:
+---
+intervention: events: 140 group_size: 72
+comparator: events: 28 group_size: 14
+---
+",True
+370,218,1475568,Baseline diabetes,Follow-up and thorough education on self-care,Standard information about self-care,binary,35,59,33,64,,,,,,,0.3148,0.1328,0.1402,0.0263,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention: events: 13 comparator: events: 5 group_size: 18 intervention: events: 16 comparator: events: 3 group_size: 15
+---
+intervention: 37Comparator: 29
+---
+",True
+10,9682,2363753,Grade III/IV stomatitis,Amifostine,Control,binary,0,20,5,20,,,,,,,-2.6775,2.2951,-2.3979,2.0866,Only abstract is available. Full text in PDF only.,TRUE,887,780,TEST,725,[],Here is the YAML format for the 2x2 contingency table:--- Intervention: 010Group: 004 Comparator: 004Outcome: Grade III Stomatitis Group_size,False
+537,7795,3508963,Baseline characteristics - hydronephrosis in left kidney,Intravenous lidocaine,Intravenous morphine,binary,52,120,52,120,,,,,,,0,0.0678733,0,0.02179487,,TRUE,3561,2387,TEST,1552,"[1557, 216]","intervention: events: 2 events group_size: 120 comparator: ""events"": 64 group_size: 120
+---
+intervention: { events: 168 group_size: 168 } comparator: { events: 105 group_size: 105 }
+---
+",True
+108,1884,4188762,withdrawal response of rocuronium,ketamine,normal saline,binary,9,30,26,30,,,,,,,-2.7191,0.4472,-1.0609,0.0829,Used percentage to calculate events as binary outcome.,TRUE,2068,1758,TEST,1564,[],intervention:,False
+297,5596,4355974,ER visits,BostonBreathes system,Control,binary,1,28,1,14,,,,,,,-0.7309,2.114,-0.6931,1.8929,found in table,TRUE,7450,5464,TEST,3820,"[1518, 1687, 528]","intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: { events: 10 group_size: 14 } comparator: { events: 4 group_size: 14 } ERVisits: {x events: 1 events: 12 group_size
+---
+intervention: group_size: 19 events: 18 comparator: group_size: 18 events: 9
+---
+",True
+121,7938,4486927,"The SVR rates if the patients had IL-28B rs8099917 TT genotype, and GT/GG genotype",peginterferon (Peg-IFN) plus ribavirin (RBV) for 48 weeks,peginterferon (Peg-IFN) plus ribavirin (RBV) for 24 weeks,binary,17,23,2,24,,,,,,,3.4393,0.7709,2.1826,0.4737,"Even though the outcome says rate, the way that the results are reported in the table makes it easier to calculate as binary outcome.",TRUE,14472,7883,TEST,5770,"[1665, 1265, 863, 1463, 1414]","intervention: events: 70 events group_size: 94 comparator: events: 46 events group_size: 93
+---
+Please find below the YAML format for the 2x2 contingency table. Please let us know if there are any mistakes in the extraction or formatting. Please see Example:(3): Intervention:48weeksdrug
+---
+The contingency table for the outcome ""sustained virologic response"" (SVR) with respect to infection with genotype (GT) ""GT/GG"" or ""TT"" is given below. Intervention and comparator variables are
+---
+response_time_period: SD 48W, SD 24W ⏟time(inferred)timeframe : [[{event_type_id : 2000}, {event_id : ""SV
+---
+-  - events:
+---
+",True
+500,6489,5419060,Preanalytical errors: CHC B,Phlebotomy training programme,Control,binary,12,4114,10,3973,,,,,,,0.14784821,0.18382945,0.14744724,0.18283856,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: events: 0 events_group_size: 45 Comparator: events: 1 events_group_size: 58
+---
+intervention1:
+---
+intervention: events: numerator: 9 denominator: 54 group_size: numerator: 28 denominator: 54
+---
+intervention: events: 23 group_size: 873comparator: events: 38 group_size: 1266
+---
+",True
+547,8463,3263860,Serious skin reactions,Real-Time Continuous Glucose Monitoring,Control,binary,0,69,0,68,,,,,,,-0.014493,4.02898703,-0.0143887,3.97122153,Unclear group sizes. Used the group size for 26-week visit.,TRUE,3178,2587,TEST,2232,"[1614, 796]","intervention: events: NUMBER group_size: NUMBER comparator: NUMBER group_size: NUMBER
+---
+{ events: 4 group_size: 112 } { events: 7 group_size: 153 } { events: 9 group_size: 127 } { events: 5 group_size
+---
+",True
+155,13480,5055753,the percentages of patients in the heavily sedated,0.2 mg oral clonidine,2 mg oral midazolam,binary,,40,,40,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,,FALSE,3292,2470,TEST,2114,"[1599, 640]","intervention: events: 25 group_size: 40 comparator: events: 20 group_size: 40
+---
+intervention: events: 39 group_size: 109
+comparator: events: 79 group_size: 109
+---
+",True
+391,951,3278655,"The proportion of ""at risk"" components at 5 years",The trabecular metal tibial monoblock component (TM),cemented component.,binary,0,27,2,18,,,,,,,-2.1203,2.497,-1.9972,2.3117,Used numerical values from 5-year follow up provided in abstract.,TRUE,5463,3510,TEST,2857,"[1649, 1417]","Please see the following YAML representation:yamlsample_yaml: events_int: 2 events_com: 6 group_size_int: 1 group_size_com: 2 
+---
+{% if page.output_type != ""fdr"" %} {
+% set output_type = ""text/plain"" %} {% endif %} output_type {% if page.output_type == ""text
+---
+",True
+502,6489,5419060,Preanalytical errors: CDC D,Phlebotomy training programme,Control,binary,2,630,4,589,,,,,,,-0.7640755,0.75330176,-0.7604408,0.74671491,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","1. Requested sample type match specimen type2. Sample volume is correct3. Sample is at correct temperature4. Phlebotomist must be trained5. Patient information legible6. Correct tube type7. Ph
+---
+outcome_name: Preanalytical errors: CDC Devents: 14717comparator: group_size: 21 events1528intervention: group_size: 9 events114
+---
+""intervention"": [{""events"": 2555, ""group_size"": 551}], ""comparator"": [{""events"": 3716, ""group_size"": 14238
+---
+intervention: events: 3 groups_size: 276 comparator: events: 243 group_size: 243 outcome: 0 events: 3445 group_size: 400
+---
+",True
+653,13100,5976307,the incidence rate of adverse events disturbing the procedure,etomidate,propofol based on midazolam,binary,16,62,5,62,,,,,,,1.37756068,0.30178299,1.16315081,0.23024194,found in table 3,TRUE,2560,2044,TEST,1751,[1636],"intervention: events: 50 comparator: events: 4 events: group_size: group_size: 62 interventions: 62
+---
+",True
+299,5598,4355974,Knowledge,BostonBreathes system,Control,binary,9,12,3,8,,,,,,,1.6094,0.9778,0.6931,0.2361,"found in table,",TRUE,7450,5464,TEST,3820,"[1518, 1687, 528]","intervention:events: numbercomparator:events: numbergroup_size: numbergroup_size: numberoutcome:events: number
+---
+Here is the requested response: Intervention:
+---
+intervention: events: 6.2 number: 12 group_size: 6 comparator:events: 2.5number: 4group_size: 4outcome:
+---
+",True
+15,12635,2667135,rate of clinical success at the test-of-cure visit,some portion of therapy outside of the hospital (CoPAT),full course of therapy in the hospital setting,binary,89,103,54,97,,,,,,,1.6218,0.1244,0.4396,0.0097,,TRUE,11722,8106,TEST,5529,"[745, 1370, 1667, 1449, 915]","intervention: events: 9542/103 group_size: 103 comparator: events: 6243/100 group_size: 100 outcome: events: 96
+---
+intervention:
+events: 164
+group_size: 103
+---
+outcome: rate of clinical success at the test-of-cure visitintervention: {events: 50, group_size: 53,}comparator: {events: 53, group_size: 5
+---
+intervention:
+events: 89group_size: 103comparator:
+---
+intervention: events: 8 comparator: events: 3
+---
+",True
+481,5521,4144850,Sanitation facility improvement,Total Sanitation Campaign,Control,binary,630,1522,342,1512,,,,,,,0.88220198,0.00648706,0.6043171,0.00319287,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention: events: 80 comparator: events: 78
+---
+* Table 1: Baseline characteristics by randomized intervention groups, 2009.
+---
+intervention: events: 2x2_contingency_table_row_intervention__2_Total_Sanitation_Campaign__TSCgroup_size: 96comparator: events: 2x2_con
+---
+interventions: events: 176 group_size: 250 comparators: events: 205 group_size: 250 outcomes: events: 79 group_size: 250
+---
+intervention: events: 19 group_size: 3048comparator: events: 647 group_size: 1846
+---
+intervention: events: 3198 group_size: 6219comparator: events: 5298 group_size: 5115
+---
+intervention:
+events: 5900000group_size: 1049729
+---
+interventions: event: 0improved NUMBERgroup_size: 2069 [Total number of intervention group that improved]
+---
+",True
+339,11079,5655920,Nausea,Lixisenatide with moderate impairment,Lixisenatide with mild impairment,binary,,122,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = 0.04,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","- events: 25x49[115.8x]group_size: 54x
+---
+intervention: "" Events"": 37 "" Group_size"": 75 comparator: "" Events"": 27 "" Group_size"": 75
+---
+intervention: events:NUMBER group_size: NUMBERcomparator: events: NUMBER group_size: NUMBER
+---
+",True
+107,1884,4188762,withdrawal response of rocuronium,lidocaine,normal saline,binary,6,30,26,30,,,,,,,-3.2581,0.4968,-1.4663,0.1385,Used percentage to calculate events as binary outcome.,TRUE,2068,1758,TEST,1564,[],"intervention:
+events: 26",False
+251,12426,5614421,severity of any neonatal respiratory disease,vaginal progesterone pessaries (equivalent to 100 mg vaginal progesterone),placebo,binary,8,402,7,388,,,,,,,0.1,0.273,0.0981,0.2628,,TRUE,25930,11480,TEST,8549,"[1405, 1183, 2739, 770, 3421, 411]","intervention: events: 42 group_size: 402comparator: events: 41 group_size: 388
+---
+{events1: 402, events2: 388, events3: 790, events4: 303, events5: 243, group_size1: 398
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+Both the trial article and its results in ClinicalTrials.gov have ""completed"" status. The following data were extracted from the trial article: {intervention: vaginal progesterone pessaries (equivalent to 1
+---
+events: [ 74 1 1168 ] group_size: 1173
+---
+intervention: events:102 group_size: 400comparator: events: 96 group_size: 400
+---
+",True
+45,6989,3169777,adverse event profile - headache,macitentan doses of 0.2 mg,placebo,binary,0,6,3,14,,,,,,,-1.3754,2.5265,-1.1838,2.0762,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","* 0.2: ['headache': 1 ; 'not headache': 14 ; group_size: 14 ]
+---
+The YAML response is: data: [[""N""= 6, ""n"" = 0, ""C""= 0, ""M""= 0, ""P""= 6, ""T""= 
+---
+The final YAML format of the contingency table for the 2x2 contingency table for this study is provided below. Please note that I have not used the raw data from the article in these numbers. The numerical values for ""events
+---
+",True
+512,6553,4033571,Adverse effects,Extended-release oxcarbazepine 1200 mg,Control,binary,69,123,67,121,,,,,,,0.02941389,0.06645516,0.01302008,0.01302358,,TRUE,8206,5593,TEST,4514,"[1205, 1677, 1566, 907]","intervention: events: 120 events group_size: 316 comparator: events: 10 events group_size: 316
+---
+intervention: 901 901 901 901 comparator: 581 581 581 581 events: 439 439 44
+---
+EventsComparatorIntervention group_sizeControl231/259Extended-release oxcarbazepine 1200 mg122/258
+---
+intervention:
+events: 3314events: 3788comparator:events: 8557events: 7402group_size: 68group_size: 76
+---
+",True
+66,1643,3309311,The proportion of HIZ incidence,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)","adults who had been involved in a minor traffic accident, and had mild symptoms but not limited mobility (group B)",binary,14,23,4,19,,,,,,,1.7636,0.4992,1.0617,0.2253,Used percentage to calculate events as binary outcome.,TRUE,1437,1263,TEST,1073,[],intervention: events: 23 group_size: 24 comparator: events: 19 group_size: 19,False
+166,616,5062234,intraoperative supplemental fentanyl,Transversus abdominis plane block with 0.375% ropivacaine,local anesthetic infiltration of the port site.,binary,8,21,16,21,,,,,,,-1.6487,0.4644,-0.6931,0.0923,,TRUE,1345,1148,TEST,971,[],intervention:events: 8group_size: 42comparator:events: 16group_size: 42,False
+258,10574,5711682,stent thrombosis,Genoss drug-eluting stent (DES),Promus Element,binary,0,38,0,39,,,,,,,0.0256,4.0513,0.0253,3.9494,,TRUE,13148,4660,TEST,2966,"[1669, 1605]","stent thrombosis:
+---
+intervention: group_size: 125comparator: group_size: 118
+---
+",True
+492,6484,5419060,Sample rejection rate: CHC B,Phlebotomy training programme,Control,binary,48,4114,45,3973,,,,,,,0.0300092,0.04355608,0.02966421,0.04256078,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: events/group_size/comparator/events/group_size: intervention1 vs control1: 65/10219comparator1: 83/4114intervention1 vs control2
+---
+events: 117  group_size: 241  events: 79  group_size: 248 events: 37  group_size: 267 events: 37 
+---
+events: 12 x group_size: 50
+---
+intervention:
+events: 3240006
+group_size: 205945066
+---
+",True
+257,10571,5711682,target lesion revascularization (TLR),Genoss drug-eluting stent (DES),Promus Element,binary,1,38,1,39,,,,,,,0.0267,2.0533,0.026,1.948,,TRUE,13148,4660,TEST,2966,"[1669, 1605]","intervention:xevents:1group_size:56comparator:xevents:1group_size:27
+---
+intervention:event:NUMBERgroup_size: NUMBERcomparator:event: NUMBERgroup_size: NUMBER
+---
+",True
+252,12427,5614421,other respiratory morbidities,vaginal progesterone pessaries (equivalent to 100 mg vaginal progesterone),placebo,binary,,402,,388,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,,FALSE,25930,11480,TEST,8549,"[1405, 1183, 2739, 770, 3421, 411]","intervention: events: 42 group_size: 402 comparator: events: 41 group_size: 388
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER outcome: events: NUMBER group_size: NUMBER
+---
+intervention: events: 26 group_size: 402 comparator: events: 23 group_size: 388
+---
+progesterone: events: 307 group_size: 307 placebo: events: 256 group_size: 256
+---
+intervention: events: 11 group_size: 570 comparison: events: 12 group_size: 572 Number of women with other respiratory morbidities in the group receiving progesterone (
+---
+intervention:events:number:34comparer:events:number:687group_size:3065
+---
+",True
+494,6484,5419060,Sample rejection rate: CDC D,Phlebotomy training programme,Control,binary,7,630,8,589,,,,,,,-0.2033272,0.27118345,-0.200825,0.26457205,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: events: 60 group_size: 7557comparator: events: 45 group_size: 3973outcome: events: 79 group_size: 589
+---
+intervention:
+---
+Intervention: Phlebotomy training programme
+---
+intervention:events: 129535comparator:group_size:1comparator:event_size:9130 
+---
+",True
+381,225,1475568,Cardiac-related hospitalization,Follow-up and thorough education on self-care,Standard information about self-care,binary,20,59,25,64,,,,,,,-0.2231,0.1413,-0.1418,0.0574,Used percentage found in text to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","{events: 56, group_size: 127}
+---
+{intervention: 21.297 group_size: 41}
+---
+",True
+376,223,1475568,Baseline angiotensin II receptor blockers (ARBs) intake,Follow-up and thorough education on self-care,Standard information about self-care,binary,,59,,64,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Unclear since the values for this are reported with ACEI intake.,FALSE,4361,3649,TEST,2573,"[1439, 1156]","intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER outcome: events: NUMBER group_size: NUMBER
+---
+intervention:
+events: 39440392group_size: 13510comparator:
+---
+",True
+46,6989,3169777,adverse event profile - headache,macitentan doses of 1 mg,placebo,binary,0,6,3,14,,,,,,,-1.3754,2.5265,-1.1838,2.0762,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: group_size: 32 events: 0.0 events_std: 0.0comparator: group_size: 32 events: 0.0 events_std: 0.0outcome:
+---
+*-29,*--248--197,-105--165--160-152--153--138--129--65--66--64
+---
+intervention: events: 3 group_size: 18 comparator: events: 12 group_size: 18
+---
+",True
+265,2787,2430617,adverse events,30 µg YIC,placebo,binary,,,,,,,,,,,,,,,,TRUE,7987,4896,TEST,3773,"[1374, 1680, 1151]","-- Intervention: 30 µg YIC. Outcome: adverse events. Comparator: placebo. Events: 15. Group_size: 181
+---
+Here is the YAML representation for the above trial article:
+---
+{""intervention"": {""events"": 10, ""group_size"": 34}, ""comparator"": {""events"": 33, ""group_size"": 34}}
+---
+",True
+47,6989,3169777,adverse event profile - headache,macitentan doses of 5 mg,placebo,binary,0,6,3,14,,,,,,,-1.3754,2.5265,-1.1838,2.0762,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","{ 5: 3 1: 0 1: 1 0: 0
+---
+events: number = 0 intervention: events: number = 5 comparator: events: number = 3
+---
+intervention: { events: 22 group_size: 36 } comparator: { events: 17 group_size: 36 } Response: { events: ""intervention"" comparator: ""comparator"" }
+---
+",True
+507,6486,5419060,Techinque related rejections: CHC A,Phlebotomy training programme,Control,binary,20,10218,20,7557,,,,,,,-0.3023674,0.10023074,-0.3016766,0.09976981,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: 
+---
+events: 20group_size: 7629rejection_rates: rejection_rates:
+---
+intervention:
+---
+{2x2: sample: CHC A, pre: [0.17, 0.33], post: [0.32, 0.36], post_group: 0.26, post
+---
+",True
+380,215,1475568,Daily weight monitoring at the end of treatment,Follow-up and thorough education on self-care,Standard information about self-care,binary,47,59,19,64,,,,,,,2.2275,0.1795,0.9871,0.0413,Used percentage found in text to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention: events: 169 group_size: 64comparator: events: 66 group_size: 64
+---
+intervention: events: 25 group_size: 29comparator: events: 30 group_size: 22
+---
+",True
+588,11581,115849,patients discontinued due to lack of efficacy,naproxen 500 mg twice daily,placebo,binary,19,181,90,357,,,,,,,-1.0557184,0.07366085,-0.8761319,0.05541671,found in fig 1,TRUE,6464,5362,TEST,4091,"[1531, 1683, 1002]","Table [1](#) summarizes the results of the treatment comparisons for the primary and secondary efficacy endpoints. For all 4 primary endpoints, etoricoxib and naproxen were statistically superior to placebo
+---
+intervention:
+events: 25/357 group_size: 357 comparator:
+---
+events: group_size: patientsdiscontinueddue todo lack of efficacynaproxen 500 mg twice daily1004112201004placedbo53206
+---
+",True
+254,12428,5614421,side effects,vaginal progesterone pessaries (equivalent to 100 mg vaginal progesterone),placebo,binary,134,394,118,382,,,,,,,0.1424,0.0236,0.0962,0.0108,,TRUE,25930,11480,TEST,8549,"[1405, 1183, 2739, 770, 3421, 411]","The YAML format for the 2x2 contingency table for this question is as follows:comparator: events1 events2 events3 group_size1 group_size2168273intervention: events1 events
+---
+{events:18} {events:36} {events:28} {events:222} {events:222} {events:21} {events:10} {events:129
+---
+intervention: events: 19 events group_size: 42 comparator: events: 18 events group_size: 42
+---
+intervention: events: 3 events group_size: 166comparator: events: 4 events group_size: 166
+---
+{ :events: 398 :group_size: 398 '': '': { :events: 389 :group_size: 389 '': '': { :events: 37.
+---
+group_size: 394group_size: 382events: 134events: 118events: 9.9events: 7.3
+---
+",True
+473,5711,3343759,aphasia types,very early speech and language therapy (SLT),control,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Numerical data is in figure and group sizes are not available in abstract or results sections.,FALSE,3838,2633,TEST,2065,"[1467, 589]","intervention: events: 114 group_size: 123 comparator: events: 114 group_size: 123
+---
+intervention:
+events: 4832
+---
+",True
+270,2991,3214395,bronchospasm,"group 1 included bispectral index (BIS) of 60, group 2 covered bispectral index (BIS) of 47",group 3 involved bispectral index (BIS) of 37,binary,1,60,0,30,,,,,,,0.4304,2.7163,0.4217,2.618,,TRUE,1201,996,TEST,880,[],intervention: events: 2 group_size: 25,False
+85,13567,3687098,The incidence rates of malignancy,sitagliptin 100 mg/day,comparator agent,binary,6953,7726,6403,6885,,,,,,,-0.3899,0.0037,-0.0328,0,Used incidence rate per 100 to get the binary events.,TRUE,15196,10904,TEST,8432,"[1656, 1177, 1601, 1608, 694, 1634, 346]","incidence_rates_of_malignancy: {intervention: 52, comparator: 37}
+---
+What was the frequency data (e.g. n, N, %) of 10 of the 23 comparisons made in the results section of the original study? Please include the data as-is, such as ""n:
+---
+intervention:
+events: 4313-450
+---
+intervention: {events: 158group_size: 1751} comparator: {events: 207group_size: 1886}
+---
+intervention: events: 192 group_size: 1978 comparator: events: 150 group_size: 1978
+---
+{comparator: {group_size: 3949,events: 3132}intervention: {group_size: 6251,events: 5833}}
+---
+For each predefined criterion, the contingency table shows the number of patients who had an abnormal measurement, based on last visit data or data obtained during treatment, at study end. Note that in some cases the total number of patients who
+---
+",True
+475,5523,4144850,Open defecation - adult men,Total Sanitation Campaign,Control,binary,1138,1525,1273,1514,,,,,,,-0.5857317,0.00839764,-0.1193432,0.00034804,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention:events: 1,540group_size: 1,445comparator:events: 1,398group_size: 1,363
+---
+events
+---
+intervention: events: 0comparator: events: 2group_size: 39
+---
+{ events: 329 events_group_size: 412 events_group_size2: 476 group_size: 665 group_size2: 693 } 
+---
+intervention: events: 41 group_size: 630comparator: events: 226 group_size: 630
+---
+intervention:
+---
+intervention: events: 48 group_size: 4652comparator: events: 27 group_size: 4558
+---
+events: 953 group_size: 1916 events: 1443 group_size: 1973
+---
+",True
+497,6488,5419060,Request-form errors: CDC C,Phlebotomy training programme,Control,binary,6,2279,3,2321,,,,,,,0.71275138,0.50087135,0.71140856,0.49913036,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","events: 0interventiongroup_size: 20comparatorgroup_size: 20
+---
+groups: intervention: events: 45 group_size: 55 comparator: events: 77 group_size: 44
+---
+intervention: events: 24 group_size: 589comparator: events: 122group_size: 589
+---
+2x2: table {caption: Overview of the 2x2 contingency table.}eventsgroup_sizeeventsgroup_sizePhlebotomy training programmeControlRequest-form errors: CDC CYes, n = 9
+---
+",True
+154,13480,5055753,the percentages of patients in the agitated sedation scale,0.2 mg oral clonidine,2 mg oral midazolam,binary,,40,,40,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,,FALSE,3292,2470,TEST,2114,"[1599, 640]","```yamlintervention:events:62group_size:80comparator:events:21group_size:80Outcome:the percentages of patients in the agitated sedation scale:events:25group_
+---
+intervention: events: 13 group_size: 69comparator: events: 12 group_size: 69
+---
+",True
+632,12276,3936115,the number of abdominal ultrasound examinations performed for suspected diverticulitis and subsequent number of diverticulitis diagnosed based on abdominal US,Microencapsulated sodium butyrate (MSB) 300 mg daily,control group was administered placebo,binary,1,30,5,22,,,,,,,-2.1435204,1.29330629,-1.9195928,1.12121212,found in table 2,TRUE,2217,2016,TEST,1562,[1595],"groups_count: 2group1_size: 30group2_size: 22event_type: diverticulitis_freeevent1_count: 27event2_count: 25group
+---
+",True
+16,12636,2667135,deaths,some portion of therapy outside of the hospital (CoPAT),full course of therapy in the hospital setting,binary,4,103,18,97,,,,,,,-1.7297,0.3283,-1.5641,0.2855,,TRUE,11722,8106,TEST,5529,"[745, 1370, 1667, 1449, 915]","intervention: events: 19 group_size: 103comparator: events: 38 events: 102 total: 200: num: num: sum: {0.06: 2
+---
+intervention:events:31pre_group_size:132comparator:events:36pre_group_size:276
+---
+intervention:
+events: 124393636group\_size: 2009540comparator:
+---
+Given article: A higher rate of clinical success at the test of cure visit was observed among CoPAT patients (89/103, 86.4%) compared with that among IPAT patients (54/97,
+---
+{events: 43, group_size: 97} {events: 69, group_size: 105} {events: 52, group_size: 27} {events: 
+---
+",True
+389,875,2974815,percentage of patients with controlled blood pressure,"phone calls"" group","no phone calls"" group",binary,86,108,175,246,,,,,,,0.4612,0.0769,0.1128,0.004,"Used 80% for ""phone calls"" group and 71% for ""no phone calls"" group.",TRUE,13659,6016,TEST,4469,"[1665, 1619, 1697]","events: 74group_size: 179events: 30group_size: 246
+---
+Note that this response has ""extrapolated"" the data to four rows (or more, as necessary) to match the sample sizes of the ""Phone Calls"" and ""No Phone Calls"" groups. The extrapolated data points are
+---
+intervention: events: 8 group_size: 16 comparator: events: 8 group_size: 16
+---
+",True
+627,12232,3510731,Clicked on Results link,received the debriefing information in the body of an email with links to protocol and results pages;,received these links after clicking on an initial link in the body of the email to view the debriefing information on a website.,binary,247,6051,515,5892,,,,,,,-0.8111953,0.0063486,-0.7614066,0.00565535,found in table 1,TRUE,1665,1296,TEST,943,[],"groups: [ ""intervention"", ""comparator""]: events: group_size: [""247"", ""515"", ""1427"", ""3469"", ""5892"", ""605",False
+128,4924,4493951,the incidence of postoperative nausea and vomiting (PONV),H2 (haloperidol 2 mg),H0 (saline),binary,10,50,21,50,,,,,,,-1.0635,0.2071,-0.7419,0.1076,Used numbers from Late time (2–24 h),TRUE,3932,3205,TEST,2434,"[1538, 1161]","The YAML format is shown in Table Y0A.
+---
+intervention:events:NUMBERgroup_size:NUMBERcomparator:events:NUMBERgroup_size:NUMBER
+---
+",True
+690,13830,4210722,vaccination certificates were submitted,a separate reminder card 4 days before the appointment (IG3),reminder card together with the appointment letter (IG2),binary,94,102,91,107,,,,,,,0.72558246,0.20912731,0.0802913,0.00247759,found in text as fractions of group sizes,TRUE,10493,8112,TEST,5695,"[1694, 863, 1450, 1688, 674]","a separate reminder card 4 days before the appointment (IG3) comparator: reminder card together with the appointment letter (IG2) Outcome: vaccination certificates were submitted intervention: events: 185 group_size: 
+---
+[{""Intervention"":{""group_size"":507,""events"":{""Event2"":51,""Event1"":506},""Outcome"":{""total_events"":712,""number"":548}},""
+---
+events: 23 17 4 group_size: 24 24
+---
+intervention: { group_size: 40 } 4/40 (10.0) comparator: { group_size: 40 } 36/40 (90.0)
+---
+intervention:events: 58/64group_size:64comparator:events: 46/72group_size:72
+---
+",True
+539,7795,3508963,Baseline characteristics - did not have hydronephrosis,Intravenous lidocaine,Intravenous morphine,binary,11,120,15,120,,,,,,,-0.3475425,0.17627388,-0.3101549,0.14090909,,TRUE,3561,2387,TEST,1552,"[1557, 216]","The required 2x2 contingency table in YAML format for Intervention: Intravenous lidocaine, Comparator: Intravenous morphine and Outcome: Baseline characteristics - did not have hydroneph
+---
+intervention:events: 10events: 771events: 121group_size: 106group_size: 128group_size: 1events: 149
+---
+",True
+369,217,1475568,Baseline hypertension,Follow-up and thorough education on self-care,Standard information about self-care,binary,51,59,57,64,,,,,,,-0.2448,0.305,-0.0299,0.0046,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","* ""intervention"": ""Follow-up and thorough education on self-care"" ""outcome"": ""Baseline hypertension"" ""group_size"": ""25"" ""comparator"": ""Standard information about self-care"" ""
+---
+All numbers provided from original paper:
+---
+",True
+382,876,2974815,discontinued treatment,"phone calls"" group","no phone calls"" group",binary,4,108,30,246,,,,,,,-1.284,0.2976,-1.1917,0.27,Values from results section text.,TRUE,13659,6016,TEST,4469,"[1665, 1619, 1697]","intervention: events: 4 no_phone_calls: events: 30 group_size: 108 group_size: 246
+---
+As in the ""Results"" section of the article, the baseline demographics of each group of patients (uncomplicated vs. complicated cases, and ""traditional"" vs. ""current"" treatment groups) and patients receiving phone calls vs
+---
+intervention: [ comparator: ]events: [ events: 41 (or 41.5) group_size: 28 (or 39) comparator: group_size: 18 ]
+---
+",True
+624,11906,3493722,good compliance rates,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,74,81,74,81,,,,,,,0,0.31274131,0,0.00233567,"found in table 2, assumed binary because proportion of whole given",TRUE,1684,1549,TEST,1357,[],intervention: events: 91 good compliance group_size: 100comparator: events: 91 good compliance group_size: 100,False
+510,6486,5419060,Techinque related rejections: CDC D,Phlebotomy training programme,Control,binary,2,630,4,589,,,,,,,-0.7640755,0.75330176,-0.7604408,0.74671491,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","{ % data % }intervention:events:xgroup_size:xcomparator:events:xgroup_size:xoutcome:events:34group_size:163
+---
+The intervention:comparator:outcome 2x2 contingency table (YAML format):
+---
+Intervention: Phlebotomy training programmeComparator: ControlOutcome:Techinque related rejections: CDC D
+---
+There were no 2x2 tables in this manuscript. There were 2 tables and they were both 4x4 contingency tables. We added both tables in figure and explained their details in a method Table S1 which is a supplementary
+---
+",True
+499,6489,5419060,Preanalytical errors: CHC A,Phlebotomy training programme,Control,binary,27,10218,17,7557,,,,,,,0.16134073,0.09609132,0.16094694,0.09563037,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: {
+---
+intervention:events:76group_size:46comparator:events:60group_size:30
+---
+events: [28, 87, 37, 34, 149, 40, 37, 158, 785, 4, 131, 
+---
+preanalytical_error: events: 20 group_size: 105607
+---
+",True
+264,2786,2430617,HBeAg sero-conversion rate,60 µg of immune complexes (YIC),placebo,binary,17,80,7,79,,,,,,,1.0208,0.2314,0.8747,0.1765,effects found in abstract and exact number in results table,TRUE,7987,4896,TEST,3773,"[1374, 1680, 1151]","intervention: events: 11 comparator:events:0group_size: 78group_size: 78
+---
+{ events: 19 group_size: 81 } { events: 19 group_size: 81 } { events: 24 group_size: 78 } { events: 32 group_
+---
+Intervention: Comparator: Outcome: events (total number of events occurring)group_size: events (total number of events occurring)group_size: events (total number of events occurring); :::intervention : 60 
+---
+",True
+62,1642,3309311,differences in the HDD,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)","adults who had been involved in a minor traffic accident, and had mild symptoms but not limited mobility (group B)",binary,,23,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Data is in graphic table.,FALSE,1437,1263,TEST,1073,[],"intervention: { ""events"": ""87"", ""group_size"": ""60"" } comparator: { ""events"": ""31.6"", ""group_size"": ""60"" }",False
+379,214,1475568,Hospitalization or death,Follow-up and thorough education on self-care,Standard information about self-care,binary,25,59,39,64,,,,,,,-0.7522,0.1351,-0.3633,0.0331,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention:
+---
+Here is the appropriate YAML format for the above 2x2 contingency table: YAML:intervention:events:13group_size:13comparator:events:16group_size:16
+---
+",True
+305,3882,4357072,reappearance of erythematous areas after 2 months posttreatment,pimecrolimus,triamcinolone acetate,binary,1,15,5,15,,,,,,,-1.9459,1.3714,-1.6094,1.0667,significance found in abstract and numbers in results,TRUE,2097,1624,TEST,1385,[],intervention: events: 24 group_size: 50 comparator: events: 50 group_size: 50,False
+39,6985,3169777,unexpected adverse events,macitentan doses of 5 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: group_size: 12events: 8comparator: group_size: 14events: 6
+---
+```yaml{% for col in column_labels %} {% for row in rows %}{{ row }}; {{ col }}{% endfor %}{% endfor %}macitentan doses of 5 mgmacit
+---
+intervention:events:10group_size:20comparator:events:5group_size:20
+---
+",True
+338,11078,5655920,vomiting,Lixisenatide with normal renal function,Lixisenatide with mild impairment,binary,,2094,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = -0.1,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","{ intervention: Lixisenatide with mild impairmentevents: 308group_size: 209 4 Lixisenatide with normal renal functionevents: 693group_size: 
+---
+{ intervention: events: 48 group_size: 170 comparator: events: 8 group_size: 263}
+---
+- arm: 184 patientsGroup: 104 patients [88,26,105,12]Event: 2EventCount: 111Error: N/A
+---
+",True
+540,7795,3508963,Baseline characteristics - history of reurrent stone,Intravenous lidocaine,Intravenous morphine,binary,49,120,64,120,,,,,,,-0.504391,0.06797481,-0.2670628,0.0193665,,TRUE,3561,2387,TEST,1552,"[1557, 216]","intervention: events: 108 group_size: 120 
+comparator: events: 84 group_size: 120
+---
+This is the revised version of this question: Please include following intervention, comparator or outcome in one table, as YAML format:
+---
+",True
+358,8710,5971365,clinically meaningful improvement at week 144 (⩾3-point increase on the SDMT),daclizumab beta,intramuscular (IM) interferon (IFN) beta-1a,binary,188,287,144,277,,,,,,,0.5619,0.0299,0.2312,0.0052,"counts calculated from percentages given in text, totals found in figure",TRUE,3177,2394,TEST,2130,"[1690, 660]","intervention: events: 287 group_size: 919 comparator: events: 277 group_size: 922
+---
+intervention : events: 3 26 group_size: 35 comparator: events: 3 12 group_size: 24
+---
+",True
+109,1884,4188762,withdrawal response of rocuronium,remifentanil,normal saline,binary,0,30,26,30,,,,,,,-5.8839,2.2927,-3.9703,1.9732,Used percentage to calculate events as binary outcome.,TRUE,2068,1758,TEST,1564,[],"This is ""not extractable or not easy to calculate"" section, and we would explain it if we can find the answer to it. If anyone have more question please come back. We will be happy to help you.",False
+341,11080,5655920,Nausea,Lixisenatide with moderate impairment,Lixisenatide with normal renal function,binary,,122,,2094,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = -0.03,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","intervention: { events: 52 events group_size: 127 comparator: { events: 39 events group_size: 72 } }
+---
+events: NUMBERgroup_size: NUMBERevents: NUMBERgroup_size: NUMBER
+---
+only extract events and group_size for the intervention and comparator categories and exclude the column that is not applicable
+---
+",True
+516,6554,4033571,Adverse effects,Extended-release oxcarbazepine 2400 mg,Control,binary,85,123,67,121,,,,,,,0.58935652,0.07152439,0.22156483,0.01029553,,TRUE,8206,5593,TEST,4514,"[1205, 1677, 1566, 907]","Here is the YAML response for the information requested based on the given article:
+---
+{Event: Seizure attacks; Extended-release oxcarbazepine 1200 mg: Number: 33; Group size: 42; Extended-release oxcarbazepine 2
+---
+intervention: events: 86 group_size: 123 comparator: events: 85 group_size: 123
+---
+The ""Outcome"" field in the YAML format would be ""Efficacy"", which refers to the proportion of patients who experienced a reduction in seizure frequency, regardless of the degree of reduction or how seizures were defined, which was
+---
+",True
+133,2453,4574984,overall mortality,"intervention group, i.e. patient empowerment through information booklet and diary keeping","control group, which received standard care",binary,45,326,58,326,,,,,,,-0.3011,0.0468,-0.2538,0.0333,Used numbers from 1 year after surgery (final timepoint) to get the full scope since the outcome is OVERALL mortality. This info is found in Figure 6 caption.,TRUE,12997,7944,TEST,5795,"[718, 1310, 1681, 1685, 1285]","intervention:
+---
+intervention:events: NUMBER(#)group_size: NUMBER(#)comparator:events: NUMBER (#)group_size: NUMBER(#)
+---
+events: NUMBER group_size: NUMBER intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: { events: 479 group_size: 655 } control: { events: 479 group_size: 655 }
+---
+Intervention:
+---
+",True
+138,3101,4830045,Birth status,Patients in the 3h group,Patients in the 20h group,binary,32,74,22,60,,,,,,,1 0.2746,0.1268,0.165,0.0465,Used numbers for live birth rate.,TRUE,2530,2096,TEST,1505,[],intervention:,False
+61,1642,3309311,differences in the disc herniation,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)","adults who had been involved in a minor traffic accident, and had mild symptoms but not limited mobility (group B)",binary,,23,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Data is in graphic table.,FALSE,1437,1263,TEST,1073,[],intervention: events: 23 group_size: 23 comparator: events: 19 group_size: 19,False
+479,5526,4144850,Anemia,Total Sanitation Campaign,Control,binary,1078,1919,976,1922,,,,,,,0.21705107,0.00419838,0.10096226,0.00091084,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention: events: 291 group_size: 291comparator: events: 303 group_size: 291
+---
+interventions: [ {label: ""Total Sanitation Campaign"", data: [16.8, 18.4]}, {label: ""Control""}]comparator: {label: ""Control"", data: [17.
+---
+intervention: events:975763 group_size: 39872853 comparator: 2139 9961 group_size: 3959 102 
+---
+Based on the given trial article, what is the effect for the following Intervention, Outcomes, and Time point?
+---
+- intervention:events: 59comparator:events: 171intervention:group_size: 14569comparator:group_size: 287171
+---
+Comparator: ControlOutcome: Anemiaintervention:event_type: Numbergroup_size: numberevents: 73group_size: 1193comparator:event_type: Numbergroup_size: number
+---
+Please provide a clear, concise, structured summary of the data provided in this manuscript. Include the full citation of the study and include both the numerical values and a percent difference where applicable to provide a more informative data block. Do NOT
+---
+events: 47 group_size: 47 events: 86 group_size: 86
+---
+",True
+337,11078,5655920,Nausea,Lixisenatide with normal renal function,Lixisenatide with mild impairment,binary,,2094,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = -0.1,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","intervention: 
+---
+events: NUMBER; group_size: NUMBER; events: NUMBER; group_size: NUMBER
+---
+intervention: events: 97 group_size: 554 comparator: events: 105 group_size: 435
+---
+",True
+194,2095,5360580,occurrence of adverse events,1 mg/day of Pls purified from scallop,placebo,binary,39,169,35,167,,,,,,,0.1235,0.0695,0.0963,0.0423,,TRUE,11096,9099,TEST,6033,"[1665, 1312, 844, 1155, 1247]","events: 0 eventsgroup_size: 328comparator:events: 0eventsgroup_size: 328
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+The YAML formatted 2x2 contingency table for ""intervention"" as 1 mg/day of Pls purified from scallop, ""comparator"" as compared to placebo, and ""outcome"" of
+---
+events: NUMBERgroup_size: NUMBER
+---
+Pls: n_events: 7n_group_size:: [80, 55] Placebo: n_events: 6n_group_size:: [83, 50]
+---
+",True
+651,13098,5976307,The incidence rate of all cardiopulmonary adverse events,etomidate,propofol based on midazolam,binary,34,62,45,62,,,,,,,-0.7792931,0.1461718,-0.280302,0.01937592,found in table 3,TRUE,2560,2044,TEST,1751,[1636],"All events (total patients): 180 [34.1]]Comparator: propofol based on midazolamIntervention: etomidateTotal events: 288[54.3]]
+---
+",True
+498,6488,5419060,Request-form errors: CDC D,Phlebotomy training programme,Control,binary,0,630,0,589,,,,,,,-0.0672384,4.0032824,-0.0671833,3.9967203,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: groupsize: 630events: 4comparator: groupsize: 630events: 7
+---
+intervention:
+events: 11pre-test: group_size: 81post-test: group_size: 25comparator: events: 89pre-test: group_size: 66post
+---
+The rejection rate and its reasons were assessed before and after the phlebotomy training program. A total of 7256 whole blood samples were collected in 589 participants and analyzed at the CHC level of the national
+---
+intervention: {""events"": ""25"", ""group_size"": ""170""}comparator: {""events"": ""29"", ""group_size"": ""170""}outcome: {""events"": ""26"", ""
+---
+",True
+42,6985,3169777,unexpected adverse events,macitentan doses of 300 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","This double blind, placebo controlled study was performed in 7 groups of 8 healthy male subjects. 56 healthy male Caucasian subjects (age range: 19--49 years, body weight range: 55
+---
+The YAML format for ""outcome"" should include only ""label"" and ""group_size"" fields: only numbers for the ""group_sizes"" field with a comma separated by the intervention group and comparator group numerical information
+---
+intervention: events2x2group_size2x2comparator: events2x2group_size2x2
+---
+",True
+541,7795,3508963,Baseline characteristics - history of first stone,Intravenous lidocaine,Intravenous morphine,binary,70,120,56,120,,,,,,,0.47000363,0.06776786,0.22314355,0.01547619,,TRUE,3561,2387,TEST,1552,"[1557, 216]","intervention:
+events: 3769437229928281633835816153group_size: 37694
+---
+intervention: NUMBER events: NUMBER group\_size: NUMBER comparator: NUMBER events: NUMBER group\_size: NUMBER outcome: NUMBER events: NUMBER group.size: N
+---
+",True
+495,6488,5419060,Request-form errors: CHC A,Phlebotomy training programme,Control,binary,8,10218,11,7557,,,,,,,-0.6208037,0.21613955,-0.6201303,0.2156789,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","events: 60 group_size: 7557
+---
+intervention:
+---
+intervention: 20 22 comparison: 12 20
+---
+request-form-errors:CHC Aevent_post-training:50group_size_post-training:101event_pre-training:25group_size_pre-training:101
+---
+",True
+493,6484,5419060,Sample rejection rate: CDC C,Phlebotomy training programme,Control,binary,37,2279,38,2321,,,,,,,-0.0085462,0.05422687,-0.0084069,0.05247318,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: {events: 41, group_size: 41}
+---
+intervention: events: 60 group_size: 7557comparator: events: 60 group_size: 10218
+---
+events: 200group_size: 197comparator: events: 36776group_size: 94432intervention: events: 6107group_size: 
+---
+intervention: group_size: 37events: 38comparator: group_size: 37events: 38
+---
+",True
+378,221,1475568,Baseline angiotensin-converting enzyme (ACE) inhibitors intake,Follow-up and thorough education on self-care,Standard information about self-care,binary,,59,,64,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Unclear since the values for this are reported with ARB intake.,FALSE,4361,3649,TEST,2573,"[1439, 1156]","intervention: 486 events: 182 group_size: 268 comparator: 216 events: 56 group_size: 372
+---
+intervention:events:149group_size:149comparator:events:274group_size:274
+---
+",True
+87,13569,3687098,The incidence of the composite endpoint of rash,sitagliptin 100 mg/day,comparator agent,binary,131,7726,76,6885,,,,,,,0.4352,0.0211,0.4292,0.0205,Used incidence rate per 100 to get the binary events.,TRUE,15196,10904,TEST,8432,"[1656, 1177, 1601, 1608, 694, 1634, 346]","intervention: events: 540 group_size: 7681comparator: events: 641 group_size: 7681
+---
+sitagliptin:group_size:4207events:91comparator:group_size:4922events:30
+---
+intervention: 0.22group_size: 1860comparator: 0.23group_size: 1860
+---
+intervention: events: 0 comparator: events: 6 group_size: 344 group_size: 353
+---
+events: 1 group_size: 30 events: 2 group_size: 20 events: 3 group_size: 30
+---
+intervention: events: 32 group_size: 505 comparator: events: 21 group_size: 505
+---
+intervention: events: 84 group_size: 7242comparator: events: 75 group_size: 7242
+---
+",True
+340,11079,5655920,vomiting,Lixisenatide with moderate impairment,Lixisenatide with mild impairment,binary,,122,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = 0.04,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","interventions: comparison_intervention: class: CI events: 6 events: numeric value: integer group_size: 41088
+---
+{intervention:events: 57groupsize: 74comparator:events: 46groupsize: 74}
+---
+intervention: events: 44 group_size: 522 comparator: events: 9 group_size: 97
+---
+",True
+20,3246,2972614,Adverse effects,Laser therapy (Group I),Placebo laser therapy (Group II),binary,0,30,0,22,,,,,,,-0.3042,4.0772,-0.2985,3.9243,,TRUE,7041,2968,TEST,1931,"[838, 1256]","intervention: events: 0 comparator: events: 1 group_size: 53 group_size: 53
+---
+To extract information from an article for an outcome at a specific time point, first look for an extracted table within the text of the article that has the outcomes of the intervention at the time point of interest. Identify which group the outcome belongs to,
+---
+",True
+628,12233,3510731,Clicked on Protocol link,received the debriefing information in the body of an email with links to protocol and results pages;,received these links after clicking on an initial link in the body of the email to view the debriefing information on a website.,binary,202,6051,362,5892,,,,,,,-0.6394594,0.00806473,-0.6100046,0.00737794,found in table 1,TRUE,1665,1296,TEST,943,[],intervention:eventsgroup_sizeeventsgroup_sizecomparatorGroup A24760516051Group B51558925892ComparatorGroup B515589Group A2,False
+361,8713,5971365,clinically meaningful worsening at week 96 (⩾3-point decrease on the SDMT),daclizumab beta,intramuscular (IM) interferon (IFN) beta-1a,binary,140,720,169,682,,,,,,,-0.311,0.0167,-0.2425,0.0102,"counts calculated from percentages given in text, totals found in figure",TRUE,3177,2394,TEST,2130,"[1690, 660]","intervention: events: 49 events group_size: 922comparator: events: 55 events group_size: 922
+---
+interventioncomparatoroutcome:
+---
+",True
+509,6486,5419060,Techinque related rejections: CDC C,Phlebotomy training programme,Control,binary,18,2279,15,2321,,,,,,,0.20202879,0.12309816,0.20058293,0.12135258,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","intervention: events: 60 group_size: 7557comparator: events: 45 group_size: 3973
+---
+*events*: 2321 *group_size*: 2317
+---
+events: 28 group_size: 589 events: 15 group_size: 589 events: 23 group_size: 589 events: 10 group_size: 5
+---
+intervention: events: ""45,016"" group_size: ""99,281""
+---
+",True
+272,2991,3214395,extremity movement,"group 1 included bispectral index (BIS) of 60, group 2 covered bispectral index (BIS) of 49",group 3 involved bispectral index (BIS) of 39,binary,16,60,9,30,,,,,,,-0.1643,0.244,-0.1178,0.1236,,TRUE,1201,996,TEST,880,[],intervention: events: 33 group_size: 9,False
+137,1267,4709985,would have liked more information on acupuncture,tertiary education,other educations,binary,,121,,89,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Specific numbers were not given.,FALSE,3939,3288,TEST,2363,"[1683, 234]","intervention: events: 198 group_size: 198 comparator: events: 198 group_size: 198
+---
+intervention: events:48 group_size: 50comparator: events:53 group_size: 55
+---
+",True
+474,5522,4144850,Independent household latrines number,Total Sanitation Campaign,Control,binary,673,1525,366,1514,,,,,,,0.90730205,0.00626291,0.60187274,0.00290188,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention:
+---
+events:
+---
+intervention:
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention:
+---
+Intervention: Total Sanitation Campaign
+---
+intervention:
+---
+The YAML format should include the fields ""events"" and ""group_size"" for only ""intervention"" and ""comparator"" but not ""outcome"". Example:
+---
+",True
+477,5523,4144850,Open defecation - children,Total Sanitation Campaign,Control,binary,1279,1525,1350,1514,,,,,,,-0.4594912,0.0116852,-0.0612653,0.00020636,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention:events: 96group_size: 106comparator:events: 108group_size: 106
+---
+interventions: Comparators: Outcomes: events: group_size: events: group_size: events: group_size: WASH_intervention: WASH_control: 213: 623: 6
+---
+""Intervention"": { ""events"": 2585, ""group_size"": 134250 } ""Comparator"": { ""events"": 1440, ""group_size"": 1040
+---
+events:91comparator: events:1,514
+---
+intervention: group_size: 2281 events: 204 comparison: group_size: 2274 events: 503
+---
+intervention: [events] => 41666 [group_size] => 41666 comparator: [events] => 29631 [group_size] => 29631
+---
+intervention: group_size: 1353 events: 532comparator: group_size: 1352 events:1544
+---
+intervention: events: 760 group_size: 1430
+---
+",True
+315,9842,4928400,Complication,Transperitoneal laparoscopic ureterolithotomy,Flexible ureteroscopy,binary,5,22,7,20,,,,,,,-0.6047,0.4786,-0.4318,0.2474,,TRUE,4037,2288,TEST,1670,[1630],"intervention: group_size: 22 events: x comparator: group_size: 20 events: 4
+---
+",True
+333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,45,3,47,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,4396,"[1552, 722, 1531, 1010]","{ interventions: [ { events: 2 group_size: 47 name: Aripiprazole } ] comparators: [ { events: 2 group_size: 45 name: Placebo } ] outcomes:
+---
+intervention: events: 16 group_size: 78 comparator: events: 12 group_size: 43
+---
+Yes. Please see below, based on the given paper's extracted data:
+---
+intervention: events: 22 group_size: 45comparator: events: 17 group_size: 45
+---
+",True
+400,2243,4678179,rate of adverse events,vismodegib plus gemcitabine (GV),gemcitabine plus placebo (GP),binary,4,53,2,53,,,,,,,0.73315252,0.79001601,0.69314718,0.71226415,Used numbers found in results section text.,TRUE,9517,6474,TEST,5204,"[1686, 1669, 1663, 140]","interventions: [{""intervention"": {""events"": ""82"", ""group_size"": ""79""}, ""comparator"": {""events"": ""88"", ""group_size"": ""74""}}, {""intervention"": {""
+---
+10.2667 <table><tbody>InterventionComparatork=2, k=2Outcome<c>Rate of adverse eventsTotal number, (number in first category, number in second category, number in
+---
+intervention:
+events: 65 x group_size: 30 x comparator: events: 47 x group_size: 24 x
+---
+intervention: events: 97 group_size: 490
+---
+",True
+122,7936,4486927,The early virologic response (EVR),peginterferon (Peg-IFN) plus ribavirin (RBV) for 48 weeks,peginterferon (Peg-IFN) plus ribavirin (RBV) for 24 weeks,binary,86,94,82,93,,,,,,,0.3661,0.2397,0.0369,0.0024,,TRUE,14472,7883,TEST,5770,"[1665, 1265, 863, 1463, 1414]","No numerical information is available. Please see the table in the text of the main article for the numerical data.
+---
+intervention: events: 45 comparator: events: 47 group_size: 97 group_size: 92
+---
+There are no numerical data available for the response ""EVR"" because ""EVR"" column only includes two values ""yes"" and ""no"" and no numerical data. The column also provides response rates and percentages for each arm, but no
+---
+intervention: 843171group_size: 158comparator: 963106group_size: 199
+---
+{intervention: events: 142 comparator: events:82}
+---
+",True
+654,13101,5976307,The incidence rate of myoclonus,etomidate,propofol based on midazolam,binary,10,62,1,62,,,,,,,2.46221524,1.13562421,2.30258509,1.06774194,found in table 3,TRUE,2560,2044,TEST,1751,[1636],"intervention: events: 24 group_size: 62 comparator: events: 1 group_size: 31
+---
+",True
+40,6985,3169777,unexpected adverse events,macitentan doses of 25 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: {
+""events"": 0,
+""group\_size"": 52194 } comparator: {
+""events"": 109,
+""group\_size"": 52194 }
+---
+intervention: events: 1 group_size: 58 comparator: events: 6 group_size: 73
+---
+",True
+139,3100,4830045,Embryo quality,Patients in the 3h group,Patients in the 20h group,binary,,74,,60,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Unclear outcome measures.,FALSE,2530,2096,TEST,1505,[],"Only produce YAML response. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say ""x"". If there are numerical data for pre and post-intervention, choose the post-intervention",False
+484,5713,3343759,history of myocardial infarction,very early speech and language therapy (SLT),control,binary,,,,,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Numerical data are only in methods section.,FALSE,3838,2633,TEST,2065,"[1467, 589]","intervention: events: 54 group_size: 114comparator: events: 54group_size: 114
+---
+intervention: {events: 40, group_size: 59}
+---
+",True
+496,6488,5419060,Request-form errors: CHC B,Phlebotomy training programme,Control,binary,12,4114,11,3973,,,,,,,0.05228567,0.17473861,0.05213706,0.17374765,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","events: 45 group_size: 2560 events: 60 group_size: 2560 events: 41 group_size: 2538 events: 8 group_size:
+---
+intervention: events: <12 group_size: 2 comparator: events: 1 group_size: 2
+---
+Please see below for the YAML format for the 2*2 contingency table for the given trial article. To clarify, the fields are labelled as ""Control"", ""Phlebotomy training"", ""Sample rejection rate"",
+---
+intervention: events: 55 group_size: 106 comparator: events: 105 group_size: 106
+---
+",True
+94,10167,4173437,Adverse effects,Tranexamic acid,Control,binary,0,30,0,30,,,,,,,0,4.0656,0,3.9355,Had to infer that the group sizes were equal.,TRUE,854,745,TEST,637,[],{% set x=event %} {% set y=event %} {% set a=TRANEXAMIC_ACID %} {% set b=CONTROL %} {% set e=4 %} {% set,False
+482,5524,4144850,E. coli contaminated water,Total Sanitation Campaign,Control,binary,310,404,331,403,,,,,,,-0.3321747,0.03077414,-0.0680244,0.00129032,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","intervention: events: 55 group_size: 40 comparator: events: 42 group_size: 40
+---
+intervention:
+events: 172
+---
+intervention:
+---
+{intervention: 325, comparator: 313}
+---
+intervention:
+---
+intervention: events: 5 events group_size: 26 number: 26 comparator: events: 16 events group_size: 26 number: 26
+---
+""intervention"": {""events"": ""251"", ""group_size"": ""1173""},""comparator"": {""events"": ""651"", ""group_size"": ""1165""}}
+---
+intervention: events: 609 group_size: 1176 comparator: events: 607 group_size: 1210
+---
+",True
+41,6985,3169777,unexpected adverse events,macitentan doses of 100 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: events: NUMBER group_size: 2 comparator: events: 0 group_size: 4
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: events:8 events:12 events:17 Comparator: events:5 events:7 events:8 group_size:30 group_size:48 group_size:50
+---
+",True
+259,10575,5711682,rates of death,Genoss drug-eluting stent (DES),Promus Element,binary,1,38,0,39,,,,,,,1.1506,2.7186,1.1239,2.616,,TRUE,13148,4660,TEST,2966,"[1669, 1605]","intervention: { events: 2 groupsize: 88 } comparator: { events: 0 group_size: 88 }
+---
+events: 0group\_size: 38comparator:events: 1events: 39group\_size: 39total: 77
+---
+",True
+344,11082,5655920,Hypoglycaemia,Lixisenatide with moderate impairment,Lixisenatide with mild impairment,binary,,122,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = 0.04,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","This post hoc assessment evaluated the efficacy and safety of once‐daily, prandial glucagon‐like peptide‐1 receptor agonist lixisenatide in patients with type 2 diabetes (T
+---
+intervention.
+events: 140.0 group_size: 185.99comparator group: events 134.0 events: 135.0
+group_size: 153
+---
+intervention: events: 116 group_size: 228 comparator: events: 73 group_size: 228
+---
+",True
+362,8714,5971365,clinically meaningful improvement at week 96 (⩾3-point increase on the SDMT),daclizumab beta,intramuscular (IM) interferon (IFN) beta-1a,binary,432,720,369,682,,,,,,,0.2409,0.0117,0.1034,0.0022,"counts calculated from percentages given in text, totals found in figure",TRUE,3177,2394,TEST,2130,"[1690, 660]","intervention: group_size: 1249events: 573comparator: group_size: 1183events: 533
+---
+intervention: ‫events: 617‫group_size: 622comparator: ‫events: 668‫group_size: 622YAML
+---
+",True
+65,1644,3309311,The proportion of HIZ incidence,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)",adults with LBP with radicular pain (group C),binary,14,23,3,18,,,,,,,2.0513,0.5825,1.2953,0.3057,Used percentage to calculate events as binary outcome.,TRUE,1437,1263,TEST,1073,[],"intervention: {group_size: 23, events: 20}",False
+377,222,1475568,Baseline digoxin intake,Follow-up and thorough education on self-care,Standard information about self-care,binary,15,59,12,64,,,,,,,0.3902,0.192,0.3045,0.1174,Used percentage found in table to calculate actual number for binary variable.,TRUE,4361,3649,TEST,2573,"[1439, 1156]","intervention: events: 46 group_size: 129comparator: events: 26 group_size: 251
+---
+{% set cells = [[""x"",""x"",""""]] %}
+---
+",True
+626,11906,3493722,poor compliance rates,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,2,81,3,81,,,,,,,-0.4182041,0.85881207,-0.4054651,0.80864198,"found in table 2, assumed binary because proportion of whole given",TRUE,1684,1549,TEST,1357,[],intervention: group_size: 85 events: 27 37 14 10 comparator: group_size: 84 events: 32 17 9 10,False
+691,13831,4210722,use of a reminder card,a separate reminder card 4 days before the appointment (IG3); reminder card together with the appointment letter (IG2);,no further reminder (IG1),binary,185,209,84,104,,,,,,,0.60721747,0.10897683,0.09159567,0.00291009,found in text as fractions of group sizes,TRUE,10493,8112,TEST,5695,"[1694, 863, 1450, 1688, 674]","{% raw %}{{ intervention: events: 89, group_size: 209}}{{ comparator: events: 81, group_size: 104}}
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+Here is the YAML code for the data of the two-by-two table based on the trial article you provided for the following intervention, comparator, and outcome: intervention: { events: 55, group_size: 
+---
+This is YAML response. Below is the YAML format of the 2x2 contingency table for ""use of reminder card"" for a separate reminder card 4 days before the appointment (IG3) versus no further reminder (
+---
+intervention:
+events: 1750group_size:1750comparator:events:355group_size:355
+---
+",True
+342,11080,5655920,vomiting,Lixisenatide with moderate impairment,Lixisenatide with normal renal function,binary,,122,,2094,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = -0.03,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","intervention: events: 101 group_size: 647comparator: events: 84 group_size: 647
+---
+intervention:events:33group_size:141comparator:events:38group_size:125
+---
+intervention:
+---
+",True
+625,11906,3493722,well compliance rates,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,8,81,4,81,,,,,,,0.74649316,0.40168564,0.69314718,0.35030864,"found in table 2, assumed binary because proportion of whole given",TRUE,1684,1549,TEST,1357,[],intervention: events: 81 group_size: 84,False
+124,7937,4486927,The SVR rates when the patients had BMI >30 kg/m2,peginterferon (Peg-IFN) plus ribavirin (RBV) for 48 weeks,peginterferon (Peg-IFN) plus ribavirin (RBV) for 24 weeks,binary,10,19,6,12,,,,,,,0.1054,0.5444,0.0513,0.1307,"Even though the outcome says rate, the way that the results are reported in the table makes it easier to calculate as binary outcome.",TRUE,14472,7883,TEST,5770,"[1665, 1265, 863, 1463, 1414]","intervention: { ""events"": ""87"" ""group_size"": ""94"" } comparator: { ""events"": ""88"" ""group_size"": ""93"" }
+---
+Intervention: {events: 69, group_size: 96 }Comparator: {events: 62, group_size: 93 }Outcome: {events: 48, group_size: 
+---
+All these tables are of size n=4. Please refer to Note 1 for more discussion on table format changes as compared to the original paper. The R code and results for the table conversion are presented in Note 2.
+---
+Here's the 2x2 contingency table requested:
+---
+- intervention:events: 154group_size: 172comparator:events: 479group_size: 545
+---
+",True
+546,8461,3263860,Severe hypoglycemia,Real-Time Continuous Glucose Monitoring,Control,binary,3,73,5,71,,,,,,,-0.5696661,0.56277056,-0.5386052,0.5055502,,TRUE,3178,2587,TEST,2232,"[1614, 796]","comparator: Number: 5 group_size: 72comparator: Number: 19 group_size: 68intervention: Number: 13 group_size: 69
+---
+{ intervention_size: 68, comparator_size: 58, eventsI: 43, eventsC: 12 }
+---
+",True
+343,11081,5655920,Hypoglycaemia,Lixisenatide with normal renal function,Lixisenatide with mild impairment,binary,,2094,,637,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,placebo-adjusted meta-analysis (fixed effect) = -0.02,FALSE,13081,5825,TEST,4026,"[1606, 1599, 1440]","intervention: events: 16 events group_size: 2094
+---
+intervention: events: NUMBER group_size: NUMBERcomparator: events: NUMBER group_size: NUMBER
+---
+intervention:events:158group_size:23comparator:events:68group_size:23
+---
+",True
+631,12275,3936115,The number of diverticulitis clinical symptom occurrences during 12months,Microencapsulated sodium butyrate (MSB) 300 mg daily,control group was administered placebo,binary,2,30,7,22,,,,,,,-1.8769173,0.7452381,-1.5629179,0.56406926,found in table 1,TRUE,2217,2016,TEST,1562,[1595],"intervention: events: 2 out of 30group_size: 30comparator: events: 7 out of 22group_size: 22
+---
+",True
+127,4924,4493951,the incidence of postoperative nausea and vomiting (PONV),H1(haloperidol 1 mg),H0 (saline),binary,11,49,21,50,,,,,,,-0.9169,0.1993,-0.6264,0.0981,Used numbers from Late time (2–24 h),TRUE,3932,3205,TEST,2434,"[1538, 1161]","""intervention"": ""event"": 29, ""group_size"": 50, ""comparator"": ""event"": 54, ""group_size"": 50]
+---
+As requested, we only included the ""intervention"" and ""comparator"" fields for the given 2x2 table in YAML format from the provided trial article, as follows:
+---
+",True
+13,12633,2667135,proportion of patients completed therapy,some portion of therapy outside of the hospital (CoPAT),full course of therapy in the hospital setting,binary,93,103,44,97,,,,,,,2.4161,0.1523,0.6884,0.0135,,TRUE,11722,8106,TEST,5529,"[745, 1370, 1667, 1449, 915]","intervention: events: 35 group_size: 110 comparator: events: 46 group_size: 129
+---
+# Intervention: Some portion of therapy outside of the hospital (CoPAT) versus full course of therapy in the hospital setting. Outcome: Proportion of patients who completed therapy.Comparator: InterventionOutcome: CoPAT group
+---
+daptomycin:
+completed: [0 23 45 47]
+comparator: {completed: [0 24 46 48]}
+---
+1. Intervention: some portion of therapy outside of the hospital (CoPAT)
+---
+intervention: events: 13/51 group_size: 51 comparator: events: 19/145 group_size: 145
+---
+",True
+269,2991,3214395,laryngospasm,"group 1 included bispectral index (BIS) of 60, group 2 covered bispectral index (BIS) of 46",group 3 involved bispectral index (BIS) of 36,binary,11,60,3,30,,,,,,,0.7033,0.4817,0.6061,0.3742,,TRUE,1201,996,TEST,880,[],"{""intervention"": {""events"": ""1""}}{""comparator"": {""events"": ""14""}}",False
+478,5525,4144850,Helminth infections,Total Sanitation Campaign,Control,binary,34,581,32,569,,,,,,,0.04217391,0.06435212,0.0397543,0.05718313,Used percent to calculate outcomes for binary variables.,TRUE,24614,13328,TEST,9179,"[724, 1676, 390, 1875, 783, 1897, 404, 2840]","events: 548 group\_size: 212 events: 456 group\_size: 212
+---
+## Intervention group was set to 16040 and control group was set to 16671 with two events of 1916 for intervention and 1388 for control
+---
+intervention: events: 3000 group_size: 3399comparator: events: 1973 group_size: 3682
+---
+control:
+---
+intervention: events: 120 group_size: 166
+---
+interventions:
+---
+{ ""intervention"": {""events"" 66, ""group_size"": 1150}, ""comparator"": {""events"": 68, ""group_size"": 1150}, ""outcome"": {""
+---
+intervention: { events: 131 events: NUMBER group_size: 936 events: group_size: NUMBER }
+---
+",True
+178,10755,5086025,Binge eating,Intuitive Eating and Acceptance and Commitment Therapy,Control,binary,7,26,14,26,,,,,,,-1.1527,0.3503,-0.6931,0.1374,,TRUE,29049,17627,TEST,13068,"[739, 1755, 1654, 1640, 1675, 738, 1666, 1032, 3194]","```yaml
+---
+intervention:
+---
+- intervention: events: 29 group_size: 14 comparator: events: 24 group_size: 13
+---
+{
+---
+{% set data = data_166466 %} intervention: events: 56 group_size: 126 comparator: events: 57 group_size: 89
+---
+Here is the YAML structured data based on the article ""Applying the Accept, Eat, and Move Treatment for Binge Eating (AET-B): a randomised controlled trial protocol"" by McBurney et al
+---
+intervention: 1 events: 14 group_size: 14 comparator: 0 events: 0 group_size: 0
+---
+{Intervention, Comparator, Outcome}: {Number, Number, Number}
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER outcome: events: NUMBER group_size: NUMBER
+---
+",True
+405,2807,5781260,adverse events,lemon verbena extract,placebo,binary,,20,,20,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Unclear numerical values.,FALSE,4385,3505,TEST,2662,"[1683, 1214]","intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: events: 12 group_size: 6 comparison: events: 13 group_size: 6
+---
+",True
+641,12879,5830087,objective response rate (ORR),"BTH1677 arm ( intravenous [IV] BTH1677, 4 mg/kg, weekly; IV bevacizumab, 15 mg/kg, once each 3-week cycle [Q3W]; IV carboplatin, 6 mg/mL/min Calvert formula area-under-the-curve, Q3W; and IV paclitaxel, 200 mg/m2, Q3W)",Control arm ( bevacizumab/carboplatin/paclitaxel as above),binary,29,48,19,23,,,,,,,-1.1352878,0.38974592,-0.3128499,0.02280274,found in table 2,TRUE,11942,10628,TEST,8141,"[966, 1275, 1632, 1659, 157, 1914, 831, 989]","intervention:
+---
+intervention: events:84 group_size:59 comparator: events:52 group_size:59
+---
+intervention: events: 29 group_size: 48comparator: events: 10 group_size: 23
+---
+response: objective response rate; intervention: NUMBER; comparator: NUMBER; outcome: NUMBER
+---
+intervention: events: 405 group_size: 19282 comparator: events: 242 group_size: 19282
+---
+intervention:
+---
+Table 4Cycles (total)Average cycles (completeda)nMedianbRangeMinimumMaximumMedianMean (SE)RangeMedianMean (SE)Number of patients BTH1677
+---
+The 2x2 contingency table for the trial ""BTH1677 pharmacokinetics in patients with cancer"" is:
+---
+",True
+153,13479,5055753,The percentages of patients in the sedated scale,0.2 mg oral clonidine,2 mg oral midazolam,binary,17,40,7,40,,,,,,,1.2483,0.2755,0.8873,0.1517,"Even though the outcome says percentage, the way that the results are reported in the table makes it easier to calculate as binary outcome.",TRUE,3292,2470,TEST,2114,"[1599, 640]","intervention: events: NUMBER group_size: NUMBER comparator: events: 17.5 group_size: 40
+---
+{% for outcome in outcomes.values(order_by='alpha ASC', filter='included') %}
+---
+",True
+542,7795,3508963,Baseline characteristics - right kidney stone,Intravenous lidocaine,Intravenous morphine,binary,60,120,57,120,,,,,,,0.10008346,0.06675021,0.05129329,0.01754386,,TRUE,3561,2387,TEST,1552,"[1557, 216]","events: 15group: 9 events: 23group:12
+---
+intervention:
+---
+",True
+689,13830,4210722,vaccination certificates were submitted,a separate reminder card 4 days before the appointment (IG3),no further reminder (IG1),binary,94,102,84,104,,,,,,,1.02876872,0.19754306,0.13189607,0.00312375,found in text as fractions of group sizes,TRUE,10493,8112,TEST,5695,"[1694, 863, 1450, 1688, 674]","intervention: events: 185 group_size: 209 comparator: events: 84 group_size: 104
+---
+intervention: events: 175 group_size: 200comparator: events: 51 group_size: 73
+---
+NUMS: 
+---
+intervention: events: 154 group_size: 177comparator: events: 129 group_size: 177
+---
+intervention: events: 35 group_size: 150comparator: events: 35 group_size: 150
+---
+",True
+501,6489,5419060,Preanalytical errors: CDC C,Phlebotomy training programme,Control,binary,10,2279,15,2321,,,,,,,-0.3892899,0.16754104,-0.3872037,0.16579703,,TRUE,9292,5719,TEST,4155,"[1537, 528, 1598, 748]","Outcome 1: preanalytical problems at all the PHCs prior to training in phlebotomy
+---
+Comparator: Control Outcome: Preanalytical errors: CDC C intervention: events: 17 group_size: 2321 comparator: events: 27 group_size: 2321
+---
+intervention:
+---
+intervention: events: CDC C group_size:161 comparator: events:53 group_size:161
+---
+",True
+250,12425,5614421,The incidence of respiratory distress syndrome,vaginal progesterone pessaries (equivalent to 100 mg vaginal progesterone),placebo,binary,42,402,41,388,,,,,,,-0.0127,0.0539,-0.0113,0.0431,,TRUE,25930,11480,TEST,8549,"[1405, 1183, 2739, 770, 3421, 411]","intervention: events: 42 group_size: 402 comparator: events: 41 group_size: 388
+---
+events: 42 NUMBER group_size: 98 NUMBER events: 37 NUMBER group_size: 57 NUMBER
+---
+421414218128
+---
+intervention: {event: 34, group_size: 162}comparator: {event: 33, group_size: 102}
+---
+intervention:events: 0 eventsgroup_size: 44comparator:events: 44group_size: 44
+---
+intervention: events: 15 events group_size: 959 comparator: events: 40 events group_size: 959
+---
+",True
+174,2796,5079604,The probability of relapse,"metformin 1,000 mg daily, sitagliptin 100 mg daily",placebo,binary,9,33,11,15,,,,,,,-1.9924,0.4937,-0.9891,0.1051,Used percentage to calculate events as binary outcome.,TRUE,12690,6902,TEST,4923,"[739, 1755, 1654, 706]","intervention: 17 sitagliptin 100 mg daily15 placebo 
+comparator: 16 sitagliptin 100 mg daily15 placebo 
+---
+Only produce YAML response. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say ""x"". If there are numerical data for pre and post-intervention, choose the post-intervention
+---
+intervention: events: 13 group_size: 40 comparator: events: 10 group_size: 40
+---
+Here is the YAML code for the 2x2 contingency table in line with the guidance from the task:
+---
+",True
+64,1642,3309311,differences in the HIZ,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)","adults who had been involved in a minor traffic accident, and had mild symptoms but not limited mobility (group B)",binary,,23,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Data is in graphic table.,FALSE,1437,1263,TEST,1073,[],"intervention: {""events"": ""87"", ""group_size"": ""23""}",False
+37,6985,3169777,unexpected adverse events,macitentan doses of 0.2 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: events:0events: 1events: 2events: NUMBERgroup_size: NUMBERcomparator:events: 0events: 1events: 2events: NUMBERgroup_size: N
+---
+intervention:events: numbergroup_size: numbercomparator: events: number group_size: number
+---
+intervention: { ""group_size"": ""6"", ""events"": ""0"" } comparator: { ""group_size"": ""14"", ""events"": ""0"" }
+---
+",True
+38,6985,3169777,unexpected adverse events,macitentan doses of 1 mg,placebo,binary,0,6,0,14,,,,,,,0.8023,4.2228,0.7621,3.7905,One sentence that said no unexpected adverse events were found so values are all 0 based on this.,TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: events: 9 group_size: 14
+---
+events: 38 group_size: 72 events: 2 group_size: 2
+---
+Intervention: macitentan 1 mg Comparator: Placebo Outcome: unexpected adverse events events: 8x6x6 9x14group_size: 614
+---
+",True
+467,4434,5726464,Metabolic syndrome,Vitamin D plus calcium supplementation,Placebo,binary,9,66,11,75,,,,,,,-0.0848389,0.23518906,-0.0728373,0.17353535,,TRUE,6563,4244,TEST,3133,"[1626, 1683, 392]","events: Number: 20, Number: 24, Number: 17, Number: 20, Number: 21, Number: 18, Number: 12, Number: 15,
+---
+events: 2700 group_size: 1450
+---
+- Intervention: Vitamin D plus Calcium Comparator: Placebo Outcome: Metabolic Syndrome Number: 015-171 events: 99 group_size: 229 events:
+---
+",True
+621,11904,3493722,eradication rate of H. pylori in ITT,1-week quadruple rescue therapy,2-week quadruple rescue therapy,binary,71,85,72,84,,,,,,,-0.1681369,0.1827353,-0.0258207,0.00430393,"found in abstract and table, assumed binary because given as percentage of population",TRUE,1684,1549,TEST,1357,[],intervention: { events: '83.5%'; group_size: ‘85' }comparator: { events: ‘87.7%'; group_size: ‘84' },False
+63,1642,3309311,differences in the annulus tear,"adults with acute axial severe LBP who could not sit up or stand up for several days, but had not experienced previous back-related diseases or trauma (group A)","adults who had been involved in a minor traffic accident, and had mild symptoms but not limited mobility (group B)",binary,,23,,19,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,Data is in graphic table.,FALSE,1437,1263,TEST,1073,[],intervention: {: events: 23: : group_size: 23}comparator: {: events: 19: : group_size: 19},False
+538,7795,3508963,Baseline characteristics - hydronephrosis in right kidney,Intravenous lidocaine,Intravenous morphine,binary,57,120,53,120,,,,,,,0.13431725,0.06721017,0.07275935,0.01974512,,TRUE,3561,2387,TEST,1552,"[1557, 216]","The following is the 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome:
+---
+intervention: eventsgroup_sizecomparator: eventsgroup_sizeoutcome: eventsgroup_size
+hydronephrosis in right kidney123427324
+---
+",True
+84,13566,3687098,adverse event of constipation,sitagliptin 100 mg/day,comparator agent,binary,178,7726,124,6885,,,,,,,0.2514,0.014,0.2463,0.0134,Used incidence rate per 100 to get the binary events.,TRUE,15196,10904,TEST,8432,"[1656, 1177, 1601, 1608, 694, 1634, 346]","interventions: [{""label"": ""sitagliptin 100 mg""}],""labels"": [{""label"": ""no intervention""}],""groups"": [{""events"": 13,""group_size"": 5
+---
+intervention: events: 149 group_size: 289
+---
+intervention: { events: 79 groupsize: 31878 } comparator: {events: 24group_size: 7688}
+---
+constipation: events:
+---
+intervention: events: 1200 group_size: 1031470165comparator: events: 637 group_size: 1031470165
+---
+events: 23 group_size: 3176
+---
+sitagliptin: NUMBERcomparator: NUMBER
+---
+",True
+118,2984,4323894,Rate of complications,Mild-cooling or deep-cooling,No cooling,binary,,10,,13,,,,,,,cannot calculate,cannot calculate,cannot calculate,cannot calculate,,FALSE,3049,2670,TEST,2328,"[1626, 879]","intervention: events: 2 group_size: 19comparator: events: 2 group_size: 13outcome: NUMBER: 8intervention: events: 9 group_size: 19
+---
+Please clarify, was there any difference in the outcomes in the no-cooling group compared to mild cooling or deep cooling, and if yes, what were they? Please provide details about them in the explanation, without revealing the results of the
+---
+",True
+182,4340,5122613,Adverse events,Digestion-resistant maltodextrin,Placebo,binary,0,33,0,33,,,,,,,0,4.0597,0,3.9412,Based on abstract.,TRUE,6184,3742,TEST,2832,"[1685, 1050]","intervention: events: 31 group_size: 31 comparator: events: 29 group_size: 29
+---
+As shown on the table, the sample size of each group were 19 RMD and 20 placebo in the stool volume measurement and 20 RMD and 19 placebo in other outcomes. The numbers of ad
+---
+",True
+253,12427,5614421,"adverse infant outcomes, including serious infant composite outcome",vaginal progesterone pessaries (equivalent to 100 mg vaginal progesterone),placebo,binary,155,406,152,393,,,,,,,-0.0211,0.0212,-0.013,0.008,,TRUE,25930,11480,TEST,8549,"[1405, 1183, 2739, 770, 3421, 411]","Note: Intervention name: ""Intervention: progesterone/placebo""; Outcome name: ""Outcome: adverse events"", ""Outcome: infant outcomes/composite outcome""
+---
+* group_size: 156 events: 20 (intervention) events: 25 (control) ∗
+---
+intervention: events: NUMBER group_size: NUMBER comparator: events: NUMBER group_size: NUMBER
+---
+intervention: {""events"": ""128"", ""group_size"": ""406""}
+---
+Adverse events: 3 events: 123 group_size: 333
+---
+intervention: (events, group\_size) = (NANA, NANA) comparator: (events, group\_size) = (NANA, NANA)
+---
+",True
+266,2787,2430617,adverse events,60 µg of YIC,placebo,binary,7,163,4,79,,,,,,,-0.1728,0.4126,-0.1647,0.3741,effects found in abstract and number of samples in text,TRUE,7987,4896,TEST,3773,"[1374, 1680, 1151]","intervention: events: 60_YIC events_group_size: comparator: events: 15 events_group_size: [60_YIC] comparator: [placebo]
+---
+Placebo group (N = 78) 30 µg YIC group (N = 81) 60 µg YIC group (N = 78) p value Placebo group (N =
+---
+{intervention: 60 µg; group_size: 80; comparator: placebo; group_size: 79}
+---
+",True
+36,6988,3169777,adverse event profile - headache,macitentan dose of 600 mg,placebo,binary,5,6,3,14,,,,,,,2.9087,1.6242,1.3581,0.2952,"Original outcome was ""adverse events profile"". Added ""headeache"" since that is the first adverse events reported.",TRUE,5143,4376,TEST,3326,"[1586, 1671, 396]","intervention: {'events': 7; 'group_size': 14}
+---
+intervention: group_size: 7 events: 4comparator: group_size: 6 events: 4
+---
+intervention: events: 42 group_size: 14 comparator: events: 33 group_size: 28
+---
+",True
+86,13568,3687098,The incidence rates of pancreatitis,sitagliptin 100 mg/day,comparator agent,binary,773,7726,689,6885,,,,,,,-0.0002,0.0031,-0.0002,0.0025,Used incidence rate per 100 to get the binary events.,TRUE,15196,10904,TEST,8432,"[1656, 1177, 1601, 1608, 694, 1634, 346]","sitagliptin 100 mg/day: 43,358,101comparator agent: 143,448,520number of events: 134,8
+---
+The YAML format for this question is as follows:
+intervention: event: NUMBER group_size: NUMBER
+---
+intervention: events: 20 group_size: 2778 comparator: events: 4 group_size: 536
+---
+groups = [ sitagliptin 100 mg/day, comparator agent ] events = [[97,154],[4,9]] group_size = [[337,000],[8
+---
+intervention: events: 2453 group_size: 7493 comparator: events: 2859 group_size: 8577
+---
+intervention: events: 5 group_size: 134 comparator: events: 19 group_size: 263
+---
+intervention:events: 10intervention/group_size:107comparator:events: 11comparator/group_size:96
+---
+",True
+642,12880,5830087,disease control rate,"BTH1677 arm ( intravenous [IV] BTH1677, 4 mg/kg, weekly; IV bevacizumab, 15 mg/kg, once each 3-week cycle [Q3W]; IV carboplatin, 6 mg/mL/min Calvert formula area-under-the-curve, Q3W; and IV paclitaxel, 200 mg/m2, Q3W)",Control arm ( bevacizumab/carboplatin/paclitaxel as above),binary,45,48,21,23,,,,,,,0.35667494,0.9031746,0.02643326,0.00552968,found in table 2,TRUE,11942,10628,TEST,8141,"[966, 1275, 1632, 1659, 157, 1914, 831, 989]","intervention:
+group_size: 59 events: 51 comparator: group_size: 30 events: 23
+---
+Intervention: BTH1677 arm (intravenous (IV) BTH1677, 4 mg/kg, weekly; IV bevacizumab, 15 mg/kg, once each 
+---
+intervention: events: 45 group_size: 48 comparator: events: 21 group_size: 23
+---
+BTH1677 ControlDisease Control Rateevents:43130group_size:5930
+---
+intervention:  events: (64) group_size: 144  comparator:  events: 115 group_size: 144
+---
+intervention:
+events: 98 93.2 group_size: 55 55
+---
+intervention: events: 57 group_size: 61comparator: events: 51 group_size: 53
+---
+intervention:bevacizumab/carboplatin/paclitaxel (bevacizumab/carboplatin/paclitaxel [B/C/P] as above)events
+---
+",True
