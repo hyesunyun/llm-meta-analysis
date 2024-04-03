@@ -125,13 +125,13 @@ class InputChunker:
                             final_chunks.append(chunk_to_add)
                             current_chunk = ""  # Reset the current chunk
                             current_length = 0  # Reset the current length
-                        # Start a new chunk with the current chunk
+                        # Start a new chunk with the current sentence
                         current_chunk += str(sentence)
-                        current_length += table_token_count
+                        current_length += sentence_token_count
                     else:
-                        # If adding this cbunk wouldn't exceed max_tokens, add it to the current chunk
+                        # If adding this chunk wouldn't exceed max_tokens, add it to the current chunk
                         current_chunk += str(sentence)
-                        current_length += table_token_count
+                        current_length += sentence_token_count
 
         # After the loop, add the current_chunk if it's not empty
         if current_length > 0:
