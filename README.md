@@ -30,14 +30,21 @@ Example script for running a specific task on GPT-3.5:
 python3 evaluation/run_task.py --model gpt35 --task binary_outcomes --split test --output_path evaluation/outputs/binary_outcomes
 ```
 
+Example script for running case study (mortality) on Mistral 7B:
+```bash
+python3 evaluation/run_task.py --model mistral7b --task end_to_end --input_path evaluation/data/meta_analysis_case_study.json --output_path evaluation/outputs/binary_outcomes --pmc_files_path evaluation/data/no_attributes_case_study_markdown_files
+```
+
 You can change the arguments to run different tasks and models.
 
 Arguments of `run_task.py`:
 - `--model`: model to evaluate ("gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B") - more details of the models can be found in [MODELS.md](evaluation/models/MODELS.md)
 - `--task`: task name ("outcome_type", "binary_outcomes", "continuous_outcomes", "end_to_end")
-- `--split`: whether to run "dev" or "test" split of the dataset
+- `--split`: whether to run "dev" or "test" split of the main evaluation dataset. This is required if input_path is not given
 - `--prompt`: specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. not available for end_to_end task. OPTIONAL
-- `--output_path`: path where json and csv files of the outputs from model should be saved
+- `--input_path`: path where json file of the inputs for the model are saved. this is only needed if you want to run some data other than our annotated dataset. please format the input file similarly to annotated_rect_dataset.json
+- `--output_path`: path of directory where json and csv files of the outputs from model should be saved
+- `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset.
 - `--test`: adding this flag will only run 10 randomly sampled examples from dataset. this is for debugging purposes.
 
 ### Running Evaluation/Calculating Metrics

@@ -106,9 +106,9 @@ class MetaAnalysisTaskEvaluator:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")
                     output_dict = DEFAULT_BINARY_OUTCOMES_DICT
 
-            if "intervention" in output_dict and "comparator" in output_dict:
-                intervention = output_dict["intervention"]
-                comparator = output_dict["comparator"]
+            if "intervention" in output_dict or "comparator" in output_dict:
+                intervention = output_dict["intervention"] if "intervention" in output_dict else {}
+                comparator = output_dict["comparator"] if "comparator" in output_dict else {}
 
                 ie_output = intervention["events"] if intervention and "events" in intervention else "x"
                 it_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
@@ -172,9 +172,9 @@ class MetaAnalysisTaskEvaluator:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")
                     output_dict = DEFAULT_CONTINUOUS_OUTCOMES_DICT
 
-            if "intervention" in output_dict and "comparator" in output_dict:
-                intervention = output_dict["intervention"]
-                comparator = output_dict["comparator"]
+            if "intervention" in output_dict or "comparator" in output_dict:
+                intervention = output_dict["intervention"] if "intervention" in output_dict else {}
+                comparator = output_dict["comparator"] if "comparator" in output_dict else {}
 
                 im_output = intervention["mean"] if intervention and "mean" in intervention else "x"
                 isd_output = intervention["standard_deviation"] if intervention and "standard_deviation" in intervention else "x"

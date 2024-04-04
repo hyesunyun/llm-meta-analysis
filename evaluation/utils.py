@@ -72,7 +72,7 @@ def save_dataset_to_csv(dataset: List[Dict], file_path: str, columns_to_drop: Op
 
 def get_xml_content_by_pmcid(pmc_file_path: str, pmcid: str) -> str:
     """
-    This method gets the xml file contents of a given pmcid
+    This method gets the xml file contents of a given pmcid in a given file path
     
     :param pmc_file_path: path to the pmc files
     :param pmcid: pmcid of the xml file
@@ -87,7 +87,7 @@ def get_xml_content_by_pmcid(pmc_file_path: str, pmcid: str) -> str:
 
 def get_md_content_by_pmcid(pmc_file_path: str, pmcid: str) -> str:
     """
-    This method gets the markdown (md) file contents of a given pmcid
+    This method gets the markdown (md) file contents of a given pmcid in a given file path
 
     :param pmc_file_path: path to the pmc files
     :param pmcid: pmcid of the md file
