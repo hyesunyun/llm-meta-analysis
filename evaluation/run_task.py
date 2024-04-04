@@ -93,10 +93,10 @@ class MetaAnalysisTaskRunner:
         """
         dataset = load_json_file(self.input_path)
 
-        # get the correct split to run the task
+        # get the correct split to run the task if split is provided
         if self.split == "dev":
             dataset = [example for example in dataset if example["split"] == "DEV"]
-        else:
+        elif self.split == "test":
             # filter out dataset to only test (evaluation) split
             dataset = [example for example in dataset if example["split"] == "TEST"]
 
@@ -241,12 +241,13 @@ class MetaAnalysisTaskRunner:
 
         return json_file_path, csv_file_path
 
-def run_end_to_end_task(model: str, split: str, output_path: str, is_test: bool) -> Tuple[Tuple[str, str], Tuple[str, str], Tuple[str, str]]:
+def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str, is_test: bool) -> Tuple[Tuple[str, str], Tuple[str, str], Tuple[str, str]]:
     '''
     This method runs the end-to-end task for the given model and split
     
     :param model: name of the model to use
     :param split: split of the dataset to run (dev or test)
+    :param input_path: path to the input file
     :param output_path: path to save the output data
     :param is_test: whether to run the task with only 10 instances for debugging purposes
     
@@ -254,7 +255,7 @@ def run_end_to_end_task(model: str, split: str, output_path: str, is_test: bool)
             output types: (json, csv) and binary outcomes: (json, csv) and continuous outcomes: (json, csv)
     '''
     # First, call the outcome type task
-    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, is_test)
+    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, is_test, None, input_path)
     outcome_type_json_file_path, outcome_type_csv_file_path = outcome_type_task_runner.run_task()
     # Do some post-processing to pass the output to the next task as input
     outcome_type_outputs = load_json_file(outcome_type_json_file_path)
@@ -281,9 +282,10 @@ if __name__ == '__main__':
 
     parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B"], help="what model to run", required=True)
     parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes', 'end_to_end'], help="type of task to run", required=True)
-    parser.add_argument("--split", default="test", choices=["test", "dev"], help="which split of the dataset to run")
+    parser.add_argument("--split", default=None, choices=["test", "dev"], help="which split of the default dataset to run. Required if input_path is not specified and overrides input_path.")
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")
-    parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved")
+    parser.add_argument("--input_path", default="./input", help="directory of where the input data is stored. this is required if split is not specified.")
+    parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved.")
     # do --no-test for explicit False
     parser.add_argument("--test", action=argparse.BooleanOptionalAction, help="used for debugging purposes. test will only run random 10 instances from the dataset.")
     
@@ -293,6 +295,7 @@ if __name__ == '__main__':
     task = args.task
     split = args.split
     prompt_name = args.prompt
+    input_path = args.input_path
     output_path = args.output_path
     is_test = args.test
 
@@ -305,17 +308,23 @@ if __name__ == '__main__':
     print(f"Is Test:      {is_test}")
     print()
 
+    if split is None and input_path is None:
+        raise ValueError("--split or --input_path must be specified.")
+    if split is not None and input_path is not None:
+        print("Both --split and --input_path are specified. Using split.")
+        input_path = None
+
     if not os.path.exists(output_path):
         os.makedirs(output_path)
         print("Output path did not exist. Directory was created.")
     
     if task == "end_to_end":
-        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, output_path, is_test)
+        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, input_path, output_path, is_test)
         print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
         print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
         print(f"Continuous Outcomes task outputs saved to {continuous_outcomes_task_files[0]} and {continuous_outcomes_task_files[1]}")
     else:
-        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name)
+        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name, input_path)
         json_file_path, csv_file_path = task_runner.run_task()
         print(f"Task outputs saved to {json_file_path} and {csv_file_path}")
     
