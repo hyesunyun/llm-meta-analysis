@@ -1,0 +1,48 @@
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 59,
+        "intervention_standard_deviation": 66,
+        "intervention_group_size": 38,
+        "comparator_mean": 62,
+        "comparator_standard_deviation": 70,
+        "comparator_group_size": 44,
+        "total": 339
+    },
+    "number_of_reference_unknowns": {
+        "intervention_mean": 178,
+        "intervention_standard_deviation": 211,
+        "intervention_group_size": 40,
+        "comparator_mean": 178,
+        "comparator_standard_deviation": 212,
+        "comparator_group_size": 40,
+        "total": 859
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.7443298969072165,
+        "intervention_standard_deviation": 0.7463917525773196,
+        "intervention_group_size": 0.777319587628866,
+        "comparator_mean": 0.7237113402061855,
+        "comparator_standard_deviation": 0.7298969072164948,
+        "comparator_group_size": 0.7402061855670103,
+        "total": 0.5010309278350515
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.954639175257732,
+        "partial_match_accuracy_2": 0.9443298969072165,
+        "partial_match_accuracy_3": 0.7711340206185567,
+        "partial_match_accuracy_4": 0.7484536082474227,
+        "partial_match_accuracy_5": 0.5422680412371134
+    },
+    "percentage_of_computable_instances": 0.73992673992674,
+    "point_estimates": {
+        "standardized_mean_difference": {
+            "mean_absolute_error": 0.3039639887266607,
+            "standard_error_of_mae": 0.09815210961932097,
+            "95_confidence_interval_of_mae": [
+                0.1115858538727916,
+                0.49634212358052976
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}

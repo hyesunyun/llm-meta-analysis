@@ -27,7 +27,9 @@
         "tiktoken_without_attributes_xml_token_num": 3205,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2434,
-        "output": "```yaml\nintervention:\n    events: 14\n    group_size: 49\ncomparator:\n    events: 13\n    group_size: 50\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 50\ncomparator:\n  events: 6\n  group_size: 50\n\nThis YAML representation indicates that there were 5 events",
+        "is_chunked": false
     },
     {
         "id": 548,
@@ -57,7 +59,9 @@
         "tiktoken_without_attributes_xml_token_num": 2587,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2232,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 69\ncomparator:\n    events: 0\n    group_size: 68\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3\n  group_size: 69\ncomparator:\n  events: 5\n  group_size: 68",
+        "is_chunked": false
     },
     {
         "id": 49,
@@ -87,7 +91,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 2\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 568,
@@ -117,7 +123,9 @@
         "tiktoken_without_attributes_xml_token_num": 5345,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4032,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 11\ncomparator:\n    events: 0\n    group_size: 6\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 11\ncomparator:\n  events: 0\n  group_size: 6",
+        "is_chunked": false
     },
     {
         "id": 622,
@@ -147,7 +155,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 71\n    group_size: 81\ncomparator:\n    events: 72\n    group_size: 81\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  group_size: 71\n  events: 71\ncomparator:\n  group_size: 72\n  events: 72",
+        "is_chunked": false
     },
     {
         "id": 50,
@@ -177,7 +187,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 2\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 8\ncomparator:\n  events: 3\n  group_size: 14\n\nThis YAML representation indicates that there was one report of head",
+        "is_chunked": false
     },
     {
         "id": 633,
@@ -207,7 +219,9 @@
         "tiktoken_without_attributes_xml_token_num": 2016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1562,
-        "output": "```yaml\nintervention:\n    events: 17\n    group_size: 30\ncomparator:\n    events: 5\n    group_size: 22\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 17\n  group_size: 30\ncomparator:\n  events: 5\n  group_size: 22",
+        "is_chunked": false
     },
     {
         "id": 123,
@@ -237,7 +251,9 @@
         "tiktoken_without_attributes_xml_token_num": 7883,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5770,
-        "output": "```yaml\nintervention:\n  events: 83\n  group_size: 94\ncomparator:\n  events: 75\n  group_size: 93\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 75\n  group_size: 93\ncomparator:\n  events: 58\n  group_size: 94",
+        "is_chunked": false
     },
     {
         "id": 623,
@@ -267,7 +283,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 19\n    group_size: 85\ncomparator:\n    events: 32\n    group_size: 84\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 19\n  group_size: 85\ncomparator:\n  events: 32\n  group_size: 84",
+        "is_chunked": false
     },
     {
         "id": 313,
@@ -297,7 +315,9 @@
         "tiktoken_without_attributes_xml_token_num": 2288,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1670,
-        "output": "```yaml\nintervention:\n    events: 22\n    group_size: 22\ncomparator:\n    events: 16\n    group_size: 20\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 22\n  group_size: 22\ncomparator:\n  events: 20\n  group_size: 20\noutcome:\n  intervention:\n    events:",
+        "is_chunked": false
     },
     {
         "id": 543,
@@ -327,7 +347,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n  events: 52\n  group_size: 120\ncomparator:\n  events: 52\n  group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 52\n  group_size: 120\ncomparator:\n  events: 52\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 373,
@@ -357,7 +379,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 32\n    group_size: 59\ncomparator:\n    events: 46\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 34\n  group_size: 59\nComparator:\n  events: 72\n  group_size: 64\n\nNote: The provided information does not specify the int",
+        "is_chunked": false
     },
     {
         "id": 14,
@@ -387,7 +411,9 @@
         "tiktoken_without_attributes_xml_token_num": 8106,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5529,
-        "output": "```yaml\nintervention:\n    events: 10\n    group_size: 103\ncomparator:\n    events: 53\n    group_size: 97\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 10\n  group_size: 103\ncomparator:\n  events: 53\n  group_size: 97",
+        "is_chunked": false
     },
     {
         "id": 384,
@@ -417,7 +443,9 @@
         "tiktoken_without_attributes_xml_token_num": 6016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4469,
-        "output": "```yaml\nintervention:\n    events: 86\n    group_size: 108\ncomparator:\n    events: 175\n    group_size: 246\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 80\n  group_size: 108\ncomparator:\n  events: 71\n  group_size: 246",
+        "is_chunked": false
     },
     {
         "id": 535,
@@ -447,7 +475,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n  events: 108\n  group_size: 120\ncomparator:\n  events: 84\n  group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 108\n  group_size: 120\ncomparator:\n  events: 84\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 256,
@@ -477,7 +507,9 @@
         "tiktoken_without_attributes_xml_token_num": 4660,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2966,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 38\ncomparator:\n    events: 0\n    group_size: 39\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 38\ncomparator:\n  events: 0\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 375,
@@ -507,7 +539,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 23\n    group_size: 59\ncomparator:\n    events: 28\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 39\n  group_size: 59\ncomparator:\n  events: 44\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 491,
@@ -537,7 +571,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 79\n    group_size: 10218\ncomparator:\n    events: 60\n    group_size: 7557\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 79\n  group_size: 10218\ncomparator:\n  events: 60\n  group_size: 7557",
+        "is_chunked": false
     },
     {
         "id": 132,
@@ -567,7 +603,9 @@
         "tiktoken_without_attributes_xml_token_num": 7944,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5795,
-        "output": "```yaml\nintervention:\n  events: 234\n  group_size: 326\ncomparator:\n  events: 261\n  group_size: 326\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 111\n  group_size: 326\ncomparator:\n  events: 125\n  group_size: 326\n\nThis YAML format represents",
+        "is_chunked": false
     },
     {
         "id": 43,
@@ -597,7 +635,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 304,
@@ -627,7 +667,9 @@
         "tiktoken_without_attributes_xml_token_num": 1624,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1385,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 15\ncomparator:\n    events: 5\n    group_size: 15\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 13\n  group_size: 15\ncomparator:\n  events: 7\n  group_size: 15\n\nintervention:\n  events_post: 1",
+        "is_chunked": false
     },
     {
         "id": 476,
@@ -657,7 +699,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n  events: x\n  group_size: 1525\ncomparator:\n  events: x\n  group_size: 1514\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 73\n  group_size: 1596\ncomparator:\n  events: 84\n  group_size: 1597",
+        "is_chunked": false
     },
     {
         "id": 587,
@@ -687,7 +731,9 @@
         "tiktoken_without_attributes_xml_token_num": 5362,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4091,
-        "output": "```yaml\nintervention:\n    events: 44\n    group_size: 353\ncomparator:\n    events: 90\n    group_size: 357\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 12.75\n  group_size: 353\n\ncomparator:\n  events: 15.4\n  group_size: 357",
+        "is_chunked": false
     },
     {
         "id": 508,
@@ -717,7 +763,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 15\n    group_size: 4114\ncomparator:\n    events: 16\n    group_size: 3973\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 16\n  group_size: 17\ncomparator:\n  events: 11\n  group_size: 17",
+        "is_chunked": false
     },
     {
         "id": 173,
@@ -747,7 +795,9 @@
         "tiktoken_without_attributes_xml_token_num": 6902,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4923,
-        "output": "```yaml\nintervention:\n    events: 9\n    group_size: 33\ncomparator:\n    events: 11\n    group_size: 15\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 34\n  group_size: 38\ncomparator:\n  events: 77\n  group_size: 38\n\nNote: The given article does not provide the number",
+        "is_chunked": false
     },
     {
         "id": 652,
@@ -777,7 +827,9 @@
         "tiktoken_without_attributes_xml_token_num": 2044,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1751,
-        "output": "```yaml\nintervention:\n    events: 17\n    group_size: 62\ncomparator:\n    events: 31\n    group_size: 62\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 31\n  group_size: 62\ncomparator:\n  events: 50\n  group_size: 62",
+        "is_chunked": false
     },
     {
         "id": 48,
@@ -807,7 +859,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n  events: 0\n  group_size: 6\ncomparator:\n  events: 3\n  group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 6\ncomparator:\n  events: 3\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 93,
@@ -837,7 +891,9 @@
         "tiktoken_without_attributes_xml_token_num": 745,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 637,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 30\ncomparator:\n    events: 0\n    group_size: 30\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 60\ncomparator:\n  events: 15\n  group_size: 60\n\nThis YAML representation represents that there were 2",
+        "is_chunked": false
     },
     {
         "id": 131,
@@ -867,7 +923,9 @@
         "tiktoken_without_attributes_xml_token_num": 7944,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5795,
-        "output": "```yaml\nintervention:\n    events: 238\n    group_size: 326\ncomparator:\n    events: 241\n    group_size: 326\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 157\n  group_size: 326\ncomparator:\n  events: 156\n  group_size: 326",
+        "is_chunked": false
     },
     {
         "id": 152,
@@ -897,7 +955,9 @@
         "tiktoken_without_attributes_xml_token_num": 2470,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2114,
-        "output": "```yaml\nintervention:\n    events: 21\n    group_size: 40\ncomparator:\n    events: 7\n    group_size: 40\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 35\n  group_size: 40\ncomparator:\n  events: 17.5\n  group_size: 40\n\nYou may also represent it as:\n",
+        "is_chunked": false
     },
     {
         "id": 370,
@@ -927,7 +987,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 35\n    group_size: 59\ncomparator:\n    events: 33\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "Intervention:\n- events: 50\n- group_size: 123\n\nComparator:\n- events: 68\n- group_size: 123\n\nIt is important to note that the",
+        "is_chunked": false
     },
     {
         "id": 10,
@@ -957,7 +1019,9 @@
         "tiktoken_without_attributes_xml_token_num": 780,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 725,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: x\ncomparator:\n    events: 25\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 10\n  group_size: 20\ncomparator:\n  events: 10\n  group_size: 20\n\nThe article does not report the number of patients who",
+        "is_chunked": false
     },
     {
         "id": 537,
@@ -987,7 +1051,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 52\n    group_size: 120\ncomparator:\n    events: 52\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 52\n  group_size: 120\n comparator:\n  events: 52\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 108,
@@ -1017,7 +1083,9 @@
         "tiktoken_without_attributes_xml_token_num": 1758,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1564,
-        "output": "```yaml\nintervention:\n    events: 9\n    group_size: 30\ncomparator:\n    events: 26\n    group_size: 30\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 9\n  group_size: 30\ncomparator:\n  events: 30\n  group_size: 30\n\noutput:\n  intervention:\n    events: ",
+        "is_chunked": false
     },
     {
         "id": 297,
@@ -1047,7 +1115,9 @@
         "tiktoken_without_attributes_xml_token_num": 5464,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3820,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 28\ncomparator:\n    events: 1\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 37\ncomparator:\n  events: 1\n  group_size: 21",
+        "is_chunked": false
     },
     {
         "id": 121,
@@ -1077,7 +1147,9 @@
         "tiktoken_without_attributes_xml_token_num": 7883,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5770,
-        "output": "```yaml\nintervention:\n  events_TT: 45\n  group_size_TT: 65\n  events_GTGG: 17\n  group_size_GTGG: 23\ncomparator:\n  events_TT: 35"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 65\n  group_size: 94\ncomparator:\n  events: 60\n  group_size: 93\noutcome_IL28B_TT:\n",
+        "is_chunked": false
     },
     {
         "id": 500,
@@ -1107,7 +1179,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 15\n  group_size: 4114\ncomparator:\n  events: 16\n  group_size: 3973\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 48\n  group_size: 23\ncomparator:\n  events: 16\n  group_size: 23",
+        "is_chunked": false
     },
     {
         "id": 547,
@@ -1137,7 +1211,9 @@
         "tiktoken_without_attributes_xml_token_num": 2587,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2232,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 74\ncomparator:\n    events: 0\n    group_size: 72\n```"
+        "chunk_num_tokens": [],
+        "output": "interventions:\n- name: Real-Time Continuous Glucose Monitoring\n  events: 0\n  group_size: 75\n\ncomparators:\n- name: Control\n  events: 0\n ",
+        "is_chunked": false
     },
     {
         "id": 155,
@@ -1167,7 +1243,9 @@
         "tiktoken_without_attributes_xml_token_num": 2470,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2114,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 40\ncomparator:\n    events: x\n    group_size: 40\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 40\ncomparator:\n  events: 5\n  group_size: 40",
+        "is_chunked": false
     },
     {
         "id": 391,
@@ -1197,7 +1275,9 @@
         "tiktoken_without_attributes_xml_token_num": 3510,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2857,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 27\ncomparator:\n    events: 2\n    group_size: 18\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 27\ncomparator:\n  events: 2\n  group_size: 18",
+        "is_chunked": false
     },
     {
         "id": 502,
@@ -1227,7 +1307,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 2\n  group_size: 630\ncomparator:\n  events: 4\n  group_size: 589\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3\n  group_size: 23\ncomparator:\n  events: 8\n  group_size: 23\n\noutcome:\n  events_pre: 8\n",
+        "is_chunked": false
     },
     {
         "id": 653,
@@ -1257,7 +1339,9 @@
         "tiktoken_without_attributes_xml_token_num": 2044,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1751,
-        "output": "```yaml\nintervention:\n    events: 16\n    group_size: 62\ncomparator:\n    events: 5\n    group_size: 62\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 16.1\n  group_size: 62\ncomparator:\n  events: 1.6\n  group_size: 62",
+        "is_chunked": false
     },
     {
         "id": 299,
@@ -1287,7 +1371,9 @@
         "tiktoken_without_attributes_xml_token_num": 5464,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3820,
-        "output": "```yaml\nintervention:\n    events: 9\n    group_size: 12\ncomparator:\n    events: 3\n    group_size: 8\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 29\n  group_size: 37\ncomparator:\n  events: 20\n  group_size: 21\n\nThe YAML format for the 2x",
+        "is_chunked": false
     },
     {
         "id": 15,
@@ -1317,7 +1403,9 @@
         "tiktoken_without_attributes_xml_token_num": 8106,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5529,
-        "output": "```yaml\nintervention:\n    events: 89\n    group_size: 103\ncomparator:\n    events: 54\n    group_size: 97\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 89\n  group_size: 103\ncomparator:\n  events: 54\n  group_size: 97",
+        "is_chunked": false
     },
     {
         "id": 481,
@@ -1347,7 +1435,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n  events: 629\n  group_size: 1522\ncomparator:\n  events: 345\n  group_size: 1512\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 25/39\n  group_size: 39\ncomparator:\n  events: 15/39\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 339,
@@ -1377,7 +1467,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 122\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 122\n  group_size: 43\ncomparator:\n  events: 68\n  group_size: 22\n\nNote: The number of patients experiencing nause",
+        "is_chunked": false
     },
     {
         "id": 107,
@@ -1407,7 +1499,9 @@
         "tiktoken_without_attributes_xml_token_num": 1758,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1564,
-        "output": "```yaml\nintervention:\n    events: 6\n    group_size: 30\ncomparator:\n    events: 26\n    group_size: 30\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 6\n  group_size: 30\ncomparator:\n  events: 26\n  group_size: 30\n\noutput:\n  \"YAML\": |\n",
+        "is_chunked": false
     },
     {
         "id": 251,
@@ -1437,7 +1531,9 @@
         "tiktoken_without_attributes_xml_token_num": 11480,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8549,
-        "output": "```yaml\nintervention:\n  events: 64\n  group_size: 402\ncomparator:\n  events: 61\n  group_size: 388\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 106\n  group_size: 398\ncomparator:\n  events: 105\n  group_size: 389",
+        "is_chunked": false
     },
     {
         "id": 45,
@@ -1467,7 +1563,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 14\ncomparator:\n  events: 2\n  group_size: 14\n\nintervention_1:\n  events: 1\n",
+        "is_chunked": false
     },
     {
         "id": 512,
@@ -1497,7 +1595,9 @@
         "tiktoken_without_attributes_xml_token_num": 5593,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4514,
-        "output": "```yaml\nintervention:\n    events: 69\n    group_size: 122\ncomparator:\n    events: 67\n    group_size: 121\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 18\n  group_size: 122\ncomparator:\n  events: 11\n  group_size: 121\n\nFor the given trial article, adverse",
+        "is_chunked": false
     },
     {
         "id": 66,
@@ -1527,7 +1627,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 14\n    group_size: 23\ncomparator:\n    events: 4\n    group_size: 19\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 52\n  group_size: 60\ncomparator:\n  events: 5\n  group_size: 19\n\nThe above YAML representation shows the 2x",
+        "is_chunked": false
     },
     {
         "id": 166,
@@ -1557,7 +1659,9 @@
         "tiktoken_without_attributes_xml_token_num": 1148,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 971,
-        "output": "```yaml\nintervention:\n    events: 8\n    group_size: 21\ncomparator:\n    events: 16\n    group_size: 21\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 8\n  group_size: 21\ncomparator:\n  events: 16\n  group_size: 21\n\nOutput is based on the given numerical data from the study",
+        "is_chunked": false
     },
     {
         "id": 258,
@@ -1587,7 +1691,9 @@
         "tiktoken_without_attributes_xml_token_num": 4660,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2966,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 38\ncomparator:\n    events: 0\n    group_size: 39\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 38\ncomparator:\n  events: 0\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 492,
@@ -1617,7 +1723,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 48\n    group_size: 4114\ncomparator:\n    events: 45\n    group_size: 3973\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 48\n  group_size: 4114\ncomparator:\n  events: 11\n  group_size: 4114",
+        "is_chunked": false
     },
     {
         "id": 257,
@@ -1647,7 +1755,9 @@
         "tiktoken_without_attributes_xml_token_num": 4660,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2966,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 38\ncomparator:\n    events: 1\n    group_size: 39\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 38\ncomparator:\n  events: 1\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 252,
@@ -1677,7 +1787,9 @@
         "tiktoken_without_attributes_xml_token_num": 11480,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8549,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 406\ncomparator:\n    events: x\n    group_size: 393\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 26\n  group_size: 398\ncomparator:\n  events: 25\n  group_size: 389",
+        "is_chunked": false
     },
     {
         "id": 494,
@@ -1707,7 +1819,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 7\n  group_size: 630\ncomparator:\n  events: 8\n  group_size: 589\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 7\n  group_size: 22\ncomparator:\n  events: 8\n  group_size: 22\n\npre_intervention:\n  intervention: 3\n",
+        "is_chunked": false
     },
     {
         "id": 381,
@@ -1737,7 +1851,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n  events: x\n  group_size: 59\ncomparator:\n  events: x\n  group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 34\n  group_size: 59\ncomparator:\n  events: 39\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 376,
@@ -1767,7 +1883,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 59\ncomparator:\n    events: x\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 30\n  group_size: 59\ncomparator:\n  events: 45\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 46,
@@ -1797,7 +1915,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14\n\n# In this study, there were no headache reports for the",
+        "is_chunked": false
     },
     {
         "id": 265,
@@ -1827,7 +1947,9 @@
         "tiktoken_without_attributes_xml_token_num": 4896,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3773,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 83\ncomparator:\n    events: x\n    group_size: 79\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 15\n  group_size: 83\ncomparator:\n  events: 6\n  group_size: 79",
+        "is_chunked": false
     },
     {
         "id": 47,
@@ -1857,7 +1979,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14\n\nAt the 5 mg dose of macitentan, there",
+        "is_chunked": false
     },
     {
         "id": 507,
@@ -1887,7 +2011,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 20\n  group_size: 10218\ncomparator:\n  events: x\n  group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 16\n  group_size: 29\ncomparator:\n  events: 4\n  group_size: 29",
+        "is_chunked": false
     },
     {
         "id": 380,
@@ -1917,7 +2043,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 47\n    group_size: 59\ncomparator:\n    events: 19\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 79\n  group_size: 59\ncomparator:\n  events: 29\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 588,
@@ -1947,7 +2075,9 @@
         "tiktoken_without_attributes_xml_token_num": 5362,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4091,
-        "output": "```yaml\nintervention:\n    events: 19\n    group_size: 181\ncomparator:\n    events: 90\n    group_size: 357\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 181\ncomparator:\n  events: 6\n  group_size: 357\n\nPlace this YAML response in a file with",
+        "is_chunked": false
     },
     {
         "id": 254,
@@ -1977,7 +2107,9 @@
         "tiktoken_without_attributes_xml_token_num": 11480,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8549,
-        "output": "```yaml\nintervention:\n    events: 134\n    group_size: 394\ncomparator:\n    events: 118\n    group_size: 382\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 39\n  group_size: 398\ncomparator:\n  events: 28\n  group_size: 389",
+        "is_chunked": false
     },
     {
         "id": 473,
@@ -2007,7 +2139,9 @@
         "tiktoken_without_attributes_xml_token_num": 2633,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2065,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: x\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 34\n  group_size: 114\ncomparator:\n  events: 19\n  group_size: 114\n\noutcome:\n  types:\n",
+        "is_chunked": false
     },
     {
         "id": 270,
@@ -2037,7 +2171,9 @@
         "tiktoken_without_attributes_xml_token_num": 996,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 880,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: x\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: \n    group_1: x\n    group_2: x\n  group_size: \n    group_1: 30\n    group_2: 30\n  BIS",
+        "is_chunked": false
     },
     {
         "id": 85,
@@ -2067,7 +2203,9 @@
         "tiktoken_without_attributes_xml_token_num": 10904,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8432,
-        "output": "```yaml\nintervention:\n  events: x\n  group_size: 7726\ncomparator:\n  events: x\n  group_size: 6885\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0.90\n  group_size: 7726\ncomparator:\n  events: 0.93\n  group_size: 6885",
+        "is_chunked": false
     },
     {
         "id": 475,
@@ -2097,7 +2235,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n  events: 386\n  group_size: 1525\ncomparator:\n  events: 1275\n  group_size: 1514\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 75\n  group_size: 1655\ncomparator:\n  events: 84\n  group_size: 1655",
+        "is_chunked": false
     },
     {
         "id": 497,
@@ -2127,7 +2267,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 6\n  group_size: 2279\ncomparator:\n  events: 3\n  group_size: 2321\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 6\n  group_size: 12\ncomparator:\n  events: 3\n  group_size: 12\n\n# Note: The exact number of blood samples and error types",
+        "is_chunked": false
     },
     {
         "id": 154,
@@ -2157,7 +2299,9 @@
         "tiktoken_without_attributes_xml_token_num": 2470,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2114,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 40\ncomparator:\n    events: 20\n    group_size: 40\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 7.5\n  group_size: 40\ncomparator:\n  events: 25\n  group_size: 40",
+        "is_chunked": false
     },
     {
         "id": 632,
@@ -2187,7 +2331,9 @@
         "tiktoken_without_attributes_xml_token_num": 2016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1562,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 30\ncomparator:\n    events: 5\n    group_size: 22\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 30\n\ncomparator:\n  events: 5\n  group_size: 22",
+        "is_chunked": false
     },
     {
         "id": 16,
@@ -2217,7 +2363,9 @@
         "tiktoken_without_attributes_xml_token_num": 8106,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5529,
-        "output": "```yaml\nintervention:\n    events: 4\n    group_size: 103\ncomparator:\n    events: 18\n    group_size: 97\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3.9\n  group_size: 103\ncomparator:\n  events: 18.6\n  group_size: 97",
+        "is_chunked": false
     },
     {
         "id": 389,
@@ -2247,7 +2395,9 @@
         "tiktoken_without_attributes_xml_token_num": 6016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4469,
-        "output": "```yaml\nintervention:\n    events: 86\n    group_size: 108\ncomparator:\n    events: 175\n    group_size: 246\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 80\n  group_size: 108\ncomparator:\n  events: 71\n  group_size: 246",
+        "is_chunked": false
     },
     {
         "id": 627,
@@ -2277,7 +2427,9 @@
         "tiktoken_without_attributes_xml_token_num": 1296,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 943,
-        "output": "```yaml\nintervention:\n    events: 247\n    group_size: 6051\ncomparator:\n    events: 515\n    group_size: 5892\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 247\n  group_size: 6051\ncomparator:\n  events: 515\n  group_size: 5892",
+        "is_chunked": false
     },
     {
         "id": 128,
@@ -2307,7 +2459,9 @@
         "tiktoken_without_attributes_xml_token_num": 3205,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2434,
-        "output": "```yaml\nintervention:\n    events: 12\n    group_size: 50\ncomparator:\n    events: 27\n    group_size: 50\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3\n  group_size: 50\ncomparator:\n  events: 17\n  group_size: 50\n\noutcome: \"PONV (late time -",
+        "is_chunked": false
     },
     {
         "id": 690,
@@ -2337,7 +2491,9 @@
         "tiktoken_without_attributes_xml_token_num": 8112,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5695,
-        "output": "```yaml\nintervention:\n    events: 94\n    group_size: 102\ncomparator:\n    events: 91\n    group_size: 107\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 92\n  group_size: 102\ncomparator:\n  events: 85\n  group_size: 107\n\nNote: The given data for intervention group",
+        "is_chunked": false
     },
     {
         "id": 539,
@@ -2367,7 +2523,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 11\n    group_size: 120\ncomparator:\n    events: 15\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 15\n  group_size: 120\n\ncomparator:\n  events: 12\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 369,
@@ -2397,7 +2555,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 51\n    group_size: 59\ncomparator:\n    events: 57\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 39\n  group_size: 64\ncomparator:\n  events: 46\n  group_size: 64\n\nThis YAML representation indicates that there were ",
+        "is_chunked": false
     },
     {
         "id": 382,
@@ -2427,7 +2587,9 @@
         "tiktoken_without_attributes_xml_token_num": 6016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4469,
-        "output": "```yaml\nintervention:\n    events: 4\n    group_size: 108\ncomparator:\n    events: 30\n    group_size: 246\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 4\n  group_size: 108\ncomparator:\n  events: 30\n  group_size: 246",
+        "is_chunked": false
     },
     {
         "id": 624,
@@ -2457,7 +2619,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 78\n    group_size: 85\ncomparator:\n    events: 77\n    group_size: 84\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 78\n  group_size: 85\ncomparator:\n  events: 68\n  group_size: 84",
+        "is_chunked": false
     },
     {
         "id": 510,
@@ -2487,7 +2651,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 2\n    group_size: 630\ncomparator:\n    events: 4\n    group_size: 589\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 6\ncomparator:\n  events: 3\n  group_size: 6\n--------------------\n|                   | Pre-intervention | Post-inter",
+        "is_chunked": false
     },
     {
         "id": 499,
@@ -2517,7 +2683,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 27\n    group_size: 10218\ncomparator:\n    events: 17\n    group_size: 7557\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 79\n  group_size: 10218\ncomparator:\n  events: 60\n  group_size: 7557",
+        "is_chunked": false
     },
     {
         "id": 264,
@@ -2547,7 +2715,9 @@
         "tiktoken_without_attributes_xml_token_num": 4896,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3773,
-        "output": "```yaml\nintervention:\n    events: 17\n    group_size: 78\ncomparator:\n    events: 7\n    group_size: 78\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 17\n  group_size: 78\n\ncomparator:\n  events: 7\n  group_size: 78\n\nThe YAML format does not directly support the",
+        "is_chunked": false
     },
     {
         "id": 62,
@@ -2577,7 +2747,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 23\n    group_size: 23\ncomparator:\n    events: 9\n    group_size: 19\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 29\n  group_size: 23\ncomparator:\n  events: 7\n  group_size: 19\n\nNote: The number of patients in each group with H",
+        "is_chunked": false
     },
     {
         "id": 379,
@@ -2607,7 +2779,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 68\n    group_size: 59\ncomparator:\n    events: 111\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 39\n  group_size: 59\ncomparator:\n  events: 111\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 305,
@@ -2637,7 +2811,9 @@
         "tiktoken_without_attributes_xml_token_num": 1624,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1385,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 15\ncomparator:\n    events: 5\n    group_size: 15\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 6.7\n  group_size: 15\ncomparator:\n  events: 33.3\n  group_size: 15",
+        "is_chunked": false
     },
     {
         "id": 39,
@@ -2667,7 +2843,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 8\ncomparator:\n  events: 0\n  group_size: 14\n\nNo unexpected adverse events were reported for the intervention group of ",
+        "is_chunked": false
     },
     {
         "id": 338,
@@ -2697,7 +2875,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 2094\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1150\n  group_size: 2094\n comparator:\n  events: 637\n  group_size: 122\n\nNote: The article",
+        "is_chunked": false
     },
     {
         "id": 540,
@@ -2727,7 +2907,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 49\n    group_size: 120\ncomparator:\n    events: 64\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 49\n  group_size: 120\ncomparator:\n  events: 64\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 358,
@@ -2757,7 +2939,9 @@
         "tiktoken_without_attributes_xml_token_num": 2394,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2130,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 287\ncomparator:\n    events: x\n    group_size: 277\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 61.7\n  group_size: 287\ncomparator:\n  events: 48.4\n  group_size: 277",
+        "is_chunked": false
     },
     {
         "id": 109,
@@ -2787,7 +2971,9 @@
         "tiktoken_without_attributes_xml_token_num": 1758,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1564,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 30\ncomparator:\n    events: 26\n    group_size: 30\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 120\ncomparator:\n  events: 26\n  group_size: 120\noutcome:\n  events:\n    group",
+        "is_chunked": false
     },
     {
         "id": 341,
@@ -2817,7 +3003,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 122\ncomparator:\n    events: x\n    group_size: 2094\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 122\n  group_size: 1412\ncomparator:\n  events: 68\n  group_size: 2094",
+        "is_chunked": false
     },
     {
         "id": 516,
@@ -2847,7 +3035,9 @@
         "tiktoken_without_attributes_xml_token_num": 5593,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4514,
-        "output": "```yaml\nintervention:\n    events: 85\n    group_size: 123\ncomparator:\n    events: 67\n    group_size: 121\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 37\n  group_size: 123\ncomparator:\n  events: 10\n  group_size: 121",
+        "is_chunked": false
     },
     {
         "id": 133,
@@ -2877,7 +3067,9 @@
         "tiktoken_without_attributes_xml_token_num": 7944,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5795,
-        "output": "```yaml\nintervention:\n    events: 45\n    group_size: 326\ncomparator:\n    events: 58\n    group_size: 326\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 6\n  group_size: 326\ncomparator:\n  events: 4\n  group_size: 326",
+        "is_chunked": false
     },
     {
         "id": 138,
@@ -2907,7 +3099,9 @@
         "tiktoken_without_attributes_xml_token_num": 2096,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1505,
-        "output": "```yaml\nintervention:\n    events: 32\n    group_size: 74\ncomparator:\n    events: 22\n    group_size: 60\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 22\n  group_size: 74\ncomparator:\n  events: 31\n  group_size: 60\n\noutcome:\n  events:\n    low",
+        "is_chunked": false
     },
     {
         "id": 61,
@@ -2937,7 +3131,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 20\n    group_size: 23\ncomparator:\n    events: 6\n    group_size: 19\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 20\n  group_size: 23\ncomparator:\n  events: 7\n  group_size: 19\n\nYou cannot determine the difference in the disc herniation",
+        "is_chunked": false
     },
     {
         "id": 479,
@@ -2967,7 +3163,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n    events: 1078\n    group_size: 1919\ncomparator:\n    events: 975\n    group_size: 1922\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 551\n  group_size: 1002\ncomparator:\n  events: 452\n  group_size: 1002",
+        "is_chunked": false
     },
     {
         "id": 337,
@@ -2997,7 +3195,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 2094\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1150\n  group_size: 2094\ncomparator:\n  events: 637\n  group_size: 122\n\nThis YAML",
+        "is_chunked": false
     },
     {
         "id": 194,
@@ -3027,7 +3227,9 @@
         "tiktoken_without_attributes_xml_token_num": 9099,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 6033,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 169\ncomparator:\n    events: x\n    group_size: 167\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 4\n  group_size: 169\ncomparator:\n  events: 7\n  group_size: 167",
+        "is_chunked": false
     },
     {
         "id": 651,
@@ -3057,7 +3259,9 @@
         "tiktoken_without_attributes_xml_token_num": 2044,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1751,
-        "output": "```yaml\nintervention:\n    events: 34\n    group_size: 62\ncomparator:\n    events: 45\n    group_size: 62\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 54.8\n  group_size: 62\ncomparator:\n  events: 72.6\n  group_size: 62",
+        "is_chunked": false
     },
     {
         "id": 498,
@@ -3087,7 +3291,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 0\n  group_size: 630\ncomparator:\n  events: 0\n  group_size: 589\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 3\ncomparator:\n  events: 0\n  group_size: 1\noutcome:\n  events:\n    pre: 3\n   ",
+        "is_chunked": false
     },
     {
         "id": 42,
@@ -3117,7 +3323,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n  events: 0\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 24\ncomparator:\n  events: 1\n  group_size: 14\n\n# Note: This YAML representation is based on the",
+        "is_chunked": false
     },
     {
         "id": 541,
@@ -3147,7 +3355,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 70\n    group_size: 120\ncomparator:\n    events: 56\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 70\n  group_size: 120\ncomparator:\n  events: 56\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 495,
@@ -3177,7 +3387,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 8\n  group_size: 10218\ncomparator:\n  events: 11\n  group_size: 7557\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 8\n  group_size: 22\ncomparator:\n  events: 11\n  group_size: 22\n```vbnet\n# Rejection rates for request form",
+        "is_chunked": false
     },
     {
         "id": 493,
@@ -3207,7 +3419,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n    events: 37\n    group_size: 2279\ncomparator:\n    events: 38\n    group_size: 2321\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 37\n  group_size: 22\ncomparator:\n  events: 12\n  group_size: 22",
+        "is_chunked": false
     },
     {
         "id": 378,
@@ -3237,7 +3451,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 46\n    group_size: 59\ncomparator:\n    events: 44\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 58\n  group_size: 123\ncomparator:\n  events: 65\n  group_size: 123",
+        "is_chunked": false
     },
     {
         "id": 87,
@@ -3267,7 +3483,9 @@
         "tiktoken_without_attributes_xml_token_num": 10904,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8432,
-        "output": "```yaml\nintervention:\n  events: x\n  group_size: 7726\ncomparator:\n  events: x\n  group_size: 6885\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0.2\n  group_size: 7726\ncomparator:\n  events: 0.0\n  group_size: 6885",
+        "is_chunked": false
     },
     {
         "id": 340,
@@ -3297,7 +3515,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 122\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 122\n  group_size: 43\ncomparator:\n  events: 101\n  group_size: 37\n\nThis YAML response represents the number",
+        "is_chunked": false
     },
     {
         "id": 20,
@@ -3327,7 +3547,9 @@
         "tiktoken_without_attributes_xml_token_num": 2968,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1931,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 30\ncomparator:\n    events: 0\n    group_size: 22\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 30\ncomparator:\n  events: 0\n  group_size: 22",
+        "is_chunked": false
     },
     {
         "id": 628,
@@ -3357,7 +3579,9 @@
         "tiktoken_without_attributes_xml_token_num": 1296,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 943,
-        "output": "```yaml\nintervention:\n    events: 202\n    group_size: 6051\ncomparator:\n    events: 362\n    group_size: 5892\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 202\n  group_size: 6051\ncomparator:\n  events: 362\n  group_size: 5892",
+        "is_chunked": false
     },
     {
         "id": 361,
@@ -3387,7 +3611,9 @@
         "tiktoken_without_attributes_xml_token_num": 2394,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2130,
-        "output": "```yaml\nintervention:\n  events: 178\n  group_size: 919\ncomparator:\n  events: 228\n  group_size: 922\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 18.8\n  group_size: 655\ncomparator:\n  events: 26.4\n  group_size: 520",
+        "is_chunked": false
     },
     {
         "id": 509,
@@ -3417,7 +3643,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 18\n  group_size: 2279\ncomparator:\n  events: 15\n  group_size: 2321\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 37\n  group_size: 67\n\ncomparator:\n  events: 6\n  group_size: 66\n\nnote: The specific data on technique related rejections",
+        "is_chunked": false
     },
     {
         "id": 272,
@@ -3447,7 +3675,9 @@
         "tiktoken_without_attributes_xml_token_num": 996,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 880,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: x\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: \n  group_size: 30 # number of patients in each group\ncomparator:\n  events: \n  group_size: 30\n\noutcome:\n  ext:",
+        "is_chunked": false
     },
     {
         "id": 137,
@@ -3477,7 +3707,9 @@
         "tiktoken_without_attributes_xml_token_num": 3288,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2363,
-        "output": "```yaml\nintervention:\n    events: 48\n    group_size: 121\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 48\n  group_size: 210\ncomparator:\n  events: 144\n  group_size: 210",
+        "is_chunked": false
     },
     {
         "id": 474,
@@ -3507,7 +3739,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 1522\ncomparator:\n    events: x\n    group_size: 1512\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 41.4\n  group_size: 39\ncomparator:\n  events: 22.6\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 477,
@@ -3537,7 +3771,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n    events: 1284\n    group_size: 1525\ncomparator:\n    events: 1349\n    group_size: 1514\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 84\n  group_size: 1525\ncomparator:\n  events: 89\n  group_size: 1520",
+        "is_chunked": false
     },
     {
         "id": 315,
@@ -3567,7 +3803,9 @@
         "tiktoken_without_attributes_xml_token_num": 2288,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1670,
-        "output": "```yaml\nintervention:\n    events: 5\n    group_size: 22\ncomparator:\n    events: 7\n    group_size: 20\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 22\ncomparator:\n  events: 7\n  group_size: 20",
+        "is_chunked": false
     },
     {
         "id": 333,
@@ -3597,7 +3835,9 @@
         "tiktoken_without_attributes_xml_token_num": 5383,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4396,
-        "output": "```yaml\nintervention:\n  events: 0\n  group_size: 47\ncomparator:\n  events: 1\n  group_size: 45\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 47\ncomparator:\n  events: 1\n  group_size: 45",
+        "is_chunked": false
     },
     {
         "id": 400,
@@ -3627,7 +3867,9 @@
         "tiktoken_without_attributes_xml_token_num": 6474,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5204,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 53\ncomparator:\n    events: x\n    group_size: 53\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 15\n  group_size: 53\ncomparator:\n  events: 12\n  group_size: 53",
+        "is_chunked": false
     },
     {
         "id": 122,
@@ -3657,7 +3899,9 @@
         "tiktoken_without_attributes_xml_token_num": 7883,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5770,
-        "output": "```yaml\nintervention:\n    events: 86\n    group_size: 94\ncomparator:\n    events: 82\n    group_size: 93\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 86\n  group_size: 94\ncomparator:\n  events: 82\n  group_size: 93",
+        "is_chunked": false
     },
     {
         "id": 654,
@@ -3687,7 +3931,9 @@
         "tiktoken_without_attributes_xml_token_num": 2044,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1751,
-        "output": "```yaml\nintervention:\n    events: 10\n    group_size: 62\ncomparator:\n    events: 1\n    group_size: 62\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 20\n  group_size: 62\ncomparator:\n  events: 1\n  group_size: 62",
+        "is_chunked": false
     },
     {
         "id": 40,
@@ -3717,7 +3963,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 6\ncomparator:\n  events: 0\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 139,
@@ -3747,7 +3995,9 @@
         "tiktoken_without_attributes_xml_token_num": 2096,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1505,
-        "output": "```yaml\nintervention:\n    events: 524\n    group_size: 705\ncomparator:\n    events: 503\n    group_size: 718\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 524\n  group_size: 705\ncomparator:\n  events: 503\n  group_size: 718",
+        "is_chunked": false
     },
     {
         "id": 484,
@@ -3777,7 +4027,9 @@
         "tiktoken_without_attributes_xml_token_num": 2633,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2065,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: x\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 34\n  group_size: 114\ncomparator:\n  events: 19\n  group_size: 114\n\nNote: The provided information from the text",
+        "is_chunked": false
     },
     {
         "id": 496,
@@ -3807,7 +4059,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 12\n  group_size: 4114\ncomparator:\n  events: 11\n  group_size: 3973\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 8\n  group_size: 4114\n\ncomparator:\n  events: 11\n  group_size: 4114\n\noutcome:\n  #",
+        "is_chunked": false
     },
     {
         "id": 94,
@@ -3837,7 +4091,9 @@
         "tiktoken_without_attributes_xml_token_num": 745,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 637,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 30\ncomparator:\n    events: 0\n    group_size: 30\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 60\ncomparator:\n  events: 15\n  group_size: 60",
+        "is_chunked": false
     },
     {
         "id": 482,
@@ -3867,7 +4123,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n  events: 310\n  group_size: 404\ncomparator:\n  events: 331\n  group_size: 403\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 162\n  group_size: 231\ncomparator:\n  events: 208\n  group_size: 280",
+        "is_chunked": false
     },
     {
         "id": 41,
@@ -3897,7 +4155,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 5\ncomparator:\n  events: 0\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 259,
@@ -3927,7 +4187,9 @@
         "tiktoken_without_attributes_xml_token_num": 4660,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2966,
-        "output": "```yaml\nintervention:\n    events: 1\n    group_size: 38\ncomparator:\n    events: 0\n    group_size: 39\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1\n  group_size: 38\ncomparator:\n  events: 0\n  group_size: 39",
+        "is_chunked": false
     },
     {
         "id": 344,
@@ -3957,7 +4219,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 122\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 122\ncomparator:\n  events: 68\n  group_size: 122",
+        "is_chunked": false
     },
     {
         "id": 362,
@@ -3987,7 +4251,9 @@
         "tiktoken_without_attributes_xml_token_num": 2394,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2130,
-        "output": "```yaml\nintervention:\n  events: 551\n  group_size: 919\ncomparator:\n  events: 498\n  group_size: 922\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 600\n  group_size: 919\ncomparator:\n  events: 579\n  group_size: 922",
+        "is_chunked": false
     },
     {
         "id": 65,
@@ -4017,7 +4283,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 14\n    group_size: 23\ncomparator:\n    events: 3\n    group_size: 18\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 44\n  group_size: 60\ncomparator:\n  events: 11\n  group_size: 60\n```\n```",
+        "is_chunked": false
     },
     {
         "id": 377,
@@ -4047,7 +4315,9 @@
         "tiktoken_without_attributes_xml_token_num": 3649,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2573,
-        "output": "```yaml\nintervention:\n    events: 15\n    group_size: 59\ncomparator:\n    events: 12\n    group_size: 64\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 25\n  group_size: 59\ncomparator:\n  events: 37\n  group_size: 64",
+        "is_chunked": false
     },
     {
         "id": 626,
@@ -4077,7 +4347,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 2\n    group_size: 85\ncomparator:\n    events: 3\n    group_size: 84\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3.7\n  group_size: 84\ncomparator:\n  events: 4.6\n  group_size: 84",
+        "is_chunked": false
     },
     {
         "id": 691,
@@ -4107,7 +4379,9 @@
         "tiktoken_without_attributes_xml_token_num": 8112,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5695,
-        "output": "```yaml\nintervention:\n    events: 185\n    group_size: 209\ncomparator:\n    events: 84\n    group_size: 104\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 92.0% # percent of participants in IG3 who provided vaccination data\n  group_size: 102 # number of participants in IG3\ncomparator:\n  events",
+        "is_chunked": false
     },
     {
         "id": 342,
@@ -4137,7 +4411,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 122\ncomparator:\n    events: x\n    group_size: 2094\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 122\n  group_size: 190\n comparator:\n  events: 102\n  group_size: 2720\n\nNote: The given numbers",
+        "is_chunked": false
     },
     {
         "id": 625,
@@ -4167,7 +4443,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 8\n    group_size: 85\ncomparator:\n    events: 4\n    group_size: 84\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 4.6\n  group_size: 84\ncomparator:\n  events: 3.7\n  group_size: 84",
+        "is_chunked": false
     },
     {
         "id": 124,
@@ -4197,7 +4475,9 @@
         "tiktoken_without_attributes_xml_token_num": 7883,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5770,
-        "output": "```yaml\nintervention:\n    events: 10\n    group_size: 19\ncomparator:\n    events: 6\n    group_size: 12\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 52.6\n  group_size: 94\ncomparator:\n  events: 50.0\n  group_size: 93",
+        "is_chunked": false
     },
     {
         "id": 546,
@@ -4227,7 +4507,9 @@
         "tiktoken_without_attributes_xml_token_num": 2587,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2232,
-        "output": "```yaml\nintervention:\n    events: 3\n    group_size: 69\ncomparator:\n    events: 5\n    group_size: 68\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3\n  group_size: 69\ncomparator:\n  events: 5\n  group_size: 68",
+        "is_chunked": false
     },
     {
         "id": 343,
@@ -4257,7 +4539,9 @@
         "tiktoken_without_attributes_xml_token_num": 5825,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4026,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 2094\ncomparator:\n    events: x\n    group_size: 637\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 1150\n  group_size: 1577\ncomparator:\n  events: 122\n  group_size: 259\n\n(Note: The",
+        "is_chunked": false
     },
     {
         "id": 631,
@@ -4287,7 +4571,9 @@
         "tiktoken_without_attributes_xml_token_num": 2016,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1562,
-        "output": "```yaml\nintervention:\n    events: 2\n    group_size: 30\ncomparator:\n    events: 7\n    group_size: 22\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 30\ncomparator:\n  events: 7\n  group_size: 22",
+        "is_chunked": false
     },
     {
         "id": 127,
@@ -4317,7 +4603,9 @@
         "tiktoken_without_attributes_xml_token_num": 3205,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2434,
-        "output": "```yaml\nintervention:\n    events: 14\n    group_size: 49\ncomparator:\n    events: 27\n    group_size: 50\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 50\ncomparator:\n  events: 15\n  group_size: 50\n\noutcome:\n  events:\n    early:",
+        "is_chunked": false
     },
     {
         "id": 13,
@@ -4347,7 +4635,9 @@
         "tiktoken_without_attributes_xml_token_num": 8106,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5529,
-        "output": "```yaml\nintervention:\n    events: 93\n    group_size: 103\ncomparator:\n    events: 44\n    group_size: 97\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 90.3\n  group_size: 103\ncomparator:\n  events: 45.4\n  group_size: 97",
+        "is_chunked": false
     },
     {
         "id": 269,
@@ -4377,7 +4667,9 @@
         "tiktoken_without_attributes_xml_token_num": 996,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 880,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: x\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: [[6, 5], [1, 3]]\n  group_size: [12, 30]\ncomparator:\n  events: [[1, 4], [3, ",
+        "is_chunked": false
     },
     {
         "id": 478,
@@ -4407,7 +4699,9 @@
         "tiktoken_without_attributes_xml_token_num": 13328,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 9179,
-        "output": "```yaml\nintervention:\n    events: 34\n    group_size: 581\ncomparator:\n    events: 32\n    group_size: 569\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 487\n  group_size: 482\ncomparator:\n  events: 487\n  group_size: 482\n\nThere is no information available on",
+        "is_chunked": false
     },
     {
         "id": 178,
@@ -4437,7 +4731,9 @@
         "tiktoken_without_attributes_xml_token_num": 17627,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 13068,
-        "output": "```yaml\nintervention:\n    events: 7\n    group_size: 14\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 7\n  group_size: 24\ncomparator:\n  events: 14\n  group_size: 24",
+        "is_chunked": false
     },
     {
         "id": 405,
@@ -4467,7 +4763,9 @@
         "tiktoken_without_attributes_xml_token_num": 3505,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2662,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 20\ncomparator:\n    events: x\n    group_size: 20\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 20\ncomparator:\n  events: 18\n  group_size: 20",
+        "is_chunked": false
     },
     {
         "id": 641,
@@ -4497,7 +4795,9 @@
         "tiktoken_without_attributes_xml_token_num": 10628,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8141,
-        "output": "```yaml\nintervention:\n    events: 29\n    group_size: 48\ncomparator:\n    events: 10\n    group_size: 23\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 29\n  group_size: 59\ncomparator:\n  events: 10\n  group_size: 30",
+        "is_chunked": false
     },
     {
         "id": 153,
@@ -4527,7 +4827,9 @@
         "tiktoken_without_attributes_xml_token_num": 2470,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2114,
-        "output": "```yaml\nintervention:\n    events: 17\n    group_size: 40\ncomparator:\n    events: 7\n    group_size: 40\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 17\n  group_size: 40\ncomparator:\n  events: 7\n  group_size: 40\n\noutcome: (for post-intervention data",
+        "is_chunked": false
     },
     {
         "id": 542,
@@ -4557,7 +4859,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 57\n    group_size: 120\ncomparator:\n    events: 53\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 57\n  group_size: 120\ncomparator:\n  events: 57\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 689,
@@ -4587,7 +4891,9 @@
         "tiktoken_without_attributes_xml_token_num": 8112,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 5695,
-        "output": "```yaml\nintervention:\n    events: 94\n    group_size: 102\ncomparator:\n    events: x\n    group_size: x\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 92\n  group_size: 102\ncomparator:\n  events: 85\n  group_size: 107\n\nNote: These numbers represent the proportion of",
+        "is_chunked": false
     },
     {
         "id": 501,
@@ -4617,7 +4923,9 @@
         "tiktoken_without_attributes_xml_token_num": 5719,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4155,
-        "output": "```yaml\nintervention:\n  events: 10\n  group_size: 2279\ncomparator:\n  events: 15\n  group_size: 2321\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 37\n  group_size: 22\ncomparator:\n  events: 6\n  group_size: 22\n\npreanalytical_errors_CDC_C",
+        "is_chunked": false
     },
     {
         "id": 250,
@@ -4647,7 +4955,9 @@
         "tiktoken_without_attributes_xml_token_num": 11480,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8549,
-        "output": "```yaml\nintervention:\n    events: 42\n    group_size: 402\ncomparator:\n    events: 41\n    group_size: 388\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 42\n  group_size: 398\ncomparator:\n  events: 41\n  group_size: 389",
+        "is_chunked": false
     },
     {
         "id": 174,
@@ -4677,7 +4987,9 @@
         "tiktoken_without_attributes_xml_token_num": 6902,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 4923,
-        "output": "```yaml\nintervention:\n    events: 9\n    group_size: 33\ncomparator:\n    events: 11\n    group_size: 15\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 17\ncomparator:\n  events: 11\n  group_size: 15",
+        "is_chunked": false
     },
     {
         "id": 64,
@@ -4707,7 +5019,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 14\n    group_size: 23\ncomparator:\n    events: 4\n    group_size: 19\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 39\n  group_size: 60\ncomparator:\n  events: 11\n  group_size: 60\n```yaml\ncomparison:\n  intervention:",
+        "is_chunked": false
     },
     {
         "id": 37,
@@ -4737,7 +5051,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 28\ncomparator:\n  events: 3\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 38,
@@ -4767,7 +5083,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 0\n    group_size: 6\ncomparator:\n    events: 0\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 0\n  group_size: 14\ncomparator:\n  events: 0\n  group_size: 14\nmacitentan_1mg:\n  events: x",
+        "is_chunked": false
     },
     {
         "id": 467,
@@ -4797,7 +5115,9 @@
         "tiktoken_without_attributes_xml_token_num": 4244,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3133,
-        "output": "```yaml\nintervention:\n    events: 9\n    group_size: 66\ncomparator:\n    events: 11\n    group_size: 75\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 9\n  group_size: 79\ncomparator:\n  events: 11\n  group_size: 86",
+        "is_chunked": false
     },
     {
         "id": 621,
@@ -4827,7 +5147,9 @@
         "tiktoken_without_attributes_xml_token_num": 1549,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1357,
-        "output": "```yaml\nintervention:\n    events: 71\n    group_size: 85\ncomparator:\n    events: 72\n    group_size: 84\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 71\n  group_size: 85\ncomparator:\n  events: 72\n  group_size: 84",
+        "is_chunked": false
     },
     {
         "id": 63,
@@ -4857,7 +5179,9 @@
         "tiktoken_without_attributes_xml_token_num": 1263,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1073,
-        "output": "```yaml\nintervention:\n    events: 23\n    group_size: 23\ncomparator:\n    events: 5\n    group_size: 19\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 100.0%\n  group_size: 23\ncomparator:\n  events: 26.3%\n  group_size: 19",
+        "is_chunked": false
     },
     {
         "id": 538,
@@ -4887,7 +5211,9 @@
         "tiktoken_without_attributes_xml_token_num": 2387,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 1552,
-        "output": "```yaml\nintervention:\n    events: 57\n    group_size: 120\ncomparator:\n    events: 53\n    group_size: 120\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 57\n  group_size: 120\ncomparator:\n  events: 52\n  group_size: 120",
+        "is_chunked": false
     },
     {
         "id": 84,
@@ -4917,7 +5243,9 @@
         "tiktoken_without_attributes_xml_token_num": 10904,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8432,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 7726\ncomparator:\n    events: x\n    group_size: 6885\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 23\n  group_size: 6885\ncomparator:\n  events: 25\n  group_size: 7726",
+        "is_chunked": false
     },
     {
         "id": 118,
@@ -4947,7 +5275,9 @@
         "tiktoken_without_attributes_xml_token_num": 2670,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2328,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 19\ncomparator:\n    events: x\n    group_size: 13\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 2\n  group_size: 15\ncomparator:\n  events: 4\n  group_size: 13\n\nThe provided article does not explicitly state the number of patients in",
+        "is_chunked": false
     },
     {
         "id": 182,
@@ -4977,7 +5307,9 @@
         "tiktoken_without_attributes_xml_token_num": 3742,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 2832,
-        "output": "```yaml\nintervention:\n    events: 4\n    group_size: 33\ncomparator:\n    events: 2\n    group_size: 33\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 4\n  group_size: 33\ncomparator:\n  events: 2\n  group_size: 33\n\nNote: The above information is extracted from the given text,",
+        "is_chunked": false
     },
     {
         "id": 253,
@@ -5007,7 +5339,9 @@
         "tiktoken_without_attributes_xml_token_num": 11480,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8549,
-        "output": "```yaml\nintervention:\n    events: 155\n    group_size: 406\ncomparator:\n    events: 152\n    group_size: 393\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 155\n  group_size: 406\ncomparator:\n  events: 152\n  group_size: 393",
+        "is_chunked": false
     },
     {
         "id": 266,
@@ -5037,7 +5371,9 @@
         "tiktoken_without_attributes_xml_token_num": 4896,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3773,
-        "output": "```yaml\nintervention:\n    events: 4\n    group_size: 80\ncomparator:\n    events: 4\n    group_size: 79\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 80\ncomparator:\n  events: 4\n  group_size: 79",
+        "is_chunked": false
     },
     {
         "id": 36,
@@ -5067,7 +5403,9 @@
         "tiktoken_without_attributes_xml_token_num": 4376,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 3326,
-        "output": "```yaml\nintervention:\n    events: 5\n    group_size: 6\ncomparator:\n    events: 3\n    group_size: 14\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 5\n  group_size: 6\ncomparator:\n  events: 3\n  group_size: 14",
+        "is_chunked": false
     },
     {
         "id": 86,
@@ -5097,7 +5435,9 @@
         "tiktoken_without_attributes_xml_token_num": 10904,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8432,
-        "output": "```yaml\nintervention:\n    events: x\n    group_size: 7726\ncomparator:\n    events: x\n    group_size: 6885\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 3\n  group_size: 7726\ncomparator:\n  events: 3\n  group_size: 6885",
+        "is_chunked": false
     },
     {
         "id": 642,
@@ -5127,6 +5467,8 @@
         "tiktoken_without_attributes_xml_token_num": 10628,
         "split": "TEST",
         "tiktoken_without_attributes_markdown_token_num": 8141,
-        "output": "```yaml\nintervention:\n    events: 45\n    group_size: 48\ncomparator:\n    events: 21\n    group_size: 23\n```"
+        "chunk_num_tokens": [],
+        "output": "intervention:\n  events: 45\n  group_size: 59\ncomparator:\n  events: 21\n  group_size: 30",
+        "is_chunked": false
     }
 ]

@@ -135,7 +135,7 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
 
 def clean_yaml_output(output: str) -> str:
     """
-    This method cleans the yaml output
+    This method cleans the yaml output string
 
     :param output: yaml output
 
@@ -143,6 +143,14 @@ def clean_yaml_output(output: str) -> str:
     """
     cleaned_output = output.replace("```", "").replace("yaml", "").replace("\t", "")
     cleaned_output = cleaned_output.replace("-x\n", "x\n").replace("-\n", "x\n") # some post processing
+    cleaned_output = cleaned_output.replace("NUMBER", "x").replace("N\A", "x")
+    cleaned_output = cleaned_output.replace("*", "")
+
+    # remove instances when outcome shows up as a field for yaml. keeps the output as is if outcome doesn't show up
+    cleaned_output = cleaned_output.split("outcome", 1)[0]
+
+
+
     return cleaned_output
 
 def parse_multiple_yaml_output(output: str) -> list[str]:

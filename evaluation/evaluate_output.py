@@ -15,6 +15,30 @@ from calculate_metrics import MetricsCalculator
 import yaml
 import json
 
+DEFAULT_BINARY_OUTCOMES_DICT = {
+    "intervention": {
+        "events": "x",
+        "group_size": "x"
+    },
+    "comparator": {
+        "events": "x",
+        "group_size": "x"
+    }
+}
+
+DEFAULT_CONTINUOUS_OUTCOMES_DICT = {
+    "intervention": {
+        "mean": "x",
+        "standard_deviation": "x",
+        "group_size": "x"
+    },
+    "comparator": {
+        "mean": "x",
+        "standard_deviation": "x",
+        "group_size": "x"
+    }
+}
+
 class MetaAnalysisTaskEvaluator:
     def __init__(self, task: str, output_path: str, metrics_path: str) -> None:
         self.task = task
@@ -47,8 +71,6 @@ class MetaAnalysisTaskEvaluator:
         This method preprocesses the data for binary_outcomes task
         """
         for example in self.data:
-            model_output = clean_yaml_output(example["output"])
-
             # need to also fill in the x to make it easier to compare with the output results
             fields_to_check = ["intervention_events", "intervention_group_size", "comparator_events", "comparator_group_size"]
             for field in fields_to_check:
@@ -63,27 +85,35 @@ class MetaAnalysisTaskEvaluator:
                 "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct)
             })
 
+            model_output = example["output"]
             # aggregate the output if the input was chunked because the output will have multiple parts
             if "is_chunked" in example and example["is_chunked"]:
                 yaml_strings_list = parse_multiple_yaml_output(model_output)
                 yaml_dict_list = []
                 for yaml_string in yaml_strings_list:
                     try:
-                        yaml_dict_list.append(yaml.safe_load(yaml_string))
+                        cleaned_yaml_string = clean_yaml_output(yaml_string)
+                        yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
-                        print(f"Error parsing yaml string: {yaml_string}")
+                        print(f"Error parsing yaml string: {cleaned_yaml_string}")
+                        yaml_dict_list.append(DEFAULT_BINARY_OUTCOMES_DICT)
                 output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list)
             else:
                 try:
-                    output_dict = yaml.safe_load(model_output)
+                    cleaned_yaml_string = clean_yaml_output(model_output)
+                    output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
-                    print(f"Error parsing yaml string: {model_output}")
+                    print(f"Error parsing yaml string: {cleaned_yaml_string}")
+                    output_dict = DEFAULT_BINARY_OUTCOMES_DICT
 
             if "intervention" in output_dict and "comparator" in output_dict:
-                ie_output = output_dict["intervention"]["events"]
-                it_output = output_dict["intervention"]["group_size"]
-                ce_output = output_dict["comparator"]["events"]
-                ct_output = output_dict["comparator"]["group_size"]
+                intervention = output_dict["intervention"]
+                comparator = output_dict["comparator"]
+
+                ie_output = intervention["events"] if intervention and "events" in intervention else "x"
+                it_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
+                ce_output = comparator["events"] if comparator and "events" in comparator else "x"
+                ct_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
                 new_item = {
                     "intervention_events_output": ie_output,
                     "intervention_group_size_output": it_output,
@@ -107,8 +137,6 @@ class MetaAnalysisTaskEvaluator:
         This method preprocesses the data for continuous_outcomes task
         """
         for example in self.data:
-            model_output = clean_yaml_output(example["output"])
-
             # need to also fill in the x to make it easier to compare with the output results
             fields_to_check = ["intervention_mean", "intervention_standard_deviation", "intervention_group_size", "comparator_mean", "comparator_standard_deviation", "comparator_group_size"]
             for field in fields_to_check:
@@ -123,29 +151,37 @@ class MetaAnalysisTaskEvaluator:
                 "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd),
             })
 
+            model_output = example["output"]
             # aggregate the output if the input was chunked because the output will have multiple parts
             if "is_chunked" in example and example["is_chunked"]:
                 yaml_strings_list = parse_multiple_yaml_output(model_output)
                 yaml_dict_list = []
                 for yaml_string in yaml_strings_list:
                     try:
-                        yaml_dict_list.append(yaml.safe_load(yaml_string))
+                        cleaned_yaml_string = clean_yaml_output(yaml_string)
+                        yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
-                        print(f"Error parsing yaml string: {yaml_string}")
+                        print(f"Error parsing yaml string: {cleaned_yaml_string}")
+                        yaml_dict_list.append(DEFAULT_CONTINUOUS_OUTCOMES_DICT)
                 output_dict = aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list)
             else:
                 try:
-                    output_dict = yaml.safe_load(model_output)
+                    cleaned_yaml_string = clean_yaml_output(model_output)
+                    output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
-                    print(f"Error parsing yaml string: {model_output}")
+                    print(f"Error parsing yaml string: {cleaned_yaml_string}")
+                    output_dict = DEFAULT_CONTINUOUS_OUTCOMES_DICT
 
             if "intervention" in output_dict and "comparator" in output_dict:
-                im_output = output_dict["intervention"]["mean"]
-                isd_output = output_dict["intervention"]["standard_deviation"]
-                it_output = output_dict["intervention"]["group_size"]
-                cm_output = output_dict["comparator"]["mean"]
-                csd_output = output_dict["comparator"]["standard_deviation"]
-                ct_output = output_dict["comparator"]["group_size"]
+                intervention = output_dict["intervention"]
+                comparator = output_dict["comparator"]
+
+                im_output = intervention["mean"] if intervention and "mean" in intervention else "x"
+                isd_output = intervention["standard_deviation"] if intervention and "standard_deviation" in intervention else "x"
+                it_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
+                cm_output = comparator["mean"] if comparator and "mean" in comparator else "x"
+                csd_output = comparator["standard_deviation"] if comparator and "standard_deviation" in comparator else "x"
+                ct_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
                 new_item = {
                     "intervention_mean_output": im_output,
                     "intervention_standard_deviation_output": isd_output,
