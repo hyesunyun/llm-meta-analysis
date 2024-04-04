@@ -32,7 +32,7 @@ python3 evaluation/run_task.py --model gpt35 --task binary_outcomes --split test
 
 Example script for running case study (mortality) on Mistral 7B:
 ```bash
-python3 evaluation/run_task.py --model mistral7b --task end_to_end --input_path evaluation/data/meta_analysis_case_study.json --output_path evaluation/outputs/binary_outcomes --pmc_files_path evaluation/data/no_attributes_case_study_markdown_files
+python3 evaluation/run_task.py --model mistral7b --task end_to_end --input_path evaluation/data/meta_analysis_case_study.json --output_path evaluation/outputs/end_to_end --pmc_files_path evaluation/data/no_attributes_case_study_markdown_files
 ```
 
 You can change the arguments to run different tasks and models.
