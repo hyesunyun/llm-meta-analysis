@@ -33,7 +33,7 @@ MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_
 
 class MetaAnalysisTaskRunner:
 
-    def __init__(self, model_name: str, task: str, split: str, output_path: str, pmc_files_path: str, is_test: bool=False, prompt_name: Optional[str]=None, input_path: Optional[str]=None) -> None:
+    def __init__(self, model_name: str, task: str, split: str, output_path: str, is_test: bool=False, prompt_name: Optional[str]=None, input_path: Optional[str]=None, pmc_files_path: Optional[str]=None) -> None:
         '''
         This class runs the meta analysis task for the given model, task, and split
 
@@ -41,10 +41,10 @@ class MetaAnalysisTaskRunner:
         :param task: task to run
         :param split: split of the dataset to run (dev or test)
         :param output_path: path to save the output data
-        :param pmc_files_path: path to the folder where the PMC files are stored
-        :param is_test: whether to run the task with only 10 instances for debugging purposes
+        :param is_test: whether to run the task with only 10 instances for debugging purposes. default is False
         :param prompt_name: name of the prompt template to use (Optional, default is the first prompt template for the given task)
         :param input_path: path to the input file (Optional, default is the annotated_rct_dataset.json file in the data folder)
+        :param pmc_files_path: path to the folder where the PMC files are stored
 
         :return None
         '''
@@ -53,11 +53,12 @@ class MetaAnalysisTaskRunner:
         self.split = split
         self.prompt_name = prompt_name
         self.output_path = output_path
-        self.pmc_files_path = pmc_files_path
         self.is_test = is_test
         # the default input path is the annotated_rct_dataset.json file in the data folder
         # this file is the evaluation dataset
         self.input_path = input_path if input_path is not None else os.path.join(DATA_FOLDER_PATH, "annotated_rct_dataset.json")
+        # the default input path is the no_attributes_markdown_files folder
+        self.pmc_files_path = pmc_files_path if pmc_files_path is not None else MD_FOLDER_PATH
 
         self.prompt_template = None
         self.dataset = None
@@ -260,7 +261,7 @@ def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str
             output types: (json, csv) and binary outcomes: (json, csv) and continuous outcomes: (json, csv)
     '''
     # First, call the outcome type task
-    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, pmc_files_path, is_test, None, input_path)
+    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, is_test, None, input_path, pmc_files_path)
     outcome_type_json_file_path, outcome_type_csv_file_path = outcome_type_task_runner.run_task()
     # Do some post-processing to pass the output to the next task as input
     outcome_type_outputs = load_json_file(outcome_type_json_file_path)
@@ -273,11 +274,11 @@ def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str
     save_json_file(outcome_type_json_file_path, outcome_type_outputs)
 
     # Second, call binary_outcomes task using the output from the outcome_type task
-    binary_outcomes_task_runner = MetaAnalysisTaskRunner(model, "binary_outcomes", split, output_path, pmc_files_path, is_test, None, outcome_type_json_file_path)
+    binary_outcomes_task_runner = MetaAnalysisTaskRunner(model, "binary_outcomes", split, output_path, is_test, None, outcome_type_json_file_path, pmc_files_path)
     binary_outcomes_json_file_path, binary_outcomes_csv_file_path = binary_outcomes_task_runner.run_task()
 
     # Third, call continuous_outcomes task using the output from the outcome_type task
-    continuous_outcomes_task_runner = MetaAnalysisTaskRunner(model, "continuous_outcomes", split, output_path, pmc_files_path, is_test, None, outcome_type_json_file_path)
+    continuous_outcomes_task_runner = MetaAnalysisTaskRunner(model, "continuous_outcomes", split, output_path, is_test, None, outcome_type_json_file_path, pmc_files_path)
     continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path = continuous_outcomes_task_runner.run_task()
 
     return (outcome_type_json_file_path, outcome_type_csv_file_path), (binary_outcomes_json_file_path, binary_outcomes_csv_file_path), (continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path)
@@ -289,9 +290,9 @@ if __name__ == '__main__':
     parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes', 'end_to_end'], help="type of task to run", required=True)
     parser.add_argument("--split", default=None, choices=["test", "dev"], help="which split of the default dataset to run. Required if input_path is not specified and overrides input_path.")
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")
-    parser.add_argument("--input_path", default="./input", help="directory of where the input data is stored. this is required if split is not specified.")
+    parser.add_argument("--input_path", default=None, help="directory of where the input data is stored. this is required if split is not specified.")
     parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved.")
-    parser.add_argument("--pmc_files_path", default=MD_FOLDER_PATH, help="directory of where the PMC files are stored. Default is the no_attributes_markdown_files folder.")
+    parser.add_argument("--pmc_files_path", default=None, help="directory of where the PMC files are stored. Default is the no_attributes_markdown_files folder. OPTIONAL")
     # do --no-test for explicit False
     parser.add_argument("--test", action=argparse.BooleanOptionalAction, help="used for debugging purposes. test will only run random 10 instances from the dataset.")
     
@@ -306,12 +307,14 @@ if __name__ == '__main__':
     pmc_files_path = args.pmc_files_path
     is_test = args.test
 
-    print("Arguments for the Clinical Trials Meta Analysis Task Runner:")
+    print("Arguments Provided for the Clinical Trials Meta Analysis Task Runner:")
     print(f"Model:        {model}")
     print(f"Task:         {task}")
     print(f"Split:        {split}")
     print(f"Prompt Name:  {prompt_name}")
+    print(f"Input Path:   {input_path}")
     print(f"Output Path:  {output_path}")
+    print(f"PMC Files:    {pmc_files_path}")
     print(f"Is Test:      {is_test}")
     print()
 

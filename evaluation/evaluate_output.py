@@ -241,7 +241,7 @@ if __name__ == '__main__':
     output_path = args.output_path
     metrics_path = args.metrics_path
 
-    print("Arguments for the Clinical Trials Meta Analysis Task Evaluator:")
+    print("Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:")
     print(f"Task:         {task}")
     print(f"Output Path:  {output_path}")
     print(f"Metrics Path: {metrics_path}")
