@@ -6,9 +6,6 @@ import csv
 import math
 from statistics import mode
 
-XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
-MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files")
-
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
     This method formats each dataset example to the give prompt template
@@ -73,30 +70,32 @@ def save_dataset_to_csv(dataset: List[Dict], file_path: str, columns_to_drop: Op
         dict_writer.writeheader()
         dict_writer.writerows(dataset)
 
-def get_xml_content_by_pmcid(pmcid: str) -> str:
+def get_xml_content_by_pmcid(pmc_file_path: str, pmcid: str) -> str:
     """
     This method gets the xml file contents of a given pmcid
-
+    
+    :param pmc_file_path: path to the pmc files
     :param pmcid: pmcid of the xml file
 
     :return xml file contents as a string
     """
     xml_filename = f"PMC{pmcid}.xml"
-    xml_path = os.path.join(XML_FOLDER_PATH, xml_filename)
+    xml_path = os.path.join(pmc_file_path, xml_filename)
     with open(xml_path, "r") as xml_file:
         xml_content = xml_file.read()
     return xml_content
 
-def get_md_content_by_pmcid(pmcid: str) -> str:
+def get_md_content_by_pmcid(pmc_file_path: str, pmcid: str) -> str:
     """
     This method gets the markdown (md) file contents of a given pmcid
 
+    :param pmc_file_path: path to the pmc files
     :param pmcid: pmcid of the md file
 
     :return md file contents as a string
     """
     md_filename = f"PMC{pmcid}.md"
-    md_path = os.path.join(MD_FOLDER_PATH, md_filename)
+    md_path = os.path.join(pmc_file_path, md_filename)
     with open(md_path, "r") as md_file:
         md_content = md_file.read()
     return md_content

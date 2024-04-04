@@ -28,10 +28,12 @@ from datetime import datetime
 import random
 
 DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
+MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files")
 
 class MetaAnalysisTaskRunner:
 
-    def __init__(self, model_name: str, task: str, split: str, output_path: str, is_test: bool=False, prompt_name: Optional[str]=None, input_path: Optional[str]=None) -> None:
+    def __init__(self, model_name: str, task: str, split: str, output_path: str, pmc_files_path: str, is_test: bool=False, prompt_name: Optional[str]=None, input_path: Optional[str]=None) -> None:
         '''
         This class runs the meta analysis task for the given model, task, and split
 
@@ -39,6 +41,7 @@ class MetaAnalysisTaskRunner:
         :param task: task to run
         :param split: split of the dataset to run (dev or test)
         :param output_path: path to save the output data
+        :param pmc_files_path: path to the folder where the PMC files are stored
         :param is_test: whether to run the task with only 10 instances for debugging purposes
         :param prompt_name: name of the prompt template to use (Optional, default is the first prompt template for the given task)
         :param input_path: path to the input file (Optional, default is the annotated_rct_dataset.json file in the data folder)
@@ -50,6 +53,7 @@ class MetaAnalysisTaskRunner:
         self.split = split
         self.prompt_name = prompt_name
         self.output_path = output_path
+        self.pmc_files_path = pmc_files_path
         self.is_test = is_test
         # the default input path is the annotated_rct_dataset.json file in the data folder
         # this file is the evaluation dataset
@@ -109,12 +113,12 @@ class MetaAnalysisTaskRunner:
         # if test, only get 10 random examples
         if self.is_test:
             random.shuffle(dataset)
-            dataset = dataset[:10]
+            dataset = dataset[:10] if len(dataset) > 10 else dataset
 
         # Add md content to each example
         for example in dataset:
             pmcid = example["pmcid"]
-            md_content = get_md_content_by_pmcid(pmcid)
+            md_content = get_md_content_by_pmcid(self.pmc_files_path, pmcid)
             md_item = {"abstract_and_results": md_content}
             example.update(md_item)
 
@@ -241,7 +245,7 @@ class MetaAnalysisTaskRunner:
 
         return json_file_path, csv_file_path
 
-def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str, is_test: bool) -> Tuple[Tuple[str, str], Tuple[str, str], Tuple[str, str]]:
+def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str, pmc_files_path: str, is_test: bool) -> Tuple[Tuple[str, str], Tuple[str, str], Tuple[str, str]]:
     '''
     This method runs the end-to-end task for the given model and split
     
@@ -249,13 +253,14 @@ def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str
     :param split: split of the dataset to run (dev or test)
     :param input_path: path to the input file
     :param output_path: path to save the output data
+    :param pmc_files_path: path to the folder where the PMC files are stored
     :param is_test: whether to run the task with only 10 instances for debugging purposes
     
     :return paths to the output files (json and csv) for outcome types and binary and continuous outcomes as a tuple
             output types: (json, csv) and binary outcomes: (json, csv) and continuous outcomes: (json, csv)
     '''
     # First, call the outcome type task
-    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, is_test, None, input_path)
+    outcome_type_task_runner = MetaAnalysisTaskRunner(model, "outcome_type", split, output_path, pmc_files_path, is_test, None, input_path)
     outcome_type_json_file_path, outcome_type_csv_file_path = outcome_type_task_runner.run_task()
     # Do some post-processing to pass the output to the next task as input
     outcome_type_outputs = load_json_file(outcome_type_json_file_path)
@@ -268,11 +273,11 @@ def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str
     save_json_file(outcome_type_json_file_path, outcome_type_outputs)
 
     # Second, call binary_outcomes task using the output from the outcome_type task
-    binary_outcomes_task_runner = MetaAnalysisTaskRunner(model, "binary_outcomes", split, output_path, is_test, None, outcome_type_json_file_path)
+    binary_outcomes_task_runner = MetaAnalysisTaskRunner(model, "binary_outcomes", split, output_path, pmc_files_path, is_test, None, outcome_type_json_file_path)
     binary_outcomes_json_file_path, binary_outcomes_csv_file_path = binary_outcomes_task_runner.run_task()
 
     # Third, call continuous_outcomes task using the output from the outcome_type task
-    continuous_outcomes_task_runner = MetaAnalysisTaskRunner(model, "continuous_outcomes", split, output_path, is_test, None, outcome_type_json_file_path)
+    continuous_outcomes_task_runner = MetaAnalysisTaskRunner(model, "continuous_outcomes", split, output_path, pmc_files_path, is_test, None, outcome_type_json_file_path)
     continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path = continuous_outcomes_task_runner.run_task()
 
     return (outcome_type_json_file_path, outcome_type_csv_file_path), (binary_outcomes_json_file_path, binary_outcomes_csv_file_path), (continuous_outcomes_json_file_path, continuous_outcomes_csv_file_path)
@@ -286,6 +291,7 @@ if __name__ == '__main__':
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")
     parser.add_argument("--input_path", default="./input", help="directory of where the input data is stored. this is required if split is not specified.")
     parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results should be saved.")
+    parser.add_argument("--pmc_files_path", default=MD_FOLDER_PATH, help="directory of where the PMC files are stored. Default is the no_attributes_markdown_files folder.")
     # do --no-test for explicit False
     parser.add_argument("--test", action=argparse.BooleanOptionalAction, help="used for debugging purposes. test will only run random 10 instances from the dataset.")
     
@@ -297,6 +303,7 @@ if __name__ == '__main__':
     prompt_name = args.prompt
     input_path = args.input_path
     output_path = args.output_path
+    pmc_files_path = args.pmc_files_path
     is_test = args.test
 
     print("Arguments for the Clinical Trials Meta Analysis Task Runner:")
@@ -319,12 +326,12 @@ if __name__ == '__main__':
         print("Output path did not exist. Directory was created.")
     
     if task == "end_to_end":
-        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, input_path, output_path, is_test)
+        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, input_path, output_path, pmc_files_path, is_test)
         print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
         print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
         print(f"Continuous Outcomes task outputs saved to {continuous_outcomes_task_files[0]} and {continuous_outcomes_task_files[1]}")
     else:
-        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name, input_path)
+        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, pmc_files_path, is_test, prompt_name, input_path)
         json_file_path, csv_file_path = task_runner.run_task()
         print(f"Task outputs saved to {json_file_path} and {csv_file_path}")
     
