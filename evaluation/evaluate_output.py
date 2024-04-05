@@ -39,11 +39,16 @@ DEFAULT_CONTINUOUS_OUTCOMES_DICT = {
     }
 }
 
+DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
+XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_xml_files")
+MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files")
+
 class MetaAnalysisTaskEvaluator:
-    def __init__(self, task: str, output_path: str, metrics_path: str) -> None:
+    def __init__(self, task: str, output_path: str, metrics_path: str, pmc_files_path: str) -> None:
         self.task = task
         self.output_path = output_path
         self.metrics_path = metrics_path
+        self.pmc_files_path = pmc_files_path if pmc_files_path is not None else MD_FOLDER_PATH
 
         self.data = None
         self.metrics_calculator = MetricsCalculator(self.task)
@@ -71,6 +76,10 @@ class MetaAnalysisTaskEvaluator:
         This method preprocesses the data for binary_outcomes task
         """
         for example in self.data:
+
+            # Keep track of the pmcid we are processing
+            pmcid = example["pmcid"]
+
             # need to also fill in the x to make it easier to compare with the output results
             fields_to_check = ["intervention_events", "intervention_group_size", "comparator_events", "comparator_group_size"]
             for field in fields_to_check:
@@ -97,7 +106,8 @@ class MetaAnalysisTaskEvaluator:
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
                         yaml_dict_list.append(DEFAULT_BINARY_OUTCOMES_DICT)
-                output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list)
+
+                output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list, pmcid, self.pmc_files_path)
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
@@ -137,6 +147,10 @@ class MetaAnalysisTaskEvaluator:
         This method preprocesses the data for continuous_outcomes task
         """
         for example in self.data:
+
+            # Keep track of the pmcid we are processing
+            pmcid = example["pmcid"]
+
             # need to also fill in the x to make it easier to compare with the output results
             fields_to_check = ["intervention_mean", "intervention_standard_deviation", "intervention_group_size", "comparator_mean", "comparator_standard_deviation", "comparator_group_size"]
             for field in fields_to_check:
@@ -163,7 +177,7 @@ class MetaAnalysisTaskEvaluator:
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
                         yaml_dict_list.append(DEFAULT_CONTINUOUS_OUTCOMES_DICT)
-                output_dict = aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list)
+                output_dict = aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list, pmcid, self.pmc_files_path)
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
@@ -234,17 +248,20 @@ if __name__ == '__main__':
     parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes'], help="type of task to run", required=True)
     parser.add_argument("--output_path", default="./output", help="directory of where the outputs/results are saved")
     parser.add_argument("--metrics_path", default="./metrics", help="directory of where the metrics should be saved")
+    parser.add_argument("--pmc_files_path", default=None, help="directory of where the PMC files are saved")
     
     args = parser.parse_args()
 
     task = args.task
     output_path = args.output_path
     metrics_path = args.metrics_path
+    pmc_files_path = args.pmc_files_path
 
     print("Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:")
     print(f"Task:         {task}")
     print(f"Output Path:  {output_path}")
     print(f"Metrics Path: {metrics_path}")
+    print(f"PMC Files Path: {pmc_files_path}")
     print()
 
     if not os.path.exists(output_path):
@@ -254,6 +271,9 @@ if __name__ == '__main__':
     if not os.path.exists(metrics_path):
         os.makedirs(metrics_path)
         print("Metrics path did not exist. Directory was created.")
+
+    if not os.path.exists(pmc_files_path):
+        print("ERROR: PMC files path does not exist.")
 
     task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path)
     task_evaluator.run_evaluation()
