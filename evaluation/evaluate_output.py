@@ -272,9 +272,6 @@ if __name__ == '__main__':
         os.makedirs(metrics_path)
         print("Metrics path did not exist. Directory was created.")
 
-    if not os.path.exists(pmc_files_path):
-        print("ERROR: PMC files path does not exist.")
-
-    task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path)
+    task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path, pmc_files_path)
     task_evaluator.run_evaluation()
     
