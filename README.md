@@ -69,6 +69,7 @@ Arguments of `evaluate_output.py`:
 - `--task`: name of the task to evaluate and calculate metrics for
 - `--output_path`: path where the model outputs are located. this should include both model outputs and reference answers.
 - `--metrics_path`: path where the calculated metrics should be saved
+- `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset.
 
 ## CITATION
 
