@@ -93,6 +93,7 @@ class MetaAnalysisTaskEvaluator:
                 for yaml_string in yaml_strings_list:
                     try:
                         cleaned_yaml_string = clean_yaml_output(yaml_string)
+                        example["cleaned_output_string"] = cleaned_yaml_string
                         yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
@@ -101,6 +102,7 @@ class MetaAnalysisTaskEvaluator:
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
+                    example["cleaned_output_string"] = cleaned_yaml_string
                     output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")
@@ -159,6 +161,7 @@ class MetaAnalysisTaskEvaluator:
                 for yaml_string in yaml_strings_list:
                     try:
                         cleaned_yaml_string = clean_yaml_output(yaml_string)
+                        example["cleaned_output_string"] = cleaned_yaml_string
                         yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
@@ -167,6 +170,7 @@ class MetaAnalysisTaskEvaluator:
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
+                    example["cleaned_output_string"] = cleaned_yaml_string
                     output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")

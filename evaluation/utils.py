@@ -4,6 +4,7 @@ import os
 import json
 import csv
 import math
+import re
 from statistics import mode
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
@@ -140,15 +141,20 @@ def clean_yaml_output(output: str) -> str:
 
     :return cleaned yaml output
     """
-    cleaned_output = output.replace("```", "").replace("yaml", "").replace("\t", "")
+    cleaned_output = output.lower()
+    cleaned_output = cleaned_output.replace("```", "").replace("yaml", "").replace("\t", "")
     cleaned_output = cleaned_output.replace("-x\n", "x\n").replace("-\n", "x\n") # some post processing
     cleaned_output = cleaned_output.replace("NUMBER", "x").replace("N\A", "x")
+    cleaned_output = cleaned_output.replace("\n\ncomparator","\ncomparator")
     cleaned_output = cleaned_output.replace("*", "")
 
-    # remove instances when outcome shows up as a field for yaml. keeps the output as is if outcome doesn't show up
-    cleaned_output = cleaned_output.split("outcome", 1)[0]
+    # use regex for clean up
+    pattern = r"intervention:\s*\n\s+|mean:\s*\s+\d+(\.\d+)?\s*\n\s+|standard_deviation:\s*\s+\d+(\.\d+)?\s*\n\s+|group_size:\s*\s+\d+(\.\d+)?\s*\n*|comparator:\s*\n\s+|"
+    cleaned_output = re.findall(pattern, cleaned_output, re.MULTILINE)
+    cleaned_output = "".join(cleaned_output)
 
-
+    # remove isntances when extraneous text shows up. often happens after \n\n
+    cleaned_output = cleaned_output.split("\n\n", 1)[0]
 
     return cleaned_output
 

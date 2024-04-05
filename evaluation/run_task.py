@@ -159,6 +159,12 @@ class MetaAnalysisTaskRunner:
 
         :return paths to the output file (json and csv) as a tuple
         '''
+
+        # check ift there is any data
+        if len(self.dataset) == 0:
+            print("There is no data to run.")
+            return None, None
+
         # load dataset prompt templates
         prompts = DatasetTemplates(self.prompt_template)
 
