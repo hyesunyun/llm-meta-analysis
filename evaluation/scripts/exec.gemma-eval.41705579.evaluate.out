@@ -1,0 +1,50 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/gemma7B_binary_outcomes_test_output_20240403-13:36:04.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 100%, control_events: 80%, intervention_total: 22, control_total: 20
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 8/3, control_events: 8/3, intervention_total: 108, control_total: 24
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 280, in <module>
+    task_evaluator.run_evaluation()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 233, in run_evaluation
+    self.__preprocess_binary_outcomes_results()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 111, in __preprocess_binary_outcomes_results
+    output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list, pmcid, self.pmc_files_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/utils.py", line 236, in aggregate_yaml_output_for_binary_outcomes
+    for key in yaml_dict.keys():
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'keys'
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/gemma7B_continuous_outcomes_test_output_20240403-14:40:46.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes
+PMC Files Path: None
+
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 280, in <module>
+    task_evaluator.run_evaluation()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 235, in run_evaluation
+    self.__preprocess_continuous_outcomes_results()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 193, in __preprocess_continuous_outcomes_results
+    if "intervention" in output_dict or "comparator" in output_dict:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable

@@ -144,6 +144,27 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
     string_to_character_mapping = {"binary": "A", "continuous": "B", "x": "C"}
     return string_to_character_mapping[outcome_type]
 
+def clean_via_regex(string: str):
+    """
+    Cleans the yaml string using regex
+    we look for a match for intervention with events and group size nested fields in that order for binary. 
+    we look for a match for intervention with mean, standard deviation, and group size nested fields in that order for continuous. 
+    this is the same for comparator field as well.
+    if the order of nested fields is wrong, no matches found.
+    extra fields will also result in no matches.
+    
+    :param string: string to clean
+    
+    :return cleaned string
+    """
+    regex = r"^intervention:\n+\s+events:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*\n\s+group_size:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*|\n*\s*comparator:\n+\s+events:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*\n\s+group_size:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*|^intervention:\n+\s+mean:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+standard_deviation:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+group_size:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*|\n*\s*comparator:\n+\s+mean:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+standard_deviation:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+group_size:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*"
+    matches = re.finditer(regex, string, re.MULTILINE)
+    parsed_string = ""
+    for matchNum, match in enumerate(matches, start=1):
+        parsed_string += match.group()
+
+    return parsed_string
+
 
 def clean_yaml_output(output: str) -> str:
     """
@@ -161,12 +182,7 @@ def clean_yaml_output(output: str) -> str:
     cleaned_output = cleaned_output.replace("*", "")
 
     # use regex for clean up
-    pattern = r"intervention:\s*\n\s+|mean:\s*\s+\d+(\.\d+)?\s*\n\s+|standard_deviation:\s*\s+\d+(\.\d+)?\s*\n\s+|group_size:\s*\s+\d+(\.\d+)?\s*\n*|comparator:\s*\n\s+|"
-    cleaned_output = re.findall(pattern, cleaned_output, re.MULTILINE)
-    cleaned_output = "".join(cleaned_output)
-
-    # remove isntances when extraneous text shows up. often happens after \n\n
-    cleaned_output = cleaned_output.split("\n\n", 1)[0]
+    cleaned_output = clean_via_regex(cleaned_output)
 
     return cleaned_output
 

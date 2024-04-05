@@ -1,0 +1,25 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_test_output_20240403-13:07:52.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+Traceback (most recent call last):
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 280, in <module>
+    task_evaluator.run_evaluation()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 233, in run_evaluation
+    self.__preprocess_binary_outcomes_results()
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/scripts/../evaluate_output.py", line 111, in __preprocess_binary_outcomes_results
+    output_dict = aggregate_yaml_output_for_binary_outcomes(yaml_dict_list, pmcid, self.pmc_files_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/yun.hy/llm-meta-analysis/evaluation/utils.py", line 236, in aggregate_yaml_output_for_binary_outcomes
+    for key in yaml_dict.keys():
+               ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'keys'
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/biomistral_continuous_outcomes_test_output_20240331-23:35:29.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes
+PMC Files Path: None
+
+ERROR: output path does not exist.

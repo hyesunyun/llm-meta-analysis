@@ -44,7 +44,7 @@ XML_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes
 MD_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data", "no_attributes_markdown_files")
 
 class MetaAnalysisTaskEvaluator:
-    def __init__(self, task: str, output_path: str, metrics_path: str, pmc_files_path: str) -> None:
+    def __init__(self, task: str, output_path: str, metrics_path: str, pmc_files_path: Optional[str]=None) -> None:
         self.task = task
         self.output_path = output_path
         self.metrics_path = metrics_path
