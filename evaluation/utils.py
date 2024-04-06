@@ -295,7 +295,6 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     aggregated_output = {"intervention_mean": [], "intervention_standard_deviation": [], "intervention_group_size": [],
                          "comparator_mean": [], "comparator_standard_deviation": [], "comparator_group_size": []}
     for yaml_dict in yaml_dict_list:
-        print(yaml_dict)
         for key in yaml_dict.keys():
             if key not in ["intervention", "comparator"]:
                 print(f"Error: key {key} not found in yaml_dict")
