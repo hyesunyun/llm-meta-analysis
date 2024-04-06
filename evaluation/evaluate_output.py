@@ -14,6 +14,7 @@ from utils import (
 from calculate_metrics import MetricsCalculator
 import yaml
 import json
+from typing import Optional
 
 DEFAULT_BINARY_OUTCOMES_DICT = {
     "intervention": {
@@ -102,8 +103,11 @@ class MetaAnalysisTaskEvaluator:
                 for yaml_string in yaml_strings_list:
                     try:
                         cleaned_yaml_string = clean_yaml_output(yaml_string)
-                        example["cleaned_output_string"] = cleaned_yaml_string
-                        yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
+                        example["cleaned_yaml_string"] = cleaned_yaml_string
+                        if not cleaned_yaml_string:
+                            yaml_dict_list.append(DEFAULT_BINARY_OUTCOMES_DICT)
+                        else:
+                            yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
                         yaml_dict_list.append(DEFAULT_BINARY_OUTCOMES_DICT)
@@ -112,8 +116,11 @@ class MetaAnalysisTaskEvaluator:
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
-                    example["cleaned_output_string"] = cleaned_yaml_string
-                    output_dict = yaml.safe_load(cleaned_yaml_string)
+                    example["cleaned_yaml_string"] = cleaned_yaml_string
+                    if not cleaned_yaml_string:
+                        output_dict = DEFAULT_BINARY_OUTCOMES_DICT
+                    else:
+                        output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")
                     output_dict = DEFAULT_BINARY_OUTCOMES_DICT
@@ -175,8 +182,11 @@ class MetaAnalysisTaskEvaluator:
                 for yaml_string in yaml_strings_list:
                     try:
                         cleaned_yaml_string = clean_yaml_output(yaml_string)
-                        example["cleaned_output_string"] = cleaned_yaml_string
-                        yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
+                        example["cleaned_yaml_string"] = cleaned_yaml_string
+                        if not cleaned_yaml_string:
+                            yaml_dict_list.append(DEFAULT_CONTINUOUS_OUTCOMES_DICT)
+                        else:
+                            yaml_dict_list.append(yaml.safe_load(cleaned_yaml_string))
                     except:
                         print(f"Error parsing yaml string: {cleaned_yaml_string}")
                         yaml_dict_list.append(DEFAULT_CONTINUOUS_OUTCOMES_DICT)
@@ -184,13 +194,16 @@ class MetaAnalysisTaskEvaluator:
             else:
                 try:
                     cleaned_yaml_string = clean_yaml_output(model_output)
-                    example["cleaned_output_string"] = cleaned_yaml_string
-                    output_dict = yaml.safe_load(cleaned_yaml_string)
+                    example["cleaned_yaml_string"] = cleaned_yaml_string
+                    if not cleaned_yaml_string:
+                        output_dict = DEFAULT_CONTINUOUS_OUTCOMES_DICT
+                    else:
+                        output_dict = yaml.safe_load(cleaned_yaml_string)
                 except:
                     print(f"Error parsing yaml string: {cleaned_yaml_string}")
                     output_dict = DEFAULT_CONTINUOUS_OUTCOMES_DICT
 
-            if "intervention" in output_dict or "comparator" in output_dict:
+            if output_dict is not None and ("intervention" in output_dict or "comparator" in output_dict):
                 intervention = output_dict["intervention"] if "intervention" in output_dict else {}
                 comparator = output_dict["comparator"] if "comparator" in output_dict else {}
 
@@ -275,6 +288,10 @@ if __name__ == '__main__':
     if not os.path.exists(metrics_path):
         os.makedirs(metrics_path)
         print("Metrics path did not exist. Directory was created.")
+
+    if pmc_files_path is not None and not os.path.exists(pmc_files_path):
+        print("ERROR: PMC files path does not exist.")
+        exit(1)
 
     task_evaluator = MetaAnalysisTaskEvaluator(task, output_path, metrics_path, pmc_files_path)
     task_evaluator.run_evaluation()

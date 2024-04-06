@@ -68,7 +68,7 @@ class MetricsCalculator:
         }
         return metrics
     
-    def __calculate_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float:
+    def __calculate_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float|None:
         """
         This method calculates the mean absolute error
 
@@ -85,9 +85,12 @@ class MetricsCalculator:
             else:
                 total_num += 1
                 list_of_abs_diff.append(abs(a - p))
-        return sum(list_of_abs_diff) / total_num
-    
-    def __calculate_standard_error_of_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float:
+        if total_num > 0:
+            return sum(list_of_abs_diff) / total_num
+        print("No computable instances found")
+        return None
+            
+    def __calculate_standard_error_of_mean_absolute_error(self, actual: List[float], predicted: List[float]) -> float|None:
         """
         This method calculates the standard error of the mean absolute error
 
@@ -104,9 +107,12 @@ class MetricsCalculator:
             else:
                 total_num += 1
                 list_of_abs_diff.append(a - p)
-        return np.std(list_of_abs_diff) / np.sqrt(total_num)
+        if total_num > 0:
+            return np.std(list_of_abs_diff) / np.sqrt(total_num)
+        print("No computable instances found")
+        return None
     
-    def __calculate_95_confidence_interval_of_mean_absolute_error(self, mean_absolute_error: float, standard_error: float) -> Tuple[float, float]:
+    def __calculate_95_confidence_interval_of_mean_absolute_error(self, mean_absolute_error: float|None, standard_error: float|None) -> Tuple[float|None, float|None]:
         """
         This method calculates the 95% confidence interval of the mean absolute error (mean differences of actual vs predicted values)
 
@@ -115,6 +121,8 @@ class MetricsCalculator:
 
         :return: tuple with the lower and upper bounds of the confidence interval
         """
+        if mean_absolute_error is None or standard_error is None:
+            return (None, None)
         return mean_absolute_error - 1.96 * standard_error, mean_absolute_error + 1.96 * standard_error
 
     def __calculate_exact_match_accuracy(self, data: List[Dict]) -> Dict:

@@ -160,7 +160,7 @@ def clean_via_regex(string: str):
     regex = r"^intervention:\n+\s+events:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*\n\s+group_size:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*|\n*\s*comparator:\n+\s+events:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*\n\s+group_size:\s*(\d+(\.\d+)?|x|unknown|NUMBER).*|^intervention:\n+\s+mean:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+standard_deviation:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+group_size:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*|\n*\s*comparator:\n+\s+mean:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+standard_deviation:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*\n+\s+group_size:\s*\s+(\d+(\.\d+)?|x|unknown|NUMBER).*"
     matches = re.finditer(regex, string, re.MULTILINE)
     parsed_string = ""
-    for matchNum, match in enumerate(matches, start=1):
+    for _, match in enumerate(matches, start=1):
         parsed_string += match.group()
 
     return parsed_string
@@ -233,20 +233,19 @@ def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict], pmcid:
     aggregated_output = {"intervention_events": [], "intervention_group_size": [], "comparator_events": [],
                          "comparator_group_size": []}
     for yaml_dict in yaml_dict_list:
-        print(yaml_dict)
         for key in yaml_dict.keys():
             if key not in ["intervention", "comparator"]:
                 print(f"Error: key {key} not found in yaml_dict")
                 return None
             if key == "intervention":
-                if "events" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "events" in yaml_dict[key].keys():
                     aggregated_output["intervention_events"].append(yaml_dict[key]["events"])
-                if "group_size" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "group_size" in yaml_dict[key].keys():
                     aggregated_output["intervention_group_size"].append(yaml_dict[key]["group_size"])
             if key == "comparator":
-                if "events" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "events" in yaml_dict[key].keys():
                     aggregated_output["comparator_events"].append(yaml_dict[key]["events"])
-                if "group_size" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "group_size" in yaml_dict[key].keys():
                     aggregated_output["comparator_group_size"].append(yaml_dict[key]["group_size"])
 
     # first get all the values for a key that are not x and exist in the file content
@@ -296,23 +295,24 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     aggregated_output = {"intervention_mean": [], "intervention_standard_deviation": [], "intervention_group_size": [],
                          "comparator_mean": [], "comparator_standard_deviation": [], "comparator_group_size": []}
     for yaml_dict in yaml_dict_list:
+        print(yaml_dict)
         for key in yaml_dict.keys():
             if key not in ["intervention", "comparator"]:
                 print(f"Error: key {key} not found in yaml_dict")
                 return None
             if key == "intervention":
-                if "mean" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "mean" in yaml_dict[key].keys():
                     aggregated_output["intervention_mean"].append(yaml_dict[key]["mean"])
-                if "standard_deviation" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "standard_deviation" in yaml_dict[key].keys():
                     aggregated_output["intervention_standard_deviation"].append(yaml_dict[key]["standard_deviation"])
-                if "group_size" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "group_size" in yaml_dict[key].keys():
                     aggregated_output["intervention_group_size"].append(yaml_dict[key]["group_size"])
             if key == "comparator":
-                if "mean" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "mean" in yaml_dict[key].keys():
                     aggregated_output["comparator_mean"].append(yaml_dict[key]["mean"])
-                if "standard_deviation" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "standard_deviation" in yaml_dict[key].keys():
                     aggregated_output["comparator_standard_deviation"].append(yaml_dict[key]["standard_deviation"])
-                if "group_size" in yaml_dict[key].keys():
+                if yaml_dict[key] is not None and "group_size" in yaml_dict[key].keys():
                     aggregated_output["comparator_group_size"].append(yaml_dict[key]["group_size"])
 
     # first get all the values for a key that are not x and exist in the file content
