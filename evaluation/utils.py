@@ -144,6 +144,7 @@ def convert_string_to_character_outcome_type(outcome_type: str) -> str:
     string_to_character_mapping = {"binary": "A", "continuous": "B", "x": "C"}
     return string_to_character_mapping[outcome_type]
 
+
 def clean_via_regex(string: str):
     """
     Cleans the yaml string using regex
@@ -176,9 +177,9 @@ def clean_yaml_output(output: str) -> str:
     """
     cleaned_output = output.lower()
     cleaned_output = cleaned_output.replace("```", "").replace("yaml", "").replace("\t", "")
-    cleaned_output = cleaned_output.replace("-x\n", "x\n").replace("-\n", "x\n") # some post processing
+    cleaned_output = cleaned_output.replace("-x\n", "x\n").replace("-\n", "x\n")  # some post processing
     cleaned_output = cleaned_output.replace("NUMBER", "x").replace("N\A", "x")
-    cleaned_output = cleaned_output.replace("\n\ncomparator","\ncomparator")
+    cleaned_output = cleaned_output.replace("\n\ncomparator", "\ncomparator")
     cleaned_output = cleaned_output.replace("*", "")
 
     # use regex for clean up
@@ -212,6 +213,14 @@ def has_mode(lst: list[Any]) -> bool:
     return True
 
 
+def get_file_extension(pmcid, directory_path):
+    for filename in os.listdir(directory_path):
+        if filename.startswith(f"PMC{pmcid}."):
+            file_extension = os.path.splitext(filename)[1]
+            return file_extension
+    return None
+
+
 def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict], pmcid: str, pmc_files_path: str) -> Dict:
     """
     This method aggregates the yaml outputs for binary outcomes
@@ -223,12 +232,15 @@ def aggregate_yaml_output_for_binary_outcomes(yaml_dict_list: list[Dict], pmcid:
     :return aggregated yaml output
     """
 
-    # get the file extension of first file in the pmc_files_path and get the content of current pmc id
-    file_extension = os.path.splitext(os.listdir(pmc_files_path)[0])[1]
+    # get the file extension of the given PMC file in the pmc_files_path and get the content of current pmc id
+    file_extension = get_file_extension(pmcid, pmc_files_path)
     if file_extension == ".xml":
         file_content = get_xml_content_by_pmcid(pmc_files_path, pmcid)
     elif file_extension == ".md":
         file_content = get_md_content_by_pmcid(pmc_files_path, pmcid)
+    else:
+        raise ValueError(f"Error: file extension {file_extension} not supported")
+
 
     aggregated_output = {"intervention_events": [], "intervention_group_size": [], "comparator_events": [],
                          "comparator_group_size": []}
@@ -285,12 +297,14 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     :return aggregated yaml output
     """
 
-    # get the file extension of first file in the pmc_files_path and get the content of the current pmcid
-    file_extension = os.path.splitext(os.listdir(pmc_files_path)[0])[1]
+    # get the file extension of the given PMC file in the pmc_files_path and get the content of current pmc id
+    file_extension = get_file_extension(pmcid, pmc_files_path)
     if file_extension == ".xml":
         file_content = get_xml_content_by_pmcid(pmc_files_path, pmcid)
     elif file_extension == ".md":
         file_content = get_md_content_by_pmcid(pmc_files_path, pmcid)
+    else:
+        raise ValueError(f"Error: file extension {file_extension} not supported")
 
     aggregated_output = {"intervention_mean": [], "intervention_standard_deviation": [], "intervention_group_size": [],
                          "comparator_mean": [], "comparator_standard_deviation": [], "comparator_group_size": []}
