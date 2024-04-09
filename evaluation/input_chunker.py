@@ -28,7 +28,7 @@ class InputChunker:
         Tables do not get removed.
 
         Args:
-        xml_string: string
+        md_string: string
 
         Returns:
         processed_string: string with number words converted to digits
