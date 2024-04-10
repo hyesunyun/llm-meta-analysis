@@ -1,1 +1,40 @@
-{"number_of_model_unknowns": {"intervention_events": 146, "intervention_group_size": 168, "comparator_events": 146, "comparator_group_size": 168, "total": 628}, "number_of_reference_unknowns": {"intervention_events": 25, "intervention_group_size": 3, "comparator_events": 25, "comparator_group_size": 3, "total": 56}, "exact_match_accuracy": {"intervention_events": 0.14619883040935672, "intervention_group_size": 0.017543859649122806, "comparator_events": 0.14619883040935672, "comparator_group_size": 0.017543859649122806, "total": 0.017543859649122806}, "partial_match_accuracy": {"partial_match_accuracy_1": 0.14619883040935672, "partial_match_accuracy_2": 0.14619883040935672, "partial_match_accuracy_3": 0.017543859649122806}, "percentage_of_computable_instances": 0.0, "point_estimates": {"log_odds_ratio": {"mean_absolute_error": null, "standard_error_of_mae": null, "95_confidence_interval_of_mae": [null, null]}}, "num_of_chunked_instances": 156}
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 146,
+        "intervention_group_size": 168,
+        "comparator_events": 146,
+        "comparator_group_size": 168,
+        "total": 628
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 25,
+        "intervention_group_size": 3,
+        "comparator_events": 25,
+        "comparator_group_size": 3,
+        "total": 56
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.14619883040935672,
+        "intervention_group_size": 0.017543859649122806,
+        "comparator_events": 0.14619883040935672,
+        "comparator_group_size": 0.017543859649122806,
+        "total": 0.017543859649122806
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.14619883040935672,
+        "partial_match_accuracy_2": 0.14619883040935672,
+        "partial_match_accuracy_3": 0.017543859649122806
+    },
+    "percentage_of_computable_instances": 0.0,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
+            "95_confidence_interval_of_mae": [
+                null,
+                null
+            ]
+        }
+    },
+    "num_of_chunked_instances": 156
+}
