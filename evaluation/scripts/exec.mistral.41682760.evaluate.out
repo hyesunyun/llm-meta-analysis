@@ -1,43 +1,0 @@
-/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-Arguments Provided for the Clinical Trials Meta Analysis Task Runner:
-Model:        mistral7B
-Task:         end_to_end
-Split:        None
-Prompt Name:  None
-Input Path:   /scratch/yun.hy/llm-meta-analysis/evaluation/data/meta_analysis_case_study.json
-Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end
-PMC Files:    /scratch/yun.hy/llm-meta-analysis/evaluation/data/no_attributes_case_study_markdown_files
-Is Test:      None
-
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.74s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.76s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.69s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.70s/it]
-  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 1292.74it/s]
-  0%|          | 0/4 [00:00<?, ?it/s]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 25%|██▌       | 1/4 [00:16<00:49, 16.34s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 50%|█████     | 2/4 [00:18<00:15,  7.95s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 75%|███████▌  | 3/4 [00:29<00:09,  9.19s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-100%|██████████| 4/4 [00:44<00:00, 11.64s/it]100%|██████████| 4/4 [00:44<00:00, 11.12s/it]
-Saving outputs for task - outcome_type; prompt - with-abstract-results; model - mistral7B to csv and json
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.63s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:02<00:01,  1.45s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.34s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.39s/it]
-WARNING:root:Some parameters are on the meta device device because they were offloaded to the cpu.
-  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 1421.56it/s]
-  0%|          | 0/4 [00:00<?, ?it/s]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 25%|██▌       | 1/4 [01:54<05:44, 114.87s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 50%|█████     | 2/4 [03:20<03:15, 97.70s/it] The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
- 75%|███████▌  | 3/4 [05:17<01:46, 106.57s/it]The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
-Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
-100%|██████████| 4/4 [07:11<00:00, 109.43s/it]100%|██████████| 4/4 [07:11<00:00, 107.87s/it]
-Saving outputs for task - binary_outcomes; prompt - yaml; model - mistral7B to csv and json
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.67s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.59s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.50s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.53s/it]
-WARNING:root:Some parameters are on the meta device device because they were offloaded to the cpu.
-There is no data to run.
-Outcome Type task outputs saved to /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_outcome_type_None_output_20240404-11:54:12.json and /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_outcome_type_None_output_20240404-11:54:12.csv
-Binary Outcomes task outputs saved to /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_binary_outcomes_None_output_20240404-12:01:28.json and /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_binary_outcomes_None_output_20240404-12:01:28.csv
-Continuous Outcomes task outputs saved to None and None

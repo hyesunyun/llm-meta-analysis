@@ -1,0 +1,71 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/xml/pmc-llama_binary_outcomes_test_output_20240331-22:04:16.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/xml/
+PMC Files Path: None
+
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 108,
+        "intervention_group_size": 120,
+        "comparator_events": 121,
+        "comparator_group_size": 138,
+        "total": 487
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 25,
+        "intervention_group_size": 3,
+        "comparator_events": 25,
+        "comparator_group_size": 3,
+        "total": 56
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.1286549707602339,
+        "intervention_group_size": 0.07602339181286549,
+        "comparator_events": 0.15204678362573099,
+        "comparator_group_size": 0.07017543859649122,
+        "total": 0.011695906432748537
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.24561403508771928,
+        "partial_match_accuracy_2": 0.15204678362573099,
+        "partial_match_accuracy_3": 0.017543859649122806
+    },
+    "percentage_of_computable_instances": 0.09302325581395349,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 1.2481384162500564,
+            "standard_error_of_mae": 0.38788188413004354,
+            "95_confidence_interval_of_mae": [
+                0.4878899233551711,
+                2.008386909144942
+            ]
+        }
+    },
+    "num_of_chunked_instances": 156
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/xml/pmc-llama_continuous_outcomes_test_output_20240401-18:10:38.jsonpmc-llama_continuous_outcomes_test_output_20240401-18:10:38.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/xml/
+PMC Files Path: None
+
+ERROR: output path does not exist.
