@@ -7,13 +7,13 @@ import math
 import re
 from statistics import mode
 from collections import Counter
-from rpy2.robjects.packages import importr
+# from rpy2.robjects.packages import importr
 
-utils = importr('utils')
-base = importr('base')
-# install the metafor package
-utils.install_packages("metafor")
-metafor = importr('metafor')
+# utils = importr('utils')
+# base = importr('base')
+# # install the metafor package
+# utils.install_packages("metafor")
+# metafor = importr('metafor')
 
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
