@@ -1,5 +1,5 @@
 from templates import Template
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Tuple
 import os
 import json
 import csv
@@ -7,6 +7,13 @@ import math
 import re
 from statistics import mode
 from collections import Counter
+from rpy2.robjects.packages import importr
+
+utils = importr('utils')
+base = importr('base')
+# install the metafor package
+utils.install_packages("metafor")
+metafor = importr('metafor')
 
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
@@ -355,6 +362,30 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     }
     return final_yaml_output
 
+def calculate_log_odds_ratio2(intervention_events: int, control_events: int, intervention_total: int,
+                              control_total: int) -> Tuple[float, float]:
+    """
+    This method calculates the log odds ratio given the values
+
+    :param intervention_events: value of intervention_events
+    :param control_events: value of control_events
+    :param intervention_total: value of intervention_total
+    :param control_total: value of control_total
+
+    :return (log odds ratio, variance)
+    """
+    try:
+        results = metafor.escalc("OR", ai = intervention_events, ci = control_events, n1i = intervention_total, n2i = comparator_total)
+        log_odds_ratio = results["yi"]
+        variance = results["vi"]
+        return (log_odds_ratio, variance)
+    except:
+        print(
+            f"An exception occurred for calculate log odds ratio - intervention_events: {intervention_events}, "
+            f"control_events: {control_events}, intervention_total: {intervention_total}, control_total: "
+            f"{control_total}")
+        return (None, None)
+    
 
 def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int,
                              control_total: int) -> float:
