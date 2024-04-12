@@ -819,7 +819,7 @@ intervention: events: 760 group_size: 1430
 315,9842,4928400,Complication,Transperitoneal laparoscopic ureterolithotomy,Flexible ureteroscopy,binary,5,22,7,20,,,,,,,-0.6047,0.4786,-0.4318,0.2474,,TRUE,4037,2288,TEST,1670,[1630],"intervention: group_size: 22 events: x comparator: group_size: 20 events: 4
 ---
 ",True
-333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,45,3,47,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,4396,"[1552, 722, 1531, 1010]","{ interventions: [ { events: 2 group_size: 47 name: Aripiprazole } ] comparators: [ { events: 2 group_size: 45 name: Placebo } ] outcomes:
+333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,47,1,45,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,4396,"[1552, 722, 1531, 1010]","{ interventions: [ { events: 2 group_size: 47 name: Aripiprazole } ] comparators: [ { events: 2 group_size: 45 name: Placebo } ] outcomes:
 ---
 intervention: events: 16 group_size: 78 comparator: events: 12 group_size: 43
 ---

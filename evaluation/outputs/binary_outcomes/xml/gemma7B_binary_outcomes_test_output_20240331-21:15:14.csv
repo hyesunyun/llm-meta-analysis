@@ -1277,7 +1277,7 @@ comparator:
 
 outcome:
   complication_rate: 22.7",False
-333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,45,3,47,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,[],"intervention:
+333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,47,1,45,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,[],"intervention:
   events: 0
   group_size: 47
 

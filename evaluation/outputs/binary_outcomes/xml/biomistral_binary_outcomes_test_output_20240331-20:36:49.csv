@@ -1145,7 +1145,7 @@ Sure, here's the answer in YAML format: events: 6 group_size: 1150
 intervention: events: 0 group_size: 15 comparator: events: 8 group_size: 9
 ---
 ",True
-333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,45,3,47,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,"[1635, 1067, 1571, 1561]","intervention: events: 23 group_size: 517 comparator: events: 8 group_size: 57
+333,5080,5617873,Serious adverse effects,Aripiprazole,Placbeo,binary,0,47,1,45,,,,,,,-1.9681,2.3302,-1.9034,2.2431,all means and std found in table 2,TRUE,7551,5383,TEST,"[1635, 1067, 1571, 1561]","intervention: events: 23 group_size: 517 comparator: events: 8 group_size: 57
 ---
 The YAML format will be based on the following template:
 ```yaml
