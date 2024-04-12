@@ -2,7 +2,7 @@ name: llm-meta-analysis
 channels:
   - defaults
 dependencies:
-  - python=3.10
+  - python=3.11
   - conda-forge::python-dotenv
   - conda-forge::jupyterlab
   - anaconda::pyyaml
@@ -26,10 +26,6 @@ dependencies:
   - anaconda::scikit-learn
   - conda-forge::pandoc
   - anaconda::nltk
-  - r::r-essentials
-  - r::r-base
-  - r::r-metafor
-  - conda-forge::rpy2
   - pip:
     - ai2-olmo
     - pypandoc
