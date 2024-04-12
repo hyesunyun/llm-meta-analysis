@@ -1,1 +1,24 @@
-{"number_of_model_unknowns": {"outcome_type": 0, "total": 0}, "number_of_reference_unknowns": {"outcome_type": 1, "total": 1}, "exact_match_accuracy": {"outcome_type": 1.0, "total": 1.0}, "partial_match_accuracy": {"partial_match_accuracy_1": 1.0}, "outcome_type_f_score": {"outcome_type": {"f1_score_binary": 1.0, "f1_score_continuous": 1.0, "f1_score_unknown": null}}}
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 1,
+        "total": 1
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 1.0,
+        "total": 1.0
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 1.0
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 1.0,
+            "f1_score_continuous": 1.0,
+            "f1_score_unknown": null
+        }
+    }
+}
