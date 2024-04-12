@@ -65,7 +65,7 @@ def save_dataset_to_json(dataset: List[Dict], file_path: str, columns_to_drop: O
     if columns_to_drop is not None:
         dataset = [{k: v for k, v in d.items() if k not in columns_to_drop} for d in dataset]
     with open(file_path, "w", encoding='utf-8') as file:
-        json.dump(data, file, indent=4)
+        json.dump(dataset, file, indent=4)
 
 
 def save_dataset_to_csv(dataset: List[Dict], file_path: str, columns_to_drop: Optional[List[str]] = None) -> None:

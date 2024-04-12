@@ -17,6 +17,9 @@ source activate llm-meta-analysis
 
 export $(xargs < ../../.env)
 
+# gpt 4 turbo
+python3 ../run_task.py --model gpt4 --task end_to_end --input_path /scratch/yun.hy/llm-meta-analysis/evaluation/data/meta_analysis_case_study.json --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end --pmc_files_path /scratch/yun.hy/llm-meta-analysis/evaluation/data/no_attributes_case_study_markdown_files
+
 # gpt 3.5 turbo
 python3 ../run_task.py --model gpt35 --task end_to_end --input_path /scratch/yun.hy/llm-meta-analysis/evaluation/data/meta_analysis_case_study.json --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end --pmc_files_path /scratch/yun.hy/llm-meta-analysis/evaluation/data/no_attributes_case_study_markdown_files
 
