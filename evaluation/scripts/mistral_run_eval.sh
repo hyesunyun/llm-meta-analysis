@@ -16,7 +16,7 @@ export $(xargs < ../../.env)
 # python3 ../evaluate_output.py --task outcome_type --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/mistral7B_outcome_type_test_output_20240326-11:34:50.json --metrics_path /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
 
 # binary outcomes
-python3 ../evaluate_output.py --task binary_outcomes --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/xml/mistral7B_binary_outcomes_test_output_20240401-00:17:14.json --metrics_path /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/xml/
+python3 ../evaluate_output.py --task binary_outcomes --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/mistral7B_binary_outcomes_test_output_20240403-16:03:23.json --metrics_path /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
 
 # continuous_outcomes
-python3 ../evaluate_output.py --task continuous_outcomes --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/xml/mistral7B_continuous_outcomes_test_output_20240401-02:44:05.json --metrics_path /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/xml/
+python3 ../evaluate_output.py --task continuous_outcomes --output_path /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/mistral7B_continuous_outcomes_test_output_20240403-17:59:45.json --metrics_path /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/

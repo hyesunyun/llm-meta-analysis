@@ -1,1 +1,40 @@
-{"number_of_model_unknowns": {"intervention_events": 47, "intervention_group_size": 26, "comparator_events": 50, "comparator_group_size": 30, "total": 153}, "number_of_reference_unknowns": {"intervention_events": 25, "intervention_group_size": 3, "comparator_events": 25, "comparator_group_size": 3, "total": 56}, "exact_match_accuracy": {"intervention_events": 0.4502923976608187, "intervention_group_size": 0.6608187134502924, "comparator_events": 0.38596491228070173, "comparator_group_size": 0.6608187134502924, "total": 0.2982456140350877}, "partial_match_accuracy": {"partial_match_accuracy_1": 0.7485380116959064, "partial_match_accuracy_2": 0.6900584795321637, "partial_match_accuracy_3": 0.42105263157894735}, "percentage_of_computable_instances": 0.5891472868217055, "point_estimates": {"log_odds_ratio": {"mean_absolute_error": 0.37410913718897415, "standard_error_of_mae": 0.0898575448430315, "95_confidence_interval_of_mae": [0.1979883492966324, 0.5502299250813159]}}, "num_of_chunked_instances": 0}
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 47,
+        "intervention_group_size": 26,
+        "comparator_events": 50,
+        "comparator_group_size": 30,
+        "total": 153
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 25,
+        "intervention_group_size": 3,
+        "comparator_events": 25,
+        "comparator_group_size": 3,
+        "total": 56
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.4502923976608187,
+        "intervention_group_size": 0.6666666666666666,
+        "comparator_events": 0.391812865497076,
+        "comparator_group_size": 0.6666666666666666,
+        "total": 0.30409356725146197
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.7485380116959064,
+        "partial_match_accuracy_2": 0.695906432748538,
+        "partial_match_accuracy_3": 0.4269005847953216
+    },
+    "percentage_of_computable_instances": 0.5891472868217055,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 0.36352649935603315,
+            "standard_error_of_mae": 0.08928901369583757,
+            "95_confidence_interval_of_mae": [
+                0.18852003251219152,
+                0.5385329661998748
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}
