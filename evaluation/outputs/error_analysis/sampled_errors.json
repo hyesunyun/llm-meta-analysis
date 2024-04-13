@@ -6784,7 +6784,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2670,
                     "split": "TEST",
                     "output": "I'm an AI",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 420,
@@ -6814,7 +6815,8 @@
                     "tiktoken_without_attributes_xml_token_num": 9686,
                     "split": "TEST",
                     "output": "I'm an artificial",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 193,
@@ -6844,7 +6846,8 @@
                     "tiktoken_without_attributes_xml_token_num": 9099,
                     "split": "TEST",
                     "output": "I'm an AI",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 165,
@@ -6874,7 +6877,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1148,
                     "split": "TEST",
                     "output": "I'm an AI",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 117,
@@ -6904,7 +6908,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2670,
                     "split": "TEST",
                     "output": "based on the question provided",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 467,
@@ -6934,7 +6939,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4244,
                     "split": "TEST",
                     "output": "I'm an ast",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 397,
@@ -6964,7 +6970,8 @@
                     "tiktoken_without_attributes_xml_token_num": 6474,
                     "split": "TEST",
                     "output": "based on the provided question",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 421,
@@ -6994,7 +7001,8 @@
                     "tiktoken_without_attributes_xml_token_num": 9686,
                     "split": "TEST",
                     "output": "I'm an AI",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 396,
@@ -7024,7 +7032,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2080,
                     "split": "TEST",
                     "output": "The outcome of a random",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 }
             ],
             "binary_when_continuous": [
