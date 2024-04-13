@@ -7065,7 +7065,8 @@
                     "tiktoken_without_attributes_xml_token_num": 7944,
                     "split": "TEST",
                     "output": "(B) continuous\n",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 }
             ]
         },
