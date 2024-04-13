@@ -7888,7 +7888,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 691,
@@ -7926,7 +7927,8 @@
                     "intervention_group_size_output": 102,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 622,
@@ -7964,7 +7966,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 370,
@@ -8002,7 +8005,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 270,
@@ -8040,7 +8044,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 547,
@@ -8078,7 +8083,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 272,
@@ -8156,7 +8162,8 @@
                     "intervention_group_size_output": 60,
                     "comparator_events_output": 11,
                     "comparator_group_size_output": 60,
-                    "log_odds_ratio_output": 2.1129642337184795
+                    "log_odds_ratio_output": 2.1129642337184795,
+                    "analyzed": true
                 },
                 {
                     "id": 473,
@@ -8194,7 +8201,8 @@
                     "intervention_group_size_output": 114,
                     "comparator_events_output": 19,
                     "comparator_group_size_output": 114,
-                    "log_odds_ratio_output": 0.7537718023763802
+                    "log_odds_ratio_output": 0.7537718023763802,
+                    "analyzed": true
                 },
                 {
                     "id": 339,
@@ -8232,7 +8240,8 @@
                     "intervention_group_size_output": 43,
                     "comparator_events_output": 68,
                     "comparator_group_size_output": 22,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 340,
@@ -8270,7 +8279,8 @@
                     "intervention_group_size_output": 43,
                     "comparator_events_output": 101,
                     "comparator_group_size_output": 37,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 118,
@@ -8308,7 +8318,8 @@
                     "intervention_group_size_output": 15,
                     "comparator_events_output": 4,
                     "comparator_group_size_output": 13,
-                    "log_odds_ratio_output": -1.0608719606852628
+                    "log_odds_ratio_output": -1.0608719606852628,
+                    "analyzed": true
                 },
                 {
                     "id": 155,
@@ -8346,7 +8357,8 @@
                     "intervention_group_size_output": 40,
                     "comparator_events_output": 5,
                     "comparator_group_size_output": 40,
-                    "log_odds_ratio_output": -0.9985288301111273
+                    "log_odds_ratio_output": -0.9985288301111273,
+                    "analyzed": true
                 },
                 {
                     "id": 337,
@@ -8384,7 +8396,8 @@
                     "intervention_group_size_output": 2094,
                     "comparator_events_output": 637,
                     "comparator_group_size_output": 122,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 62,
@@ -8422,7 +8435,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 7,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 265,
@@ -8612,7 +8626,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 7,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": 2.436116485618568
+                    "log_odds_ratio_output": 2.436116485618568,
+                    "analyzed": true
                 },
                 {
                     "id": 376,
@@ -8650,7 +8665,8 @@
                     "intervention_group_size_output": 59,
                     "comparator_events_output": 45,
                     "comparator_group_size_output": 64,
-                    "log_odds_ratio_output": -0.8283219589281979
+                    "log_odds_ratio_output": -0.8283219589281979,
+                    "analyzed": true
                 },
                 {
                     "id": 405,
@@ -8688,7 +8704,8 @@
                     "intervention_group_size_output": 20,
                     "comparator_events_output": 18,
                     "comparator_group_size_output": 20,
-                    "log_odds_ratio_output": -3.295836866004329
+                    "log_odds_ratio_output": -3.295836866004329,
+                    "analyzed": true
                 },
                 {
                     "id": 341,
@@ -8726,7 +8743,8 @@
                     "intervention_group_size_output": 1412,
                     "comparator_events_output": 68,
                     "comparator_group_size_output": 2094,
-                    "log_odds_ratio_output": 1.0359345270100608
+                    "log_odds_ratio_output": 1.0359345270100608,
+                    "analyzed": true
                 },
                 {
                     "id": 139,
@@ -8764,7 +8782,8 @@
                     "intervention_group_size_output": 705,
                     "comparator_events_output": 503,
                     "comparator_group_size_output": 718,
-                    "log_odds_ratio_output": 0.21304251108314007
+                    "log_odds_ratio_output": 0.21304251108314007,
+                    "analyzed": true
                 },
                 {
                     "id": 484,
@@ -8802,7 +8821,8 @@
                     "intervention_group_size_output": 114,
                     "comparator_events_output": 19,
                     "comparator_group_size_output": 114,
-                    "log_odds_ratio_output": 0.7537718023763802
+                    "log_odds_ratio_output": 0.7537718023763802,
+                    "analyzed": true
                 },
                 {
                     "id": 378,
@@ -8840,7 +8860,8 @@
                     "intervention_group_size_output": 123,
                     "comparator_events_output": 65,
                     "comparator_group_size_output": 123,
-                    "log_odds_ratio_output": -0.22788851869843563
+                    "log_odds_ratio_output": -0.22788851869843563,
+                    "analyzed": true
                 },
                 {
                     "id": 343,
@@ -8878,7 +8899,8 @@
                     "intervention_group_size_output": 1577,
                     "comparator_events_output": 122,
                     "comparator_group_size_output": 259,
-                    "log_odds_ratio_output": 1.1066930892235396
+                    "log_odds_ratio_output": 1.1066930892235396,
+                    "analyzed": true
                 }
             ],
             "badly_formatted_output": [
@@ -8918,7 +8940,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 342,
@@ -8956,7 +8979,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 537,
@@ -8994,7 +9018,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 }
             ]
         },
