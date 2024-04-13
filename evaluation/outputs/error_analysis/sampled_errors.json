@@ -5540,7 +5540,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3649,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 506,
@@ -5570,7 +5571,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5719,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 328,
@@ -5600,7 +5602,8 @@
                     "tiktoken_without_attributes_xml_token_num": 884,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 595,
@@ -5630,7 +5633,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 52,
@@ -5660,7 +5664,8 @@
                     "tiktoken_without_attributes_xml_token_num": 8380,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 385,
@@ -5690,7 +5695,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2080,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 303,
@@ -5720,7 +5726,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1624,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 312,
@@ -5750,7 +5757,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1043,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 216,
@@ -5780,7 +5788,8 @@
                     "tiktoken_without_attributes_xml_token_num": 7477,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 530,
@@ -5810,7 +5819,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2589,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed":true
                 },
                 {
                     "id": 660,
@@ -5840,7 +5850,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2261,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 245,
@@ -5870,7 +5881,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1019,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 486,
@@ -5900,7 +5912,8 @@
                     "tiktoken_without_attributes_xml_token_num": 6231,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 126,
@@ -5930,7 +5943,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3205,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 166,
@@ -5960,7 +5974,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1148,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 608,
@@ -5990,7 +6005,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 25,
@@ -6020,7 +6036,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2968,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 437,
@@ -6050,7 +6067,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4934,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 316,
@@ -6080,7 +6098,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2288,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 515,
@@ -6110,7 +6129,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5593,
                     "split": "TEST",
                     "output": "C. unknown - there",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 }
             ],
             "continuous_when_binary": [
