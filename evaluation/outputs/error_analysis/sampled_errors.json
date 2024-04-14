@@ -10041,7 +10041,8 @@
                     "comparator_mean_output": 18.2,
                     "comparator_standard_deviation_output": 3.1,
                     "comparator_group_size_output": 30,
-                    "standardized_mean_difference_output": 0.8540514532484057
+                    "standardized_mean_difference_output": 0.8540514532484057,
+                    "analyzed": true
                 },
                 {
                     "id": 521,
@@ -10081,7 +10082,8 @@
                     "comparator_mean_output": 318.5,
                     "comparator_standard_deviation_output": 26.7,
                     "comparator_group_size_output": 32,
-                    "standardized_mean_difference_output": -3.814285598586306
+                    "standardized_mean_difference_output": -3.814285598586306,
+                    "analyzed": true
                 },
                 {
                     "id": 351,
@@ -10121,7 +10123,8 @@
                     "comparator_mean_output": 182.4,
                     "comparator_standard_deviation_output": 8.6,
                     "comparator_group_size_output": 9,
-                    "standardized_mean_difference_output": 0.0
+                    "standardized_mean_difference_output": 0.0,
+                    "analyzed": true
                 },
                 {
                     "id": 247,
@@ -10161,7 +10164,8 @@
                     "comparator_mean_output": "x.05",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 5,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 645,
@@ -10201,7 +10205,8 @@
                     "comparator_mean_output": 101.7,
                     "comparator_standard_deviation_output": 8.2,
                     "comparator_group_size_output": 30,
-                    "standardized_mean_difference_output": -0.22127662982916263
+                    "standardized_mean_difference_output": -0.22127662982916263,
+                    "analyzed": true
                 },
                 {
                     "id": 145,
@@ -10241,7 +10246,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 643,
@@ -10281,7 +10287,8 @@
                     "comparator_mean_output": 5.6,
                     "comparator_standard_deviation_output": "1.5, ne",
                     "comparator_group_size_output": 23,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 503,
@@ -10321,7 +10328,8 @@
                     "comparator_mean_output": 63.0,
                     "comparator_standard_deviation_output": 15.2,
                     "comparator_group_size_output": 53,
-                    "standardized_mean_difference_output": 2.325761012357303
+                    "standardized_mean_difference_output": 2.325761012357303,
+                    "analyzed": true
                 },
                 {
                     "id": 649,
@@ -10361,7 +10369,8 @@
                     "comparator_mean_output": 31.8,
                     "comparator_standard_deviation_output": 4.3,
                     "comparator_group_size_output": 62,
-                    "standardized_mean_difference_output": 0.4807216240606605
+                    "standardized_mean_difference_output": 0.4807216240606605,
+                    "analyzed": true
                 },
                 {
                     "id": 181,
@@ -10401,7 +10410,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 217,
@@ -10441,7 +10451,8 @@
                     "comparator_mean_output": "65\u00b113",
                     "comparator_standard_deviation_output": 13,
                     "comparator_group_size_output": 16,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 156,
@@ -10481,7 +10492,8 @@
                     "comparator_mean_output": 165.5,
                     "comparator_standard_deviation_output": 34.5,
                     "comparator_group_size_output": 40,
-                    "standardized_mean_difference_output": -1.8439030596855317
+                    "standardized_mean_difference_output": -1.8439030596855317,
+                    "analyzed": true
                 },
                 {
                     "id": 536,
@@ -10521,7 +10533,8 @@
                     "comparator_mean_output": 37.71,
                     "comparator_standard_deviation_output": 11.08,
                     "comparator_group_size_output": 1,
-                    "standardized_mean_difference_output": -0.21119454507138205
+                    "standardized_mean_difference_output": -0.21119454507138205,
+                    "analyzed": true
                 },
                 {
                     "id": 418,
@@ -10561,7 +10574,8 @@
                     "comparator_mean_output": 4.1,
                     "comparator_standard_deviation_output": 1.9,
                     "comparator_group_size_output": 98,
-                    "standardized_mean_difference_output": -0.056934094230956994
+                    "standardized_mean_difference_output": -0.056934094230956994,
+                    "analyzed": true
                 },
                 {
                     "id": 428,
@@ -10601,7 +10615,8 @@
                     "comparator_mean_output": 33.6,
                     "comparator_standard_deviation_output": 16.3,
                     "comparator_group_size_output": 99,
-                    "standardized_mean_difference_output": 3.0273180705882154
+                    "standardized_mean_difference_output": 3.0273180705882154,
+                    "analyzed": true
                 },
                 {
                     "id": 318,
@@ -10641,7 +10656,8 @@
                     "comparator_mean_output": "13.3\u00b11.7",
                     "comparator_standard_deviation_output": 1.7,
                     "comparator_group_size_output": 2,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 241,
@@ -10681,7 +10697,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 327,
@@ -10721,7 +10738,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 0,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 553,
@@ -10761,7 +10779,8 @@
                     "comparator_mean_output": 46.9,
                     "comparator_standard_deviation_output": 4.8,
                     "comparator_group_size_output": 19,
-                    "standardized_mean_difference_output": 0.24937672822674586
+                    "standardized_mean_difference_output": 0.24937672822674586,
+                    "analyzed": true
                 },
                 {
                     "id": 673,
@@ -10801,7 +10820,8 @@
                     "comparator_mean_output": 0.226,
                     "comparator_standard_deviation_output": 0.23,
                     "comparator_group_size_output": 12,
-                    "standardized_mean_difference_output": -0.36027455198638275
+                    "standardized_mean_difference_output": -0.36027455198638275,
+                    "analyzed": true
                 }
             ],
             "unknown_output_but_reference_known": [
