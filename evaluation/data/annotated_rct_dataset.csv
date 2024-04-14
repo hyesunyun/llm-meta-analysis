@@ -197,7 +197,7 @@ id,evidence_inference_prompt_id,pmcid,outcome,intervention,comparator,outcome_ty
 196,2097,5360580,WMS-R (0 min),1 mg/day of Pls purified from scallop,placebo,continuous,,24,,24,1.29,3.14,1.08,1.55,Data is from 28 weeks (final timepoint). Back calculated the SD values using CI values.,FALSE,TRUE,FALSE,TRUE,11096,9099,6033,TEST
 197,7734,5380284,Pain scores 48 hours after the surgery,Gum-chewing group,No gum group,continuous,,38,,37,,,,,,FALSE,TRUE,TRUE,FALSE,1731,1429,1251,TEST
 198,7735,5380284,Surgery duration,Gum-chewing group,No gum group,continuous,,38,,37,,,,,Data is unavailable.,FALSE,FALSE,TRUE,FALSE,1731,1429,1251,TEST
-199,7736,5380284,Rates of POI,Gum-chewing group,No gum group,binary,21,38,21,37,,,,,,FALSE,TRUE,TRUE,TRUE,1731,1429,1251,TEST
+199,7736,5380284,Rates of POI,Gum-chewing group,No gum group,binary,,38,,37,,,,,,FALSE,TRUE,TRUE,FALSE,1731,1429,1251,TEST
 200,7737,5380284,Consumption of fentanyl,Gum-chewing group,No gum group,continuous,,38,,37,,,,,,FALSE,TRUE,TRUE,FALSE,1731,1429,1251,TEST
 201,7738,5380284,Pain scores 24 hours and 72 hours after the surgery,Gum-chewing group,No gum group,continuous,,38,,37,,,,,,FALSE,TRUE,TRUE,FALSE,1731,1429,1251,TEST
 202,5498,5380326,Interferon gamma-induced protein 10,Vitamin D supplementation,Control,continuous,,40,,40,636.47,448.47,748.88,551,,FALSE,TRUE,FALSE,TRUE,10658,5810,4260,TEST
