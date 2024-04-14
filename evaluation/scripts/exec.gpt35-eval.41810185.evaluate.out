@@ -1,37 +1,37 @@
 Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
 Task:         outcome_type
-Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/biomistral_outcome_type_test_output_20240326-11:28:52.json
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/gpt35_outcome_type_test_output_20240326-11:38:47.json
 Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
 PMC Files Path: None
 
 Metrics for the task:
 {
     "number_of_model_unknowns": {
-        "outcome_type": 409,
-        "total": 409
+        "outcome_type": 152,
+        "total": 152
     },
     "number_of_reference_unknowns": {
         "outcome_type": 0,
         "total": 0
     },
     "exact_match_accuracy": {
-        "outcome_type": 0.13414634146341464,
-        "total": 0.13414634146341464
+        "outcome_type": 0.6067073170731707,
+        "total": 0.6067073170731707
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.13414634146341464
+        "partial_match_accuracy_1": 0.6067073170731707
     },
     "outcome_type_f_score": {
         "outcome_type": {
-            "f1_score_binary": 0.27956989247311825,
-            "f1_score_continuous": 0.13559322033898305,
+            "f1_score_binary": 0.6797066014669926,
+            "f1_score_continuous": 0.6897470039946738,
             "f1_score_unknown": 0.0
         }
     }
 }
 Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
 Task:         binary_outcomes
-Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_test_output_20240403-13:07:52.json
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/gpt35_binary_outcomes_test_output_20240403-12:38:47.json
 Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
 PMC Files Path: None
 
@@ -39,12 +39,16 @@ Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
 An exception occurred for calculate log odds ratio - intervention_events: 1116, control_events: 1264, intervention_total: 1,525, control_total: 1,514
+Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 An exception occurred for calculate log odds ratio - intervention_events: 630, control_events: 342, intervention_total: 1,522, control_total: 1,512
 Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
 An exception occurred for calculate log odds ratio - intervention_events: 1138, control_events: 1273, intervention_total: 1,525, control_total: 1,514
+Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 An exception occurred for calculate log odds ratio - intervention_events: 1,078, control_events: 976, intervention_total: 1,919, control_total: 1,922
 Error in applying zero correction: Undefined results.
@@ -58,16 +62,15 @@ Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
 Error in applying zero correction: Undefined results.
-No computable instances found
-No computable instances found
+Error in applying zero correction: Undefined results.
 Metrics for the task:
 {
     "number_of_model_unknowns": {
-        "intervention_events": 144,
-        "intervention_group_size": 162,
-        "comparator_events": 144,
-        "comparator_group_size": 162,
-        "total": 612
+        "intervention_events": 45,
+        "intervention_group_size": 24,
+        "comparator_events": 49,
+        "comparator_group_size": 27,
+        "total": 145
     },
     "number_of_reference_unknowns": {
         "intervention_events": 27,
@@ -77,49 +80,53 @@ Metrics for the task:
         "total": 72
     },
     "exact_match_accuracy": {
-        "intervention_events": 0.15789473684210525,
-        "intervention_group_size": 0.05263157894736842,
-        "comparator_events": 0.15789473684210525,
-        "comparator_group_size": 0.05263157894736842,
-        "total": 0.03508771929824561
+        "intervention_events": 0.4619883040935672,
+        "intervention_group_size": 0.6549707602339181,
+        "comparator_events": 0.391812865497076,
+        "comparator_group_size": 0.6491228070175439,
+        "total": 0.2982456140350877
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.17543859649122806,
-        "partial_match_accuracy_2": 0.17543859649122806,
-        "partial_match_accuracy_3": 0.03508771929824561
+        "partial_match_accuracy_1": 0.7485380116959064,
+        "partial_match_accuracy_2": 0.695906432748538,
+        "partial_match_accuracy_3": 0.4152046783625731
     },
-    "percentage_of_computable_instances": 0.0,
+    "percentage_of_computable_instances": 0.6101694915254238,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": null,
-            "standard_error_of_mae": null,
+            "mean_absolute_error": 0.35183621851127345,
+            "standard_error_of_mae": 0.09011661271639318,
             "95_confidence_interval_of_mae": [
-                null,
-                null
+                0.17520765758714282,
+                0.528464779435404
             ]
         }
     },
-    "num_of_chunked_instances": 143
+    "num_of_chunked_instances": 0
 }
 Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
 Task:         continuous_outcomes
-Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/biomistral_continuous_outcomes_test_output_20240403-15:29:53.json
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/gpt35_continuous_outcomes_test_output_20240403-13:10:49.json
 Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/
 PMC Files Path: None
 
+An exception occurred for calculate standardized mean difference - intervention_mean: 35.2%, control_mean: 9.9%, intervention_sd: 21.7%, control_sd: 14.5%
+An exception occurred for calculate standardized mean difference - intervention_mean: 9 days, control_mean: 9 days, intervention_sd: 0, control_sd: 0
+An exception occurred for calculate standardized mean difference - intervention_mean: 1.7, control_mean: 1.8, intervention_sd: 0.0, control_sd: 0.0
 An exception occurred for calculate standardized mean difference - intervention_mean: 6,032.37, control_mean: 6408.33, intervention_sd: 1359.15, control_sd: 1822.17
-No computable instances found
-No computable instances found
+An exception occurred for calculate standardized mean difference - intervention_mean: 15%, control_mean: 20%, intervention_sd: 6%, control_sd: 23%
+An exception occurred for calculate standardized mean difference - intervention_mean: 5, control_mean: 4, intervention_sd: 0, control_sd: 0
+An exception occurred for calculate standardized mean difference - intervention_mean: 24 (sd, 12.9), control_mean: 11.7 (sd, 6.3), intervention_sd: 12.9, control_sd: 6.3
 Metrics for the task:
 {
     "number_of_model_unknowns": {
-        "intervention_mean": 296,
-        "intervention_standard_deviation": 257,
-        "intervention_group_size": 443,
-        "comparator_mean": 290,
-        "comparator_standard_deviation": 256,
-        "comparator_group_size": 443,
-        "total": 1985
+        "intervention_mean": 61,
+        "intervention_standard_deviation": 53,
+        "intervention_group_size": 61,
+        "comparator_mean": 87,
+        "comparator_standard_deviation": 85,
+        "comparator_group_size": 90,
+        "total": 437
     },
     "number_of_reference_unknowns": {
         "intervention_mean": 189,
@@ -131,31 +138,31 @@ Metrics for the task:
         "total": 925
     },
     "exact_match_accuracy": {
-        "intervention_mean": 0.38969072164948454,
-        "intervention_standard_deviation": 0.47010309278350515,
-        "intervention_group_size": 0.0865979381443299,
-        "comparator_mean": 0.4020618556701031,
-        "comparator_standard_deviation": 0.47216494845360824,
-        "comparator_group_size": 0.0865979381443299,
-        "total": 0.041237113402061855
+        "intervention_mean": 0.5381443298969072,
+        "intervention_standard_deviation": 0.6061855670103092,
+        "intervention_group_size": 0.6412371134020619,
+        "comparator_mean": 0.5257731958762887,
+        "comparator_standard_deviation": 0.5835051546391753,
+        "comparator_group_size": 0.6082474226804123,
+        "total": 0.2804123711340206
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.5010309278350515,
-        "partial_match_accuracy_2": 0.5010309278350515,
-        "partial_match_accuracy_3": 0.40824742268041236,
-        "partial_match_accuracy_4": 0.4020618556701031,
-        "partial_match_accuracy_5": 0.05360824742268041
+        "partial_match_accuracy_1": 0.8721649484536083,
+        "partial_match_accuracy_2": 0.8144329896907216,
+        "partial_match_accuracy_3": 0.6453608247422681,
+        "partial_match_accuracy_4": 0.554639175257732,
+        "partial_match_accuracy_5": 0.33608247422680415
     },
-    "percentage_of_computable_instances": 0.0,
+    "percentage_of_computable_instances": 0.6274509803921569,
     "point_estimates": {
         "standardized_mean_difference": {
-            "mean_absolute_error": null,
-            "standard_error_of_mae": null,
+            "mean_absolute_error": 0.9101616125916042,
+            "standard_error_of_mae": 0.4206553620292821,
             "95_confidence_interval_of_mae": [
-                null,
-                null
+                0.08567710301421128,
+                1.7346461221689973
             ]
         }
     },
-    "num_of_chunked_instances": 421
+    "num_of_chunked_instances": 0
 }

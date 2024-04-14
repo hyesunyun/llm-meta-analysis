@@ -8,16 +8,16 @@
         "total": 0
     },
     "exact_match_accuracy": {
-        "outcome_type": 0.7301829268292683,
-        "total": 0.7301829268292683
+        "outcome_type": 0.7317073170731707,
+        "total": 0.7317073170731707
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.7301829268292683
+        "partial_match_accuracy_1": 0.7317073170731707
     },
     "outcome_type_f_score": {
         "outcome_type": {
-            "f1_score_binary": 0.12371134020618556,
-            "f1_score_continuous": 0.8467815049864008,
+            "f1_score_binary": 0.12435233160621761,
+            "f1_score_continuous": 0.8478260869565217,
             "f1_score_unknown": 0.0
         }
     }
