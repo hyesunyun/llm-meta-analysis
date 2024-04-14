@@ -1,38 +1,38 @@
 {
     "number_of_model_unknowns": {
-        "intervention_events": 14,
+        "intervention_events": 12,
         "intervention_group_size": 5,
-        "comparator_events": 17,
+        "comparator_events": 15,
         "comparator_group_size": 9,
-        "total": 45
+        "total": 41
     },
     "number_of_reference_unknowns": {
-        "intervention_events": 25,
-        "intervention_group_size": 3,
-        "comparator_events": 25,
-        "comparator_group_size": 3,
-        "total": 56
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
     },
     "exact_match_accuracy": {
-        "intervention_events": 0.7426900584795322,
-        "intervention_group_size": 0.8771929824561403,
-        "comparator_events": 0.7251461988304093,
-        "comparator_group_size": 0.8771929824561403,
-        "total": 0.6432748538011696
+        "intervention_events": 0.7485380116959064,
+        "intervention_group_size": 0.8421052631578947,
+        "comparator_events": 0.7368421052631579,
+        "comparator_group_size": 0.8304093567251462,
+        "total": 0.6549707602339181
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.9473684210526315,
-        "partial_match_accuracy_2": 0.935672514619883,
-        "partial_match_accuracy_3": 0.695906432748538
+        "partial_match_accuracy_1": 0.9122807017543859,
+        "partial_match_accuracy_2": 0.9005847953216374,
+        "partial_match_accuracy_3": 0.6900584795321637
     },
-    "percentage_of_computable_instances": 0.8527131782945736,
+    "percentage_of_computable_instances": 0.8728813559322034,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 0.12368180336716987,
-            "standard_error_of_mae": 0.04883588655115699,
+            "mean_absolute_error": 0.09218734559314505,
+            "standard_error_of_mae": 0.04428782396073371,
             "95_confidence_interval_of_mae": [
-                0.02796346572690217,
-                0.21940014100743757
+                0.00538321063010698,
+                0.17899148055618314
             ]
         }
     },

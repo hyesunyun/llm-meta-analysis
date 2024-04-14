@@ -1,38 +1,38 @@
 {
     "number_of_model_unknowns": {
-        "intervention_events": 122,
-        "intervention_group_size": 138,
-        "comparator_events": 130,
-        "comparator_group_size": 154,
-        "total": 544
+        "intervention_events": 119,
+        "intervention_group_size": 131,
+        "comparator_events": 127,
+        "comparator_group_size": 147,
+        "total": 524
     },
     "number_of_reference_unknowns": {
-        "intervention_events": 25,
-        "intervention_group_size": 3,
-        "comparator_events": 25,
-        "comparator_group_size": 3,
-        "total": 56
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
     },
     "exact_match_accuracy": {
-        "intervention_events": 0.1286549707602339,
-        "intervention_group_size": 0.04678362573099415,
-        "comparator_events": 0.14035087719298245,
-        "comparator_group_size": 0.017543859649122806,
-        "total": 0.011695906432748537
+        "intervention_events": 0.14619883040935672,
+        "intervention_group_size": 0.08771929824561403,
+        "comparator_events": 0.15789473684210525,
+        "comparator_group_size": 0.05847953216374269,
+        "total": 0.03508771929824561
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.18128654970760233,
-        "partial_match_accuracy_2": 0.1286549707602339,
-        "partial_match_accuracy_3": 0.011695906432748537
+        "partial_match_accuracy_1": 0.21637426900584794,
+        "partial_match_accuracy_2": 0.16374269005847952,
+        "partial_match_accuracy_3": 0.03508771929824561
     },
-    "percentage_of_computable_instances": 0.06201550387596899,
+    "percentage_of_computable_instances": 0.07627118644067797,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 1.4149393869370221,
-            "standard_error_of_mae": 0.6211426047760753,
+            "mean_absolute_error": 1.6624879107053179,
+            "standard_error_of_mae": 0.6640852791946653,
             "95_confidence_interval_of_mae": [
-                0.19749988157591458,
-                2.6323788922981297
+                0.36088076348377385,
+                2.964095057926862
             ]
         }
     },

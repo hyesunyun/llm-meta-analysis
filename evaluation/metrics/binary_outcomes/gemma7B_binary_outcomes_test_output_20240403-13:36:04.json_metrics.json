@@ -1,38 +1,38 @@
 {
     "number_of_model_unknowns": {
-        "intervention_events": 21,
+        "intervention_events": 18,
         "intervention_group_size": 17,
-        "comparator_events": 33,
+        "comparator_events": 30,
         "comparator_group_size": 25,
-        "total": 96
+        "total": 90
     },
     "number_of_reference_unknowns": {
-        "intervention_events": 25,
-        "intervention_group_size": 3,
-        "comparator_events": 25,
-        "comparator_group_size": 3,
-        "total": 56
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
     },
     "exact_match_accuracy": {
-        "intervention_events": 0.2573099415204678,
-        "intervention_group_size": 0.52046783625731,
-        "comparator_events": 0.2573099415204678,
-        "comparator_group_size": 0.5730994152046783,
+        "intervention_events": 0.27485380116959063,
+        "intervention_group_size": 0.5087719298245614,
+        "comparator_events": 0.27485380116959063,
+        "comparator_group_size": 0.5555555555555556,
         "total": 0.13450292397660818
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.672514619883041,
+        "partial_match_accuracy_1": 0.6783625730994152,
         "partial_match_accuracy_2": 0.5847953216374269,
         "partial_match_accuracy_3": 0.21637426900584794
     },
-    "percentage_of_computable_instances": 0.4728682170542636,
+    "percentage_of_computable_instances": 0.5,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 1.0768734245971197,
-            "standard_error_of_mae": 0.2194830924526903,
+            "mean_absolute_error": 1.1447060723571219,
+            "standard_error_of_mae": 0.22773637062310445,
             "95_confidence_interval_of_mae": [
-                0.6466865633898466,
-                1.5070602858043927
+                0.6983427859358371,
+                1.5910693587784066
             ]
         }
     },

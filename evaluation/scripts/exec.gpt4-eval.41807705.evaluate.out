@@ -1,0 +1,173 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/gpt4_outcome_type_test_output_20240325-11:55:44.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 155,
+        "total": 155
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.7149390243902439,
+        "total": 0.7149390243902439
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.7149390243902439
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.7395498392282958,
+            "f1_score_continuous": 0.8368794326241135,
+            "f1_score_unknown": 0.0
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/gpt4_binary_outcomes_test_output_20240403-12:51:38.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 1116, control_events: 1264, intervention_total: 1,525, control_total: 1,514
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 630, control_events: 342, intervention_total: 1,522, control_total: 1,512
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 1138, control_events: 1273, intervention_total: 1,525, control_total: 1,514
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 1,078, control_events: 976, intervention_total: 1,919, control_total: 1,922
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+An exception occurred for calculate log odds ratio - intervention_events: 673, control_events: 366, intervention_total: 1,525, control_total: 1,514
+An exception occurred for calculate log odds ratio - intervention_events: 1279, control_events: 1350, intervention_total: 1,525, control_total: 1,514
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Error in applying zero correction: Undefined results.
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 12,
+        "intervention_group_size": 5,
+        "comparator_events": 15,
+        "comparator_group_size": 9,
+        "total": 41
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.7485380116959064,
+        "intervention_group_size": 0.8421052631578947,
+        "comparator_events": 0.7368421052631579,
+        "comparator_group_size": 0.8304093567251462,
+        "total": 0.6549707602339181
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.9122807017543859,
+        "partial_match_accuracy_2": 0.9005847953216374,
+        "partial_match_accuracy_3": 0.6900584795321637
+    },
+    "percentage_of_computable_instances": 0.8728813559322034,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 0.09218734559314505,
+            "standard_error_of_mae": 0.04428782396073371,
+            "95_confidence_interval_of_mae": [
+                0.00538321063010698,
+                0.17899148055618314
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/gpt4_continuous_outcomes_test_output_20240403-14:06:53.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/
+PMC Files Path: None
+
+An exception occurred for calculate standardized mean difference - intervention_mean: 6,032.37, control_mean: 6408.33, intervention_sd: 1359.15, control_sd: 1822.17
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 77,
+        "intervention_standard_deviation": 65,
+        "intervention_group_size": 65,
+        "comparator_mean": 73,
+        "comparator_standard_deviation": 69,
+        "comparator_group_size": 73,
+        "total": 422
+    },
+    "number_of_reference_unknowns": {
+        "intervention_mean": 189,
+        "intervention_standard_deviation": 228,
+        "intervention_group_size": 42,
+        "comparator_mean": 195,
+        "comparator_standard_deviation": 229,
+        "comparator_group_size": 42,
+        "total": 925
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.7195876288659794,
+        "intervention_standard_deviation": 0.7505154639175258,
+        "intervention_group_size": 0.734020618556701,
+        "comparator_mean": 0.7195876288659794,
+        "comparator_standard_deviation": 0.7381443298969073,
+        "comparator_group_size": 0.6907216494845361,
+        "total": 0.4865979381443299
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.9216494845360824,
+        "partial_match_accuracy_2": 0.9134020618556701,
+        "partial_match_accuracy_3": 0.7649484536082474,
+        "partial_match_accuracy_4": 0.7237113402061855,
+        "partial_match_accuracy_5": 0.5422680412371134
+    },
+    "percentage_of_computable_instances": 0.7176470588235294,
+    "point_estimates": {
+        "standardized_mean_difference": {
+            "mean_absolute_error": 0.3199110515753759,
+            "standard_error_of_mae": 0.10770247187565636,
+            "95_confidence_interval_of_mae": [
+                0.10881420669908945,
+                0.5310078964516624
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}
