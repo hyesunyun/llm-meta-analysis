@@ -30,7 +30,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3742,
                     "split": "TEST",
                     "output": "C",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 495,
@@ -60,7 +61,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5719,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 345,
@@ -90,7 +92,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3515,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 183,
@@ -120,7 +123,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3742,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 328,
@@ -150,7 +154,8 @@
                     "tiktoken_without_attributes_xml_token_num": 884,
                     "split": "TEST",
                     "output": "C",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 413,
@@ -180,7 +185,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4934,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 543,
@@ -210,7 +216,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2387,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 52,
@@ -240,7 +247,8 @@
                     "tiktoken_without_attributes_xml_token_num": 8380,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 207,
@@ -270,7 +278,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5810,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 509,
@@ -300,7 +309,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5719,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 485,
@@ -330,7 +340,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2633,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 90,
@@ -360,7 +371,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1217,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 652,
@@ -390,7 +402,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2044,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 395,
@@ -420,7 +433,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2080,
                     "split": "TEST",
                     "output": "C",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 500,
@@ -450,7 +464,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5719,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 481,
@@ -480,7 +495,8 @@
                     "tiktoken_without_attributes_xml_token_num": 13328,
                     "split": "TEST",
                     "output": "C",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 67,
@@ -510,7 +526,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3999,
                     "split": "TEST",
                     "output": "C)section",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 580,
@@ -540,7 +557,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4205,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 656,
@@ -570,7 +588,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2261,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 },
                 {
                     "id": 325,
@@ -600,7 +619,8 @@
                     "tiktoken_without_attributes_xml_token_num": 884,
                     "split": "TEST",
                     "output": "C)",
-                    "outcome_type_output": "x"
+                    "outcome_type_output": "x",
+                    "analyzed": true
                 }
             ],
             "continuous_when_binary": [
@@ -632,7 +652,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1429,
                     "split": "TEST",
                     "output": "A) binary",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 172,
@@ -662,7 +683,8 @@
                     "tiktoken_without_attributes_xml_token_num": 6902,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 663,
@@ -692,7 +714,8 @@
                     "tiktoken_without_attributes_xml_token_num": 7894,
                     "split": "TEST",
                     "output": "A",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 675,
@@ -722,7 +745,8 @@
                     "tiktoken_without_attributes_xml_token_num": 12978,
                     "split": "TEST",
                     "output": "A) binary",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 581,
@@ -752,7 +776,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 169,
@@ -782,7 +807,8 @@
                     "tiktoken_without_attributes_xml_token_num": 6902,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 676,
@@ -812,7 +838,8 @@
                     "tiktoken_without_attributes_xml_token_num": 12978,
                     "split": "TEST",
                     "output": "A) binary",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 614,
@@ -842,7 +869,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "A) binary",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 411,
@@ -872,7 +900,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4934,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 410,
@@ -902,7 +931,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4934,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 399,
@@ -932,7 +962,8 @@
                     "tiktoken_without_attributes_xml_token_num": 6474,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 98,
@@ -962,7 +993,8 @@
                     "tiktoken_without_attributes_xml_token_num": 7106,
                     "split": "TEST",
                     "output": "A) binary",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 310,
@@ -992,7 +1024,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1043,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 119,
@@ -1022,7 +1055,8 @@
                     "tiktoken_without_attributes_xml_token_num": 2670,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 596,
@@ -1052,7 +1086,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 408,
@@ -1082,7 +1117,8 @@
                     "tiktoken_without_attributes_xml_token_num": 4934,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 271,
@@ -1112,7 +1148,8 @@
                     "tiktoken_without_attributes_xml_token_num": 996,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 638,
@@ -1142,7 +1179,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1885,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 249,
@@ -1172,7 +1210,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1019,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 },
                 {
                     "id": 606,
@@ -1202,7 +1241,8 @@
                     "tiktoken_without_attributes_xml_token_num": 5362,
                     "split": "TEST",
                     "output": "A)",
-                    "outcome_type_output": "binary"
+                    "outcome_type_output": "binary",
+                    "analyzed": true
                 }
             ],
             "binary_when_continuous": [
@@ -1234,7 +1274,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1263,
                     "split": "TEST",
                     "output": "B) continuous",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 304,
@@ -1264,7 +1305,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1624,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 64,
@@ -1294,7 +1336,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1263,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 61,
@@ -1324,7 +1367,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1263,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 474,
@@ -1354,7 +1398,8 @@
                     "tiktoken_without_attributes_xml_token_num": 13328,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 132,
@@ -1384,7 +1429,8 @@
                     "tiktoken_without_attributes_xml_token_num": 7944,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 63,
@@ -1414,7 +1460,8 @@
                     "tiktoken_without_attributes_xml_token_num": 1263,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 },
                 {
                     "id": 380,
@@ -1444,7 +1491,8 @@
                     "tiktoken_without_attributes_xml_token_num": 3649,
                     "split": "TEST",
                     "output": "B",
-                    "outcome_type_output": "continuous"
+                    "outcome_type_output": "continuous",
+                    "analyzed": true
                 }
             ]
         },
@@ -1484,7 +1532,8 @@
                     "intervention_group_size_output": 49,
                     "comparator_events_output": 27,
                     "comparator_group_size_output": 50,
-                    "log_odds_ratio_output": -1.0766333819493346
+                    "log_odds_ratio_output": -1.0766333819493346,
+                    "analyzed": true
                 },
                 {
                     "id": 304,
@@ -1520,7 +1569,8 @@
                     "intervention_group_size_output": 15,
                     "comparator_events_output": 5,
                     "comparator_group_size_output": 15,
-                    "log_odds_ratio_output": -1.9459101490553135
+                    "log_odds_ratio_output": -1.9459101490553135,
+                    "analyzed": true
                 },
                 {
                     "id": 379,
@@ -1556,7 +1606,8 @@
                     "intervention_group_size_output": 59,
                     "comparator_events_output": 111,
                     "comparator_group_size_output": 64,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 641,
@@ -1592,7 +1643,8 @@
                     "intervention_group_size_output": 48,
                     "comparator_events_output": 10,
                     "comparator_group_size_output": 23,
-                    "log_odds_ratio_output": 0.6852211152875246
+                    "log_odds_ratio_output": 0.6852211152875246,
+                    "analyzed": true
                 },
                 {
                     "id": 500,
@@ -1628,7 +1680,8 @@
                     "intervention_group_size_output": 4114,
                     "comparator_events_output": 16,
                     "comparator_group_size_output": 3973,
-                    "log_odds_ratio_output": -0.09979540025648442
+                    "log_odds_ratio_output": -0.09979540025648442,
+                    "analyzed": true
                 },
                 {
                     "id": 512,
@@ -1664,7 +1717,8 @@
                     "intervention_group_size_output": 122,
                     "comparator_events_output": 67,
                     "comparator_group_size_output": 121,
-                    "log_odds_ratio_output": 0.04810601821844594
+                    "log_odds_ratio_output": 0.04810601821844594,
+                    "analyzed": true
                 },
                 {
                     "id": 251,
@@ -1700,7 +1754,8 @@
                     "intervention_group_size_output": 402,
                     "comparator_events_output": 61,
                     "comparator_group_size_output": 388,
-                    "log_odds_ratio_output": 0.014923494600595165
+                    "log_odds_ratio_output": 0.014923494600595165,
+                    "analyzed": true
                 },
                 {
                     "id": 48,
@@ -1736,7 +1791,8 @@
                     "intervention_group_size_output": 6,
                     "comparator_events_output": 3,
                     "comparator_group_size_output": 14,
-                    "log_odds_ratio_output": -1.3753652905877003
+                    "log_odds_ratio_output": -1.3753652905877003,
+                    "analyzed": true
                 },
                 {
                     "id": 49,
@@ -1772,7 +1828,8 @@
                     "intervention_group_size_output": 6,
                     "comparator_events_output": 3,
                     "comparator_group_size_output": 14,
-                    "log_odds_ratio_output": 0.6061358035703155
+                    "log_odds_ratio_output": 0.6061358035703155,
+                    "analyzed": true
                 },
                 {
                     "id": 625,
@@ -1808,7 +1865,8 @@
                     "intervention_group_size_output": 85,
                     "comparator_events_output": 4,
                     "comparator_group_size_output": 84,
-                    "log_odds_ratio_output": 0.7313683933801429
+                    "log_odds_ratio_output": 0.7313683933801429,
+                    "analyzed": true
                 },
                 {
                     "id": 252,
@@ -1844,7 +1902,8 @@
                     "intervention_group_size_output": 406,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 393,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 10,
@@ -1880,7 +1939,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": 25,
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 264,
@@ -1916,7 +1976,8 @@
                     "intervention_group_size_output": 78,
                     "comparator_events_output": 7,
                     "comparator_group_size_output": 78,
-                    "log_odds_ratio_output": 1.0391092078689068
+                    "log_odds_ratio_output": 1.0391092078689068,
+                    "analyzed": true
                 },
                 {
                     "id": 479,
@@ -1952,7 +2013,8 @@
                     "intervention_group_size_output": 1919,
                     "comparator_events_output": 975,
                     "comparator_group_size_output": 1922,
-                    "log_odds_ratio_output": 0.2191327136842254
+                    "log_odds_ratio_output": 0.2191327136842254,
+                    "analyzed": true
                 },
                 {
                     "id": 543,
@@ -1988,7 +2050,8 @@
                     "intervention_group_size_output": 120,
                     "comparator_events_output": 52,
                     "comparator_group_size_output": 120,
-                    "log_odds_ratio_output": 0.0
+                    "log_odds_ratio_output": 0.0,
+                    "analyzed": true
                 },
                 {
                     "id": 128,
@@ -2024,7 +2087,8 @@
                     "intervention_group_size_output": 50,
                     "comparator_events_output": 27,
                     "comparator_group_size_output": 50,
-                    "log_odds_ratio_output": -1.313022160013565
+                    "log_odds_ratio_output": -1.313022160013565,
+                    "analyzed": true
                 },
                 {
                     "id": 361,
@@ -2060,7 +2124,8 @@
                     "intervention_group_size_output": 919,
                     "comparator_events_output": 228,
                     "comparator_group_size_output": 922,
-                    "log_odds_ratio_output": -0.313090743451638
+                    "log_odds_ratio_output": -0.313090743451638,
+                    "analyzed": true
                 },
                 {
                     "id": 182,
@@ -2096,7 +2161,8 @@
                     "intervention_group_size_output": 33,
                     "comparator_events_output": 2,
                     "comparator_group_size_output": 33,
-                    "log_odds_ratio_output": 0.7598385550586174
+                    "log_odds_ratio_output": 0.7598385550586174,
+                    "analyzed": true
                 },
                 {
                     "id": 481,
@@ -2132,7 +2198,8 @@
                     "intervention_group_size_output": 1522,
                     "comparator_events_output": 345,
                     "comparator_group_size_output": 1512,
-                    "log_odds_ratio_output": 0.8681918910791377
+                    "log_odds_ratio_output": 0.8681918910791377,
+                    "analyzed": true
                 },
                 {
                     "id": 547,
@@ -2168,7 +2235,8 @@
                     "intervention_group_size_output": 74,
                     "comparator_events_output": 0,
                     "comparator_group_size_output": 72,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 }
             ],
             "known_output_but_reference_unknown": [
@@ -2206,7 +2274,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 5,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": 4.819548158898162
+                    "log_odds_ratio_output": 4.819548158898162,
+                    "analyzed": true
                 },
                 {
                     "id": 154,
@@ -2242,7 +2311,8 @@
                     "intervention_group_size_output": 40,
                     "comparator_events_output": 20,
                     "comparator_group_size_output": 40,
-                    "log_odds_ratio_output": -3.6635616461296463
+                    "log_odds_ratio_output": -3.6635616461296463,
+                    "analyzed": true
                 },
                 {
                     "id": 265,
@@ -2278,7 +2348,8 @@
                     "intervention_group_size_output": 83,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 79,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 137,
@@ -2314,7 +2385,8 @@
                     "intervention_group_size_output": 121,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 384,
@@ -2350,7 +2422,8 @@
                     "intervention_group_size_output": 108,
                     "comparator_events_output": 175,
                     "comparator_group_size_output": 246,
-                    "log_odds_ratio_output": 0.46119874601299327
+                    "log_odds_ratio_output": 0.46119874601299327,
+                    "analyzed": true
                 },
                 {
                     "id": 62,
@@ -2386,7 +2459,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 9,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": 3.950231060267041
+                    "log_odds_ratio_output": 3.950231060267041,
+                    "analyzed": true
                 },
                 {
                     "id": 139,
@@ -2422,7 +2496,8 @@
                     "intervention_group_size_output": 705,
                     "comparator_events_output": 503,
                     "comparator_group_size_output": 718,
-                    "log_odds_ratio_output": 0.21304251108314007
+                    "log_odds_ratio_output": 0.21304251108314007,
+                    "analyzed": true
                 },
                 {
                     "id": 378,
@@ -2458,7 +2533,8 @@
                     "intervention_group_size_output": 59,
                     "comparator_events_output": 44,
                     "comparator_group_size_output": 64,
-                    "log_odds_ratio_output": 0.47523467866328806
+                    "log_odds_ratio_output": 0.47523467866328806,
+                    "analyzed": true
                 },
                 {
                     "id": 61,
@@ -2494,7 +2570,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 6,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": 2.670309873119363
+                    "log_odds_ratio_output": 2.670309873119363,
+                    "analyzed": true
                 },
                 {
                     "id": 64,
@@ -2530,7 +2607,8 @@
                     "intervention_group_size_output": 23,
                     "comparator_events_output": 4,
                     "comparator_group_size_output": 19,
-                    "log_odds_ratio_output": 1.7635885922613586
+                    "log_odds_ratio_output": 1.7635885922613586,
+                    "analyzed": true
                 }
             ],
             "unknown_output_but_reference_known": [
@@ -2568,7 +2646,8 @@
                     "intervention_group_size_output": 53,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 53,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 269,
@@ -2604,7 +2683,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 358,
@@ -2640,7 +2720,8 @@
                     "intervention_group_size_output": 287,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 277,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 194,
@@ -2676,7 +2757,8 @@
                     "intervention_group_size_output": 169,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 167,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 121,
@@ -2712,7 +2794,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 87,
@@ -2748,7 +2831,8 @@
                     "intervention_group_size_output": 7726,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 6885,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 178,
@@ -2784,7 +2868,8 @@
                     "intervention_group_size_output": 14,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 84,
@@ -2820,7 +2905,8 @@
                     "intervention_group_size_output": 7726,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 6885,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 10,
@@ -2856,7 +2942,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": 25,
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 507,
@@ -2892,7 +2979,8 @@
                     "intervention_group_size_output": 10218,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 689,
@@ -2928,7 +3016,8 @@
                     "intervention_group_size_output": 102,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 86,
@@ -2964,7 +3053,8 @@
                     "intervention_group_size_output": 7726,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 6885,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 272,
@@ -3000,7 +3090,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 270,
@@ -3036,7 +3127,8 @@
                     "intervention_group_size_output": "x",
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 85,
@@ -3072,7 +3164,8 @@
                     "intervention_group_size_output": 7726,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 6885,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 474,
@@ -3108,7 +3201,8 @@
                     "intervention_group_size_output": 1522,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 1512,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 381,
@@ -3144,7 +3238,8 @@
                     "intervention_group_size_output": 59,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 64,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 137,
@@ -3180,7 +3275,8 @@
                     "intervention_group_size_output": 121,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": "x",
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 476,
@@ -3216,7 +3312,8 @@
                     "intervention_group_size_output": 1525,
                     "comparator_events_output": "x",
                     "comparator_group_size_output": 1514,
-                    "log_odds_ratio_output": null
+                    "log_odds_ratio_output": null,
+                    "analyzed": true
                 }
             ]
         },
@@ -3258,7 +3355,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 15,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 569,
@@ -3296,7 +3394,8 @@
                     "comparator_mean_output": 92.8,
                     "comparator_standard_deviation_output": 6.4,
                     "comparator_group_size_output": 6,
-                    "standardized_mean_difference_output": -1.1890356924813348
+                    "standardized_mean_difference_output": -1.1890356924813348,
+                    "analyzed": true
                 },
                 {
                     "id": 562,
@@ -3334,7 +3433,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 15,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 12,
@@ -3372,7 +3472,8 @@
                     "comparator_mean_output": 13.5,
                     "comparator_standard_deviation_output": 9.49,
                     "comparator_group_size_output": 97,
-                    "standardized_mean_difference_output": 1.081068617842359
+                    "standardized_mean_difference_output": 1.081068617842359,
+                    "analyzed": true
                 },
                 {
                     "id": 574,
@@ -3410,7 +3511,8 @@
                     "comparator_mean_output": 1.8,
                     "comparator_standard_deviation_output": 0.6,
                     "comparator_group_size_output": 11,
-                    "standardized_mean_difference_output": -0.14142135623730961
+                    "standardized_mean_difference_output": -0.14142135623730961,
+                    "analyzed": true
                 },
                 {
                     "id": 345,
@@ -3448,7 +3550,8 @@
                     "comparator_mean_output": 3.9,
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 22,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 332,
@@ -3486,7 +3589,8 @@
                     "comparator_mean_output": 3.4,
                     "comparator_standard_deviation_output": 0.1,
                     "comparator_group_size_output": 45,
-                    "standardized_mean_difference_output": -6.999999999999997
+                    "standardized_mean_difference_output": -6.999999999999997,
+                    "analyzed": true
                 },
                 {
                     "id": 456,
@@ -3524,7 +3628,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 20,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 565,
@@ -3562,7 +3667,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 15,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 579,
@@ -3600,7 +3706,8 @@
                     "comparator_mean_output": 39.2,
                     "comparator_standard_deviation_output": 9.5,
                     "comparator_group_size_output": 11,
-                    "standardized_mean_difference_output": 0.48419976271493814
+                    "standardized_mean_difference_output": 0.48419976271493814,
+                    "analyzed": true
                 },
                 {
                     "id": 607,
@@ -3638,7 +3745,8 @@
                     "comparator_mean_output": 65,
                     "comparator_standard_deviation_output": 19,
                     "comparator_group_size_output": 181,
-                    "standardized_mean_difference_output": 0.0512652015851016
+                    "standardized_mean_difference_output": 0.0512652015851016,
+                    "analyzed": true
                 },
                 {
                     "id": 323,
@@ -3676,7 +3784,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 190,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 686,
@@ -3714,7 +3823,8 @@
                     "comparator_mean_output": 128.55,
                     "comparator_standard_deviation_output": 51.45,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": 0.27152449247781063
+                    "standardized_mean_difference_output": 0.27152449247781063,
+                    "analyzed": true
                 },
                 {
                     "id": 577,
@@ -3752,7 +3862,8 @@
                     "comparator_mean_output": 20.0,
                     "comparator_standard_deviation_output": 9.0,
                     "comparator_group_size_output": 11,
-                    "standardized_mean_difference_output": 0.8104459907656137
+                    "standardized_mean_difference_output": 0.8104459907656137,
+                    "analyzed": true
                 },
                 {
                     "id": 365,
@@ -3790,7 +3901,8 @@
                     "comparator_mean_output": 0.97,
                     "comparator_standard_deviation_output": 1.31,
                     "comparator_group_size_output": 20,
-                    "standardized_mean_difference_output": 0.48820421889696275
+                    "standardized_mean_difference_output": 0.48820421889696275,
+                    "analyzed": true
                 },
                 {
                     "id": 470,
@@ -3828,7 +3940,8 @@
                     "comparator_mean_output": 0.67,
                     "comparator_standard_deviation_output": 0.18,
                     "comparator_group_size_output": 20,
-                    "standardized_mean_difference_output": -0.2681606092615966
+                    "standardized_mean_difference_output": -0.2681606092615966,
+                    "analyzed": true
                 },
                 {
                     "id": 267,
@@ -3866,7 +3979,8 @@
                     "comparator_mean_output": 14.0,
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 109,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 320,
@@ -3904,7 +4018,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 190,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 685,
@@ -3942,7 +4057,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 34,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 578,
@@ -3980,7 +4096,8 @@
                     "comparator_mean_output": 56.9,
                     "comparator_standard_deviation_output": 5.0,
                     "comparator_group_size_output": 11,
-                    "standardized_mean_difference_output": 0.10511766624552735
+                    "standardized_mean_difference_output": 0.10511766624552735,
+                    "analyzed": true
                 }
             ],
             "incorrect_output": [
@@ -4020,7 +4137,8 @@
                     "comparator_mean_output": 0.62,
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 232,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 357,
@@ -4058,7 +4176,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 15,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 221,
@@ -4096,7 +4215,8 @@
                     "comparator_mean_output": 7.2,
                     "comparator_standard_deviation_output": 1.33,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": -7.2801407394260345
+                    "standardized_mean_difference_output": -7.2801407394260345,
+                    "analyzed": true
                 },
                 {
                     "id": 6,
@@ -4134,7 +4254,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 232,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 618,
@@ -4172,7 +4293,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 667,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 517,
@@ -4210,7 +4332,8 @@
                     "comparator_mean_output": 230.8,
                     "comparator_standard_deviation_output": 75,
                     "comparator_group_size_output": 32,
-                    "standardized_mean_difference_output": -0.545954430498912
+                    "standardized_mean_difference_output": -0.545954430498912,
+                    "analyzed": true
                 },
                 {
                     "id": 207,
@@ -4248,7 +4371,8 @@
                     "comparator_mean_output": 548.33,
                     "comparator_standard_deviation_output": 191.46,
                     "comparator_group_size_output": 40,
-                    "standardized_mean_difference_output": 0.8152691238738441
+                    "standardized_mean_difference_output": 0.8152691238738441,
+                    "analyzed": true
                 },
                 {
                     "id": 675,
@@ -4286,7 +4410,8 @@
                     "comparator_mean_output": 64.2,
                     "comparator_standard_deviation_output": 28,
                     "comparator_group_size_output": 320,
-                    "standardized_mean_difference_output": -0.2742220044715407
+                    "standardized_mean_difference_output": -0.2742220044715407,
+                    "analyzed": true
                 },
                 {
                     "id": 291,
@@ -4324,7 +4449,8 @@
                     "comparator_mean_output": 42.8,
                     "comparator_standard_deviation_output": 12.8,
                     "comparator_group_size_output": 19,
-                    "standardized_mean_difference_output": 0.46432761346488405
+                    "standardized_mean_difference_output": 0.46432761346488405,
+                    "analyzed": true
                 },
                 {
                     "id": 359,
@@ -4362,7 +4488,8 @@
                     "comparator_mean_output": 2.9,
                     "comparator_standard_deviation_output": 12.7,
                     "comparator_group_size_output": 922,
-                    "standardized_mean_difference_output": 0.09561070089697983
+                    "standardized_mean_difference_output": 0.09561070089697983,
+                    "analyzed": true
                 },
                 {
                     "id": 676,
@@ -4400,7 +4527,8 @@
                     "comparator_mean_output": 64.2,
                     "comparator_standard_deviation_output": 28,
                     "comparator_group_size_output": 320,
-                    "standardized_mean_difference_output": -0.25488290706924727
+                    "standardized_mean_difference_output": -0.25488290706924727,
+                    "analyzed": true
                 },
                 {
                     "id": 289,
@@ -4438,7 +4566,8 @@
                     "comparator_mean_output": 39.5,
                     "comparator_standard_deviation_output": 10.6,
                     "comparator_group_size_output": 19,
-                    "standardized_mean_difference_output": 0.44627091943965974
+                    "standardized_mean_difference_output": 0.44627091943965974,
+                    "analyzed": true
                 },
                 {
                     "id": 212,
@@ -4476,7 +4605,8 @@
                     "comparator_mean_output": 6.5,
                     "comparator_standard_deviation_output": 0.9,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": 7.155417527999327
+                    "standardized_mean_difference_output": 7.155417527999327,
+                    "analyzed": true
                 },
                 {
                     "id": 555,
@@ -4514,7 +4644,8 @@
                     "comparator_mean_output": 26.4,
                     "comparator_standard_deviation_output": 10.4,
                     "comparator_group_size_output": 17,
-                    "standardized_mean_difference_output": 0.47977875419611
+                    "standardized_mean_difference_output": 0.47977875419611,
+                    "analyzed": true
                 },
                 {
                     "id": 643,
@@ -4552,7 +4683,8 @@
                     "comparator_mean_output": 5.6,
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 10,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 617,
@@ -4590,7 +4722,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 667,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 246,
@@ -4628,7 +4761,8 @@
                     "comparator_mean_output": 83,
                     "comparator_standard_deviation_output": 5,
                     "comparator_group_size_output": 10,
-                    "standardized_mean_difference_output": -1.8
+                    "standardized_mean_difference_output": -1.8,
+                    "analyzed": true
                 },
                 {
                     "id": 81,
@@ -4666,7 +4800,8 @@
                     "comparator_mean_output": 62.49,
                     "comparator_standard_deviation_output": 6.69,
                     "comparator_group_size_output": 27,
-                    "standardized_mean_difference_output": 5.77057171110741
+                    "standardized_mean_difference_output": 5.77057171110741,
+                    "analyzed": true
                 },
                 {
                     "id": 451,
@@ -4704,7 +4839,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 114,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 215,
@@ -4742,7 +4878,8 @@
                     "comparator_mean_output": 2.0,
                     "comparator_standard_deviation_output": 0.3,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": 0.0
+                    "standardized_mean_difference_output": 0.0,
+                    "analyzed": true
                 }
             ],
             "unknown_output_but_reference_known": [
@@ -4782,7 +4919,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 121,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 210,
@@ -4820,7 +4958,8 @@
                     "comparator_mean_output": 1.3,
                     "comparator_standard_deviation_output": 0.2,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": 0.39223227027636753
+                    "standardized_mean_difference_output": 0.39223227027636753,
+                    "analyzed": true
                 },
                 {
                     "id": 650,
@@ -4858,7 +4997,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 62,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 213,
@@ -4896,7 +5036,8 @@
                     "comparator_mean_output": 10.1,
                     "comparator_standard_deviation_output": 1.2,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": -0.2499999999999991
+                    "standardized_mean_difference_output": -0.2499999999999991,
+                    "analyzed": true
                 },
                 {
                     "id": 559,
@@ -4934,7 +5075,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 25,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 196,
@@ -4972,7 +5114,8 @@
                     "comparator_mean_output": 1.39,
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 135,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 276,
@@ -5010,7 +5153,8 @@
                     "comparator_mean_output": 4.3,
                     "comparator_standard_deviation_output": 22.7,
                     "comparator_group_size_output": 33,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 223,
@@ -5048,7 +5192,8 @@
                     "comparator_mean_output": 1.62,
                     "comparator_standard_deviation_output": 0.47,
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": -4.814344042121175
+                    "standardized_mean_difference_output": -4.814344042121175,
+                    "analyzed": true
                 },
                 {
                     "id": 149,
@@ -5086,7 +5231,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 30,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 300,
@@ -5124,7 +5270,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 545,
@@ -5162,7 +5309,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 273,
@@ -5200,7 +5348,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 531,
@@ -5238,7 +5387,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 301,
@@ -5276,7 +5426,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 629,
@@ -5314,7 +5465,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 5892,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 699,
@@ -5352,7 +5504,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 30,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 515,
@@ -5390,7 +5543,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 368,
@@ -5428,7 +5582,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 64,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 329,
@@ -5466,7 +5621,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": 5,
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 },
                 {
                     "id": 275,
@@ -5504,7 +5660,8 @@
                     "comparator_mean_output": "x",
                     "comparator_standard_deviation_output": "x",
                     "comparator_group_size_output": "x",
-                    "standardized_mean_difference_output": null
+                    "standardized_mean_difference_output": null,
+                    "analyzed": true
                 }
             ]
         }

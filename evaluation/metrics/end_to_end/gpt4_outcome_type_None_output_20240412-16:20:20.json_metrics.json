@@ -4,8 +4,8 @@
         "total": 0
     },
     "number_of_reference_unknowns": {
-        "outcome_type": 1,
-        "total": 1
+        "outcome_type": 0,
+        "total": 0
     },
     "exact_match_accuracy": {
         "outcome_type": 1.0,
@@ -17,7 +17,7 @@
     "outcome_type_f_score": {
         "outcome_type": {
             "f1_score_binary": 1.0,
-            "f1_score_continuous": 1.0,
+            "f1_score_continuous": null,
             "f1_score_unknown": null
         }
     }

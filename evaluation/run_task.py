@@ -236,9 +236,6 @@ class MetaAnalysisTaskRunner:
         current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
 
         keys_to_drop = [
-            "is_data_in_figure_graphics", 
-            "is_relevant_data_in_table", 
-            "is_table_in_graphic_format", 
             "abstract_and_results", 
             "input"
         ]
