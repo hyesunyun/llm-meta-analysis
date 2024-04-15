@@ -404,6 +404,19 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
             f"control_events: {control_events}, intervention_total: {intervention_total}, control_total: "
             f"{control_total}")
         return (None, None)
+    
+def convert_string_to_float(value: str) -> float:
+    """
+    This method converts a string to a float
+
+    :param value: value to convert
+
+    :return float value
+    """
+    try:
+        return float(value.replace(',', ''))
+    except:
+        return None
 
 def calculate_standardized_mean_difference(intervention_mean: float, control_mean: float, intervention_sd: float,
                                            control_sd: float, intervention_group_size: float, control_group_size: float) -> Tuple[float, float]:
@@ -425,17 +438,20 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
     
     # convert any string values to float
     if isinstance(intervention_mean, str):
-        intervention_mean = float(intervention_mean.replace(',', ''))
+        intervention_mean = convert_string_to_float(intervention_mean)
     if isinstance(control_mean, str):
-        control_mean = float(control_mean.replace(',', ''))
+        control_mean = convert_string_to_float(control_mean)
     if isinstance(intervention_sd, str):
-        intervention_sd = float(intervention_sd.replace(',', ''))
+        intervention_sd = convert_string_to_float(intervention_sd)
     if isinstance(control_sd, str):
-        control_sd = float(control_sd.replace(',', ''))
+        control_sd = convert_string_to_float(control_sd)
     if isinstance(intervention_group_size, str):
-        intervention_group_size = float(intervention_group_size.replace(',', ''))
+        intervention_group_size = convert_string_to_float(intervention_group_size)
     if isinstance(control_group_size, str):
-        control_group_size = float(control_group_size.replace(',', ''))
+        control_group_size = convert_string_to_float(control_group_size)
+
+    if None in (intervention_mean, control_mean, intervention_sd, control_sd, intervention_group_size, control_group_size):
+        return (None, None)
 
     try: 
         smd, var_eff = effectsize_smd(np.array([intervention_mean]), 
