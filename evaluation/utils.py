@@ -370,10 +370,28 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
 
     :return log odds ratio
     """
-    # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis) This
-    # involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero Except when
-    # intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR is undefined.
-    try:
+    # need to check for x or unknown in the values
+    if "x" in (intervention_events, control_events, intervention_total, control_total):
+        return (None, None)
+    
+    # convert any string values to int
+    if isinstance(intervention_events, str):
+        intervention_events = int(intervention_events.replace(',', ''))
+    if isinstance(control_events, str):
+        control_events = int(control_events.replace(',', ''))
+    if isinstance(intervention_total, str):
+        intervention_total = int(intervention_total.replace(',', ''))
+    if isinstance(control_total, str):
+        control_total = int(control_total.replace(',', ''))
+
+    # check to make sure that events do not exceed total
+    if (intervention_events > intervention_total) or (control_events > control_total):
+        return (None, None)
+    
+    try:    
+        # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis) This
+        # involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero Except when
+        # intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR is undefined.
         lor, var_eff = effectsize_2proportions(np.array([intervention_events]), 
                                             np.array([intervention_total]),
                                             np.array([control_events]),
@@ -401,7 +419,25 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
 
     :return standardized mean difference
     """
-    try:
+    # need to check for x or unknown in the values
+    if "x" in (intervention_mean, control_mean, intervention_sd, control_sd, intervention_group_size, control_group_size):
+        return (None, None)
+    
+    # convert any string values to float
+    if isinstance(intervention_mean, str):
+        intervention_mean = float(intervention_mean.replace(',', ''))
+    if isinstance(control_mean, str):
+        control_mean = float(control_mean.replace(',', ''))
+    if isinstance(intervention_sd, str):
+        intervention_sd = float(intervention_sd.replace(',', ''))
+    if isinstance(control_sd, str):
+        control_sd = float(control_sd.replace(',', ''))
+    if isinstance(intervention_group_size, str):
+        intervention_group_size = float(intervention_group_size.replace(',', ''))
+    if isinstance(control_group_size, str):
+        control_group_size = float(control_group_size.replace(',', ''))
+
+    try: 
         smd, var_eff = effectsize_smd(np.array([intervention_mean]), 
                                       np.array([intervention_sd]),
                                       np.array([intervention_group_size]),
