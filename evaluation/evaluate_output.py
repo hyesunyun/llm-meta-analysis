@@ -91,6 +91,7 @@ class MetaAnalysisTaskEvaluator:
             it = example["intervention_group_size"]
             ce = example["comparator_events"]
             ct = example["comparator_group_size"]
+            print(calculate_log_odds_ratio(ie, ce, it, ct)[0])
             example.update({
                 "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct)[0]
             })
@@ -133,6 +134,7 @@ class MetaAnalysisTaskEvaluator:
                 it_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
                 ce_output = comparator["events"] if comparator and "events" in comparator else "x"
                 ct_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
+                print(calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)[0])
                 new_item = {
                     "intervention_events_output": ie_output,
                     "intervention_group_size_output": it_output,
@@ -172,6 +174,7 @@ class MetaAnalysisTaskEvaluator:
             cm = example["comparator_mean"]
             csd = example["comparator_standard_deviation"]
             cgs = example["comparator_group_size"]
+            print(calculate_standardized_mean_difference(im, cm, isd, csd, igs, cgs)[0])
             example.update({
                 "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd, igs, cgs)[0],
             })
@@ -215,6 +218,7 @@ class MetaAnalysisTaskEvaluator:
                 cm_output = comparator["mean"] if comparator and "mean" in comparator else "x"
                 csd_output = comparator["standard_deviation"] if comparator and "standard_deviation" in comparator else "x"
                 cgs_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
+                print(calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output, igs_output, cgs_output)[0])
                 new_item = {
                     "intervention_mean_output": im_output,
                     "intervention_standard_deviation_output": isd_output,
