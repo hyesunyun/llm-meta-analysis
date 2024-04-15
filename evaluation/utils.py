@@ -358,6 +358,32 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     }
     return final_yaml_output
 
+def convert_string_to_int(value: str) -> int:
+    """
+    This method converts a string to an int
+
+    :param value: value to convert
+
+    :return int value
+    """
+    try:
+        return int(value.replace(',', ''))
+    except:
+        return None
+
+def convert_string_to_float(value: str) -> float:
+    """
+    This method converts a string to a float
+
+    :param value: value to convert
+
+    :return float value
+    """
+    try:
+        return float(value.replace(',', ''))
+    except:
+        return None
+
 def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int,
                              control_total: int) -> Tuple[float, float]:
     """
@@ -376,14 +402,16 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
     
     # convert any string values to int
     if isinstance(intervention_events, str):
-        intervention_events = int(intervention_events.replace(',', ''))
+        intervention_events = convert_string_to_int(intervention_events)
     if isinstance(control_events, str):
-        control_events = int(control_events.replace(',', ''))
+        control_events = convert_string_to_int(control_events)
     if isinstance(intervention_total, str):
-        intervention_total = int(intervention_total.replace(',', ''))
+        intervention_total = convert_string_to_int(intervention_total)
     if isinstance(control_total, str):
-        control_total = int(control_total.replace(',', ''))
+        control_total = convert_string_to_int(control_total)
 
+    if None in (intervention_events, control_events, intervention_total, control_total):
+        return (None, None)
     # check to make sure that events do not exceed total
     if (intervention_events > intervention_total) or (control_events > control_total):
         return (None, None)
@@ -404,19 +432,6 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
             f"control_events: {control_events}, intervention_total: {intervention_total}, control_total: "
             f"{control_total}")
         return (None, None)
-    
-def convert_string_to_float(value: str) -> float:
-    """
-    This method converts a string to a float
-
-    :param value: value to convert
-
-    :return float value
-    """
-    try:
-        return float(value.replace(',', ''))
-    except:
-        return None
 
 def calculate_standardized_mean_difference(intervention_mean: float, control_mean: float, intervention_sd: float,
                                            control_sd: float, intervention_group_size: float, control_group_size: float) -> Tuple[float, float]:
