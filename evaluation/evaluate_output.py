@@ -168,10 +168,12 @@ class MetaAnalysisTaskEvaluator:
 
             im = example["intervention_mean"]
             isd = example["intervention_standard_deviation"]
+            igs = example["intervention_group_size"]
             cm = example["comparator_mean"]
             csd = example["comparator_standard_deviation"]
+            cgs = example["comparator_group_size"]
             example.update({
-                "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd),
+                "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd, igs, cgs),
             })
 
             model_output = example["output"]
@@ -209,18 +211,18 @@ class MetaAnalysisTaskEvaluator:
 
                 im_output = intervention["mean"] if intervention and "mean" in intervention else "x"
                 isd_output = intervention["standard_deviation"] if intervention and "standard_deviation" in intervention else "x"
-                it_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
+                igs_output = intervention["group_size"] if intervention and "group_size" in intervention else "x"
                 cm_output = comparator["mean"] if comparator and "mean" in comparator else "x"
                 csd_output = comparator["standard_deviation"] if comparator and "standard_deviation" in comparator else "x"
-                ct_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
+                cgs_output = comparator["group_size"] if comparator and "group_size" in comparator else "x"
                 new_item = {
                     "intervention_mean_output": im_output,
                     "intervention_standard_deviation_output": isd_output,
-                    "intervention_group_size_output": it_output,
+                    "intervention_group_size_output": igs_output,
                     "comparator_mean_output": cm_output,
                     "comparator_standard_deviation_output": csd_output,
-                    "comparator_group_size_output": ct_output,
-                    "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output)
+                    "comparator_group_size_output": cgs_output,
+                    "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output, igs_output, cgs_output)
                 }
                 example.update(new_item)
             else:

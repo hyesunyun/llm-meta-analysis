@@ -26,6 +26,7 @@ dependencies:
   - anaconda::scikit-learn
   - conda-forge::pandoc
   - anaconda::nltk
+  - conda-forge::statsmodels
   - pip:
     - ai2-olmo
     - pypandoc

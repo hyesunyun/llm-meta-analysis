@@ -7,14 +7,10 @@ import math
 import re
 from statistics import mode
 from collections import Counter
-# from rpy2.robjects.packages import importr
-
-# utils = importr('utils')
-# base = importr('base')
-# # install the metafor package
-# utils.install_packages("metafor")
-# metafor = importr('metafor')
-
+from statsmodels.stats.meta_analysis import (
+    effectsize_smd,
+    effectsize_2proportions
+)
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
@@ -362,35 +358,10 @@ def aggregate_yaml_output_for_continuous_outcomes(yaml_dict_list: list[Dict], pm
     }
     return final_yaml_output
 
-def calculate_log_odds_ratio2(intervention_events: int, control_events: int, intervention_total: int,
-                              control_total: int) -> Tuple[float, float]:
-    """
-    This method calculates the log odds ratio given the values
-
-    :param intervention_events: value of intervention_events
-    :param control_events: value of control_events
-    :param intervention_total: value of intervention_total
-    :param control_total: value of control_total
-
-    :return (log odds ratio, variance)
-    """
-    try:
-        results = metafor.escalc("OR", ai = intervention_events, ci = control_events, n1i = intervention_total, n2i = comparator_total)
-        log_odds_ratio = results["yi"]
-        variance = results["vi"]
-        return (log_odds_ratio, variance)
-    except:
-        print(
-            f"An exception occurred for calculate log odds ratio - intervention_events: {intervention_events}, "
-            f"control_events: {control_events}, intervention_total: {intervention_total}, control_total: "
-            f"{control_total}")
-        return (None, None)
-    
-
 def calculate_log_odds_ratio(intervention_events: int, control_events: int, intervention_total: int,
-                             control_total: int) -> float:
+                             control_total: int) -> Tuple[float, float]:
     """
-    This method calculates the log odds ratio given the values
+    This method calculates the log odds ratio given the values.
 
     :param intervention_events: value of intervention_events
     :param control_events: value of control_events
@@ -399,65 +370,21 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
 
     :return log odds ratio
     """
+    # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis) This
+    # involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero Except when
+    # intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR is undefined.
     try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_events, control_events, intervention_total, control_total):
-            return None
-        # check to make sure that events do not exceed total
-        if (intervention_events > intervention_total) or (control_events > control_total):
-            return None
-
-        intervention_nonevents = intervention_total - intervention_events
-        control_nonevents = control_total - control_events
-
-        intervention_events, control_events, intervention_nonevents, control_nonevents = check_and_apply_zero_correction(
-            intervention_events, control_events, intervention_nonevents, control_nonevents)
-
-        if None in (intervention_events, control_events, intervention_nonevents, control_nonevents):
-            return None
-        else:
-            odds_ratio = (intervention_events * control_nonevents) / (control_events * intervention_nonevents)
-            return math.log(odds_ratio)
+        lor, var_eff = effectsize_2proportions([intervention_events], [intervention_total], [control_events], [control_total], statistic='odds-ratio', zero_correction=0.5)
+        return (lor[0], var_eff[0])
     except:
         print(
             f"An exception occurred for calculate log odds ratio - intervention_events: {intervention_events}, "
             f"control_events: {control_events}, intervention_total: {intervention_total}, control_total: "
             f"{control_total}")
-        return None
-
-
-def check_and_apply_zero_correction(intervention_events: int, control_events: int, intervention_nonevents: int,
-                                    control_nonevents: int) -> float:
-    """
-    This method applies a zero correction to a contingency table if needed
-
-    :param intervention_events: intervention_events
-    :param control_events: control_events
-    :param intervention_nonevents: intervention_nonevents
-    :param control_nonevents: control_nonevents
-
-    :return all values with zero correction (if applied)
-    """
-    # Haldane-Anscombe correction (algorithm used by Review Manager - RevMan software for meta-analysis) This
-    # involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero Except when
-    # intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR and RR is
-    # undefined
-    if 0 in (intervention_events, control_events, intervention_nonevents, control_nonevents):
-        if (intervention_events == 0 and control_events == 0) or (
-                intervention_nonevents == 0 and control_nonevents == 0):
-            print("Error in applying zero correction: Undefined results.")
-            return None, None, None, None
-        else:
-            intervention_events += 0.5
-            control_events += 0.5
-            intervention_nonevents += 0.5
-            control_nonevents += 0.5
-
-    return intervention_events, control_events, intervention_nonevents, control_nonevents
-
+        return (None, None)
 
 def calculate_standardized_mean_difference(intervention_mean: float, control_mean: float, intervention_sd: float,
-                                           control_sd: float) -> float:
+                                           control_sd: float, intervention_group_size: float, control_group_size: float) -> Tuple[float, float]:
     """
     This method calculates the standardized mean difference given the values
 
@@ -465,16 +392,15 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
     :param control_mean: value of control_mean
     :param intervention_sd: value of intervention_sd
     :param control_sd: value of control_sd
+    :param intervention_group_size: value of intervention_group_size
+    :param control_group_size: value of control_group_size
 
     :return standardized mean difference
     """
     try:
-        # need to check for x or unknown in the values
-        if "x" in (intervention_mean, control_mean, intervention_sd, control_sd):
-            return None
-
-        return (intervention_mean - control_mean) / ((intervention_sd ** 2 + control_sd ** 2) / 2) ** 0.5
+        smd, var_eff = effectsize_smd([intervention_mean], [intervention_sd], [intervention_group_size], [control_mean], [control_sd], [control_group_size])
+        return (smd[0], var_eff[0])
     except:
         print(
-            f"An exception occurred for calculate standardized mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}, intervention_sd: {intervention_sd}, control_sd: {control_sd}")
-        return None
+            f"An exception occurred for calculate standardized mean difference - intervention_mean: {intervention_mean}, control_mean: {control_mean}, intervention_sd: {intervention_sd}, control_sd: {control_sd}, intervention_group_size: {intervention_group_size}, control_group_size: {control_group_size}")
+        return (None, None)
