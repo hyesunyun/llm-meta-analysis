@@ -92,7 +92,7 @@ class MetaAnalysisTaskEvaluator:
             ce = example["comparator_events"]
             ct = example["comparator_group_size"]
             example.update({
-                "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct)
+                "log_odds_ratio": calculate_log_odds_ratio(ie, ce, it, ct)[0]
             })
 
             model_output = example["output"]
@@ -138,7 +138,7 @@ class MetaAnalysisTaskEvaluator:
                     "intervention_group_size_output": it_output,
                     "comparator_events_output": ce_output,
                     "comparator_group_size_output": ct_output,
-                    "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)
+                    "log_odds_ratio_output": calculate_log_odds_ratio(ie_output, ce_output, it_output, ct_output)[0]
                 }
                 example.update(new_item)
             else:
@@ -173,7 +173,7 @@ class MetaAnalysisTaskEvaluator:
             csd = example["comparator_standard_deviation"]
             cgs = example["comparator_group_size"]
             example.update({
-                "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd, igs, cgs),
+                "standardized_mean_difference": calculate_standardized_mean_difference(im, cm, isd, csd, igs, cgs)[0],
             })
 
             model_output = example["output"]
@@ -222,7 +222,7 @@ class MetaAnalysisTaskEvaluator:
                     "comparator_mean_output": cm_output,
                     "comparator_standard_deviation_output": csd_output,
                     "comparator_group_size_output": cgs_output,
-                    "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output, igs_output, cgs_output)
+                    "standardized_mean_difference_output": calculate_standardized_mean_difference(im_output, cm_output, isd_output, csd_output, igs_output, cgs_output)[0]
                 }
                 example.update(new_item)
             else:
