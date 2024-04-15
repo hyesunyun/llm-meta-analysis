@@ -97,11 +97,11 @@ Metrics for the task:
     "percentage_of_computable_instances": 1.0,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 0.1098704672449694,
-            "standard_error_of_mae": 0.09400428934170903,
+            "mean_absolute_error": 0.09263587142904797,
+            "standard_error_of_mae": 0.07908324039973029,
             "95_confidence_interval_of_mae": [
-                -0.07437793986478028,
-                0.29411887435471906
+                -0.06236727975442338,
+                0.24763902261251933
             ]
         }
     },
@@ -144,11 +144,11 @@ Metrics for the task:
     "percentage_of_computable_instances": 1.0,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 0.05472478463183536,
-            "standard_error_of_mae": 0.046261524697419974,
+            "mean_absolute_error": 0.06977048289329027,
+            "standard_error_of_mae": 0.05928690483331071,
             "95_confidence_interval_of_mae": [
-                -0.035947803775107784,
-                0.1453973730387785
+                -0.04643185057999871,
+                0.18597281636657925
             ]
         }
     },

@@ -25,14 +25,14 @@
         "partial_match_accuracy_2": 0.695906432748538,
         "partial_match_accuracy_3": 0.4152046783625731
     },
-    "percentage_of_computable_instances": 0.6101694915254238,
+    "percentage_of_computable_instances": 0.6370370370370371,
     "point_estimates": {
         "log_odds_ratio": {
-            "mean_absolute_error": 0.35183621851127345,
-            "standard_error_of_mae": 0.09011661271639318,
+            "mean_absolute_error": NaN,
+            "standard_error_of_mae": NaN,
             "95_confidence_interval_of_mae": [
-                0.17520765758714282,
-                0.528464779435404
+                NaN,
+                NaN
             ]
         }
     },

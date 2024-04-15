@@ -1,0 +1,1073 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/biomistral_outcome_type_test_output_20240326-11:28:52.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 409,
+        "total": 409
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.1326219512195122,
+        "total": 0.1326219512195122
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.1326219512195122
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.2749326145552561,
+            "f1_score_continuous": 0.13533834586466165,
+            "f1_score_unknown": 0.0
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_test_output_20240403-13:07:52.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 108, control_total: 246
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 1116, control_events: 1264, intervention_total: 1,525, control_total: 1,514
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 40, control_total: 40
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 630, control_events: 342, intervention_total: 1,522, control_total: 1,512
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 122, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 402, control_total: 388
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 59, control_total: 64
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 60, control_total: 30
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 1138, control_events: 1273, intervention_total: 1,525, control_total: 1,514
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 40, control_total: 40
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 74, control_events: 74, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 2094, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 122, control_total: 2094
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 1,078, control_events: 976, intervention_total: 1,919, control_total: 1,922
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 2094, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 59, control_total: 64
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 122, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 60, control_total: 30
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 121, control_total: 89
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 673, control_events: 366, intervention_total: 1,525, control_total: 1,514
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 1279, control_events: 1350, intervention_total: 1,525, control_total: 1,514
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 74, control_total: 60
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 122, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 2, control_events: 3, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 122, control_total: 2094
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: 8, control_events: 4, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 2094, control_total: 637
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 60, control_total: 30
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 20, control_total: 20
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: 10, control_total: 13
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+An exception occurred for calculate log odds ratio - intervention_events: x, control_events: x, intervention_total: x, control_total: x
+No computable instances found
+No computable instances found
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 144,
+        "intervention_group_size": 162,
+        "comparator_events": 144,
+        "comparator_group_size": 162,
+        "total": 612
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.15789473684210525,
+        "intervention_group_size": 0.05263157894736842,
+        "comparator_events": 0.15789473684210525,
+        "comparator_group_size": 0.05263157894736842,
+        "total": 0.03508771929824561
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.17543859649122806,
+        "partial_match_accuracy_2": 0.17543859649122806,
+        "partial_match_accuracy_3": 0.03508771929824561
+    },
+    "percentage_of_computable_instances": 0.0,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
+            "95_confidence_interval_of_mae": [
+                null,
+                null
+            ]
+        }
+    },
+    "num_of_chunked_instances": 143
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/biomistral_continuous_outcomes_test_output_20240403-15:29:53.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/
+PMC Files Path: None
+
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 37, control_group_size: 23
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 60, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 10, control_mean: 37, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 32.07, control_mean: 31.947, intervention_sd: 6.52, control_sd: 7.89, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 0.443, control_mean: 0.04, intervention_sd: 0.75, control_sd: 0.91, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -1.65, control_mean: 0.05, intervention_sd: 2.5, control_sd: 3.2, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 6, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 5, control_group_size: 5
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 8, control_group_size: 8
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 5639, control_mean: 6150, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 19, control_group_size: 19
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 10.7, control_mean: 11.2, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -34.5, control_mean: -13.3, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 33, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 37, control_group_size: 23
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 5, control_group_size: 5
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -0.2, control_mean: -0.4, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 7.5, control_mean: 8, intervention_sd: 4, control_sd: 3.8, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 40, control_group_size: 40
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 21, control_group_size: 21
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -38.3, control_mean: -28.7, intervention_sd: x, control_sd: x, intervention_group_size: 109, control_group_size: 117
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -0.2, control_mean: -1.8, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 24, control_group_size: 28
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 3, control_mean: 2.92, intervention_sd: 1.08, control_sd: 1.03, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 60, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 13, control_group_size: 13
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 8, control_group_size: 8
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 6
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 50, control_group_size: 49
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 6
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 24, control_group_size: 28
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 22
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 50, control_group_size: 49
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 25, control_mean: 25.3, intervention_sd: x, control_sd: x, intervention_group_size: 6051, control_group_size: 5892
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 326, control_group_size: 326
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -1.4, control_mean: -4.2, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 12, control_group_size: 12
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 70, control_mean: 15.4, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 13
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 60, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 17
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 22, control_group_size: 22
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 12, control_group_size: 12
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 393, control_group_size: 199
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 8, control_group_size: 8
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 17
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -3.34, control_mean: 2.65, intervention_sd: 9.3, control_sd: 10.3, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -0.4, control_mean: 0, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 19, control_group_size: 19
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 50, control_group_size: 50
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 480, control_mean: 305, intervention_sd: x, control_sd: x, intervention_group_size: 33, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 16
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 16
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 53, control_group_size: 53
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 45, control_mean: 57, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 64
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 19, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 38, control_group_size: 37
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 8, control_mean: 13, intervention_sd: x, control_sd: x, intervention_group_size: 53, control_group_size: 53
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 6
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 2, control_mean: 3, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -423, control_mean: 0, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 24, control_group_size: 28
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 40, control_group_size: 40
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 9.44, control_mean: 8, intervention_sd: 5.48, control_sd: 4.16, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 6.23, control_mean: 5.51, intervention_sd: x, control_sd: x, intervention_group_size: 562, control_group_size: 463
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 48, control_group_size: 23
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 14, control_group_size: 12
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 4, control_group_size: 5
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 151, control_mean: 150.8, intervention_sd: 117.4, control_sd: 107.8, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 1.2, control_mean: 2.1, intervention_sd: x, control_sd: x, intervention_group_size: 70, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 17
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 6.6, control_mean: 23.4, intervention_sd: 4.4, control_sd: 8.9, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 38, control_group_size: 37
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 45, control_mean: 57, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 64
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 13, control_group_size: 13
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 11897, control_mean: 13229, intervention_sd: x, control_sd: x, intervention_group_size: 33, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: 15.4, intervention_sd: x, control_sd: x, intervention_group_size: 9, control_group_size: 13
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: 70, intervention_sd: x, control_sd: x, intervention_group_size: 9, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 19, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 181, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 24, control_group_size: 28
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 6,032.37, control_mean: 6408.33, intervention_sd: 1359.15, control_sd: 1822.17, intervention_group_size: 40, control_group_size: 40
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 0.63, control_mean: 0.67, intervention_sd: 0.11, control_sd: 0.18, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 138, control_mean: 154, intervention_sd: x, control_sd: x, intervention_group_size: 33, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 48, control_group_size: 23
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 37, control_group_size: 23
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 17.1, control_mean: 14, intervention_sd: x, control_sd: x, intervention_group_size: 102, control_group_size: 109
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -485, control_mean: 0, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 508.92, control_mean: 1840.84, intervention_sd: 63.3, control_sd: 819.51, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 4.15, control_mean: 4.12, intervention_sd: 0.52, control_sd: 0.6, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 11
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 5, control_group_size: 4
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 14, control_group_size: 12
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 3.5, control_mean: 3.6, intervention_sd: x, control_sd: x, intervention_group_size: 6051, control_group_size: 5892
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 64
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 4, control_group_size: 4
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -52.7, control_mean: -13.3, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 8, control_group_size: 8
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 5, control_group_size: 5
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 38, control_group_size: 37
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 24, control_group_size: 28
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 37, control_group_size: 35
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 3.5, control_mean: 3, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 8818, control_mean: 8362, intervention_sd: x, control_sd: x, intervention_group_size: 754, control_group_size: 656
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -1.4, control_mean: -0.4, intervention_sd: x, control_sd: x, intervention_group_size: 28, control_group_size: 14
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 0.25, control_mean: 0.27, intervention_sd: x, control_sd: x, intervention_group_size: 33, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 1, control_mean: 5, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 64
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 357
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 38, control_group_size: 37
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 16
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 7.54, control_mean: 6.29, intervention_sd: 2.57, control_sd: 1.84, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 55
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 59, control_group_size: 64
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 15, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 17, control_group_size: 17
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 16, control_group_size: 15
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 17.2, control_mean: 6.9, intervention_sd: x, control_sd: x, intervention_group_size: 12, control_group_size: 12
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 69, control_group_size: 68
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 76, control_group_size: 70
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 20, control_group_size: 20
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 7.4, control_mean: 7.28, intervention_sd: 1.93, control_sd: 1.59, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 353, control_group_size: 181
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 1.7, control_mean: x, intervention_sd: 1.66, control_sd: x, intervention_group_size: 21, control_group_size: 45
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: -42.9, control_mean: -28.7, intervention_sd: x, control_sd: x, intervention_group_size: 111, control_group_size: 117
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: 20, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 22, control_group_size: 22
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 79, control_group_size: 86
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 19, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 10, control_group_size: 10
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 11, control_group_size: 6
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 38, control_group_size: 37
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: 30, control_group_size: 30
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+An exception occurred for calculate standardized mean difference - intervention_mean: x, control_mean: x, intervention_sd: x, control_sd: x, intervention_group_size: x, control_group_size: x
+No computable instances found
+No computable instances found
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 296,
+        "intervention_standard_deviation": 257,
+        "intervention_group_size": 443,
+        "comparator_mean": 290,
+        "comparator_standard_deviation": 256,
+        "comparator_group_size": 443,
+        "total": 1985
+    },
+    "number_of_reference_unknowns": {
+        "intervention_mean": 189,
+        "intervention_standard_deviation": 228,
+        "intervention_group_size": 42,
+        "comparator_mean": 195,
+        "comparator_standard_deviation": 229,
+        "comparator_group_size": 42,
+        "total": 925
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.38969072164948454,
+        "intervention_standard_deviation": 0.47010309278350515,
+        "intervention_group_size": 0.0865979381443299,
+        "comparator_mean": 0.4020618556701031,
+        "comparator_standard_deviation": 0.47216494845360824,
+        "comparator_group_size": 0.0865979381443299,
+        "total": 0.041237113402061855
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.5010309278350515,
+        "partial_match_accuracy_2": 0.5010309278350515,
+        "partial_match_accuracy_3": 0.40824742268041236,
+        "partial_match_accuracy_4": 0.4020618556701031,
+        "partial_match_accuracy_5": 0.05360824742268041
+    },
+    "percentage_of_computable_instances": 0.0,
+    "point_estimates": {
+        "standardized_mean_difference": {
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
+            "95_confidence_interval_of_mae": [
+                null,
+                null
+            ]
+        }
+    },
+    "num_of_chunked_instances": 421
+}
