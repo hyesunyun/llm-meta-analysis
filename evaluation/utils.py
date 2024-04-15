@@ -10,6 +10,7 @@ from statsmodels.stats.meta_analysis import (
     effectsize_smd,
     effectsize_2proportions
 )
+import numpy as np
 
 def format_example_with_prompt_template(example: Dict, prompt_template: Template) -> Dict:
     """
@@ -373,7 +374,11 @@ def calculate_log_odds_ratio(intervention_events: int, control_events: int, inte
     # involves adding 0.5 to each cell value if any of the cells in the contingency table contain a zero Except when
     # intervention_events and control_events = 0 or intervention_nonevents and control_nonevents = 0, OR is undefined.
     try:
-        lor, var_eff = effectsize_2proportions([intervention_events], [intervention_total], [control_events], [control_total], statistic='odds-ratio', zero_correction=0.5)
+        lor, var_eff = effectsize_2proportions(np.array([intervention_events]), 
+                                            np.array([intervention_total]),
+                                            np.array([control_events]),
+                                            np.array([control_total]),
+                                            statistic='odds-ratio', zero_correction=0.5)
         return (lor[0], var_eff[0])
     except:
         print(
@@ -397,7 +402,12 @@ def calculate_standardized_mean_difference(intervention_mean: float, control_mea
     :return standardized mean difference
     """
     try:
-        smd, var_eff = effectsize_smd([intervention_mean], [intervention_sd], [intervention_group_size], [control_mean], [control_sd], [control_group_size])
+        smd, var_eff = effectsize_smd(np.array([intervention_mean]), 
+                                      np.array([intervention_sd]),
+                                      np.array([intervention_group_size]),
+                                      np.array([control_mean]), 
+                                      np.array([control_sd]),  
+                                      np.array([control_group_size]))
         return (smd[0], var_eff[0])
     except:
         print(
