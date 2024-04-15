@@ -36,11 +36,11 @@
     "percentage_of_computable_instances": 0.049586776859504134,
     "point_estimates": {
         "standardized_mean_difference": {
-            "mean_absolute_error": NaN,
-            "standard_error_of_mae": NaN,
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
             "95_confidence_interval_of_mae": [
-                NaN,
-                NaN
+                null,
+                null
             ]
         }
     },
