@@ -1,0 +1,149 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/pmc-llama_outcome_type_test_output_20240326-14:21:40.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 15,
+        "total": 15
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.7317073170731707,
+        "total": 0.7317073170731707
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.7317073170731707
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.12435233160621761,
+            "f1_score_continuous": 0.8478260869565217,
+            "f1_score_unknown": 0.0
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/pmc-llama_binary_outcomes_test_output_20240404-07:06:18.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 119,
+        "intervention_group_size": 131,
+        "comparator_events": 127,
+        "comparator_group_size": 147,
+        "total": 524
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.14619883040935672,
+        "intervention_group_size": 0.08771929824561403,
+        "comparator_events": 0.15789473684210525,
+        "comparator_group_size": 0.05847953216374269,
+        "total": 0.03508771929824561
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.21637426900584794,
+        "partial_match_accuracy_2": 0.16374269005847952,
+        "partial_match_accuracy_3": 0.03508771929824561
+    },
+    "percentage_of_computable_instances": 0.07092198581560284,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 1.523250126103748,
+            "standard_error_of_mae": 0.5890305627253435,
+            "95_confidence_interval_of_mae": [
+                0.36875022316207495,
+                2.6777500290454213
+            ]
+        }
+    },
+    "num_of_chunked_instances": 148
+}
+/home/yun.hy/.conda/envs/llm-meta-analysis/lib/python3.11/site-packages/statsmodels/stats/meta_analysis.py:386: RuntimeWarning: invalid value encountered in divide
+  smd = (mean1 - mean2) / sd_diff
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/pmc-llama_continuous_outcomes_test_output_20240403-17:54:04.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/
+PMC Files Path: None
+
+Error: key     mean not found in yaml_dict
+Error: key   mean not found in yaml_dict
+Error parsing yaml string: intervention:
+     mean: 83
+     standard_deviation: 5.0
+     group_size: 10
+comparator:
+  mean: 74
+  standard_deviation: 5.0
+   group_size: 10
+Error parsing yaml string: intervention:
+ mean: 0.762
+  standard_deviation: 0.228
+  group_size: 32
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 266,
+        "intervention_standard_deviation": 230,
+        "intervention_group_size": 387,
+        "comparator_mean": 268,
+        "comparator_standard_deviation": 231,
+        "comparator_group_size": 396,
+        "total": 1778
+    },
+    "number_of_reference_unknowns": {
+        "intervention_mean": 189,
+        "intervention_standard_deviation": 228,
+        "intervention_group_size": 42,
+        "comparator_mean": 195,
+        "comparator_standard_deviation": 229,
+        "comparator_group_size": 42,
+        "total": 925
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.36907216494845363,
+        "intervention_standard_deviation": 0.44742268041237115,
+        "intervention_group_size": 0.10721649484536082,
+        "comparator_mean": 0.38969072164948454,
+        "comparator_standard_deviation": 0.4556701030927835,
+        "comparator_group_size": 0.10927835051546392,
+        "total": 0.03917525773195876
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.5175257731958763,
+        "partial_match_accuracy_2": 0.49690721649484537,
+        "partial_match_accuracy_3": 0.3917525773195876,
+        "partial_match_accuracy_4": 0.3752577319587629,
+        "partial_match_accuracy_5": 0.0577319587628866
+    },
+    "percentage_of_computable_instances": 0.049586776859504134,
+    "point_estimates": {
+        "standardized_mean_difference": {
+            "mean_absolute_error": NaN,
+            "standard_error_of_mae": NaN,
+            "95_confidence_interval_of_mae": [
+                NaN,
+                NaN
+            ]
+        }
+    },
+    "num_of_chunked_instances": 423
+}

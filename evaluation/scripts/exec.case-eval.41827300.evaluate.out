@@ -1,0 +1,156 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_outcome_type_None_output_20240404-11:54:12.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/end_to_end/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 1.0,
+        "total": 1.0
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 1.0
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 1.0,
+            "f1_score_continuous": null,
+            "f1_score_unknown": null
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/gpt4_outcome_type_None_output_20240412-16:20:20.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/end_to_end/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 1.0,
+        "total": 1.0
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 1.0
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 1.0,
+            "f1_score_continuous": null,
+            "f1_score_unknown": null
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/mistral7B_binary_outcomes_None_output_20240404-12:01:28.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/end_to_end/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 0,
+        "intervention_group_size": 0,
+        "comparator_events": 0,
+        "comparator_group_size": 0,
+        "total": 0
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 0,
+        "intervention_group_size": 0,
+        "comparator_events": 0,
+        "comparator_group_size": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.5,
+        "intervention_group_size": 0.75,
+        "comparator_events": 0.75,
+        "comparator_group_size": 1.0,
+        "total": 0.5
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 1.0,
+        "partial_match_accuracy_2": 1.0,
+        "partial_match_accuracy_3": 0.5
+    },
+    "percentage_of_computable_instances": 1.0,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 0.09263587142904797,
+            "standard_error_of_mae": 0.07908324039973029,
+            "95_confidence_interval_of_mae": [
+                -0.06236727975442338,
+                0.24763902261251933
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/end_to_end/gpt4_binary_outcomes_None_output_20240412-16:20:46.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/end_to_end/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 0,
+        "intervention_group_size": 0,
+        "comparator_events": 0,
+        "comparator_group_size": 0,
+        "total": 0
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 0,
+        "intervention_group_size": 0,
+        "comparator_events": 0,
+        "comparator_group_size": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.5,
+        "intervention_group_size": 0.75,
+        "comparator_events": 0.75,
+        "comparator_group_size": 1.0,
+        "total": 0.5
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 1.0,
+        "partial_match_accuracy_2": 1.0,
+        "partial_match_accuracy_3": 0.5
+    },
+    "percentage_of_computable_instances": 1.0,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": 0.06977048289329027,
+            "standard_error_of_mae": 0.05928690483331071,
+            "95_confidence_interval_of_mae": [
+                -0.04643185057999871,
+                0.18597281636657925
+            ]
+        }
+    },
+    "num_of_chunked_instances": 0
+}

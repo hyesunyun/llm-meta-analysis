@@ -33,14 +33,14 @@
         "partial_match_accuracy_4": 0.1731958762886598,
         "partial_match_accuracy_5": 0.05979381443298969
     },
-    "percentage_of_computable_instances": 0.14901960784313725,
+    "percentage_of_computable_instances": 0.11983471074380166,
     "point_estimates": {
         "standardized_mean_difference": {
-            "mean_absolute_error": 2.0050640537644533,
-            "standard_error_of_mae": 0.4536335087155563,
+            "mean_absolute_error": 1.7381328357641646,
+            "standard_error_of_mae": 0.4535038483394878,
             "95_confidence_interval_of_mae": [
-                1.115942376681963,
-                2.8941857308469436
+                0.8492652930187684,
+                2.627000378509561
             ]
         }
     },

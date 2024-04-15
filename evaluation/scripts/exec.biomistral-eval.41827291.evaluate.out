@@ -1,0 +1,137 @@
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         outcome_type
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/outcome_type/biomistral_outcome_type_test_output_20240326-11:28:52.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/outcome_type/
+PMC Files Path: None
+
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "outcome_type": 409,
+        "total": 409
+    },
+    "number_of_reference_unknowns": {
+        "outcome_type": 0,
+        "total": 0
+    },
+    "exact_match_accuracy": {
+        "outcome_type": 0.1326219512195122,
+        "total": 0.1326219512195122
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.1326219512195122
+    },
+    "outcome_type_f_score": {
+        "outcome_type": {
+            "f1_score_binary": 0.2749326145552561,
+            "f1_score_continuous": 0.13533834586466165,
+            "f1_score_unknown": 0.0
+        }
+    }
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         binary_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/binary_outcomes/biomistral_binary_outcomes_test_output_20240403-13:07:52.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/binary_outcomes/
+PMC Files Path: None
+
+No computable instances found
+No computable instances found
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_events": 144,
+        "intervention_group_size": 162,
+        "comparator_events": 144,
+        "comparator_group_size": 162,
+        "total": 612
+    },
+    "number_of_reference_unknowns": {
+        "intervention_events": 27,
+        "intervention_group_size": 9,
+        "comparator_events": 27,
+        "comparator_group_size": 9,
+        "total": 72
+    },
+    "exact_match_accuracy": {
+        "intervention_events": 0.15789473684210525,
+        "intervention_group_size": 0.05263157894736842,
+        "comparator_events": 0.15789473684210525,
+        "comparator_group_size": 0.05263157894736842,
+        "total": 0.03508771929824561
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.17543859649122806,
+        "partial_match_accuracy_2": 0.17543859649122806,
+        "partial_match_accuracy_3": 0.03508771929824561
+    },
+    "percentage_of_computable_instances": 0.0,
+    "point_estimates": {
+        "log_odds_ratio": {
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
+            "95_confidence_interval_of_mae": [
+                null,
+                null
+            ]
+        }
+    },
+    "num_of_chunked_instances": 143
+}
+Arguments Provided for the Clinical Trials Meta Analysis Task Evaluator:
+Task:         continuous_outcomes
+Output Path:  /scratch/yun.hy/llm-meta-analysis/evaluation/outputs/continuous_outcomes/biomistral_continuous_outcomes_test_output_20240403-15:29:53.json
+Metrics Path: /scratch/yun.hy/llm-meta-analysis/evaluation/metrics/continuous_outcomes/
+PMC Files Path: None
+
+No computable instances found
+No computable instances found
+Metrics for the task:
+{
+    "number_of_model_unknowns": {
+        "intervention_mean": 296,
+        "intervention_standard_deviation": 257,
+        "intervention_group_size": 443,
+        "comparator_mean": 290,
+        "comparator_standard_deviation": 256,
+        "comparator_group_size": 443,
+        "total": 1985
+    },
+    "number_of_reference_unknowns": {
+        "intervention_mean": 189,
+        "intervention_standard_deviation": 228,
+        "intervention_group_size": 42,
+        "comparator_mean": 195,
+        "comparator_standard_deviation": 229,
+        "comparator_group_size": 42,
+        "total": 925
+    },
+    "exact_match_accuracy": {
+        "intervention_mean": 0.38969072164948454,
+        "intervention_standard_deviation": 0.47010309278350515,
+        "intervention_group_size": 0.0865979381443299,
+        "comparator_mean": 0.4020618556701031,
+        "comparator_standard_deviation": 0.47216494845360824,
+        "comparator_group_size": 0.0865979381443299,
+        "total": 0.041237113402061855
+    },
+    "partial_match_accuracy": {
+        "partial_match_accuracy_1": 0.5010309278350515,
+        "partial_match_accuracy_2": 0.5010309278350515,
+        "partial_match_accuracy_3": 0.40824742268041236,
+        "partial_match_accuracy_4": 0.4020618556701031,
+        "partial_match_accuracy_5": 0.05360824742268041
+    },
+    "percentage_of_computable_instances": 0.0,
+    "point_estimates": {
+        "standardized_mean_difference": {
+            "mean_absolute_error": null,
+            "standard_error_of_mae": null,
+            "95_confidence_interval_of_mae": [
+                null,
+                null
+            ]
+        }
+    },
+    "num_of_chunked_instances": 421
+}
