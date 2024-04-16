@@ -24,7 +24,6 @@ from utils import (
 from typing import Dict, List, Optional, Tuple
 from tqdm import tqdm
 from templates import DatasetTemplates
-from datetime import datetime
 import random
 
 DATA_FOLDER_PATH = os.path.join(os.path.dirname(__file__), "data")
@@ -233,18 +232,17 @@ class MetaAnalysisTaskRunner:
 
         # saving results to file
         print(f"Saving outputs for task - {self.task}; prompt - {prompt.get_name()}; model - {self.model_name} to csv and json")
-        current_datetime = datetime.now().strftime("%Y%m%d-%H:%M:%S")
 
         keys_to_drop = [
             "abstract_and_results", 
             "input"
         ]
         # convert into json
-        json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output_{current_datetime}.json"
+        json_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output.json"
         save_dataset_to_json(dataset, json_file_path, keys_to_drop)
 
         # convert into csv
-        csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output_{current_datetime}.csv"
+        csv_file_path = f"{self.output_path}/{self.model_name}_{self.task}_{self.split}_output.csv"
         save_dataset_to_csv(dataset, csv_file_path, keys_to_drop)
 
         return json_file_path, csv_file_path

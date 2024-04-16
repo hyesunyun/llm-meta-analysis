@@ -1,5 +1,6 @@
-# llm-meta-analysis
-Automating meta-analysis of clinical trials (randomized controlled trials)
+# Automatically Extracting Numerical Results from RCTS with LLMs
+
+Automating meta-analysis of clinical trials (randomized controlled trials).
 
 ## SETUP
 
@@ -12,6 +13,7 @@ Activate the conda environment: `conda activate llm-meta-analysis`
 The human-annotated data is available in the `data` folder as both csv and json formats.
 The dev set has 10 RCTs with 43 number of total ICO triplets.
 The test set has 110 RCTs with 656 number of total ICO triplets.
+Additional dataset statistics can be found in `data/analyze_data.ipynb` file.
 
 ## EXPERIMENTS
 
@@ -69,4 +71,4 @@ Arguments of `evaluate_output.py`:
 - `--task`: name of the task to evaluate and calculate metrics for
 - `--output_path`: path where the model outputs are located. this should include both model outputs and reference answers.
 - `--metrics_path`: path where the calculated metrics should be saved
-- `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset.
+- `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset. Only required if you want to run the case study example or other dataset.
