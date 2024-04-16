@@ -1,7 +1,5 @@
 ---
 title: "Metafor for LLM Numerical Data Extraction (Case Study)"
-author: "Hye Sun Yun"
-date: "`r Sys.Date()`"
 output: pdf_document
 ---
 

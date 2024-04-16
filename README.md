@@ -13,7 +13,7 @@ Activate the conda environment: `conda activate llm-meta-analysis`
 The human-annotated data is available in the `data` folder as both csv and json formats.
 The dev set has 10 RCTs with 43 number of total ICO triplets.
 The test set has 110 RCTs with 656 number of total ICO triplets.
-Additional dataset statistics can be found in `data/analyze_data.ipynb` file.
+Additional dataset statistics can be found in `evaluation/data/analyze_data.ipynb` file.
 
 ## EXPERIMENTS
 
@@ -48,6 +48,12 @@ Arguments of `run_task.py`:
 - `--output_path`: path of directory where json and csv files of the outputs from model should be saved
 - `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset.
 - `--test`: adding this flag will only run 10 randomly sampled examples from dataset. this is for debugging purposes.
+
+### Prompts
+
+The prompts we used for each model type and task are available in the `evaluation/templates` folder.
+You will find the prompts in `yaml` files organized by model and task. 
+Although the prompts were adjusted to maximize the performance of each model, the core content of the prompts are the same for each task.
 
 ### Running Evaluation/Calculating Metrics
 
