@@ -1,7 +1,7 @@
 dataset: binary_outcomes
 templates:
-  922252e3-61dc-4d2b-93bf-51aa77aa4555: !Template
-    id: 922252e3-61dc-4d2b-93bf-51aa77aa4555
+  6123ed96-9d21-48de-8392-127db01f207d: !Template
+    id: 6123ed96-9d21-48de-8392-127db01f207d
     prompt: |+ 
       Below is an instruction that describes a task, paired with an input that provides further context.
       Write a response that appropriately completes the request.

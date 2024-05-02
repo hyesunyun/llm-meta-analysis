@@ -1,7 +1,7 @@
-dataset: binary_outcomes
+dataset: continuous_outcomes
 templates:
-  922252e3-61dc-4d2b-93bf-51aa77aa4555: !Template
-    id: 922252e3-61dc-4d2b-93bf-51aa77aa4555
+  9bdf31f0-a4b1-46b3-bb9b-491574673d0e: !Template
+    id: 9bdf31f0-a4b1-46b3-bb9b-491574673d0e
     prompt: |+ 
       Below is an instruction that describes a task, paired with an input that provides further context.
       Write a response that appropriately completes the request.
@@ -11,20 +11,23 @@ templates:
       
       ### Input:
       ### Article: {{abstract_and_results}}
-      ### Question: Based on the given trial article, what is the 2x2 contingency table in YAML format for the following Intervention, Comparator, and Outcome?
+      ### Question: Based on the given trial article, what is the table of mean outcome and standard deviation in YAML format for the following Intervention, Comparator, and Outcome?
       Intervention: {{intervention}}
       Comparator: {{comparator}}
       Outcome: {{outcome}}
       
-      The YAML format should include the fields "events" and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
+      Include the total size of each group for Intervention and Comparator. 
+      The YAML format should include the fields "mean", "standard_deviation", and "group_size" for only "intervention" and "comparator" but not "outcome". Example:
       intervention:
-          events: NUMBER
-          group_size: NUMBER	
+          mean: NUMBER
+          standard_deviation: NUMBER
+          group_size: NUMBER
       comparator:
-          events: NUMBER
+          mean: NUMBER
+          standard_deviation: NUMBER
           group_size: NUMBER
 
-      Only produce YAML response. Do NOT provide explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x". 
+      Only produce YAML response. Do NOT provide an explanation. If any of the numerical information is unavailable or not extractable or not easy to calculate, please say "x".
       If there are numerical data for pre and post-intervention, choose the post-intervention data. If there are multiple timeframes for the outcome, choose the one closest to the outcome timepoint of interest or the very last one.
       ### Response:
     name: yaml

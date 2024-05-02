@@ -1,23 +1,23 @@
 {
     "number_of_model_unknowns": {
-        "outcome_type": 409,
-        "total": 409
+        "outcome_type": 1,
+        "total": 1
     },
     "number_of_reference_unknowns": {
         "outcome_type": 0,
         "total": 0
     },
     "exact_match_accuracy": {
-        "outcome_type": 0.1326219512195122,
-        "total": 0.1326219512195122
+        "outcome_type": 0.739329268292683,
+        "total": 0.739329268292683
     },
     "partial_match_accuracy": {
-        "partial_match_accuracy_1": 0.1326219512195122
+        "partial_match_accuracy_1": 0.739329268292683
     },
     "outcome_type_f_score": {
         "outcome_type": {
-            "f1_score_binary": 0.2749326145552561,
-            "f1_score_continuous": 0.13533834586466165,
+            "f1_score_binary": 0.0,
+            "f1_score_continuous": 0.8508771929824561,
             "f1_score_unknown": 0.0
         }
     }

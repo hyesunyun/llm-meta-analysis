@@ -40,7 +40,7 @@ python3 evaluation/run_task.py --model mistral7b --task end_to_end --input_path 
 You can change the arguments to run different tasks and models.
 
 Arguments of `run_task.py`:
-- `--model`: model to evaluate ("gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B") - more details of the models can be found in [MODELS.md](evaluation/models/MODELS.md)
+- `--model`: model to evaluate ("gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B", "alpaca13B") - more details of the models can be found in [MODELS.md](evaluation/models/MODELS.md)
 - `--task`: task name ("outcome_type", "binary_outcomes", "continuous_outcomes", "end_to_end")
 - `--split`: whether to run "dev" or "test" split of the main evaluation dataset. This is required if input_path is not given
 - `--prompt`: specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. not available for end_to_end task. OPTIONAL

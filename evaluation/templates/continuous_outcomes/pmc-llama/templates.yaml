@@ -7,7 +7,7 @@ templates:
       Write a response that appropriately completes the request.
       
       ### Instruction:
-       You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
+      You're an expert in extracting numerical data from clinical trial text, kindly address the following query. Answer with the best option directly.
       
       ### Input:
       ### Article: {{abstract_and_results}}

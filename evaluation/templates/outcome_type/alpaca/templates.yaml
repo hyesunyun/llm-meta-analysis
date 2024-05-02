@@ -1,7 +1,7 @@
 dataset: outcome_type
 templates:
-  0baec943-c438-42df-94c7-b61fcb69b8ba: !Template
-    id: 0baec943-c438-42df-94c7-b61fcb69b8ba
+  5a0ed990-2734-48f9-8791-24f94878fd85: !Template
+    id: 5a0ed990-2734-48f9-8791-24f94878fd85
     prompt: |+ 
       Below is an instruction that describes a task, paired with an input that provides further context.
       Write a response that appropriately completes the request.
@@ -17,8 +17,8 @@ templates:
       (C) unknown - there is insufficient information to make any inference
       ### Response: (
     name: without-abstract-results
-  15d354d7-4629-49c4-8127-4ebdb047bbc6: !Template
-    id: 15d354d7-4629-49c4-8127-4ebdb047bbc6
+  902c1bdc-4b1e-4459-997f-41db43bab56b: !Template
+    id: 902c1bdc-4b1e-4459-997f-41db43bab56b
     prompt: |+
       Below is an instruction that describes a task, paired with an input that provides further context.
       Write a response that appropriately completes the request.

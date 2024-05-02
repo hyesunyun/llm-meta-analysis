@@ -8,6 +8,7 @@ from models.gemma import Gemma
 from models.mistral import Mistral
 from models.pmc_llama import PMCLlama
 from models.olmo import Olmo
+from models.alpaca import Alpaca
 from models.model import Model
 
 from input_chunker import InputChunker
@@ -86,6 +87,8 @@ class MetaAnalysisTaskRunner:
             self.prompt_template = self.task + "/gemma"
         elif "olmo" in self.model_name:
             self.prompt_template = self.task + "/olmo"
+        elif self.model_name == "alpaca13B":
+            self.prompt_template = self.task + "/alpaca"
         else:
             self.prompt_template = self.task # default. this should never really happen
     
@@ -133,7 +136,7 @@ class MetaAnalysisTaskRunner:
 
         :return Model object
         """
-        model_class_mapping = {"gpt35": GPT35, "gpt4": GPT4, "mistral7B": Mistral, "biomistral": BioMistral, "pmc-llama": PMCLlama, "gemma7B": Gemma, "olmo7B": Olmo}
+        model_class_mapping = {"gpt35": GPT35, "gpt4": GPT4, "mistral7B": Mistral, "biomistral": BioMistral, "pmc-llama": PMCLlama, "gemma7B": Gemma, "olmo7B": Olmo, "alpaca13B": Alpaca}
         model_class = model_class_mapping[self.model_name]
         self.model = model_class()
 
@@ -207,7 +210,7 @@ class MetaAnalysisTaskRunner:
                     example["is_chunked"] = False
                     results.append(example)
                 else: # if the model cannot handle the tokens, chunk the input
-                    prompt_approx_tokens = 450 if self.model_name == "pmc-llama" else 300 # PMC LLAMA prompts tend to be longer. Also model seems to be more sensitive to token size
+                    prompt_approx_tokens = 450 if self.model_name == "pmc-llama" or self.model_name == "alpaca13B" else 300 # PMC LLAMA & Alapaca prompts tend to be longer. Also model seems to be more sensitive to token size
                     max_chunk_tokens = self.model.get_context_length() - prompt_approx_tokens - self.max_new_tokens # account for the actual prompt, 300 as approx num of tokens of prompt template and also tokens to generate
                     chunks = input_chunker.get_chunked_input(example["abstract_and_results"], max_chunk_tokens)
                     chunked_examples = []
@@ -287,7 +290,7 @@ def run_end_to_end_task(model: str, split: str, input_path:str, output_path: str
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Running Clinical Trials Meta Analysis Task")
 
-    parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B"], help="what model to run", required=True)
+    parser.add_argument("--model", default="gpt35", choices=["gpt35", "gpt4", "mistral7B", "biomistral", "pmc-llama", "gemma7B", "olmo7B", "alpaca13B"], help="what model to run", required=True)
     parser.add_argument("--task", default="outcome_type", choices=['outcome_type', 'binary_outcomes', 'continuous_outcomes', 'end_to_end'], help="type of task to run", required=True)
     parser.add_argument("--split", default=None, choices=["test", "dev"], help="which split of the default dataset to run. Required if input_path is not specified and overrides input_path.")
     parser.add_argument("--prompt", default=None, help="specific prompt to run. if no specific prompt is given, the first prompt for the given task is run. OPTIONAL")
@@ -330,12 +333,12 @@ if __name__ == '__main__':
         print("Output path did not exist. Directory was created.")
     
     if task == "end_to_end":
-        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, input_path, output_path, pmc_files_path, is_test)
+        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, task, split, output_path, is_test, prompt_name, input_path, pmc_files_path)
         print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
         print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
         print(f"Continuous Outcomes task outputs saved to {continuous_outcomes_task_files[0]} and {continuous_outcomes_task_files[1]}")
     else:
-        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, pmc_files_path, is_test, prompt_name, input_path)
+        task_runner = MetaAnalysisTaskRunner(model, task, split, output_path, is_test, prompt_name, input_path, pmc_files_path)
         json_file_path, csv_file_path = task_runner.run_task()
         print(f"Task outputs saved to {json_file_path} and {csv_file_path}")
     
