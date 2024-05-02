@@ -259,7 +259,8 @@ class MetaAnalysisTaskEvaluator:
         print(json.dumps(metrics, indent=4))
 
         output_file_name = self.output_path.split("/")[-1]
-        save_json_file(f"{self.metrics_path}/{output_file_name}_metrics.json", metrics)
+        file_name = output_file_name.split(".")[0]
+        save_json_file(f"{self.metrics_path}/{file_name}_metrics.json", metrics)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Evaluating Outputs for Clinical Trials Meta Analysis Task")
