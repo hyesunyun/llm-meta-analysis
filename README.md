@@ -78,3 +78,15 @@ Arguments of `evaluate_output.py`:
 - `--output_path`: path where the model outputs are located. this should include both model outputs and reference answers.
 - `--metrics_path`: path where the calculated metrics should be saved
 - `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset. Only required if you want to run the case study example or other dataset.
+
+## CITATION
+
+```bibtex
+@inproceedings{yun2024automatically,
+  title={Automatically Extracting Numerical Results from Randomized Controlled Trials with Large Language Models},
+  author={Yun, Hye Sun and Pogrebitskiy, David and Marshall, Iain J and Wallace, Byron C},
+  booktitle={Machine Learning for Healthcare Conference},
+  year={2024},
+  organization={PMLR}
+}
+```
