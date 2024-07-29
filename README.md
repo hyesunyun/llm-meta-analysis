@@ -2,6 +2,8 @@
 
 Automating meta-analysis of clinical trials (randomized controlled trials).
 
+Our paper is available at: **[paper.pdf](https://arxiv.org/abs/2405.01686)**
+
 ## SETUP
 
 Create conda environment from the environment.yml: `conda env create -f environment.yml`
