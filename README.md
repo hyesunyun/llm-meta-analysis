@@ -1,23 +1,23 @@
-# Automatically Extracting Numerical Results from RCTS with LLMs
+# Automatically Extracting Numerical Results from Randomized Controlled Trials with LLMs
 
 Automating meta-analysis of clinical trials (randomized controlled trials).
 
-Our paper is available at: **[paper.pdf](https://arxiv.org/abs/2405.01686)**
+Our paper is available at: **[paper.pdf](https://arxiv.org/abs/2405.01686)** :page_facing_up:
 
-## SETUP
+## :hammer_and_wrench: SETUP
 
 Create conda environment from the environment.yml: `conda env create -f environment.yml`
 
 Activate the conda environment: `conda activate llm-meta-analysis`
 
-## DATA
+## :bookmark_tabs: DATA
 
 The human-annotated data is available in the `data` folder as both csv and json formats.
 The dev set has 10 RCTs with 43 number of total ICO triplets.
 The test set has 110 RCTs with 656 number of total ICO triplets.
 Additional dataset statistics can be found in `evaluation/data/analyze_data.ipynb` file.
 
-## EXPERIMENTS
+## :test_tube: EXPERIMENTS
 
 ### Running Tasks
 
@@ -81,7 +81,7 @@ Arguments of `evaluate_output.py`:
 - `--metrics_path`: path where the calculated metrics should be saved
 - `--pmc_files_path`: path of directory where all the pmc markdown files are saved. this is not required if you will be running our default evaluation dataset. Only required if you want to run the case study example or other dataset.
 
-## CITATION
+## :star: CITATION
 
 ```bibtex
 @inproceedings{yun2024automatically,
