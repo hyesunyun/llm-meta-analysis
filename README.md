@@ -2,7 +2,7 @@
 
 Automating meta-analysis of clinical trials (randomized controlled trials).
 
-Our paper is available at: **[paper.pdf](https://arxiv.org/abs/2405.01686)** :page_facing_up:
+:page_facing_up: Our paper is available at: <a href="https://arxiv.org/abs/2405.01686"><img src="https://img.shields.io/badge/Paper-orange" alt="paper" /></a>
 
 ## :hammer_and_wrench: SETUP
 
