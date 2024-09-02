@@ -9,7 +9,7 @@ MAX_API_RETRY = 3
 class GPT35(Model):
     def __init__(self) -> None:
         super().__init__()
-        self.client = OpenAI(organization='XXX',)
+        self.client = OpenAI()
         self.encoder = tiktoken.get_encoding("cl100k_base")
 
     def get_context_length(self) -> int:
