@@ -333,7 +333,7 @@ if __name__ == '__main__':
         print("Output path did not exist. Directory was created.")
     
     if task == "end_to_end":
-        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, task, split, output_path, is_test, prompt_name, input_path, pmc_files_path)
+        outcome_type_task_files, binary_outcomes_task_files, continuous_outcomes_task_files = run_end_to_end_task(model, split, input_path, output_path, pmc_files_path, is_test)
         print(f"Outcome Type task outputs saved to {outcome_type_task_files[0]} and {outcome_type_task_files[1]}")
         print(f"Binary Outcomes task outputs saved to {binary_outcomes_task_files[0]} and {binary_outcomes_task_files[1]}")
         print(f"Continuous Outcomes task outputs saved to {continuous_outcomes_task_files[0]} and {continuous_outcomes_task_files[1]}")
